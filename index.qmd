@@ -1,4 +1,4 @@
-![](Acute%20project%20logo_gh.png){fig-align="center" width="400"}
+![](Acute%20project%20logo_gh.png){fig-align="center" width="300"}
 
 <br>
 
@@ -19,4 +19,4 @@
 
 **Funding:**European Society of Clinical Microbiology and Infectious Diseases (ESCMID)\*\* [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022) to Irene Zaghi, M.D.
 
-![](ESCMID.png)
+![](ESCMID.png){width="400"}
