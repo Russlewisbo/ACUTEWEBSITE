@@ -44,7 +44,6 @@ fig1 + theme_bw(base_size = 16)
 #### Figure 2. 
 
 ```{r}
-# | code-fold: true
 library (ggplot2)
 theme_set(theme_bw())
 ceftaz <- read.csv("~/Desktop/ACUTE/ceftazidime.csv")
