@@ -2,11 +2,10 @@
 
 <br>
 
-<br>
 
 **Principal investigator:** Irene Zaghi, M.D.^1^
 
-**Supervisors:** - Russell E. Lewis, Pharm.D,^2^ - Monica Cricca, M.D., Ph.D.,^1,3^ - Vittorio Sambri, M.D., Ph.D.^1,3^
+**Supervisors:** - Russell E. Lewis, Pharm.D,^2^ - Monica Cricca, M.D., PhD.,^1,3^ - Vittorio Sambri, M.D., PhD.^1,3^
 
 ^1^Laboratorio Unico della AUSL della Romagna, in Pievesestina di Cesena, Italy
 
@@ -16,9 +15,9 @@
 
 **Collaborators:**
 
--   Joseph Meletiadis, Ph.D., Professor of Microbiology in Medical School of National and Kapodistrian University of Athens, Greece
--   Jason Roberts, Pharm.D., P.D., NHMRC Leadership Fellow, UQ Centre for Clinical Research, Faculty of Medicine, Acting Director, CCR. Faculty of Medicine
+-   Joseph Meletiadis, PhD., Professor of Microbiology in Medical School of National and Kapodistrian University of Athens, Greece
+-   Jason Roberts, Pharm.D., PhD., NHMRC Leadership Fellow, UQ Centre for Clinical Research, Faculty of Medicine, Acting Director, CCR. Faculty of Medicine
 
-**Funding support provided by European Society of Clinical Microbiology and Infectious Diseases (ESCMID)** [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022) to Irene Zaghi, M.D.
+**Funding:**European Society of Clinical Microbiology and Infectious Diseases (ESCMID)** [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022) to Irene Zaghi, M.D.
 
 ![](ESCMID.png)

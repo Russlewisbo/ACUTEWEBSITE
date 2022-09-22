@@ -3,10 +3,11 @@ title: "Protocols"
 ---
 
 # Workpackage 1
+
 ## Test isolates
 
 | Isolate                                  | Abbreviaiton | Enzyme       | Ceftazidime/Avibactam MIC (mg/L |
-|--------------------|----------------|----------------|--------------------|
+|------------------------------------------|--------------|--------------|---------------------------------|
 | *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | *MIC needed*                    |
 | *Klebsiella pneumoniae* KPC- A           | KP_KPC_A     | KPC-2        | 1                               |
 | *Klebsiella pneumoniae* KPC- B           | KP_KPC_B     | KPC-2        | 2                               |
@@ -50,4 +51,3 @@ To prepare a standardized inoculum (1.5 x10^2^ CFU/mL) for injection in blood cu
 6.  *describe incubation conditions*, incubator settings, etc. <!--# Irene please provide -->
 
 7.  *how are data collected from the software etc.* <!--# Irene please provide -->
-

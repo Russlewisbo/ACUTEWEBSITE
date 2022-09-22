@@ -11,4 +11,4 @@ The project will generate fundamental knowledge of how Tpos relates to frequentl
 
 This study will form the basis for the broader development and validation of Tpos as a surrogate pharmacodynamic biomarker for antimicrobial activity in serum, that could potentially be used for screening or monitoring antimicrobial efficacy in the critically-ill patients.
 
-![](bloodculturebottle.png){width="150"}
+![](bloodculturebottle.png){fig-align="center" width="150"}
