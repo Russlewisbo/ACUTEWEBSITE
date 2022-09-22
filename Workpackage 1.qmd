@@ -1,9 +1,55 @@
 ---
 title: "Workpackage 1"
+bibliography: references.bib
+csl: nature.csl
 ---
 
 ## Workpackage1A
 
-Establishing the quantitative relationship of TPOS and KPC-Klebsiella pneumoniae inoculum in blood culture bottles.
+Establishing the quantitative relationship of TPOS and KPC-*Klebsiella pneumoniae* inoculum in blood culture bottles. A modification of the methods proposed by Kaltsas et al[@kaltsas2005]
 
-## 
+Tubes containing 1.8 mL of pooled healthy human serum will be inoculated with 0.2 mL of a series of seven ten-fold dilutions (5x10^1^ to 5x10^7^ CFU/mL) of the standardised inoculum of each test indicator strains listed in Table 1. The inoculated sera are then transferred into BacT⁄ALERT bottles without inactivating matrix (Biomérieux Inc) for aerobic incubation and monitored for time to positivity. Tpos results will be used to establish preliminary assay quality control ranges and confirm the utility of isolates as selected "indicator" organisms and quality control ranges at specific inoculum thresholds. Experiments will be performed in at least 10 replicates. The main goal of this workpackage is to demonstrate that Tpos results under the assay conditions exhibit a reproducible and reliable relationship with bacterial inoculum for representative KPC-carbapenemase producing strains of Klebsiella pneumoniae.
+
+This link can be followed to find detailed Standard Operating Procedures for the experiments.
+
+#### Figure 1. Relationship of *K. pneumoniae* inoculum vs. Tpos
+
+```{r}
+library (ggplot2)
+theme_set(theme_bw())
+wp1 <- read.csv("~/Desktop/ACUTE/wp1a.csv")
+fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, color=isolates, shape=diluent, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
+scale_x_log10 () +
+scale_y_continuous(name="Time to positivity (Tpos)", limits=c(4,12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+fig1 + theme_bw(base_size = 16)
+
+```
+
+#### Figure 2. Relationship between Tpos and ceftazidime concentrations
+
+```{r}
+# | code-fold: true
+library (ggplot2)
+theme_set(theme_bw())
+ceftaz <- read.csv("~/Desktop/ACUTE/ceftazidime.csv")
+ggplot(ceftaz, aes(x=conc, y=tpos, shape=isolate)) + geom_point(size=4, alpha = 0.7)+ 
+scale_x_log10(name="Ceftazidime/Avibactam Concentration, mg/L") +
+scale_y_continuous(name="Time to positivity (Tpos)", limits=c(4,25)) 
+
+```
+
+#### Figure 3. Relationship of ceftazidime-avibactam concentrations vs. time to positivity for KP_KPC_B
+
+```{r}
+# | code-fold: true
+library(drda)
+wp2 <- read.csv("~/Desktop/ACUTE/ec50_KPCB.csv")
+fit <- drda(tpos ~ conc, data=wp2, mean_function = "logistic4", max_iter = 1000)
+plot(fit, xlab = "log(conc)", ylab = "Tpos hrs")
+
+```
+
+```{r}
+summary (fit)
+```
