@@ -2,7 +2,6 @@
 
 <br>
 
-
 **Principal investigator:** Irene Zaghi, M.D.^1^
 
 **Supervisors:** - Russell E. Lewis, Pharm.D,^2^ - Monica Cricca, M.D., PhD.,^1,3^ - Vittorio Sambri, M.D., PhD.^1,3^
@@ -18,6 +17,6 @@
 -   Joseph Meletiadis, PhD., Professor of Microbiology in Medical School of National and Kapodistrian University of Athens, Greece
 -   Jason Roberts, Pharm.D., PhD., NHMRC Leadership Fellow, UQ Centre for Clinical Research, Faculty of Medicine, Acting Director, CCR. Faculty of Medicine
 
-**Funding:**European Society of Clinical Microbiology and Infectious Diseases (ESCMID)** [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022) to Irene Zaghi, M.D.
+**Funding:**European Society of Clinical Microbiology and Infectious Diseases (ESCMID)\*\* [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022) to Irene Zaghi, M.D.
 
 ![](ESCMID.png)
