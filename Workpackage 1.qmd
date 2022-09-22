@@ -2,4 +2,8 @@
 title: "Workpackage 1"
 ---
 
-**#Workpackage1A:** **Establishing the quantitative relationship of T~pos~and KPC-Kp inoculum in blood culture**
+## Workpackage1A
+
+Establishing the quantitative relationship of TPOS and KPC-Klebsiella pneumoniae inoculum in blood culture bottles.
+
+## 
