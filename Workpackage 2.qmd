@@ -1,0 +1,30 @@
+---
+title: "Workpackage 2"
+---
+
+![](Acute%20project%20logo_gh.png){fig-align="center" width="600"}
+
+<br>
+
+<br>
+
+**Principal investigator:** Irene Zaghi, M.D.^1^
+
+**Supervisors:** - Russell E. Lewis, Pharm.D,^2^ - Monica Cricca, M.D., Ph.D.,^1,3^ - Vittorio Sambri, M.D., Ph.D.^1,3^
+
+^1^Laboratorio Unico della AUSL della Romagna, in Pievesestina di Cesena, Italy
+
+^2^ Department of Medical and Surgical Sciences, University of Bologna, Italy
+
+^3^ Department of Diagnostic and Experimental Medicine, University of Bologna, Italy
+
+**Collaborators:**
+
+-   Joseph Meletiadis, Ph.D., Professor of Microbiology in Medical School of National and Kapodistrian University of Athens, Greece
+-   Jason Roberts, Pharm.D., P.D., NHMRC Leadership Fellow, UQ Centre for Clinical Research, Faculty of Medicine, Acting Director, CCR. Faculty of Medicine
+
+#### 
+
+```{r}
+1 + 1
+```
