@@ -7,7 +7,7 @@ title: "Protocols"
 ## Test isolates
 
 | Isolate                                  | Abbreviaiton | Enzyme       | Ceftazidime/Avibactam MIC (mg/L) |
-|-------------------------|--------------|--------------|-------------------|
+|------------------------------------------|--------------|--------------|----------------------------------|
 | *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | *MIC needed*                     |
 | *Klebsiella pneumoniae* KPC- A           | KP_KPC_A     | KPC-2        | 1                                |
 | *Klebsiella pneumoniae* KPC- B           | KP_KPC_B     | KPC-2        | 2                                |
