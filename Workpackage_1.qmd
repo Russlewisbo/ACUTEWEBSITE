@@ -45,7 +45,7 @@ wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
 df <- data.frame (wp1)
 table1<-lm_table(df, log(inoculum) ~ tpos, "diluent")
 kbl(table1)%>%
-kable_paper("hover", full_width = F)
+kable_paper("hover", full_width = F, position="left")
 ```
 
 ## Package 1B
