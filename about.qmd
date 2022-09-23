@@ -2,15 +2,15 @@
 title: "Background"
 ---
 
-**The ACUTE project** (**A**dapting Blood**cu**lture systems **t**o monitor antimicrobial **e**fficacy) proposes to develop time-to positivity (Tpos)- a commonly measured variable in bloodculture systems used in clinical microbiology laboratories - as surrogate pharmacodynamic biomarker for monitoring antibiotic therapy of multidrug resistant (MDR) bacteria.
+**The ACUTE project** (**A**dapting Blood**cu**lture systems **t**o monitor antimicrobial **e**fficacy) proposes to develop time-to positivity (Tpos)- a commonly measured variable from bloodculture systems in clinical microbiology laboratories - as a (pharmacodynamic) biomarker suitable for monitoring antibiotic therapy of multidrug resistant (MDR) gram-negative bacteria.
 
-The project will generate fundamental knowledge of how Tpos correlated with established pharmacodynamic indices (e.g. AUC/MIC, %T\> MIC). The activity of ceftazidime-avibactam montherapy and combination anibiotic regimens *in vitro* and from patients against KPC-carbapenemase producing *Klebsiella pneumoniae* (KPC-Kp) will be tested as proof-of-concept. <br>
+The project will generate fundamental knowledge of how Tpos correlates with established pharmacodynamic indices (e.g. AUC/MIC, %T\> MIC). The activity of ceftazidime-avibactam monotherapy and combination antibiotic regimens will be tested *in vitro* and using sera from patients undergoing treatment for KPC-carbapenemase producing *Klebsiella pneumoniae* (KPC-Kp). <br>
 
-Te objectives of this project will be accomplished through two specific aims and several workpackages.
+Te objectives of this project will be accomplished through two specific aims and several workpackages:
 
--   The first specific aim will establish the quantitative relationships between Tpos and several representative KPC-Kp strains in the absence and after exposure to a range of clinically-relevant exposures of ceftazidime-avibactam.
--   The second specific aim will measure Tpos from the blood of 20 critically-ill patients receiving ceftazidime-avibactam treatment for KPC-KP bloodstream infections using KPC-Kp "indicator" strains or the patient's own isolate. Tpos results will be correlated with blood concentration-time courses of ceftazidime and avibactam and PK/PD target attainment (free drug T\>MIC ) simulated for each patient using Bayesian estimates of individual PK parameters from population pharmacokinetic models and LC/MS/MS analysis of ceftazidime-avibactam in serum.
+-   The first specific aim will establish the quantitative relationship between Tpos and representative KPC-Kp strains in the absence and presence of clinically-relevant antibiotic exposures.
+-   The second specific aim will measure Tpos using sera from 20 critically-ill patients receiving ceftazidime-avibactam treatment for KPC-KP bloodstream infections using KPC-Kp "indicator" strains or the patient's own isolate. Tpos results will be correlated with blood concentration-time courses of ceftazidime and avibactam and PK/PD target attainment (free drug T\>MIC ) simulated for each patient using Bayesian estimates of individual PK parameters from population pharmacokinetic models and LC/MS/MS analysis of ceftazidime-avibactam drug concentrations in serum.
 
-This study will form the basis for the broader development and validation of Tpos as a surrogate pharmacodynamic (PD) biomarker for antimicrobial activity in serum, that could potentially be used for screening or monitoring antimicrobial efficacy in the critically-ill patients.
+This study will form the basis for the broader development and validation of Tpos as a surrogate pharmacodynamic (PD) biomarker for monitoring antimicrobial activity of antibiotic monotherapy and combination therapy for Gram-negative infections.
 
 ![](bloodculturebottle.png){fig-align="center" width="150"}

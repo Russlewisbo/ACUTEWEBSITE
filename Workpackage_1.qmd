@@ -1,11 +1,11 @@
 ---
 title: "Workpackage 1"
-sidebar:
-  collapse-level: 4
-html:
+date: "9/23/2022"
+format: 
+  html:
     code-fold: true
-  execute:
-  echo: false
+execute:
+  echo: true
   warning: false
 bibliography: references.bib
 csl: nature.csl
@@ -47,8 +47,9 @@ table1<-lm_table(df, log(inoculum) ~ tpos, "diluent")
 kbl(table1)%>%
 kable_paper("hover", full_width = F)
 ```
+## Package 1B
 
-<br>
+This workpackage explores how antibiotic concentrations impact Tpos. <br>
 
 The effect of increasing fixed ceftazidime/avibactam (CAZ/AVI) concentrations (x:x) on Tpos was investigated at an inoculum of 1x10^4^ CFU/mL of *K. pneumoniae* KPC_B (MIC X mg/L) and *K. pneumonia* NDM producing isolate (negative control, MIC X mg/L ). All experiments were performed in triplicate with an incubation period of 24 hours. Figure 2 shows a marked increased in the Tpos for KPC_B from \< 10 hrs to [\>]{.underline} 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos \< 10hr at all test concentrations consistent with lack of antimicrobial activity.
 
@@ -78,28 +79,35 @@ A four-parameter logistic regression model was fit to the experimental data (Fig
 library(drda)
 wp2 <- read.csv("~/Desktop/ACUTE/ec50_KPCB.csv")
 fit <- drda(tpos ~ conc, data=wp2, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit, xlab = "Caz/AVI (conc)", ylab = "Tpos hrs")
+plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos hrs")
 
-```
-
-```{r, results=FALSE}
-library(drda)
-library(broom)
-library(kableExtra)
-wp2 <- read.csv("~/Desktop/ACUTE/ec50_KPCB.csv")
-fit <- drda(tpos ~ conc, data=wp2, mean_function = "logistic4", max_iter = 1000)
-summary(fit)
-coef(fit)
-sigma(fit)
 ```
 
 ```{r}
 library(drda)
 library(broom)
 library(kableExtra)
-wp2 <- read.csv("~/Desktop/ACUTE/ec50_KPCB.csv")
+wp2 <- read.csv("~/Desktop/ACUTEWEBSITE/ec50_KPCB.csv")
 fit <- drda(tpos ~ conc, data=wp2, mean_function = "logistic4", max_iter = 1000)
 ed<-effective_dose(fit, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "center")
+```
+
+<br>
+
+Ceftazidime/avibactam was tested as a combination prepared in pure powders against the KPC_B and ATCC strains. The results of data fitted with a 4-parameter logistic model are shown in Figure 4.
+
+## Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam pure powder combination
+:::{.callout-important}
+Need to explain why this experiment failed
+:::
+
+```{r}
+# | code-fold: true
+library(drda)
+cazavi1 <- read.csv("~/Desktop/ACUTEWEBSITE/19_07_cazavi.csv")
+fit <- drda(tpos ~ caz, data=cazavi1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos hrs")
+
 ```

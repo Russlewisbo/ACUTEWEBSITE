@@ -1,13 +1,14 @@
 project:
   type: website
   output-dir: docs
-
+title: "The Acute Project Website"
 website:
-  title: "THE ACUTE PROJECT"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
+  sidebar:
+    pinned: true
+    style: "docked"
+    search: true
+    contents:
+      - index.qmd
       - about.qmd
       - Workpackage_1.qmd
       - Workpackage_2.qmd
@@ -15,8 +16,6 @@ website:
       - Publications.qmd
       - Protocols.qmd
       - Documentation.qmd
-      
-
 format: 
   html:
     theme: cosmo
