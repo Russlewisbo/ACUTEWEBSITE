@@ -2,7 +2,9 @@
 title: "Workpackage 1"
 sidebar:
   collapse-level: 4
-execute:
+html:
+    code-fold: true
+  execute:
   echo: false
   warning: false
 bibliography: references.bib
@@ -66,7 +68,6 @@ scale_y_continuous(name="Time to positivity (Tpos)", limits=c(4,25))
 
 A four-parameter logistic regression model was fit to the experimental data (Figure 3) for the KPC_B isolate (Figure 3). The model estimated an EC~50~ for the total Tpos effect at CAZ/AVI 2.15 mg/L (95% CI 2.04-2.27). The EC~90~ was estimated at 2.75 mg/L (95% CI 2.21-3.30).
 
-<br>
 
 <br>
 
