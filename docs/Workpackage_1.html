@@ -165,7 +165,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="package-1a">Package 1A</h2>
 <p><strong>Establishing the quantitative relationship of TPOS and KPC-<em>Klebsiella pneumoniae</em> inoculum in blood culture bottles.</strong> <br> A modification of the methods proposed by Kaltsas et al.<span class="citation" data-cites="kaltsas2005"><sup><a href="#ref-kaltsas2005" role="doc-biblioref">1</a></sup></span> Detailed methods can be found following this <a href="Protocols.html">link</a>.</p>
 <p>Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated with 0.2 mL of a series of seven ten-fold dilutions (5x10<sup>1</sup> to 5x10<sup>7</sup> CFU/mL) of the standardised inoculum of each test indicator strains. The inoculated sera were then transferred into BacT⁄ALERT bottles without inactivating matrix (Biomérieux Inc) for aerobic incubation and monitored for time to positivity. Tpos results were used to establish preliminary assay quality control ranges by testing in triplicate for five KPC-carbapenemase producing <em>K. pneumoniae</em> strains (KPC_KPCA,B,C and NDM, and VIM producing strains) and a reference <em>K. pneumoniae</em> ATCC strain producing ESBL only. Detailed information on the isolates can be found <a href="Protocols.html">here</a>. We also compared how inoculation of the organism suspension prepared in phosphate buffered saline (pbs-0.9%) versus pooled human serum (serum) affected Tpos.</p>
-<p><a href="#figure-1.-tpos-vs.-test-inoculum">Figure 1. Tpos vs.&nbsp;test inoculum</a> shows the relationship between Tpos and the <em>K. pneumoniae</em> inoculum fitted by linear regression. A linear relationship was evident from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range. <em>These data suggest Tpos has a high dynamic range as an indicator for viable CFU/mL.</em></p>
+<p>Figure 1. Tpos vs.&nbsp;test inoculum shows the relationship between Tpos and the <em>K. pneumoniae</em> inoculum. A linear relationship was evident from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R<sup>2</sup> of 0.92-0.94. <em>These data show Tpos has a wide dynamic range as an indicator for viable CFU/mL.</em></p>
 <div style="red">
 <p>Note<em>: we need to add a special note about the actual inoculum in the bottle</em></p>
 </div>
@@ -213,6 +213,7 @@ div.csl-indent {
 </div>
 </div>
 <p><br></p>
+<p>The effect of increasing fixed ceftazidime/avibactam (CAZ/AVI) concentrations (x:x) on Tpos was investigated at an inoculum of 1x10<sup>4</sup> CFU/mL of <em>K. pneumoniae</em> KPC_B (MIC X mg/L) and <em>K. pneumonia</em> NDM producing isolate (negative control, MIC X mg/L ). All experiments were performed in triplicate with an incubation period of 24 hours. Figure 2 shows a marked increased in the Tpos for KPC_B from &lt; 10 hrs to <u>&gt;</u> 24 hrs at concentrations &gt; 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos &lt; 10hr at all concentrations tested consistent with lack of antimicrobial activity.</p>
 </section>
 <section id="figure-2.-impact-of-cazavi-concentrations-on-tpos" class="level3">
 <h3 class="anchored" data-anchor-id="figure-2.-impact-of-cazavi-concentrations-on-tpos">Figure 2. Impact of CAZ/AVI concentrations on Tpos</h3>
@@ -221,6 +222,9 @@ div.csl-indent {
 <p><img src="Workpackage_1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>A four-parameter logistic regression model was fit to the experimental data (Figure 3) for the KPC_B strain (Figure 3). The model estimated an EC<sub>50</sub> for the total Tpos effect at CAZ/AVI 2.15 mg/L (95% CI 2.04-2.27). The EC<sub>90</sub> was estimated at 2.75 mg/L (95% CI 2.21-3.30).</p>
+<p><br></p>
+<p><br></p>
 </section>
 <section id="figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos" class="level3">
 <h3 class="anchored" data-anchor-id="figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos">Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs.&nbsp;Tpos</h3>
@@ -230,30 +234,60 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call: drda(formula = tpos ~ conc, data = wp2, mean_function = "logistic4", 
-    max_iter = 1000)
 
-Pearson Residuals:
-     Min        1Q    Median        3Q       Max  
--1.40020  -0.63581   0.00006   0.24329   2.54945  
+</div>
+<div class="cell">
+<div class="cell-output-display">
 
-Parameters:
-                  Estimate Std. Error Lower .95 Upper .95
-Minimum             8.9594    0.15665     8.652     9.266
-Height             15.0587    0.30239    14.466    15.651
-Growth rate         3.6462    1.36438     0.972     6.320
-Midpoint at         2.1573    0.05969     2.040     2.274
-Residual std err.   0.5187    0.07487     0.372     0.665
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; ">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 1.554736 </td>
+   <td style="text-align:right;"> 1.253729 </td>
+   <td style="text-align:right;"> 1.855743 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 1.856043 </td>
+   <td style="text-align:right;"> 1.750759 </td>
+   <td style="text-align:right;"> 1.961327 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 2.157349 </td>
+   <td style="text-align:right;"> 2.038163 </td>
+   <td style="text-align:right;"> 2.276536 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 2.458656 </td>
+   <td style="text-align:right;"> 2.127602 </td>
+   <td style="text-align:right;"> 2.789710 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 2.759963 </td>
+   <td style="text-align:right;"> 2.216534 </td>
+   <td style="text-align:right;"> 3.303391 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 2.964895 </td>
+   <td style="text-align:right;"> 2.277116 </td>
+   <td style="text-align:right;"> 3.652674 </td>
+  </tr>
+</tbody>
+</table>
 
-Residual standard error on 26 degrees of freedom
-
-Log-likelihood: -20.729
-AIC: 51.457
-BIC: 58.463
-
-Optimization algorithm converged in 336 iterations</code></pre>
 </div>
 </div>
 
