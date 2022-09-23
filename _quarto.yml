@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: docs
-title: "The Acute Project Website"
+title: "The Acute Website"
 website:
   sidebar:
     pinned: true
