@@ -18,7 +18,7 @@ Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated w
 Figure 1 shows the relationship between Tpos and the *K. pneumoniae* inoculum. A linear relationship was observed from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R^2^ of 0.92-0.94. *These data confirm thatTpos has a wide dynamic range as a surrogate indicator for viable CFU/mL.*
 
 :::{.callout-note}
-We need to add an explanation about the inoculum effects
+We need to add an explanation about the *actual* inoculum in the bottles
 :::
 
 ### Figure 1. Tpos vs. test inoculum
