@@ -19,7 +19,7 @@ website:
       - Documentation.qmd
 format: 
   html:
-    theme: flatly
+    theme: cerulean
     css: styles.css
     toc: true
 
