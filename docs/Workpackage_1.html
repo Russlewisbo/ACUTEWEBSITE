@@ -73,6 +73,9 @@ div.csl-indent {
   }
 }</script>
 
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -98,10 +101,10 @@ div.csl-indent {
     <a class="nav-link" href="./about.html">Background</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Workpackage 1.html" aria-current="page">Workpackage 1</a>
+    <a class="nav-link active" href="./Workpackage_1.html" aria-current="page">Workpackage 1</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Workpackage 2.html">Workpackage 2</a>
+    <a class="nav-link" href="./Workpackage_2.html">Workpackage 2</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Presentations.html">Presentations</a>
@@ -160,9 +163,9 @@ div.csl-indent {
 
 <section id="package-1a" class="level2">
 <h2 class="anchored" data-anchor-id="package-1a">Package 1A</h2>
-<p><strong>Establishing the quantitative relationship of TPOS and KPC-<em>Klebsiella pneumoniae</em> inoculum in blood culture bottles.</strong> <br> A modification of the methods proposed by Kaltsas et al.<span class="citation" data-cites="kaltsas2005"><sup><a href="#ref-kaltsas2005" role="doc-biblioref">1</a></sup></span> Detailed methods can be found following this <a href="Protocols.html">link</a></p>
+<p><strong>Establishing the quantitative relationship of TPOS and KPC-<em>Klebsiella pneumoniae</em> inoculum in blood culture bottles.</strong> <br> A modification of the methods proposed by Kaltsas et al.<span class="citation" data-cites="kaltsas2005"><sup><a href="#ref-kaltsas2005" role="doc-biblioref">1</a></sup></span> Detailed methods can be found following this <a href="Protocols.html">link</a>.</p>
 <p>Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated with 0.2 mL of a series of seven ten-fold dilutions (5x10<sup>1</sup> to 5x10<sup>7</sup> CFU/mL) of the standardised inoculum of each test indicator strains. The inoculated sera were then transferred into BacT⁄ALERT bottles without inactivating matrix (Biomérieux Inc) for aerobic incubation and monitored for time to positivity. Tpos results were used to establish preliminary assay quality control ranges by testing in triplicate for five KPC-carbapenemase producing <em>K. pneumoniae</em> strains (KPC_KPCA,B,C and NDM, and VIM producing strains) and a reference <em>K. pneumoniae</em> ATCC strain producing ESBL only. Detailed information on the isolates can be found <a href="Protocols.html">here</a>. We also compared how inoculation of the organism suspension prepared in phosphate buffered saline (pbs-0.9%) versus pooled human serum (serum) affected Tpos.</p>
-<p><a href="#figure-1.-tpos-vs.-test-inoculum">Figure 1. Tpos vs.&nbsp;test inoculum</a>. shows the relationship between Tpos and the <em>K. pneumoniae</em> inoculum fitted by Loess. A linear relationship was evident from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured in the BACTEC-Alert culture system from 10.5 hours-4.5 hours over the tested inoculum range. <em>These data suggest Tpos has a high dynamic range as a possible biomarker</em>.</p>
+<p><a href="#figure-1.-tpos-vs.-test-inoculum">Figure 1. Tpos vs.&nbsp;test inoculum</a> shows the relationship between Tpos and the <em>K. pneumoniae</em> inoculum fitted by linear regression. A linear relationship was evident from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range. <em>These data suggest Tpos has a high dynamic range as an indicator for viable CFU/mL.</em></p>
 <div style="red">
 <p>Note<em>: we need to add a special note about the actual inoculum in the bottle</em></p>
 </div>
@@ -170,7 +173,43 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="figure-1.-tpos-vs.-test-inoculum">Figure 1. Tpos vs.&nbsp;test inoculum</h3>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Workpackage-1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> diluent </th>
+   <th style="text-align:right;"> b0 </th>
+   <th style="text-align:right;"> b1 </th>
+   <th style="text-align:right;"> Rsqr </th>
+   <th style="text-align:right;"> Rsqr_adj </th>
+   <th style="text-align:right;"> Std.Error </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> pbs </td>
+   <td style="text-align:right;"> 32.05074 </td>
+   <td style="text-align:right;"> -2.564975 </td>
+   <td style="text-align:right;"> 0.9343070 </td>
+   <td style="text-align:right;"> 0.9336227 </td>
+   <td style="text-align:right;"> 1.110872 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> serum </td>
+   <td style="text-align:right;"> 33.02361 </td>
+   <td style="text-align:right;"> -2.840223 </td>
+   <td style="text-align:right;"> 0.9231703 </td>
+   <td style="text-align:right;"> 0.9216023 </td>
+   <td style="text-align:right;"> 1.210130 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
 <p><br></p>
@@ -179,7 +218,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="figure-2.-impact-of-cazavi-concentrations-on-tpos">Figure 2. Impact of CAZ/AVI concentrations on Tpos</h3>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Workpackage-1_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -187,7 +226,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos">Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs.&nbsp;Tpos</h3>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Workpackage-1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
