@@ -18,7 +18,7 @@ website:
       - Documentation.qmd
 format: 
   html:
-    theme: united
+    theme: flatly
     css: styles.css
     toc: true
 

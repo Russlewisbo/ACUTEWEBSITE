@@ -225,7 +225,7 @@ div.csl-indent {
   <li><a href="#figure-2.-impact-of-cazavi-concentrations-on-tpos" id="toc-figure-2.-impact-of-cazavi-concentrations-on-tpos" class="nav-link" data-scroll-target="#figure-2.-impact-of-cazavi-concentrations-on-tpos">Figure 2. Impact of CAZ/AVI concentrations on Tpos</a></li>
   <li><a href="#figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos" id="toc-figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos" class="nav-link" data-scroll-target="#figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos">Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs.&nbsp;Tpos</a></li>
   </ul></li>
-  <li><a href="#figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam-pure-powder-combination" id="toc-figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam-pure-powder-combination" class="nav-link" data-scroll-target="#figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam-pure-powder-combination">Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam pure powder combination</a></li>
+  <li><a href="#figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" id="toc-figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" class="nav-link" data-scroll-target="#figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam">Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam</a></li>
   </ul>
 </nav>
     </div>
@@ -388,11 +388,11 @@ Note
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">drda</span>(tpos <span class="sc">~</span> conc, <span class="at">data=</span>wp2, <span class="at">mean_function =</span> <span class="st">"logistic4"</span>, <span class="at">max_iter =</span> <span class="dv">1000</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ed<span class="ot">&lt;-</span><span class="fu">effective_dose</span>(fit, <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">0.10</span>,<span class="fl">0.25</span>,<span class="fl">0.50</span>,<span class="fl">0.75</span>,<span class="fl">0.90</span>,<span class="fl">0.95</span>))</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(ed)<span class="sc">%&gt;%</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_paper</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F, <span class="at">position =</span> <span class="st">"center"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_paper</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F, <span class="at">position =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; ">
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -447,8 +447,8 @@ Note
 <p>Ceftazidime/avibactam was tested as a combination prepared in pure powders against the KPC_B and ATCC strains. The results of data fitted with a 4-parameter logistic model are shown in Figure 4.</p>
 </section>
 </section>
-<section id="figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam-pure-powder-combination" class="level2">
-<h2 class="anchored" data-anchor-id="figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam-pure-powder-combination">Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam pure powder combination</h2>
+<section id="figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" class="level2">
+<h2 class="anchored" data-anchor-id="figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam">Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam</h2>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

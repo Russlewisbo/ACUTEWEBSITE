@@ -19,7 +19,7 @@ Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated w
 
 Figure 1 shows the relationship between Tpos and the *K. pneumoniae* inoculum. A linear relationship was observed from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R^2^ of 0.92-0.94. *These data confirm thatTpos has a wide dynamic range as a surrogate indicator for viable CFU/mL.*
 
-:::{.callout-note}
+::: callout-note
 We need to add an explanation about the *actual* inoculum in the bottles
 :::
 
@@ -47,6 +47,7 @@ table1<-lm_table(df, log(inoculum) ~ tpos, "diluent")
 kbl(table1)%>%
 kable_paper("hover", full_width = F)
 ```
+
 ## Package 1B
 
 This workpackage explores how antibiotic concentrations impact Tpos. <br>
@@ -69,7 +70,6 @@ scale_y_continuous(name="Time to positivity (Tpos)", limits=c(4,25))
 
 A four-parameter logistic regression model was fit to the experimental data (Figure 3) for the KPC_B isolate (Figure 3). The model estimated an EC~50~ for the total Tpos effect at CAZ/AVI 2.15 mg/L (95% CI 2.04-2.27). The EC~90~ was estimated at 2.75 mg/L (95% CI 2.21-3.30).
 
-
 <br>
 
 ### Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos
@@ -91,15 +91,16 @@ wp2 <- read.csv("~/Desktop/ACUTEWEBSITE/ec50_KPCB.csv")
 fit <- drda(tpos ~ conc, data=wp2, mean_function = "logistic4", max_iter = 1000)
 ed<-effective_dose(fit, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
-kable_paper("hover", full_width = F, position = "center")
+kable_paper("hover", full_width = F, position = "left")
 ```
 
 <br>
 
 Ceftazidime/avibactam was tested as a combination prepared in pure powders against the KPC_B and ATCC strains. The results of data fitted with a 4-parameter logistic model are shown in Figure 4.
 
-## Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam pure powder combination
-:::{.callout-important}
+## Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam 
+
+::: callout-important
 Need to explain why this experiment failed
 :::
 
