@@ -4,7 +4,39 @@ title: "Protocols"
 
 # Workpackage 1
 
+## Materials
+
+-   sterile 15 ml falcon tube 
+
+-   glass tubes
+
+-   tube racks
+
+-   DensiCHEK plus Biomerieux
+
+-   Vortex
+
+-   100-1000 mcl mechanical pipette
+
+-   1 ml sterile insulin syringe
+
+-   serum from healthy volunteers
+
+-   saline sterile solution
+
+-   MH broth
+
+-   BacT/ALERT FA FAN® Aerobic Biomeriuex blood culture bottles
+
+-   BacT/ALERT SA Standard Aerobic Biomerieux blood culture bottles (without inactivating matrix)
+
+-   Bact/ALERT 3D Biomerieux incubator system
+
 ## Test isolates
+
+-   Bacterial strains were obtained from the banked collection of the Microbiology Unit, Hub Laboratory, AUSL Romagna, Cesena, Italy.
+
+-   Each day before testing, strains are thawed and incubated at 37°C for 18-24 hours.
 
 | Isolate                                  | Abbreviaiton | Enzyme       | Ceftazidime/Avibactam MIC (mg/L) |
 |------------------------------------------|--------------|--------------|----------------------------------|
@@ -17,16 +49,17 @@ title: "Protocols"
 
 ## Inoculum preparation
 
-The proposed method are a modification of Tpos assay as proposed by Kaltsas et al. [@kaltsas2005]
+The proposed method are a modification of Tpos assay as proposed by Kaltsas et al.
 
-Dilution schemes are from the Clinical Laboratory Standards Institute (CLSI) [M21-A Methodology for the Serum Bactericidal Test](CLSI_M21A.pdf) [@Clinical_Laboratory_Standards_Institute1999-iya]and [M26A Methodology for Determining Bactericidal Activity of Antibiotics](CLSI_M26A.pdf) [@Clinical_Laboratory_Standards_Institute1999-iy]
+Dilution schemes are from the Clinical Laboratory Standards Institute (CLSI) [M21-A Methodology for the Serum Bactericidal Test](CLSI_M21A.pdf) and [M26A Methodology for Determining Bactericidal Activity of Antibiotics](CLSI_M26A.pdf).
 
 To prepare a standardized inoculum (1.5 x10^2^ CFU/mL) for injection in blood culture bottles:
 
 1.  Colonies are selected from an 18- to 24-hour agar plate and suspended in sterile 0.9% phosphate buffered saline (PBS) in a glass test tube. The suspension is then adjusted by optimal density using a Densichek turbidity meter to an equivalent to a 0.5 McFarland standard corresponding to 1 to 2 × 10^8^ CFU/mL.
+
 2.  The inoculum is then serially diluted using ten-fold dilution scheme: 200 μL inoculum dispensed by micropipette into 1800 μL 0.9% saline → vortexed → then 200 μL of this suspension is pipetted into a fresh tube containing 1800 μL 0.9% saline, etc.) until a final inoculum of **1.5 x10^2^ CFU/ml is reached**.
 
-[![Figure 1. Inoculum dilution scheme](dilution_1.png){fig-align="left" width="500"}](Figure%201)
+    ![](dilution_1.png){width="600"}
 
 3.  Note the final dilution step is repeated an additional 5 times in replicate tubes to ensure 6 tubes (12 mL of the final 1.5 x10^2^ CFU/mL) are available to inoculate 10 blood culture bottles.
 

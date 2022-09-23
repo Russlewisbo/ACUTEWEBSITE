@@ -9,19 +9,21 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
+
 ## Package 1A
 
 **Establishing the quantitative relationship of TPOS and KPC-*Klebsiella pneumoniae* inoculum in blood culture bottles.** <br> A modification of the methods proposed by Kaltsas et al.[@kaltsas2005] Detailed methods can be found following this [link](Protocols.html)
 
 Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated with 0.2 mL of a series of seven ten-fold dilutions (5x10^1^ to 5x10^7^ CFU/mL) of the standardised inoculum of each test indicator strains. The inoculated sera were then transferred into BacT⁄ALERT bottles without inactivating matrix (Biomérieux Inc) for aerobic incubation and monitored for time to positivity. Tpos results were used to establish preliminary assay quality control ranges by testing in triplicate for five KPC-carbapenemase producing *K. pneumoniae* strains (KPC_KPCA,B,C and NDM, and VIM producing strains) and a reference *K. pneumoniae* ATCC strain producing ESBL only. Detailed information on the isolates can be found [here](Protocols.html). We also compared how inoculation of the organism suspension prepared in phosphate buffered saline (pbs-0.9%) versus pooled human serum (serum) affected Tpos.
 
-[Figure 1. Tpos vs. test inoculum]. shows the relationship between Tpos and the *K. pneumoniae* inoculum fitted by linear regression. A linear relationship was evident from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range. *These data suggest Tpos has a high dynamic range as an indicator for viable CFU/mL.*
+[Figure 1. Tpos vs. test inoculum]. shows the relationship between Tpos and the *K. pneumoniae* inoculum fitted by Loess. A linear relationship was evident from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured in the BACTEC-Alert culture system from 10.5 hours-4.5 hours over the tested inoculum range. *These data suggest Tpos has a high dynamic range as a possible biomarker*.
 
 ::: {style="red"}
 Note*: we need to add a special note about the actual inoculum in the bottle*
 :::
 
 ### Figure 1. Tpos vs. test inoculum
+
 
 ```{r}
 library (ggplot2)
@@ -36,9 +38,11 @@ fig1 + theme_bw(base_size = 16)
 
 ```
 
+
 <br>
 
 ### Figure 2. Impact of CAZ/AVI concentrations on Tpos
+
 
 ```{r}
 library (ggplot2)
@@ -50,7 +54,9 @@ scale_y_continuous(name="Time to positivity (Tpos)", limits=c(4,25))
 
 ```
 
-### Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos
+
+### Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos 
+
 
 ```{r}
 # | code-fold: true
@@ -64,3 +70,4 @@ plot(fit, xlab = "Caz/AVI (conc)", ylab = "Tpos hrs")
 ```{r}
 summary (fit)
 ```
+
