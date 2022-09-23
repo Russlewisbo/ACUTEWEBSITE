@@ -98,7 +98,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 Ceftazidime/avibactam was tested as a combination prepared in pure powders against the KPC_B and ATCC strains. The results of data fitted with a 4-parameter logistic model are shown in Figure 4.
 
-## Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam, 19-07-2022 
+## Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam
 
 ::: callout-important
 Need to explain why this experiment failed
