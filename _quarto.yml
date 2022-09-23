@@ -9,8 +9,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - Workpackage 1.qmd
-      - Workpackage 2.qmd
+      - Workpackage_1.qmd
+      - Workpackage_2.qmd
       - Presentations.qmd
       - Publications.qmd
       - Protocols.qmd
