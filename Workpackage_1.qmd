@@ -13,7 +13,7 @@ csl: nature.csl
 
 ## Package 1A
 
-**Establishing the quantitative relationship of TPOS and KPC-*Klebsiella pneumoniae* inoculum in blood culture bottles.** <br> A modification of the methods proposed by Kaltsas et al.[@kaltsas2005] Detailed methods can be found following this [link](Protocols.html).
+**Establishing the quantitative relationship of TPOS and KPC-*Klebsiella pneumoniae* inoculum in blood culture bottles.** <br> A modification of the methods proposed by Kaltsas et al.[@kaltsas2005] Detailed methods can be found following this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.[@Clinical_Laboratory_Standards_Institute1999-iy;@Clinical_Laboratory_Standards_Institute1999-iya]
 
 Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated with 0.2 mL of a series of seven ten-fold dilutions (5x10^1^ to 5x10^7^ CFU/mL) of the standardised inoculum of each test indicator strains. The inoculated sera were then transferred into BacT⁄ALERT bottles without inactivating matrix (Biomérieux Inc) for aerobic incubation and monitored for time to positivity. Tpos results were used to establish preliminary assay quality control ranges by testing in triplicate for five KPC-carbapenemase producing *K. pneumoniae* strains (KPC_KPCA,B,C and NDM, and VIM producing strains) and a reference *K. pneumoniae* ATCC strain producing ESBL only. Detailed information on the isolates can be found [here](Protocols.html). We also compared how inoculation of the organism suspension prepared in phosphate buffered saline (pbs-0.9%) versus pooled human serum (serum) affected Tpos.
 
@@ -31,7 +31,7 @@ library(scales)
 theme_set(theme_bw())
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
 fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, color=isolates, shape=diluent, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
-scale_y_continuous(name="Time to positivity (Tpos)", limits=c(4,12)) +
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
 theme(legend.text=element_text(size=12)) +
 geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
 fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
@@ -62,7 +62,7 @@ theme_set(theme_bw())
 ceftaz <- read.csv("~/Desktop/ACUTE/ceftazidime.csv")
 ggplot(ceftaz, aes(x=conc, y=tpos, color=isolate, shape=isolate)) + geom_point(size=4, alpha = 0.7)+ 
 scale_x_log10(name="CAZ/AVI, mg/L") +
-scale_y_continuous(name="Time to positivity (Tpos)", limits=c(4,25)) 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
 
 ```
 
@@ -79,7 +79,7 @@ A four-parameter logistic regression model was fit to the experimental data (Fig
 library(drda)
 wp2 <- read.csv("~/Desktop/ACUTE/ec50_KPCB.csv")
 fit <- drda(tpos ~ conc, data=wp2, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos hrs")
+plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos (hr)")
 
 ```
 
@@ -109,6 +109,6 @@ Need to explain why this experiment failed
 library(drda)
 cazavi1 <- read.csv("~/Desktop/ACUTEWEBSITE/19_07_cazavi.csv")
 fit <- drda(tpos ~ caz, data=cazavi1, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos hrs")
+plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos (hr)")
 
 ```
