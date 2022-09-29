@@ -130,6 +130,12 @@ plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos (hr)")
 
 ## Figure 6. In vitro effects of combination ceftazidime/avibactam + gentamicin
 
+The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial product) plus gentamicin was tested against KP_KPC_B strain in ~~X replicate~~ experiments. The effect of the Tpos combination was analyzed using (A) Loewe Additivity and (B) Bliss Independence Model of Drug interaction. The results demonstrated that CTZ/AVI + gentamicin is broadly synergistic over a range of clinically acheived concentrations, with and average 4.29 hr (95% CI 2.65-6.46) increase in Tpos versus the predicted null response.
+
+::: callout-note
+The log10 EC50 differes from Figure 2
+:::
+
 ```{r}
 library(BIGL)
 library(knitr)
@@ -141,10 +147,11 @@ set.seed(12345)
 cutoff <- 0.95
 caz_gent <- read.csv("~/Desktop/ACUTEWEBSITE/caz_gent_syn.csv")
 ## Fitting marginal models, maximal fixe at 24 hours, minimal at 8.5
-marginalFit <- fitMarginals(caz_gent, method = "nls",
+marginalFit <- fitMarginals(caz_gent, method = "nls",                 
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 9),
                             names = c("CTZ/AVI", "GENT"))
 summary(marginalFit)
-## Plotting marginal models
+## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum contrastined at 24 hours
 plot(marginalFit) + ggtitle(paste("Ceftazidime/Avibactam + Gentamicin"))
 rs <- fitSurface(caz_gent, marginalFit,
                  null_model = "loewe",
@@ -183,5 +190,4 @@ view3d(0, -75)
 rglwidget()
 summary(maxR_B$confInt)
 plotConfInt(maxR_B, color = "effect-size")
-
 ```
