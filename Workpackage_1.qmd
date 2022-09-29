@@ -129,6 +129,29 @@ plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos (hr)")
 ```
 
 ## Figure 6. In vitro effects of combination ceftazidime/avibactam + gentamicin
+### Figure 2. Impact of CAZ/AVI concentrations on Tpos
+
+```{r}
+library (ggplot2)
+theme_set(theme_bw())
+mero1 <- read.csv("~/Desktop/ACUTEWEBSITE/meropenem_10^4.csv")
+ggplot(mero1, aes(x=mer, y=tpos, color=isolate, shape=isolate)) + geom_point(size=4, alpha = 0.7)+ 
+scale_x_log10(name="Meropenem, mg/L") +
+scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
+
+```
+# Figure 7. 
+
+```{r}
+# | code-fold: true
+library(drda)
+mero1 <- read.csv("~/Desktop/ACUTEWEBSITE/meropenem_10^4.csv")
+fit <- drda(tpos ~ caz, data=cazavi1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos (hr)")
+
+```
+
+# Figure 8. In vitro effects of combination ceftazidime/avibactam + gentamicin
 
 The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial product) plus gentamicin was tested against KP_KPC_B strain in ~~X replicate~~ experiments. The effect of the Tpos combination was analyzed using (A) Loewe Additivity and (B) Bliss Independence Model of Drug interaction. The results demonstrated that CTZ/AVI + gentamicin is broadly synergistic over a range of clinically acheived concentrations, with and average 4.29 hr (95% CI 2.65-6.46) increase in Tpos versus the predicted null response.
 
