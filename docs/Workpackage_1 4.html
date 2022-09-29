@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-09-23">
+
+<title>Workpackage 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/rglWebGL-binding-0.109.6/rglWebGL.js"></script>
+<link href="site_libs/rglwidgetClass-0.109.6/rgl.css" rel="stylesheet">
+<script src="site_libs/rglwidgetClass-0.109.6/rglClass.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/utils.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/buffer.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/subscenes.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/shaders.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/textures.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/projection.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/mouse.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/init.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/pieces.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/draw.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/controls.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/selection.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/rglTimer.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/pretty.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/axes.src.js"></script>
+<script src="site_libs/rglwidgetClass-0.109.6/animation.src.js"></script>
+<script type="text/plain" id="rgl-vertex-shader">
+#line 2 1
+// File 1 is the vertex shader
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#endif
+
+attribute vec3 aPos;
+attribute vec4 aCol;
+uniform mat4 mvMatrix;
+uniform mat4 prMatrix;
+varying vec4 vCol;
+varying vec4 vPosition;
+
+#ifdef NEEDS_VNORMAL
+attribute vec3 aNorm;
+uniform mat4 normMatrix;
+varying vec4 vNormal;
+#endif
+
+#if defined(HAS_TEXTURE) || defined (IS_TEXT)
+attribute vec2 aTexcoord;
+varying vec2 vTexcoord;
+#endif
+
+#ifdef FIXED_SIZE
+uniform vec3 textScale;
+#endif
+
+#ifdef FIXED_QUADS
+attribute vec3 aOfs;
+#endif
+
+#ifdef IS_TWOSIDED
+#ifdef HAS_NORMALS
+varying float normz;
+uniform mat4 invPrMatrix;
+#else
+attribute vec3 aPos1;
+attribute vec3 aPos2;
+varying float normz;
+#endif
+#endif // IS_TWOSIDED
+
+#ifdef FAT_LINES
+attribute vec3 aNext;
+attribute vec2 aPoint;
+varying vec2 vPoint;
+varying float vLength;
+uniform float uAspect;
+uniform float uLwd;
+#endif
+
+
+void main(void) {
+  
+#ifndef IS_BRUSH
+#if defined(NCLIPPLANES) || !defined(FIXED_QUADS) || defined(HAS_FOG)
+  vPosition = mvMatrix * vec4(aPos, 1.);
+#endif
+  
+#ifndef FIXED_QUADS
+  gl_Position = prMatrix * vPosition;
+#endif
+#endif // !IS_BRUSH
+  
+#ifdef IS_POINTS
+  gl_PointSize = POINTSIZE;
+#endif
+  
+  vCol = aCol;
+  
+#ifdef NEEDS_VNORMAL
+  vNormal = normMatrix * vec4(-aNorm, dot(aNorm, aPos));
+#endif
+  
+#ifdef IS_TWOSIDED
+#ifdef HAS_NORMALS
+  /* normz should be calculated *after* projection */
+  normz = (invPrMatrix*vNormal).z;
+#else
+  vec4 pos1 = prMatrix*(mvMatrix*vec4(aPos1, 1.));
+  pos1 = pos1/pos1.w - gl_Position/gl_Position.w;
+  vec4 pos2 = prMatrix*(mvMatrix*vec4(aPos2, 1.));
+  pos2 = pos2/pos2.w - gl_Position/gl_Position.w;
+  normz = pos1.x*pos2.y - pos1.y*pos2.x;
+#endif
+#endif // IS_TWOSIDED
+  
+#ifdef NEEDS_VNORMAL
+  vNormal = vec4(normalize(vNormal.xyz/vNormal.w), 1);
+#endif
+  
+#if defined(HAS_TEXTURE) || defined(IS_TEXT)
+  vTexcoord = aTexcoord;
+#endif
+  
+#if defined(FIXED_SIZE) && !defined(ROTATING)
+  vec4 pos = prMatrix * mvMatrix * vec4(aPos, 1.);
+  pos = pos/pos.w;
+  gl_Position = pos + vec4(aOfs*textScale, 0.);
+#endif
+  
+#if defined(IS_SPRITES) && !defined(FIXED_SIZE)
+  vec4 pos = mvMatrix * vec4(aPos, 1.);
+  pos = pos/pos.w + vec4(aOfs,  0.);
+  gl_Position = prMatrix*pos;
+#endif
+  
+#ifdef FAT_LINES
+  /* This code was inspired by Matt Deslauriers' code in 
+   https://mattdesl.svbtle.com/drawing-lines-is-hard */
+  vec2 aspectVec = vec2(uAspect, 1.0);
+  mat4 projViewModel = prMatrix * mvMatrix;
+  vec4 currentProjected = projViewModel * vec4(aPos, 1.0);
+  currentProjected = currentProjected/currentProjected.w;
+  vec4 nextProjected = projViewModel * vec4(aNext, 1.0);
+  vec2 currentScreen = currentProjected.xy * aspectVec;
+  vec2 nextScreen = (nextProjected.xy / nextProjected.w) * aspectVec;
+  float len = uLwd;
+  vec2 dir = vec2(1.0, 0.0);
+  vPoint = aPoint;
+  vLength = length(nextScreen - currentScreen)/2.0;
+  vLength = vLength/(vLength + len);
+  if (vLength > 0.0) {
+    dir = normalize(nextScreen - currentScreen);
+  }
+  vec2 normal = vec2(-dir.y, dir.x);
+  dir.x /= uAspect;
+  normal.x /= uAspect;
+  vec4 offset = vec4(len*(normal*aPoint.x*aPoint.y - dir), 0.0, 0.0);
+  gl_Position = currentProjected + offset;
+#endif
+  
+#ifdef IS_BRUSH
+  gl_Position = vec4(aPos, 1.);
+#endif
+}
+</script>
+<script type="text/plain" id="rgl-fragment-shader">
+#line 2 2
+// File 2 is the fragment shader
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#endif
+varying vec4 vCol; // carries alpha
+varying vec4 vPosition;
+#if defined(HAS_TEXTURE) || defined (IS_TEXT)
+varying vec2 vTexcoord;
+uniform sampler2D uSampler;
+#endif
+
+#ifdef HAS_FOG
+uniform int uFogMode;
+uniform vec3 uFogColor;
+uniform vec4 uFogParms;
+#endif
+
+#if defined(IS_LIT) && !defined(FIXED_QUADS)
+varying vec4 vNormal;
+#endif
+
+#if NCLIPPLANES > 0
+uniform vec4 vClipplane[NCLIPPLANES];
+#endif
+
+#if NLIGHTS > 0
+uniform mat4 mvMatrix;
+#endif
+
+#ifdef IS_LIT
+uniform vec3 emission;
+uniform float shininess;
+#if NLIGHTS > 0
+uniform vec3 ambient[NLIGHTS];
+uniform vec3 specular[NLIGHTS]; // light*material
+uniform vec3 diffuse[NLIGHTS];
+uniform vec3 lightDir[NLIGHTS];
+uniform bool viewpoint[NLIGHTS];
+uniform bool finite[NLIGHTS];
+#endif
+#endif // IS_LIT
+
+#ifdef IS_TWOSIDED
+uniform bool front;
+varying float normz;
+#endif
+
+#ifdef FAT_LINES
+varying vec2 vPoint;
+varying float vLength;
+#endif
+
+void main(void) {
+  vec4 fragColor;
+#ifdef FAT_LINES
+  vec2 point = vPoint;
+  bool neg = point.y < 0.0;
+  point.y = neg ? (point.y + vLength)/(1.0 - vLength) :
+                 -(point.y - vLength)/(1.0 - vLength);
+#if defined(IS_TRANSPARENT) && defined(IS_LINESTRIP)
+  if (neg && length(point) <= 1.0) discard;
+#endif
+  point.y = min(point.y, 0.0);
+  if (length(point) > 1.0) discard;
+#endif // FAT_LINES
+  
+#ifdef ROUND_POINTS
+  vec2 coord = gl_PointCoord - vec2(0.5);
+  if (length(coord) > 0.5) discard;
+#endif
+  
+#if NCLIPPLANES > 0
+  for (int i = 0; i < NCLIPPLANES; i++)
+    if (dot(vPosition, vClipplane[i]) < 0.0) discard;
+#endif
+    
+#ifdef FIXED_QUADS
+    vec3 n = vec3(0., 0., 1.);
+#elif defined(IS_LIT)
+    vec3 n = normalize(vNormal.xyz);
+#endif
+    
+#ifdef IS_TWOSIDED
+    if ((normz <= 0.) != front) discard;
+#endif
+    
+#ifdef IS_LIT
+    vec3 eye = normalize(-vPosition.xyz/vPosition.w);
+    vec3 lightdir;
+    vec4 colDiff;
+    vec3 halfVec;
+    vec4 lighteffect = vec4(emission, 0.);
+    vec3 col;
+    float nDotL;
+#ifdef FIXED_QUADS
+    n = -faceforward(n, n, eye);
+#endif
+    
+#if NLIGHTS > 0
+    for (int i=0;i<NLIGHTS;i++) {
+      colDiff = vec4(vCol.rgb * diffuse[i], vCol.a);
+      lightdir = lightDir[i];
+      if (!viewpoint[i])
+        lightdir = (mvMatrix * vec4(lightdir, 1.)).xyz;
+      if (!finite[i]) {
+        halfVec = normalize(lightdir + eye);
+      } else {
+        lightdir = normalize(lightdir - vPosition.xyz/vPosition.w);
+        halfVec = normalize(lightdir + eye);
+      }
+      col = ambient[i];
+      nDotL = dot(n, lightdir);
+      col = col + max(nDotL, 0.) * colDiff.rgb;
+      col = col + pow(max(dot(halfVec, n), 0.), shininess) * specular[i];
+      lighteffect = lighteffect + vec4(col, colDiff.a);
+    }
+#endif
+    
+#else // not IS_LIT
+    vec4 colDiff = vCol;
+    vec4 lighteffect = colDiff;
+#endif
+    
+#ifdef IS_TEXT
+    vec4 textureColor = lighteffect*texture2D(uSampler, vTexcoord);
+#endif
+    
+#ifdef HAS_TEXTURE
+#ifdef TEXTURE_rgb
+    vec4 textureColor = lighteffect*vec4(texture2D(uSampler, vTexcoord).rgb, 1.);
+#endif
+    
+#ifdef TEXTURE_rgba
+    vec4 textureColor = lighteffect*texture2D(uSampler, vTexcoord);
+#endif
+    
+#ifdef TEXTURE_alpha
+    vec4 textureColor = texture2D(uSampler, vTexcoord);
+    float luminance = dot(vec3(1.,1.,1.), textureColor.rgb)/3.;
+    textureColor =  vec4(lighteffect.rgb, lighteffect.a*luminance);
+#endif
+    
+#ifdef TEXTURE_luminance
+    vec4 textureColor = vec4(lighteffect.rgb*dot(texture2D(uSampler, vTexcoord).rgb, vec3(1.,1.,1.))/3., lighteffect.a);
+#endif
+    
+#ifdef TEXTURE_luminance_alpha
+    vec4 textureColor = texture2D(uSampler, vTexcoord);
+    float luminance = dot(vec3(1.,1.,1.),textureColor.rgb)/3.;
+    textureColor = vec4(lighteffect.rgb*luminance, lighteffect.a*textureColor.a);
+#endif
+    
+    fragColor = textureColor;
+
+#elif defined(IS_TEXT)
+    if (textureColor.a < 0.1)
+      discard;
+    else
+      fragColor = textureColor;
+#else
+    fragColor = lighteffect;
+#endif // HAS_TEXTURE
+    
+#ifdef HAS_FOG
+    // uFogParms elements: x = near, y = far, z = fogscale, w = (1-sin(FOV/2))/(1+sin(FOV/2))
+    // In Exp and Exp2: use density = density/far
+    // fogF will be the proportion of fog
+    // Initialize it to the linear value
+    float fogF;
+    if (uFogMode > 0) {
+      fogF = (uFogParms.y - vPosition.z/vPosition.w)/(uFogParms.y - uFogParms.x);
+      if (uFogMode > 1)
+        fogF = mix(uFogParms.w, 1.0, fogF);
+      fogF = fogF*uFogParms.z;
+      if (uFogMode == 2)
+        fogF = 1.0 - exp(-fogF);
+      // Docs are wrong: use (density*c)^2, not density*c^2
+      // https://gitlab.freedesktop.org/mesa/mesa/-/blob/master/src/mesa/swrast/s_fog.c#L58
+      else if (uFogMode == 3)
+        fogF = 1.0 - exp(-fogF*fogF);
+      fogF = clamp(fogF, 0.0, 1.0);
+      gl_FragColor = vec4(mix(fragColor.rgb, uFogColor, fogF), fragColor.a);
+    } else gl_FragColor = fragColor;
+#else
+    gl_FragColor = fragColor;
+#endif // HAS_FOG
+    
+}
+</script>
+<script src="site_libs/CanvasMatrix4-0.109.6/CanvasMatrix.src.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Workpackage 1</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">The Acute Website</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">Background</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Workpackage_1.html" class="sidebar-item-text sidebar-link active">Workpackage 1</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Workpackage_2.html" class="sidebar-item-text sidebar-link">Workpackage 2</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  Summary_results.qmd
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Presentations.html" class="sidebar-item-text sidebar-link">Presentations</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Publications.html" class="sidebar-item-text sidebar-link">Publications</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Protocols.html" class="sidebar-item-text sidebar-link">Protocols</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Documentation.html" class="sidebar-item-text sidebar-link">Documentation</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#package-1a" id="toc-package-1a" class="nav-link active" data-scroll-target="#package-1a">Package 1A</a>
+  <ul class="collapse">
+  <li><a href="#figure-1.-tpos-vs.-test-inoculum" id="toc-figure-1.-tpos-vs.-test-inoculum" class="nav-link" data-scroll-target="#figure-1.-tpos-vs.-test-inoculum">Figure 1. Tpos vs.&nbsp;test inoculum</a></li>
+  </ul></li>
+  <li><a href="#package-1b" id="toc-package-1b" class="nav-link" data-scroll-target="#package-1b">Package 1B</a>
+  <ul class="collapse">
+  <li><a href="#figure-2.-impact-of-cazavi-concentrations-on-tpos" id="toc-figure-2.-impact-of-cazavi-concentrations-on-tpos" class="nav-link" data-scroll-target="#figure-2.-impact-of-cazavi-concentrations-on-tpos">Figure 2. Impact of CAZ/AVI concentrations on Tpos</a></li>
+  <li><a href="#figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos" id="toc-figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos" class="nav-link" data-scroll-target="#figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos">Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs.&nbsp;Tpos</a></li>
+  </ul></li>
+  <li><a href="#figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" id="toc-figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" class="nav-link" data-scroll-target="#figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam">Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam</a></li>
+  <li><a href="#figure-5.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" id="toc-figure-5.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" class="nav-link" data-scroll-target="#figure-5.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam">Figure 5. In vitro pharmacodynamics of ceftazidime/avibactam</a></li>
+  <li><a href="#figure-6.-in-vitro-effects-of-combination-ceftazidimeavibactam-gentamicin" id="toc-figure-6.-in-vitro-effects-of-combination-ceftazidimeavibactam-gentamicin" class="nav-link" data-scroll-target="#figure-6.-in-vitro-effects-of-combination-ceftazidimeavibactam-gentamicin">Figure 6. In vitro effects of combination ceftazidime/avibactam + gentamicin</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Workpackage 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 23, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="package-1a" class="level2">
+<h2 class="anchored" data-anchor-id="package-1a">Package 1A</h2>
+<p><strong>Establishing the quantitative relationship of Tpos and KPC-<em>Klebsiella pneumoniae</em> inoculum in blood culture bottles.</strong> <br> The methods for the assay are a modification of those originally proposed by Kaltsas et al.<span class="citation" data-cites="kaltsas2005"><sup><a href="#ref-kaltsas2005" role="doc-biblioref">1</a></sup></span> Detailed procedures can be found following this <a href="Protocols.html">link</a>. Methodology for preparing the test inoculum was adapted from <a href="CLSI_M21A.pdf">CLSI M21A</a> and <a href="CLSI_M26A.pdf">M26A</a> guidelines.<span class="citation" data-cites="Clinical_Laboratory_Standards_Institute1999-iy Clinical_Laboratory_Standards_Institute1999-iya"><sup><a href="#ref-Clinical_Laboratory_Standards_Institute1999-iy" role="doc-biblioref">2</a>,<a href="#ref-Clinical_Laboratory_Standards_Institute1999-iya" role="doc-biblioref">3</a></sup></span></p>
+<p>Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated with 0.2 mL of a series of ten-fold dilutions (5x10<sup>1</sup> to 5x10<sup>7</sup> CFU/mL) of the standardised inoculum of each test indicator strains. The inoculated sera were then transferred into BacT⁄ALERT bottles without inactivating matrix (Biomérieux Inc) for aerobic incubation for 24 hours and monitored for time to positivity. Tpos results were used to establish preliminary assay quality control ranges by testing in triplicate for five KPC-carbapenemase producing <em>K. pneumoniae</em> strains (KPC_KPCA,B,C and NDM, and VIM producing strains) and a reference <em>K. pneumoniae</em> ATCC strain producing ESBL only. Detailed information on the isolates can be found <a href="Protocols.html">here</a>. We also compared how inoculation of the organism suspension prepared in phosphate buffered saline (pbs-0.9%) versus pooled human serum (serum) affected Tpos.</p>
+<p>Figure 1 shows the relationship between Tpos and the <em>K. pneumoniae</em> inoculum. A linear relationship was observed from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R<sup>2</sup> of 0.92-0.94. <em>These data confirm thatTpos has a wide dynamic range as a surrogate indicator for viable CFU/mL.</em></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We need to add an explanation about the <em>actual</em> inoculum in the bottles</p>
+</div>
+</div>
+<section id="figure-1.-tpos-vs.-test-inoculum" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1.-tpos-vs.-test-inoculum">Figure 1. Tpos vs.&nbsp;test inoculum</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>wp1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTEWEBSITE/wp1a.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span><span class="fu">ggplot</span>(wp1, <span class="fu">aes</span>(<span class="at">x=</span>inoculum, <span class="at">y=</span>tpos, <span class="at">color=</span>isolates, <span class="at">shape=</span>diluent, <span class="at">fill=</span>isolates)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">name=</span><span class="st">"Tpos (hr)"</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>diluent), <span class="at">method=</span>lm , <span class="at">color=</span><span class="st">"black"</span>, <span class="at">fill=</span><span class="st">"#69b3a2"</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">inherit.aes =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fig1 <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>)<span class="sc">+</span> <span class="fu">scale_x_log10</span>(<span class="at">name=</span><span class="st">"Inoculum CFU/mL"</span>, <span class="at">breaks =</span> <span class="fu">trans_breaks</span>(<span class="st">"log10"</span>,<span class="at">n=</span><span class="dv">7</span>, <span class="cf">function</span>(x) <span class="dv">10</span><span class="sc">^</span>x),<span class="at">labels =</span> <span class="fu">trans_format</span>(<span class="st">"log10"</span>, <span class="fu">math_format</span>(<span class="dv">10</span><span class="sc">^</span>.x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forestmangr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>wp1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTEWEBSITE/wp1a.csv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (wp1)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">&lt;-</span><span class="fu">lm_table</span>(df, <span class="fu">log</span>(inoculum) <span class="sc">~</span> tpos, <span class="st">"diluent"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(table1)<span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_paper</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F, <span class="at">position=</span><span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; ">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> diluent </th>
+   <th style="text-align:right;"> b0 </th>
+   <th style="text-align:right;"> b1 </th>
+   <th style="text-align:right;"> Rsqr </th>
+   <th style="text-align:right;"> Rsqr_adj </th>
+   <th style="text-align:right;"> Std.Error </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> pbs </td>
+   <td style="text-align:right;"> 32.05074 </td>
+   <td style="text-align:right;"> -2.564975 </td>
+   <td style="text-align:right;"> 0.9343070 </td>
+   <td style="text-align:right;"> 0.9336227 </td>
+   <td style="text-align:right;"> 1.110872 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> serum </td>
+   <td style="text-align:right;"> 33.02361 </td>
+   <td style="text-align:right;"> -2.840223 </td>
+   <td style="text-align:right;"> 0.9231703 </td>
+   <td style="text-align:right;"> 0.9216023 </td>
+   <td style="text-align:right;"> 1.210130 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</section>
+</section>
+<section id="package-1b" class="level2">
+<h2 class="anchored" data-anchor-id="package-1b">Package 1B</h2>
+<p>This workpackage explores how antibiotic concentrations impact Tpos. <br></p>
+<p>The effect of increasing fixed ceftazidime/avibactam (CAZ/AVI) concentrations (x:x) on Tpos was investigated at an inoculum of 1x10<sup>4</sup> CFU/mL of <em>K. pneumoniae</em> KPC_B (MIC X mg/L) and <em>K. pneumonia</em> NDM producing isolate (negative control, MIC X mg/L ). All experiments were performed in triplicate with an incubation period of 24 hours. Figure 2 shows a marked increased in the Tpos for KPC_B from &lt; 10 hrs to <u>&gt;</u> 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos &lt; 10hr at all test concentrations consistent with lack of antimicrobial activity.</p>
+<section id="figure-2.-impact-of-cazavi-concentrations-on-tpos" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2.-impact-of-cazavi-concentrations-on-tpos">Figure 2. Impact of CAZ/AVI concentrations on Tpos</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ceftaz <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTE/ceftazidime.csv"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ceftaz, <span class="fu">aes</span>(<span class="at">x=</span>conc, <span class="at">y=</span>tpos, <span class="at">color=</span>isolate, <span class="at">shape=</span>isolate)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)<span class="sc">+</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_log10</span>(<span class="at">name=</span><span class="st">"CAZ/AVI, mg/L"</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">name=</span><span class="st">"Tpos (hr)"</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">25</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><br></p>
+<p>A four-parameter logistic regression model was fit to the experimental data (Figure 3) for the KPC_B isolate (Figure 3). The model estimated an EC<sub>50</sub> for the total Tpos effect at CAZ/AVI 2.15 mg/L (95% CI 2.04-2.27). The EC<sub>90</sub> was estimated at 2.75 mg/L (95% CI 2.21-3.30).</p>
+<p><br></p>
+</section>
+<section id="figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3.-in-vitro-pharmacodynamics-of-cazavi-concentrations-vs.-tpos">Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs.&nbsp;Tpos</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># | code-fold: true</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drda)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>wp2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTE/ec50_KPCB.csv"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">drda</span>(tpos <span class="sc">~</span> conc, <span class="at">data=</span>wp2, <span class="at">mean_function =</span> <span class="st">"loglogistic4"</span>, <span class="at">max_iter =</span> <span class="dv">1000</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">xlab =</span> <span class="st">"CAZ/AVI (conc)"</span>, <span class="at">ylab =</span> <span class="st">"Tpos (hr)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drda)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>wp2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTEWEBSITE/ec50_KPCB.csv"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">drda</span>(tpos <span class="sc">~</span> conc, <span class="at">data=</span>wp2, <span class="at">mean_function =</span> <span class="st">"logistic4"</span>, <span class="at">max_iter =</span> <span class="dv">1000</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ed<span class="ot">&lt;-</span><span class="fu">effective_dose</span>(fit, <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">0.10</span>,<span class="fl">0.25</span>,<span class="fl">0.50</span>,<span class="fl">0.75</span>,<span class="fl">0.90</span>,<span class="fl">0.95</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(ed)<span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_paper</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F, <span class="at">position =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; ">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 1.554736 </td>
+   <td style="text-align:right;"> 1.253729 </td>
+   <td style="text-align:right;"> 1.855743 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 1.856043 </td>
+   <td style="text-align:right;"> 1.750759 </td>
+   <td style="text-align:right;"> 1.961327 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 2.157349 </td>
+   <td style="text-align:right;"> 2.038163 </td>
+   <td style="text-align:right;"> 2.276536 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 2.458656 </td>
+   <td style="text-align:right;"> 2.127602 </td>
+   <td style="text-align:right;"> 2.789710 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 2.759963 </td>
+   <td style="text-align:right;"> 2.216534 </td>
+   <td style="text-align:right;"> 3.303391 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 2.964895 </td>
+   <td style="text-align:right;"> 2.277116 </td>
+   <td style="text-align:right;"> 3.652674 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p><br></p>
+<p>Ceftazidime/avibactam was tested as a combination prepared in pure powders against the KPC_B and ATCC strains. The results of data fitted with a 4-parameter logistic model are shown in Figure 4.</p>
+</section>
+</section>
+<section id="figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" class="level2">
+<h2 class="anchored" data-anchor-id="figure-4.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam">Figure 4. In vitro pharmacodynamics of ceftazidime/avibactam</h2>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Need to explain why this experiment failed- Starting Inoculum 1x10<sup>4</sup></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># | code-fold: true</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drda)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>cazavi1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTEWEBSITE/19_07_2022_cazavi.csv"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">drda</span>(tpos <span class="sc">~</span> caz, <span class="at">data=</span>cazavi1, <span class="at">mean_function =</span> <span class="st">"loglogistic4"</span>, <span class="at">max_iter =</span> <span class="dv">1000</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">xlab =</span> <span class="st">"CAZ/AVI (conc)"</span>, <span class="at">ylab =</span> <span class="st">"Tpos (hr)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="figure-5.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam" class="level2">
+<h2 class="anchored" data-anchor-id="figure-5.-in-vitro-pharmacodynamics-of-ceftazidimeavibactam">Figure 5. In vitro pharmacodynamics of ceftazidime/avibactam</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Starting Inoculum 1x10<sup>2</sup>; Insufficient data for fitting</p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># | code-fold: true</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drda)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>cazavi2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTEWEBSITE/26_07_2022_cazavi.csv"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">drda</span>(tpos <span class="sc">~</span> caz, <span class="at">data=</span>cazavi2, <span class="at">mean_function =</span> <span class="st">"loglogistic4"</span>, <span class="at">max_iter =</span> <span class="dv">1000</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">xlab =</span> <span class="st">"CAZ/AVI (conc)"</span>, <span class="at">ylab =</span> <span class="st">"Tpos (hr)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="figure-6.-in-vitro-effects-of-combination-ceftazidimeavibactam-gentamicin" class="level2">
+<h2 class="anchored" data-anchor-id="figure-6.-in-vitro-effects-of-combination-ceftazidimeavibactam-gentamicin">Figure 6. In vitro effects of combination ceftazidime/avibactam + gentamicin</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BIGL)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgl)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">&lt;-</span> <span class="fl">0.95</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>caz_gent <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/ACUTEWEBSITE/caz_gent_syn.csv"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Fitting marginal models, maximal fixe at 24 hours, minimal at 8.5</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>marginalFit <span class="ot">&lt;-</span> <span class="fu">fitMarginals</span>(caz_gent, <span class="at">method =</span> <span class="st">"nls"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"CTZ/AVI"</span>, <span class="st">"GENT"</span>))</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(marginalFit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Formula: effect ~ fn(h1, h2, b, m1, m2, e1, e2, d1, d2)
+Transformations: No
+
+                 CTZ/AVI   GENT
+Slope              4.820  1.260
+Maximal response  21.974 32.813
+log10(EC50)        0.460  0.417
+
+Common baseline at: 9.465</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Plotting marginal models</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(marginalFit) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="fu">paste</span>(<span class="st">"Ceftazidime/Avibactam + Gentamicin"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>rs <span class="ot">&lt;-</span> <span class="fu">fitSurface</span>(caz_gent, marginalFit,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">null_model =</span> <span class="st">"loewe"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">B.CP =</span> <span class="dv">50</span>, <span class="at">statistic =</span> <span class="st">"none"</span>, <span class="at">parallel =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Null model: Generalized Loewe Additivity
+Variance assumption used: "equal"
+Mean occupancy rate: 0.5055213
+
+Formula: effect ~ fn(h1, h2, b, m1, m2, e1, e2, d1, d2)
+Transformations: No
+
+                 CTZ/AVI   GENT
+Slope              4.820  1.260
+Maximal response  21.974 32.813
+log10(EC50)        0.460  0.417
+
+Common baseline at: 9.465
+
+
+
+No test statistics were computed.
+CONFIDENCE INTERVALS
+Overall effect
+Estimated mean departure from null response surface with 95% confidence interval:
+3.0011 [-11.9644, 5.9018]
+Evidence for effects in data: None 
+
+Significant pointwise effects
+      estimate  lower   upper call
+1_0.5   9.7145 0.7081 18.7209  Syn
+
+Pointwise 95% confidence intervals summary:
+ Syn Ant Total
+   1   0    17</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">isobologram</span>(rs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(rs, <span class="at">legend =</span> <span class="cn">FALSE</span>, <span class="at">main =</span> <span class="st">""</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view3d</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">75</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rglwidget</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="rgl15208" style="width:100%;height:464px;" class="rglWebGL html-widget"></div>
+<script type="application/json" data-for="rgl15208">{"x":{"material":{"color":"#000000","alpha":1,"lit":true,"ambient":"#000000","specular":"#FFFFFF","emission":"#000000","shininess":50,"smooth":true,"front":"lines","back":"culled","size":3,"lwd":1,"fog":true,"point_antialias":false,"line_antialias":false,"texture":null,"textype":"rgb","texmipmap":false,"texminfilter":"linear","texmagfilter":"linear","texenvmap":false,"depth_mask":true,"depth_test":"less","isTransparent":false,"polygon_offset":[0,0],"margin":"","floating":false,"tag":""},"rootSubscene":7,"objects":{"13":{"id":13,"type":"points","material":{"lit":false,"front":"filled","back":"filled"},"vertices":"0","colors":"1","centers":"2","ignoreExtent":false,"flags":34816},"15":{"id":15,"type":"text","material":{"lit":false,"front":"filled","back":"filled","margin":0,"floating":true,"edge":[0,1,1]},"vertices":"3","colors":"4","texts":[[""]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"5","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"16":{"id":16,"type":"text","material":{"lit":false,"front":"filled","back":"filled","margin":1,"floating":true,"edge":[1,1,1]},"vertices":"6","colors":"7","texts":[[""]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"8","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"17":{"id":17,"type":"text","material":{"lit":false,"front":"filled","back":"filled","margin":2,"floating":true,"edge":[1,1,1]},"vertices":"9","colors":"10","texts":[[""]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"11","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"18":{"id":18,"type":"spheres","material":{"front":"filled","back":"filled"},"vertices":"12","colors":"13","radii":[[0.551381587982178]],"centers":"14","ignoreExtent":false,"fastTransparency":true,"flags":32771},"19":{"id":19,"type":"planes","material":{"alpha":0.298039227724075,"lit":false,"front":"filled","back":"filled","isTransparent":true},"vertices":"15","colors":"17","offsets":[[0]],"centers":"18","normals":"16","ignoreExtent":true,"flags":32802},"20":{"id":20,"type":"surface","material":{"alpha":[0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858],"lit":false,"front":"filled","back":"filled","lwd":2,"isTransparent":true},"vertices":"19","colors":"20","dim":[[7,6]],"centers":"21","ignoreExtent":false,"flipped":true,"flags":32810},"22":{"id":22,"type":"quads","material":{"lit":false,"front":"filled","back":"lines","uri":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAEDmlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPpu5syskzoPUpqaSDv41lLRsUtGE2uj+ZbNt3CyTbLRBkMns3Z1pJjPj/KRpKT4UQRDBqOCT4P9bwSchaqvtiy2itFCiBIMo+ND6R6HSFwnruTOzu5O4a73L3PnmnO9+595z7t4LkLgsW5beJQIsGq4t5dPis8fmxMQ6dMF90A190C0rjpUqlSYBG+PCv9rt7yDG3tf2t/f/Z+uuUEcBiN2F2Kw4yiLiZQD+FcWyXYAEQfvICddi+AnEO2ycIOISw7UAVxieD/Cyz5mRMohfRSwoqoz+xNuIB+cj9loEB3Pw2448NaitKSLLRck2q5pOI9O9g/t/tkXda8Tbg0+PszB9FN8DuPaXKnKW4YcQn1Xk3HSIry5ps8UQ/2W5aQnxIwBdu7yFcgrxPsRjVXu8HOh0qao30cArp9SZZxDfg3h1wTzKxu5E/LUxX5wKdX5SnAzmDx4A4OIqLbB69yMesE1pKojLjVdoNsfyiPi45hZmAn3uLWdpOtfQOaVmikEs7ovj8hFWpz7EV6mel0L9Xy23FMYlPYZenAx0yDB1/PX6dledmQjikjkXCxqMJS9WtfFCyH9XtSekEF+2dH+P4tzITduTygGfv58a5VCTH5PtXD7EFZiNyUDBhHnsFTBgE0SQIA9pfFtgo6cKGuhooeilaKH41eDs38Ip+f4At1Rq/sjr6NEwQqb/I/DQqsLvaFUjvAx+eWirddAJZnAj1DFJL0mSg/gcIpPkMBkhoyCSJ8lTZIxk0TpKDjXHliJzZPO50dR5ASNSnzeLvIvod0HG/mdkmOC0z8VKnzcQ2M/Yz2vKldduXjp9bleLu0ZWn7vWc+l0JGcaai10yNrUnXLP/8Jf59ewX+c3Wgz+B34Df+vbVrc16zTMVgp9um9bxEfzPU5kPqUtVWxhs6OiWTVW+gIfywB9uXi7CGcGW/zk98k/kmvJ95IfJn/j3uQ+4c5zn3Kfcd+AyF3gLnJfcl9xH3OfR2rUee80a+6vo7EK5mmXUdyfQlrYLTwoZIU9wsPCZEtP6BWGhAlhL3p2N6sTjRdduwbHsG9kq32sgBepc+xurLPW4T9URpYGJ3ym4+8zA05u44QjST8ZIoVtu3qE7fWmdn5LPdqvgcZz8Ww8BWJ8X3w0PhQ/wnCDGd+LvlHs8dRy6bLLDuKMaZ20tZrqisPJ5ONiCq8yKhYM5cCgKOu66Lsc0aYOtZdo5QCwezI4wm9J/v0X23mlZXOfBjj8Jzv3WrY5D+CsA9D7aMs2gGfjve8ArD6mePZSeCfEYt8CONWDw8FXTxrPqx/r9Vt4biXeANh8vV7/+/16ffMD1N8AuKD/A/8leAvFY9bLAAAAOGVYSWZNTQAqAAAACAABh2kABAAAAAEAAAAaAAAAAAACoAIABAAAAAEAAAEAoAMABAAAAAEAAAEAAAAAAEQiOHMAAAZNSURBVHgB7dQBEQAgDAMxwL/nwWHjMwdNd93zbjkCBJICJ5laaAIEvoAB8AgEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiE7gesAX8371FYAAAAABJRU5ErkJggg=="},"vertices":"22","colors":"24","texcoords":"23","centers":"25","ignoreExtent":true,"flags":36870},"24":{"id":24,"type":"lines","material":{"lit":false},"vertices":"26","colors":"27","centers":"28","ignoreExtent":true,"flags":32832},"25":{"id":25,"type":"text","material":{"lit":false},"vertices":"29","colors":"30","texts":[["0.00"],["0.25"],["0.50"],["1.00"],["2.00"],["4.00"],["8.00"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"31","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"26":{"id":26,"type":"lines","material":{"lit":false},"vertices":"32","colors":"33","centers":"34","ignoreExtent":true,"flags":32832},"27":{"id":27,"type":"text","material":{"lit":false},"vertices":"35","colors":"36","texts":[["0.00"],["0.25"],["0.50"],["1.00"],["2.00"],["4.00"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"37","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"28":{"id":28,"type":"lines","material":{"lit":false},"vertices":"38","colors":"39","centers":"40","ignoreExtent":true,"flags":32832},"29":{"id":29,"type":"text","material":{"lit":false},"vertices":"41","colors":"42","texts":[["10"],["15"],["20"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"43","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"30":{"id":30,"type":"text","material":{"lit":false,"margin":0,"edge":[0,-1,-1]},"vertices":"44","colors":"45","texts":[["CTZ/AVI"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"46","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"31":{"id":31,"type":"text","material":{"lit":false,"margin":1,"edge":[-1,-1,-1]},"vertices":"47","colors":"48","texts":[["GENT"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"49","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"32":{"id":32,"type":"text","material":{"lit":false,"margin":2,"edge":[-1,-1,-1]},"vertices":"50","colors":"51","texts":[["Response"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"52","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"33":{"id":33,"type":"surface","material":{"alpha":[0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858],"lit":false,"lwd":2,"isTransparent":true},"vertices":"53","colors":"54","dim":[[7,6]],"centers":"55","ignoreExtent":false,"flipped":true,"flags":45098},"11":{"id":11,"type":"light","vertices":[[0,0,1]],"colors":[[1,1,1,1],[1,1,1,1],[1,1,1,1]],"viewpoint":true,"finite":false},"10":{"id":10,"type":"background","material":{"front":"filled","back":"filled"},"colors":"56","centers":"57","sphere":false,"fogtype":"none","fogscale":1,"flags":32768},"12":{"id":12,"type":"background","material":{"lit":false,"front":"filled","back":"lines"},"colors":"58","centers":"59","sphere":false,"fogtype":"none","fogscale":1,"flags":32768},"21":{"id":21,"type":"background","material":{"lit":false,"front":"filled","back":"lines","uri":"data:image/png;base64,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"},"colors":"60","ids":[[22]],"types":[["quads"]],"centers":"61","objects":[{"id":{"id":22},"type":{"type":"quads"},"material":{"color":"#FFFFFF","lit":false,"texture":"/private/var/folders/vy/65r441z530s3v3p18l442mq00000gn/T/RtmpnuGsM8/filed29f3a0b27ae.png","front":"filled","back":"lines"},"vertices":[[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]],"colors":[[1,1,1,1]],"texcoords":[[0,0],[1,0],[1,1],[0,1]],"centers":[[0,0,1]],"ignoreExtent":true}],"sphere":false,"fogtype":"none","fogscale":1,"flags":32768},"14":{"id":14,"type":"bboxdeco","material":{"front":"culled"},"colors":"62","axes":{"mode":["none","none","none"],"step":[-1,-1,-1],"nticks":[0,0,0],"marklen":[15,15,15],"expand":[1.02999997138977,1.02999997138977,1.02999997138977]},"draw_front":false,"flags":32769},"23":{"id":23,"type":"bboxdeco","material":{},"colors":"63","axes":{"mode":["none","none","none"],"step":[0,0,0],"nticks":[0,0,0],"marklen":[15,15,15],"expand":[1.02999997138977,1.02999997138977,1.02999997138977]},"draw_front":false,"flags":36865},"7":{"id":7,"type":"subscene","par3d":{"antialias":8,"FOV":60,"ignoreExtent":false,"listeners":7,"mouseMode":{"none":"none","left":"trackball","right":"zoom","middle":"fov","wheel":"pull"},"observer":[0,0,22.02952003479],"modelMatrix":[[4.93038129806519,0,0,-0.0165991578251123],[0,1.5234739780426,0.564299821853638,-9.00717639923096],[0,-5.68568181991577,0.151203691959381,-25.3194885253906],[0,0,0,1]],"projMatrix":[[1.73205089569092,0,0,0],[0,1.73205089569092,0,0],[0,0,-1.99999988079071,-33.0442771911621],[0,0,-1,0]],"skipRedraw":false,"userMatrix":[[1,0,0,0],[0,0.258819073438644,0.965925812721252,0],[0,-0.965925812721252,0.258819073438644,0],[0,0,0,1]],"userProjection":[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],"scale":[4.93038129806519,5.8862509727478,0.584206163883209],"viewport":{"x":0,"y":0,"width":1,"height":1},"zoom":1,"bbox":[-1.01492345333099,1.02165687084198,-0.996762812137604,0.709096789360046,7.75618648529053,24.9438133239746],"windowRect":[20,64,276,320],"family":"sans","font":1,"cex":1,"useFreeType":true,"fontname":"/Library/Frameworks/R.framework/Versions/4.0/Resources/library/rgl/fonts/FreeSans.ttf","maxClipPlanes":6,"glVersion":2.1,"activeSubscene":0},"embeddings":{"viewport":"replace","projection":"replace","model":"replace","mouse":"replace"},"objects":[21,23,13,15,16,17,18,19,20,24,25,26,27,28,29,30,31,32,33,11],"subscenes":[],"flags":48507}},"crosstalk":{"key":[],"group":[],"id":[],"options":[]},"width":672,"height":480,"buffer":{"accessors":[{"bufferView":0,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":1,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":2,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":3,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":4,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":5,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":6,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":7,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":8,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":9,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":10,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":11,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":12,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":13,"componentType":5121,"count":109,"type":"VEC4","normalized":true},{"bufferView":14,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":15,"componentType":5126,"count":3,"type":"VEC3"},{"bufferView":16,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":17,"componentType":5126,"count":1,"type":"VEC4"},{"bufferView":18,"componentType":5126,"count":4,"type":"VEC3"},{"bufferView":19,"componentType":5126,"count":42,"type":"VEC3"},{"bufferView":20,"componentType":5121,"count":42,"type":"VEC4","normalized":true},{"bufferView":21,"componentType":5126,"count":30,"type":"VEC3"},{"bufferView":22,"componentType":5120,"count":4,"type":"VEC3"},{"bufferView":23,"componentType":5121,"count":4,"type":"VEC2","normalized":true},{"bufferView":24,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":25,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":26,"componentType":5126,"count":16,"type":"VEC3"},{"bufferView":27,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":28,"componentType":5126,"count":8,"type":"VEC3"},{"bufferView":29,"componentType":5126,"count":7,"type":"VEC3"},{"bufferView":30,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":31,"componentType":5126,"count":7,"type":"VEC3"},{"bufferView":32,"componentType":5126,"count":14,"type":"VEC3"},{"bufferView":33,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":34,"componentType":5126,"count":7,"type":"VEC3"},{"bufferView":35,"componentType":5126,"count":6,"type":"VEC3"},{"bufferView":36,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":37,"componentType":5126,"count":6,"type":"VEC3"},{"bufferView":38,"componentType":5126,"count":8,"type":"VEC3"},{"bufferView":39,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":40,"componentType":5126,"count":4,"type":"VEC3"},{"bufferView":41,"componentType":5126,"count":3,"type":"VEC3"},{"bufferView":42,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":43,"componentType":5126,"count":3,"type":"VEC3"},{"bufferView":44,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":45,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":46,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":47,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":48,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":49,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":50,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":51,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":52,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":53,"componentType":5126,"count":42,"type":"VEC3"},{"bufferView":54,"componentType":5121,"count":42,"type":"VEC4","normalized":true},{"bufferView":55,"componentType":5126,"count":30,"type":"VEC3"},{"bufferView":56,"componentType":5126,"count":1,"type":"VEC4"},{"bufferView":57,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":58,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":59,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":60,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":61,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":62,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":63,"componentType":5121,"count":1,"type":"VEC4"}],"bufferViews":[{"buffer":0,"byteLength":1308,"byteOffset":0},{"buffer":0,"byteLength":4,"byteOffset":1308},{"buffer":0,"byteLength":1308,"byteOffset":1312},{"buffer":0,"byteLength":12,"byteOffset":2620},{"buffer":0,"byteLength":4,"byteOffset":2632},{"buffer":0,"byteLength":12,"byteOffset":2636},{"buffer":0,"byteLength":12,"byteOffset":2648},{"buffer":0,"byteLength":4,"byteOffset":2660},{"buffer":0,"byteLength":12,"byteOffset":2664},{"buffer":0,"byteLength":12,"byteOffset":2676},{"buffer":0,"byteLength":4,"byteOffset":2688},{"buffer":0,"byteLength":12,"byteOffset":2692},{"buffer":0,"byteLength":1308,"byteOffset":2704},{"buffer":0,"byteLength":436,"byteOffset":4012},{"buffer":0,"byteLength":1308,"byteOffset":4448},{"buffer":0,"byteLength":36,"byteOffset":5756},{"buffer":0,"byteLength":3,"byteOffset":5792},{"buffer":0,"byteLength":16,"byteOffset":5796},{"buffer":0,"byteLength":48,"byteOffset":5812},{"buffer":0,"byteLength":504,"byteOffset":5860},{"buffer":0,"byteLength":168,"byteOffset":6364},{"buffer":0,"byteLength":360,"byteOffset":6532},{"buffer":0,"byteLength":12,"byteOffset":6892},{"buffer":0,"byteLength":8,"byteOffset":6904},{"buffer":0,"byteLength":4,"byteOffset":6912},{"buffer":0,"byteLength":3,"byteOffset":6916},{"buffer":0,"byteLength":192,"byteOffset":6920},{"buffer":0,"byteLength":4,"byteOffset":7112},{"buffer":0,"byteLength":96,"byteOffset":7116},{"buffer":0,"byteLength":84,"byteOffset":7212},{"buffer":0,"byteLength":4,"byteOffset":7296},{"buffer":0,"byteLength":84,"byteOffset":7300},{"buffer":0,"byteLength":168,"byteOffset":7384},{"buffer":0,"byteLength":4,"byteOffset":7552},{"buffer":0,"byteLength":84,"byteOffset":7556},{"buffer":0,"byteLength":72,"byteOffset":7640},{"buffer":0,"byteLength":4,"byteOffset":7712},{"buffer":0,"byteLength":72,"byteOffset":7716},{"buffer":0,"byteLength":96,"byteOffset":7788},{"buffer":0,"byteLength":4,"byteOffset":7884},{"buffer":0,"byteLength":48,"byteOffset":7888},{"buffer":0,"byteLength":36,"byteOffset":7936},{"buffer":0,"byteLength":4,"byteOffset":7972},{"buffer":0,"byteLength":36,"byteOffset":7976},{"buffer":0,"byteLength":12,"byteOffset":8012},{"buffer":0,"byteLength":4,"byteOffset":8024},{"buffer":0,"byteLength":12,"byteOffset":8028},{"buffer":0,"byteLength":12,"byteOffset":8040},{"buffer":0,"byteLength":4,"byteOffset":8052},{"buffer":0,"byteLength":12,"byteOffset":8056},{"buffer":0,"byteLength":12,"byteOffset":8068},{"buffer":0,"byteLength":4,"byteOffset":8080},{"buffer":0,"byteLength":12,"byteOffset":8084},{"buffer":0,"byteLength":504,"byteOffset":8096},{"buffer":0,"byteLength":168,"byteOffset":8600},{"buffer":0,"byteLength":360,"byteOffset":8768},{"buffer":0,"byteLength":16,"byteOffset":9128},{"buffer":0,"byteLength":3,"byteOffset":9144},{"buffer":0,"byteLength":4,"byteOffset":9147},{"buffer":0,"byteLength":3,"byteOffset":9151},{"buffer":0,"byteLength":4,"byteOffset":9154},{"buffer":0,"byteLength":3,"byteOffset":9158},{"buffer":0,"byteLength":4,"byteOffset":9161},{"buffer":0,"byteLength":4,"byteOffset":9165}],"buffers":[{"byteLength":9169,"bytes":"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\ns5kAAP+ZAAD/mQAA/5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5n/AACZs7OzmbOzs5mzs7OZ\ns7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmZge\nKr+YHiq/GEghQX5Nob6YHiq/Ga8iQYCjnL2YHiq/0hAmQUHMQT6YHiq/Zks5QTha8T6YHiq/\nbq+CQU47Qz+YHiq/ucanQZgeKr9+TaG+EPc2QX5Nob5+TaG+loU6QYCjnL1+TaG+zdVBQUHM\nQT5+TaG+LmlaQTha8T5+TaG+MDSNQU47Qz9+TaG+qXSpQZgeKr+Ao5y9UlFZQX5Nob6Ao5y9\n0CleQYCjnL2Ao5y91AZnQUHMQT6Ao5y9mqd+QTha8T6Ao5y9gq+XQU47Qz+Ao5y9I3irQZge\nKr9BzEE+djyJQX5Nob5BzEE+j5KLQYCjnL1BzEE+2GSPQUHMQT5BzEE+hreXQTha8T5BzEE+\npjalQU47Qz9BzEE+CIeuQZgeKr84WvE+LhOuQX5Nob44WvE+dAevQYCjnL04WvE+F1+wQUHM\nQT44WvE+wo6yQTha8T44WvE+oyS0QU47Qz84WvE+e6+yQf//AQH/AQEBAf8BAQAA/wD//wD/\nAQEBAQAAAQDoMGe/Y9yCv6ry70Av6mg/Y9yCv6ry70DoMGe/Y9yCv6ry70DoMGe/wHuIvwrJ\n4UCTGNq+Y9yCv6ry70CTGNq+wHuIvwrJ4UDUBFG+Y9yCv6ry70DUBFG+wHuIvwrJ4UBPhVE9\nY9yCv6ry70BPhVE9wHuIvwrJ4UCXm6c+Y9yCv6ry70CXm6c+wHuIvwrJ4UBtjB0/Y9yCv6ry\n70BtjB0/wHuIvwrJ4UAv6mg/Y9yCv6ry70Av6mg/wHuIvwrJ4UAAAAABgKNcO2Pcgr+q8u9A\n6DBnvxKshb/a3ehAkxjavhKshb/a3ehA1ARRvhKshb/a3ehAT4VRPRKshb/a3ehAl5unPhKs\nhb/a3ehAbYwdPxKshb/a3ehAL+poPxKshb/a3ehA6DBnv3q6k7/JdcVAkxjavnq6k7/JdcVA\n1ARRvnq6k7/JdcVAT4VRPXq6k7/JdcVAl5unPnq6k7/JdcVAbYwdP3q6k7/JdcVAL+poP3q6\nk7/JdcVAAAAAAegwZ796upO/yXXFQJMY2r56upO/yXXFQNQEUb56upO/yXXFQE+FUT16upO/\nyXXFQJebpz56upO/yXXFQG2MHT96upO/yXXFQC/qaD96upO/yXXFQAjShb/oMGe/qvLvQAjS\nhb9tjB0/qvLvQAjShb/oMGe/qvLvQHOIjL/oMGe/CsnhQAjShb+TGNq+qvLvQHOIjL+TGNq+\nCsnhQAjShb/UBFG+qvLvQHOIjL/UBFG+CsnhQAjShb9PhVE9qvLvQHOIjL9PhVE9CsnhQAjS\nhb+Xm6c+qvLvQHOIjL+Xm6c+CsnhQAjShb9tjB0/qvLvQHOIjL9tjB0/CsnhQAAAAAEI0oW/\n9kgTvqry70A+LYm/6DBnv9rd6EA+LYm/kxjavtrd6EA+LYm/1ARRvtrd6EA+LYm/T4VRPdrd\n6EA+LYm/l5unPtrd6EA+LYm/bYwdP9rd6EBJ9Zm/6DBnv8l1xUBJ9Zm/kxjavsl1xUBJ9Zm/\n1ARRvsl1xUBJ9Zm/T4VRPcl1xUBJ9Zm/l5unPsl1xUBJ9Zm/bYwdP8l1xUAAAAABSfWZv+gw\nZ7/JdcVASfWZv5MY2r7JdcVASfWZv9QEUb7JdcVASfWZv0+FUT3JdcVASfWZv5ebpz7JdcVA\nSfWZv22MHT/JdcVACNKFv2Pcgr8AACBBCNKFv2Pcgr8AAKBBCNKFv2Pcgr8AACBBc4iMv8B7\niL8AACBBCNKFv2Pcgr8AAHBBc4iMv8B7iL8AAHBBCNKFv2Pcgr8AAKBBc4iMv8B7iL8AAKBB\nAAAAAQjShb9j3IK/AABwQT4tib8SrIW/AAAgQT4tib8SrIW/AABwQT4tib8SrIW/AACgQUn1\nmb96upO/AAAgQUn1mb96upO/AABwQUn1mb96upO/AACgQQAAAAFJ9Zm/erqTvwAAIEFJ9Zm/\nerqTvwAAcEFJ9Zm/erqTvwAAoEEAAMB/AAAAQAAAAAAAAAABAADAfwAAAEAAAAAAAADAfwAA\nAEAAAAAAAAAAAQAAwH8AAABAAAAAAAAAwH8AAABAAAAAAAAAAAEAAMB/AAAAQAAAAADoMGe/\n6DBnv69uF0GTGNq+6DBnvxNvF0HUBFG+6DBnv7F5F0FPhVE96DBnv9ejGEGXm6c+6DBnvz+7\nNEFtjB0/6DBnv6uqnkEv6mg/6DBnv+0Pr0HoMGe/kxjavi/oKUGTGNq+kxjavnJaLEHUBFG+\nkxjavi15L0FPhVE9kxjavpKsOEGXm6c+kxjavu8hX0FtjB0/kxjavnUkokEv6mg/kxjavtk7\nr0HoMGe/1ARRvmLSQEGTGNq+1ARRvj/HREHUBFG+1ARRvnp7SUFPhVE91ARRvvu1VUGXm6c+\n1ARRvjwgfEFtjB0/1ARRvjQLpUEv6mg/1ARRviFnr0HoMGe/T4VRPXtJbUGTGNq+T4VRPS5i\nckHUBFG+T4VRPVoCeEFPhVE9T4VRPcFzgkGXm6c+T4VRPVfwkUFtjB0/T4VRPWGyqUEv6mg/\nT4VRPdm7r0HoMGe/l5unPteQmUGTGNq+l5unPiyLm0HUBFG+l5unPs2MnUFPhVE9l5unPqSR\noUGXm6c+l5unPlroqEFtjB0/l5unPoRPsEEv6mg/l5unPl5esEHoMGe/bYwdP2SdwUGTGNq+\nbYwdP0+TwUHUBFG+bYwdP4lywUFPhVE9bYwdP2PrwEGXm6c+bYwdP6jVvkFtjB0/bYwdPwSF\nuEEv6mg/bYwdPwOLsUGzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZ\ns7OzmQAA/5mzs7OZs7OzmbOzs5mzs7OZAAD/mQAA/5kAAP+Zs7OzmbOzs5mzs7OZs7OzmbOz\ns5mzs7OZ/wAAmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZ\ns7OzmbOzs5mzs7OZs7OzmbOzs5mYHiq/mB4qvxhIIUF+TaG+mB4qvxmvIkGAo5y9mB4qv9IQ\nJkFBzEE+mB4qv2ZLOUE4WvE+mB4qv26vgkFOO0M/mB4qv7nGp0GYHiq/fk2hvhD3NkF+TaG+\nfk2hvpaFOkGAo5y9fk2hvs3VQUFBzEE+fk2hvi5pWkE4WvE+fk2hvjA0jUFOO0M/fk2hvql0\nqUGYHiq/gKOcvVJRWUF+TaG+gKOcvdApXkGAo5y9gKOcvdQGZ0FBzEE+gKOcvZqnfkE4WvE+\ngKOcvYKvl0FOO0M/gKOcvSN4q0GYHiq/QcxBPnY8iUF+TaG+QcxBPo+Si0GAo5y9QcxBPthk\nj0FBzEE+QcxBPoa3l0E4WvE+QcxBPqY2pUFOO0M/QcxBPgiHrkGYHiq/OFrxPi4TrkF+TaG+\nOFrxPnQHr0GAo5y9OFrxPhdfsEFBzEE+OFrxPsKOskE4WvE+OFrxPqMktEFOO0M/OFrxPnuv\nskGZmJg+mZiYPpmYmD4AAIA/AAAAAQEBAQAAAAEBAQEAAAAAAAABAAAAAQ=="}]},"context":{"shiny":false,"rmarkdown":null},"vertexShader":"#line 2 1\n// File 1 is the vertex shader\n#ifdef GL_ES\n#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\n#endif\n\nattribute vec3 aPos;\nattribute vec4 aCol;\nuniform mat4 mvMatrix;\nuniform mat4 prMatrix;\nvarying vec4 vCol;\nvarying vec4 vPosition;\n\n#ifdef NEEDS_VNORMAL\nattribute vec3 aNorm;\nuniform mat4 normMatrix;\nvarying vec4 vNormal;\n#endif\n\n#if defined(HAS_TEXTURE) || defined (IS_TEXT)\nattribute vec2 aTexcoord;\nvarying vec2 vTexcoord;\n#endif\n\n#ifdef FIXED_SIZE\nuniform vec3 textScale;\n#endif\n\n#ifdef FIXED_QUADS\nattribute vec3 aOfs;\n#endif\n\n#ifdef IS_TWOSIDED\n#ifdef HAS_NORMALS\nvarying float normz;\nuniform mat4 invPrMatrix;\n#else\nattribute vec3 aPos1;\nattribute vec3 aPos2;\nvarying float normz;\n#endif\n#endif // IS_TWOSIDED\n\n#ifdef FAT_LINES\nattribute vec3 aNext;\nattribute vec2 aPoint;\nvarying vec2 vPoint;\nvarying float vLength;\nuniform float uAspect;\nuniform float uLwd;\n#endif\n\n\nvoid main(void) {\n  \n#ifndef IS_BRUSH\n#if defined(NCLIPPLANES) || !defined(FIXED_QUADS) || defined(HAS_FOG)\n  vPosition = mvMatrix * vec4(aPos, 1.);\n#endif\n  \n#ifndef FIXED_QUADS\n  gl_Position = prMatrix * vPosition;\n#endif\n#endif // !IS_BRUSH\n  \n#ifdef IS_POINTS\n  gl_PointSize = POINTSIZE;\n#endif\n  \n  vCol = aCol;\n  \n#ifdef NEEDS_VNORMAL\n  vNormal = normMatrix * vec4(-aNorm, dot(aNorm, aPos));\n#endif\n  \n#ifdef IS_TWOSIDED\n#ifdef HAS_NORMALS\n  /* normz should be calculated *after* projection */\n  normz = (invPrMatrix*vNormal).z;\n#else\n  vec4 pos1 = prMatrix*(mvMatrix*vec4(aPos1, 1.));\n  pos1 = pos1/pos1.w - gl_Position/gl_Position.w;\n  vec4 pos2 = prMatrix*(mvMatrix*vec4(aPos2, 1.));\n  pos2 = pos2/pos2.w - gl_Position/gl_Position.w;\n  normz = pos1.x*pos2.y - pos1.y*pos2.x;\n#endif\n#endif // IS_TWOSIDED\n  \n#ifdef NEEDS_VNORMAL\n  vNormal = vec4(normalize(vNormal.xyz/vNormal.w), 1);\n#endif\n  \n#if defined(HAS_TEXTURE) || defined(IS_TEXT)\n  vTexcoord = aTexcoord;\n#endif\n  \n#if defined(FIXED_SIZE) && !defined(ROTATING)\n  vec4 pos = prMatrix * mvMatrix * vec4(aPos, 1.);\n  pos = pos/pos.w;\n  gl_Position = pos + vec4(aOfs*textScale, 0.);\n#endif\n  \n#if defined(IS_SPRITES) && !defined(FIXED_SIZE)\n  vec4 pos = mvMatrix * vec4(aPos, 1.);\n  pos = pos/pos.w + vec4(aOfs,  0.);\n  gl_Position = prMatrix*pos;\n#endif\n  \n#ifdef FAT_LINES\n  /* This code was inspired by Matt Deslauriers' code in \n   https://mattdesl.svbtle.com/drawing-lines-is-hard */\n  vec2 aspectVec = vec2(uAspect, 1.0);\n  mat4 projViewModel = prMatrix * mvMatrix;\n  vec4 currentProjected = projViewModel * vec4(aPos, 1.0);\n  currentProjected = currentProjected/currentProjected.w;\n  vec4 nextProjected = projViewModel * vec4(aNext, 1.0);\n  vec2 currentScreen = currentProjected.xy * aspectVec;\n  vec2 nextScreen = (nextProjected.xy / nextProjected.w) * aspectVec;\n  float len = uLwd;\n  vec2 dir = vec2(1.0, 0.0);\n  vPoint = aPoint;\n  vLength = length(nextScreen - currentScreen)/2.0;\n  vLength = vLength/(vLength + len);\n  if (vLength > 0.0) {\n    dir = normalize(nextScreen - currentScreen);\n  }\n  vec2 normal = vec2(-dir.y, dir.x);\n  dir.x /= uAspect;\n  normal.x /= uAspect;\n  vec4 offset = vec4(len*(normal*aPoint.x*aPoint.y - dir), 0.0, 0.0);\n  gl_Position = currentProjected + offset;\n#endif\n  \n#ifdef IS_BRUSH\n  gl_Position = vec4(aPos, 1.);\n#endif\n}","fragmentShader":"#line 2 2\n// File 2 is the fragment shader\n#ifdef GL_ES\n#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\n#endif\nvarying vec4 vCol; // carries alpha\nvarying vec4 vPosition;\n#if defined(HAS_TEXTURE) || defined (IS_TEXT)\nvarying vec2 vTexcoord;\nuniform sampler2D uSampler;\n#endif\n\n#ifdef HAS_FOG\nuniform int uFogMode;\nuniform vec3 uFogColor;\nuniform vec4 uFogParms;\n#endif\n\n#if defined(IS_LIT) && !defined(FIXED_QUADS)\nvarying vec4 vNormal;\n#endif\n\n#if NCLIPPLANES > 0\nuniform vec4 vClipplane[NCLIPPLANES];\n#endif\n\n#if NLIGHTS > 0\nuniform mat4 mvMatrix;\n#endif\n\n#ifdef IS_LIT\nuniform vec3 emission;\nuniform float shininess;\n#if NLIGHTS > 0\nuniform vec3 ambient[NLIGHTS];\nuniform vec3 specular[NLIGHTS]; // light*material\nuniform vec3 diffuse[NLIGHTS];\nuniform vec3 lightDir[NLIGHTS];\nuniform bool viewpoint[NLIGHTS];\nuniform bool finite[NLIGHTS];\n#endif\n#endif // IS_LIT\n\n#ifdef IS_TWOSIDED\nuniform bool front;\nvarying float normz;\n#endif\n\n#ifdef FAT_LINES\nvarying vec2 vPoint;\nvarying float vLength;\n#endif\n\nvoid main(void) {\n  vec4 fragColor;\n#ifdef FAT_LINES\n  vec2 point = vPoint;\n  bool neg = point.y < 0.0;\n  point.y = neg ? (point.y + vLength)/(1.0 - vLength) :\n                 -(point.y - vLength)/(1.0 - vLength);\n#if defined(IS_TRANSPARENT) && defined(IS_LINESTRIP)\n  if (neg && length(point) <= 1.0) discard;\n#endif\n  point.y = min(point.y, 0.0);\n  if (length(point) > 1.0) discard;\n#endif // FAT_LINES\n  \n#ifdef ROUND_POINTS\n  vec2 coord = gl_PointCoord - vec2(0.5);\n  if (length(coord) > 0.5) discard;\n#endif\n  \n#if NCLIPPLANES > 0\n  for (int i = 0; i < NCLIPPLANES; i++)\n    if (dot(vPosition, vClipplane[i]) < 0.0) discard;\n#endif\n    \n#ifdef FIXED_QUADS\n    vec3 n = vec3(0., 0., 1.);\n#elif defined(IS_LIT)\n    vec3 n = normalize(vNormal.xyz);\n#endif\n    \n#ifdef IS_TWOSIDED\n    if ((normz <= 0.) != front) discard;\n#endif\n    \n#ifdef IS_LIT\n    vec3 eye = normalize(-vPosition.xyz/vPosition.w);\n    vec3 lightdir;\n    vec4 colDiff;\n    vec3 halfVec;\n    vec4 lighteffect = vec4(emission, 0.);\n    vec3 col;\n    float nDotL;\n#ifdef FIXED_QUADS\n    n = -faceforward(n, n, eye);\n#endif\n    \n#if NLIGHTS > 0\n    for (int i=0;i<NLIGHTS;i++) {\n      colDiff = vec4(vCol.rgb * diffuse[i], vCol.a);\n      lightdir = lightDir[i];\n      if (!viewpoint[i])\n        lightdir = (mvMatrix * vec4(lightdir, 1.)).xyz;\n      if (!finite[i]) {\n        halfVec = normalize(lightdir + eye);\n      } else {\n        lightdir = normalize(lightdir - vPosition.xyz/vPosition.w);\n        halfVec = normalize(lightdir + eye);\n      }\n      col = ambient[i];\n      nDotL = dot(n, lightdir);\n      col = col + max(nDotL, 0.) * colDiff.rgb;\n      col = col + pow(max(dot(halfVec, n), 0.), shininess) * specular[i];\n      lighteffect = lighteffect + vec4(col, colDiff.a);\n    }\n#endif\n    \n#else // not IS_LIT\n    vec4 colDiff = vCol;\n    vec4 lighteffect = colDiff;\n#endif\n    \n#ifdef IS_TEXT\n    vec4 textureColor = lighteffect*texture2D(uSampler, vTexcoord);\n#endif\n    \n#ifdef HAS_TEXTURE\n#ifdef TEXTURE_rgb\n    vec4 textureColor = lighteffect*vec4(texture2D(uSampler, vTexcoord).rgb, 1.);\n#endif\n    \n#ifdef TEXTURE_rgba\n    vec4 textureColor = lighteffect*texture2D(uSampler, vTexcoord);\n#endif\n    \n#ifdef TEXTURE_alpha\n    vec4 textureColor = texture2D(uSampler, vTexcoord);\n    float luminance = dot(vec3(1.,1.,1.), textureColor.rgb)/3.;\n    textureColor =  vec4(lighteffect.rgb, lighteffect.a*luminance);\n#endif\n    \n#ifdef TEXTURE_luminance\n    vec4 textureColor = vec4(lighteffect.rgb*dot(texture2D(uSampler, vTexcoord).rgb, vec3(1.,1.,1.))/3., lighteffect.a);\n#endif\n    \n#ifdef TEXTURE_luminance_alpha\n    vec4 textureColor = texture2D(uSampler, vTexcoord);\n    float luminance = dot(vec3(1.,1.,1.),textureColor.rgb)/3.;\n    textureColor = vec4(lighteffect.rgb*luminance, lighteffect.a*textureColor.a);\n#endif\n    \n    fragColor = textureColor;\n\n#elif defined(IS_TEXT)\n    if (textureColor.a < 0.1)\n      discard;\n    else\n      fragColor = textureColor;\n#else\n    fragColor = lighteffect;\n#endif // HAS_TEXTURE\n    \n#ifdef HAS_FOG\n    // uFogParms elements: x = near, y = far, z = fogscale, w = (1-sin(FOV/2))/(1+sin(FOV/2))\n    // In Exp and Exp2: use density = density/far\n    // fogF will be the proportion of fog\n    // Initialize it to the linear value\n    float fogF;\n    if (uFogMode > 0) {\n      fogF = (uFogParms.y - vPosition.z/vPosition.w)/(uFogParms.y - uFogParms.x);\n      if (uFogMode > 1)\n        fogF = mix(uFogParms.w, 1.0, fogF);\n      fogF = fogF*uFogParms.z;\n      if (uFogMode == 2)\n        fogF = 1.0 - exp(-fogF);\n      // Docs are wrong: use (density*c)^2, not density*c^2\n      // https://gitlab.freedesktop.org/mesa/mesa/-/blob/master/src/mesa/swrast/s_fog.c#L58\n      else if (uFogMode == 3)\n        fogF = 1.0 - exp(-fogF*fogF);\n      fogF = clamp(fogF, 0.0, 1.0);\n      gl_FragColor = vec4(mix(fragColor.rgb, uFogColor, fogF), fragColor.a);\n    } else gl_FragColor = fragColor;\n#else\n    gl_FragColor = fragColor;\n#endif // HAS_FOG\n    \n}","players":[],"webGLoptions":{"preserveDrawingBuffer":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rsh <span class="ot">&lt;-</span> <span class="fu">fitSurface</span>(caz_gent, marginalFit,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">null_model =</span> <span class="st">"hsa"</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">B.CP =</span> <span class="dv">50</span>, <span class="at">statistic =</span> <span class="st">"both"</span>, <span class="at">parallel =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rsh)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Null model: Highest Single Agent with differing maximal response
+Variance assumption used: "equal"
+
+Formula: effect ~ fn(h1, h2, b, m1, m2, e1, e2, d1, d2)
+Transformations: No
+
+                 CTZ/AVI   GENT
+Slope              4.820  1.260
+Maximal response  21.974 32.813
+log10(EC50)        0.460  0.417
+
+Common baseline at: 9.465
+
+Exact meanR test (H0 = no synergy/antagonism):
+    F(17,54) = 12.2892 (p-value = 0)
+
+Evidence for effects in data: Syn
+Points with significant deviations from the null: 
+       d1   d2     absR p-value call
+1_0.5   1 0.50 8.523614  &lt;2e-16  Syn
+2_0.25  2 0.25 7.889096  &lt;2e-16  Syn
+2_0.5   2 0.50 5.931565  &lt;2e-16  Syn
+2_2     2 2.00 3.396737 0.02236  Syn
+
+Overall maxR summary:
+ Call Syn Ant Total
+  Syn   4   0    17
+
+CONFIDENCE INTERVALS
+Overall effect
+Estimated mean departure from null response surface with 95% confidence interval:
+4.3269 [1.1372, 6.2857]
+Evidence for effects in data: Syn 
+
+Significant pointwise effects
+       estimate  lower   upper call
+1_0.5   11.0201 5.2810 16.7591  Syn
+2_0.25  12.3043 5.3652 19.2434  Syn
+2_0.5   11.9486 3.8656 20.0317  Syn
+
+Pointwise 95% confidence intervals summary:
+ Syn Ant Total
+   3   0    17</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>rsb <span class="ot">&lt;-</span> <span class="fu">fitSurface</span>(caz_gent, marginalFit, </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">null_model =</span> <span class="st">"bliss"</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">B.CP =</span> <span class="dv">50</span>, <span class="at">statistic =</span> <span class="st">"both"</span>, <span class="at">parallel =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rsb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Null model: Bliss independence with differing maximal response
+Variance assumption used: "equal"
+
+Formula: effect ~ fn(h1, h2, b, m1, m2, e1, e2, d1, d2)
+Transformations: No
+
+                 CTZ/AVI   GENT
+Slope              4.820  1.260
+Maximal response  21.974 32.813
+log10(EC50)        0.460  0.417
+
+Common baseline at: 9.465
+
+Exact meanR test (H0 = no synergy/antagonism):
+    F(17,54) = 10.5569 (p-value = 0)
+
+Evidence for effects in data: Syn
+Points with significant deviations from the null: 
+       d1   d2     absR p-value call
+1_0.5   1 0.50 8.607946  &lt;2e-16  Syn
+2_0.25  2 0.25 6.655256  &lt;2e-16  Syn
+2_0.5   2 0.50 4.558906 0.00042  Syn
+2_1     2 1.00 4.210324 0.00161  Ant
+
+Overall maxR summary:
+ Call Syn Ant Total
+  Syn   3   1    17
+
+CONFIDENCE INTERVALS
+Overall effect
+Estimated mean departure from null response surface with 95% confidence interval:
+3.321 [-0.5464, 6.4582]
+Evidence for effects in data: None 
+
+Significant pointwise effects
+       estimate  lower   upper call
+1_0.5   10.9530 6.0393 15.8666  Syn
+2_0.25  11.2402 4.7624 17.7179  Syn
+2_0.5   10.3203 2.5178 18.1228  Syn
+
+Pointwise 95% confidence intervals summary:
+ Syn Ant Total
+   3   0    17</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>maxR_N <span class="ot">&lt;-</span> <span class="fu">fitSurface</span>(caz_gent, marginalFit,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">statistic =</span> <span class="st">"maxR"</span>, <span class="at">CP =</span> rs<span class="sc">$</span>CP, <span class="at">B.B =</span> <span class="cn">NULL</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">parallel =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>maxR_B <span class="ot">&lt;-</span> <span class="fu">fitSurface</span>(caz_gent, marginalFit,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">statistic =</span> <span class="st">"maxR"</span>, <span class="at">CP =</span> rs<span class="sc">$</span>CP, <span class="at">B.B =</span> <span class="dv">20</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">parallel =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>maxR_both <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">summary</span>(maxR_N<span class="sc">$</span>maxR)<span class="sc">$</span>totals,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">summary</span>(maxR_B<span class="sc">$</span>maxR)<span class="sc">$</span>totals)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>outPts <span class="ot">&lt;-</span> <span class="fu">outsidePoints</span>(maxR_B<span class="sc">$</span>maxR<span class="sc">$</span>Ymean)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(outPts, <span class="at">caption =</span> <span class="fu">paste0</span>(<span class="st">"Non-additive points for Experiment "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<table>
+<caption>Non-additive points for Experiment </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> d1 </th>
+   <th style="text-align:right;"> d2 </th>
+   <th style="text-align:right;"> absR </th>
+   <th style="text-align:right;"> p-value </th>
+   <th style="text-align:left;"> call </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1_0.5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0.5 </td>
+   <td style="text-align:right;"> 6.929071 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Syn </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2_1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1.0 </td>
+   <td style="text-align:right;"> 5.837273 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Ant </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(maxR_B,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>        <span class="do">## colorPalette = c("blue", "black", "black", "red"),</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">" Experiment "</span>, <span class="st">" contour plot for maxR"</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">scientific =</span> <span class="cn">TRUE</span>, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">cutoff =</span> cutoff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-8-4.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (x, y, ...) 
+UseMethod("plot")
+&lt;bytecode: 0x7fe8bbf903a0&gt;
+&lt;environment: namespace:base&gt;</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(maxR_B, <span class="at">color =</span> <span class="st">"maxR"</span>, <span class="at">legend =</span> <span class="cn">FALSE</span>, <span class="at">main =</span> <span class="st">""</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view3d</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">75</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rglwidget</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="rgl34401" style="width:100%;height:464px;" class="rglWebGL html-widget"></div>
+<script type="application/json" data-for="rgl34401">{"x":{"material":{"color":"#000000","alpha":1,"lit":true,"ambient":"#000000","specular":"#FFFFFF","emission":"#000000","shininess":50,"smooth":true,"front":"lines","back":"culled","size":3,"lwd":1,"fog":true,"point_antialias":false,"line_antialias":false,"texture":null,"textype":"rgb","texmipmap":false,"texminfilter":"linear","texmagfilter":"linear","texenvmap":false,"depth_mask":true,"depth_test":"less","isTransparent":false,"polygon_offset":[0,0],"margin":"","floating":false,"tag":""},"rootSubscene":7,"objects":{"22":{"id":22,"type":"quads","material":{"lit":false,"front":"filled","back":"lines","uri":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAEDmlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPpu5syskzoPUpqaSDv41lLRsUtGE2uj+ZbNt3CyTbLRBkMns3Z1pJjPj/KRpKT4UQRDBqOCT4P9bwSchaqvtiy2itFCiBIMo+ND6R6HSFwnruTOzu5O4a73L3PnmnO9+595z7t4LkLgsW5beJQIsGq4t5dPis8fmxMQ6dMF90A190C0rjpUqlSYBG+PCv9rt7yDG3tf2t/f/Z+uuUEcBiN2F2Kw4yiLiZQD+FcWyXYAEQfvICddi+AnEO2ycIOISw7UAVxieD/Cyz5mRMohfRSwoqoz+xNuIB+cj9loEB3Pw2448NaitKSLLRck2q5pOI9O9g/t/tkXda8Tbg0+PszB9FN8DuPaXKnKW4YcQn1Xk3HSIry5ps8UQ/2W5aQnxIwBdu7yFcgrxPsRjVXu8HOh0qao30cArp9SZZxDfg3h1wTzKxu5E/LUxX5wKdX5SnAzmDx4A4OIqLbB69yMesE1pKojLjVdoNsfyiPi45hZmAn3uLWdpOtfQOaVmikEs7ovj8hFWpz7EV6mel0L9Xy23FMYlPYZenAx0yDB1/PX6dledmQjikjkXCxqMJS9WtfFCyH9XtSekEF+2dH+P4tzITduTygGfv58a5VCTH5PtXD7EFZiNyUDBhHnsFTBgE0SQIA9pfFtgo6cKGuhooeilaKH41eDs38Ip+f4At1Rq/sjr6NEwQqb/I/DQqsLvaFUjvAx+eWirddAJZnAj1DFJL0mSg/gcIpPkMBkhoyCSJ8lTZIxk0TpKDjXHliJzZPO50dR5ASNSnzeLvIvod0HG/mdkmOC0z8VKnzcQ2M/Yz2vKldduXjp9bleLu0ZWn7vWc+l0JGcaai10yNrUnXLP/8Jf59ewX+c3Wgz+B34Df+vbVrc16zTMVgp9um9bxEfzPU5kPqUtVWxhs6OiWTVW+gIfywB9uXi7CGcGW/zk98k/kmvJ95IfJn/j3uQ+4c5zn3Kfcd+AyF3gLnJfcl9xH3OfR2rUee80a+6vo7EK5mmXUdyfQlrYLTwoZIU9wsPCZEtP6BWGhAlhL3p2N6sTjRdduwbHsG9kq32sgBepc+xurLPW4T9URpYGJ3ym4+8zA05u44QjST8ZIoVtu3qE7fWmdn5LPdqvgcZz8Ww8BWJ8X3w0PhQ/wnCDGd+LvlHs8dRy6bLLDuKMaZ20tZrqisPJ5ONiCq8yKhYM5cCgKOu66Lsc0aYOtZdo5QCwezI4wm9J/v0X23mlZXOfBjj8Jzv3WrY5D+CsA9D7aMs2gGfjve8ArD6mePZSeCfEYt8CONWDw8FXTxrPqx/r9Vt4biXeANh8vV7/+/16ffMD1N8AuKD/A/8leAvFY9bLAAAAOGVYSWZNTQAqAAAACAABh2kABAAAAAEAAAAaAAAAAAACoAIABAAAAAEAAAEAoAMABAAAAAEAAAEAAAAAAEQiOHMAAAZNSURBVHgB7dQBEQAgDAMxwL/nwWHjMwdNd93zbjkCBJICJ5laaAIEvoAB8AgEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiEzAAfoBAWMAAhMsXnYAB8AMEwgIGIFy+6AQMgB8gEBYwAOHyRSdgAPwAgbCAAQiXLzoBA+AHCIQFDEC4fNEJGAA/QCAsYADC5YtOwAD4AQJhAQMQLl90AgbADxAICxiAcPmiE7gesAX8371FYAAAAABJRU5ErkJggg=="},"vertices":"0","colors":"2","texcoords":"1","centers":"3","ignoreExtent":true,"flags":36870},"42":{"id":42,"type":"points","material":{"lit":false,"front":"filled","back":"filled"},"vertices":"4","colors":"5","centers":"6","ignoreExtent":false,"flags":34816},"44":{"id":44,"type":"text","material":{"lit":false,"front":"filled","back":"filled","margin":0,"floating":true,"edge":[0,1,1]},"vertices":"7","colors":"8","texts":[[""]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"9","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"45":{"id":45,"type":"text","material":{"lit":false,"front":"filled","back":"filled","margin":1,"floating":true,"edge":[1,1,1]},"vertices":"10","colors":"11","texts":[[""]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"12","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"46":{"id":46,"type":"text","material":{"lit":false,"front":"filled","back":"filled","margin":2,"floating":true,"edge":[1,1,1]},"vertices":"13","colors":"14","texts":[[""]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"15","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"47":{"id":47,"type":"spheres","material":{"front":"filled","back":"filled"},"vertices":"16","colors":"17","radii":[[0.551381587982178]],"centers":"18","ignoreExtent":false,"fastTransparency":true,"flags":32771},"48":{"id":48,"type":"planes","material":{"alpha":0.298039227724075,"lit":false,"front":"filled","back":"filled","isTransparent":true},"vertices":"19","colors":"21","offsets":[[0]],"centers":"22","normals":"20","ignoreExtent":true,"flags":32802},"49":{"id":49,"type":"surface","material":{"alpha":[0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858],"lit":false,"front":"filled","back":"filled","lwd":2,"isTransparent":true},"vertices":"23","colors":"24","dim":[[7,6]],"centers":"25","ignoreExtent":false,"flipped":true,"flags":32810},"51":{"id":51,"type":"quads","material":{"lit":false,"front":"filled","back":"lines","uri":"data:image/png;base64,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"},"vertices":"26","colors":"28","texcoords":"27","centers":"29","ignoreExtent":true,"flags":36870},"53":{"id":53,"type":"lines","material":{"lit":false},"vertices":"30","colors":"31","centers":"32","ignoreExtent":true,"flags":32832},"54":{"id":54,"type":"text","material":{"lit":false},"vertices":"33","colors":"34","texts":[["0.00"],["0.25"],["0.50"],["1.00"],["2.00"],["4.00"],["8.00"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"35","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"55":{"id":55,"type":"lines","material":{"lit":false},"vertices":"36","colors":"37","centers":"38","ignoreExtent":true,"flags":32832},"56":{"id":56,"type":"text","material":{"lit":false},"vertices":"39","colors":"40","texts":[["0.00"],["0.25"],["0.50"],["1.00"],["2.00"],["4.00"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"41","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"57":{"id":57,"type":"lines","material":{"lit":false},"vertices":"42","colors":"43","centers":"44","ignoreExtent":true,"flags":32832},"58":{"id":58,"type":"text","material":{"lit":false},"vertices":"45","colors":"46","texts":[["10"],["15"],["20"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"47","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"59":{"id":59,"type":"text","material":{"lit":false,"margin":0,"edge":[0,-1,-1]},"vertices":"48","colors":"49","texts":[["CTZ/AVI"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"50","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"60":{"id":60,"type":"text","material":{"lit":false,"margin":1,"edge":[-1,-1,-1]},"vertices":"51","colors":"52","texts":[["GENT"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"53","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"61":{"id":61,"type":"text","material":{"lit":false,"margin":2,"edge":[-1,-1,-1]},"vertices":"54","colors":"55","texts":[["Response"]],"cex":[[1]],"adj":[[0.5,0.5,0.5]],"centers":"56","family":[["sans"]],"font":[[1]],"ignoreExtent":true,"flags":33808},"62":{"id":62,"type":"surface","material":{"alpha":[0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858,0.600000023841858],"lit":false,"lwd":2,"isTransparent":true},"vertices":"57","colors":"58","dim":[[7,6]],"centers":"59","ignoreExtent":false,"flipped":true,"flags":45098},"11":{"id":11,"type":"light","vertices":[[0,0,1]],"colors":[[1,1,1,1],[1,1,1,1],[1,1,1,1]],"viewpoint":true,"finite":false},"21":{"id":21,"type":"background","material":{"lit":false,"front":"filled","back":"lines","uri":"data:image/png;base64,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"},"colors":"60","ids":[[22]],"types":[["quads"]],"centers":"61","objects":[{"id":{"id":22},"type":{"type":"quads"},"material":{"color":"#FFFFFF","lit":false,"texture":"/private/var/folders/vy/65r441z530s3v3p18l442mq00000gn/T/RtmpnuGsM8/filed29f3a0b27ae.png","front":"filled","back":"lines"},"vertices":[[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]],"colors":[[1,1,1,1]],"texcoords":[[0,0],[1,0],[1,1],[0,1]],"centers":[[0,0,1]],"ignoreExtent":true}],"sphere":false,"fogtype":"none","fogscale":1,"flags":32768},"50":{"id":50,"type":"background","material":{"lit":false,"front":"filled","back":"lines","uri":"data:image/png;base64,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"},"colors":"62","ids":[[51]],"types":[["quads"]],"centers":"63","objects":[{"id":{"id":51},"type":{"type":"quads"},"material":{"color":"#FFFFFF","lit":false,"texture":"/private/var/folders/vy/65r441z530s3v3p18l442mq00000gn/T/RtmpnuGsM8/filed29f325a2e47.png","front":"filled","back":"lines"},"vertices":[[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]],"colors":[[1,1,1,1]],"texcoords":[[0,0],[1,0],[1,1],[0,1]],"centers":[[0,0,1]],"ignoreExtent":true}],"sphere":false,"fogtype":"none","fogscale":1,"flags":32768},"14":{"id":14,"type":"bboxdeco","material":{"front":"culled"},"colors":"64","axes":{"mode":["none","none","none"],"step":[-1,-1,-1],"nticks":[0,0,0],"marklen":[15,15,15],"expand":[1.02999997138977,1.02999997138977,1.02999997138977]},"draw_front":false,"flags":32769},"43":{"id":43,"type":"bboxdeco","material":{"front":"culled"},"colors":"65","axes":{"mode":["none","none","none"],"step":[-1,-1,-1],"nticks":[0,0,0],"marklen":[15,15,15],"expand":[1.02999997138977,1.02999997138977,1.02999997138977]},"draw_front":false,"flags":32769},"52":{"id":52,"type":"bboxdeco","material":{},"colors":"66","axes":{"mode":["none","none","none"],"step":[0,0,0],"nticks":[0,0,0],"marklen":[15,15,15],"expand":[1.02999997138977,1.02999997138977,1.02999997138977]},"draw_front":false,"flags":36865},"7":{"id":7,"type":"subscene","par3d":{"antialias":8,"FOV":60,"ignoreExtent":false,"listeners":7,"mouseMode":{"none":"none","left":"trackball","right":"zoom","middle":"fov","wheel":"pull"},"observer":[0,0,22.02952003479],"modelMatrix":[[4.93038129806519,0,0,-0.0165991578251123],[0,1.5234739780426,0.564299821853638,-9.00717639923096],[0,-5.68568181991577,0.151203691959381,-25.3194885253906],[0,0,0,1]],"projMatrix":[[1.73205089569092,0,0,0],[0,1.73205089569092,0,0],[0,0,-1.99999988079071,-33.0442771911621],[0,0,-1,0]],"skipRedraw":false,"userMatrix":[[1,0,0,0],[0,0.258819073438644,0.965925812721252,0],[0,-0.965925812721252,0.258819073438644,0],[0,0,0,1]],"userProjection":[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],"scale":[4.93038129806519,5.8862509727478,0.584206163883209],"viewport":{"x":0,"y":0,"width":1,"height":1},"zoom":1,"bbox":[-1.01492345333099,1.02165687084198,-0.996762812137604,0.709096789360046,7.75618648529053,24.9438133239746],"windowRect":[20,64,276,320],"family":"sans","font":1,"cex":1,"useFreeType":true,"fontname":"/Library/Frameworks/R.framework/Versions/4.0/Resources/library/rgl/fonts/FreeSans.ttf","maxClipPlanes":6,"glVersion":2.1,"activeSubscene":0},"embeddings":{"viewport":"replace","projection":"replace","model":"replace","mouse":"replace"},"objects":[50,52,42,44,45,46,47,48,49,53,54,55,56,57,58,59,60,61,62,11],"subscenes":[],"flags":48507}},"crosstalk":{"key":[],"group":[],"id":[],"options":[]},"width":672,"height":480,"buffer":{"accessors":[{"bufferView":0,"componentType":5120,"count":4,"type":"VEC3"},{"bufferView":1,"componentType":5121,"count":4,"type":"VEC2","normalized":true},{"bufferView":2,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":3,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":4,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":5,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":6,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":7,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":8,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":9,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":10,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":11,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":12,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":13,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":14,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":15,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":16,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":17,"componentType":5121,"count":109,"type":"VEC4","normalized":true},{"bufferView":18,"componentType":5126,"count":109,"type":"VEC3"},{"bufferView":19,"componentType":5126,"count":3,"type":"VEC3"},{"bufferView":20,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":21,"componentType":5126,"count":1,"type":"VEC4"},{"bufferView":22,"componentType":5126,"count":4,"type":"VEC3"},{"bufferView":23,"componentType":5126,"count":42,"type":"VEC3"},{"bufferView":24,"componentType":5121,"count":42,"type":"VEC4","normalized":true},{"bufferView":25,"componentType":5126,"count":30,"type":"VEC3"},{"bufferView":26,"componentType":5120,"count":4,"type":"VEC3"},{"bufferView":27,"componentType":5121,"count":4,"type":"VEC2","normalized":true},{"bufferView":28,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":29,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":30,"componentType":5126,"count":16,"type":"VEC3"},{"bufferView":31,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":32,"componentType":5126,"count":8,"type":"VEC3"},{"bufferView":33,"componentType":5126,"count":7,"type":"VEC3"},{"bufferView":34,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":35,"componentType":5126,"count":7,"type":"VEC3"},{"bufferView":36,"componentType":5126,"count":14,"type":"VEC3"},{"bufferView":37,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":38,"componentType":5126,"count":7,"type":"VEC3"},{"bufferView":39,"componentType":5126,"count":6,"type":"VEC3"},{"bufferView":40,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":41,"componentType":5126,"count":6,"type":"VEC3"},{"bufferView":42,"componentType":5126,"count":8,"type":"VEC3"},{"bufferView":43,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":44,"componentType":5126,"count":4,"type":"VEC3"},{"bufferView":45,"componentType":5126,"count":3,"type":"VEC3"},{"bufferView":46,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":47,"componentType":5126,"count":3,"type":"VEC3"},{"bufferView":48,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":49,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":50,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":51,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":52,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":53,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":54,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":55,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":56,"componentType":5126,"count":1,"type":"VEC3"},{"bufferView":57,"componentType":5126,"count":42,"type":"VEC3"},{"bufferView":58,"componentType":5121,"count":42,"type":"VEC4","normalized":true},{"bufferView":59,"componentType":5126,"count":30,"type":"VEC3"},{"bufferView":60,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":61,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":62,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":63,"componentType":5121,"count":1,"type":"VEC3"},{"bufferView":64,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":65,"componentType":5121,"count":1,"type":"VEC4"},{"bufferView":66,"componentType":5121,"count":1,"type":"VEC4"}],"bufferViews":[{"buffer":0,"byteLength":12,"byteOffset":0},{"buffer":0,"byteLength":8,"byteOffset":12},{"buffer":0,"byteLength":4,"byteOffset":20},{"buffer":0,"byteLength":3,"byteOffset":24},{"buffer":0,"byteLength":1308,"byteOffset":28},{"buffer":0,"byteLength":4,"byteOffset":1336},{"buffer":0,"byteLength":1308,"byteOffset":1340},{"buffer":0,"byteLength":12,"byteOffset":2648},{"buffer":0,"byteLength":4,"byteOffset":2660},{"buffer":0,"byteLength":12,"byteOffset":2664},{"buffer":0,"byteLength":12,"byteOffset":2676},{"buffer":0,"byteLength":4,"byteOffset":2688},{"buffer":0,"byteLength":12,"byteOffset":2692},{"buffer":0,"byteLength":12,"byteOffset":2704},{"buffer":0,"byteLength":4,"byteOffset":2716},{"buffer":0,"byteLength":12,"byteOffset":2720},{"buffer":0,"byteLength":1308,"byteOffset":2732},{"buffer":0,"byteLength":436,"byteOffset":4040},{"buffer":0,"byteLength":1308,"byteOffset":4476},{"buffer":0,"byteLength":36,"byteOffset":5784},{"buffer":0,"byteLength":3,"byteOffset":5820},{"buffer":0,"byteLength":16,"byteOffset":5824},{"buffer":0,"byteLength":48,"byteOffset":5840},{"buffer":0,"byteLength":504,"byteOffset":5888},{"buffer":0,"byteLength":168,"byteOffset":6392},{"buffer":0,"byteLength":360,"byteOffset":6560},{"buffer":0,"byteLength":12,"byteOffset":6920},{"buffer":0,"byteLength":8,"byteOffset":6932},{"buffer":0,"byteLength":4,"byteOffset":6940},{"buffer":0,"byteLength":3,"byteOffset":6944},{"buffer":0,"byteLength":192,"byteOffset":6948},{"buffer":0,"byteLength":4,"byteOffset":7140},{"buffer":0,"byteLength":96,"byteOffset":7144},{"buffer":0,"byteLength":84,"byteOffset":7240},{"buffer":0,"byteLength":4,"byteOffset":7324},{"buffer":0,"byteLength":84,"byteOffset":7328},{"buffer":0,"byteLength":168,"byteOffset":7412},{"buffer":0,"byteLength":4,"byteOffset":7580},{"buffer":0,"byteLength":84,"byteOffset":7584},{"buffer":0,"byteLength":72,"byteOffset":7668},{"buffer":0,"byteLength":4,"byteOffset":7740},{"buffer":0,"byteLength":72,"byteOffset":7744},{"buffer":0,"byteLength":96,"byteOffset":7816},{"buffer":0,"byteLength":4,"byteOffset":7912},{"buffer":0,"byteLength":48,"byteOffset":7916},{"buffer":0,"byteLength":36,"byteOffset":7964},{"buffer":0,"byteLength":4,"byteOffset":8000},{"buffer":0,"byteLength":36,"byteOffset":8004},{"buffer":0,"byteLength":12,"byteOffset":8040},{"buffer":0,"byteLength":4,"byteOffset":8052},{"buffer":0,"byteLength":12,"byteOffset":8056},{"buffer":0,"byteLength":12,"byteOffset":8068},{"buffer":0,"byteLength":4,"byteOffset":8080},{"buffer":0,"byteLength":12,"byteOffset":8084},{"buffer":0,"byteLength":12,"byteOffset":8096},{"buffer":0,"byteLength":4,"byteOffset":8108},{"buffer":0,"byteLength":12,"byteOffset":8112},{"buffer":0,"byteLength":504,"byteOffset":8124},{"buffer":0,"byteLength":168,"byteOffset":8628},{"buffer":0,"byteLength":360,"byteOffset":8796},{"buffer":0,"byteLength":4,"byteOffset":9156},{"buffer":0,"byteLength":3,"byteOffset":9160},{"buffer":0,"byteLength":4,"byteOffset":9163},{"buffer":0,"byteLength":3,"byteOffset":9167},{"buffer":0,"byteLength":4,"byteOffset":9170},{"buffer":0,"byteLength":4,"byteOffset":9174},{"buffer":0,"byteLength":4,"byteOffset":9178}],"buffers":[{"byteLength":9182,"bytes":"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\nl5unPgAAwEFtjB0/T4VRPQAAwEHoMGe/6DBnvwAAIEGXm6c+6DBnvwAAIEHoMGe/T4VRPQAA\nIEHoMGe/l5unPgAAkEGXm6c+T4VRPQAAUEGXm6c+l5unPgAAwEHoMGe/6DBnvwAAIEHoMGe/\nl5unPgAAikGXm6c+l5unPgAAwEHoMGe/6DBnv65HGUFtjB0/6DBnvwAAwEHoMGe/T4VRPQAA\nIEHoMGe/l5unPgAAoEGXm6c+T4VRPQAAcEGXm6c+l5unPgAAwEHoMGe/6DBnv65HHUHoMGe/\nkxjavgAAIEHoMGe/1ARRvq5HXUHoMGe/T4VRPQAAwEHoMGe/6DBnv65HHUHoMGe/kxjavq5H\nHUHoMGe/1ARRvgAAQEHoMGe/T4VRPQAAwEHoMGe/6DBnvzMzC0HoMGe/kxjavlyPGkHoMGe/\n1ARRvgAAFEHoMGe/T4VRPa5HHUHoMGe/l5unPgAAoEHoMGe/bYwdPwAAwEH/////AAAA/wAA\nAP8AAAD/AAAA/wAAAP8AAAD//////wAAAP8AAAD//////wAAAP8AAAD/AAAA/wAAAP8AAAD/\n/////wAAAP8AAAD//////wAAAP8AAAD/AAAA//////8AAAD/AAAA/wAAAP//////9KRg/wAA\nAP8AAAD/AAAA///////0pGD/9KRg/6UqKv+lKir/AAAA/wAAAP8AAAD/AAAA///////0pGD/\n9KRg/6UqKv+lKir/AAAA/wAAAP8AAAD///////SkYP+lKir/AAAA///////0pGD/pSoq/wAA\nAP8AAAD///////SkYP+lKir/pSoq/wAAAP8AAAD///////SkYP/0pGD/pSoq/wAAAP8AAAD/\nAAAA/wAAAP//////9KRg//SkYP+lKir/pSoq/wAAAP8AAAD/AAAA///////0pGD/pSoq/6Uq\nKv8AAAD/AAAA//////+lKir/AAAA///////0pGD/pSoq/6UqKv8AAAD/AAAA//////+lKir/\npSoq/6UqKv//////pSoq/6UqKv+lKir//////6UqKv+lKir/pSoq/6UqKv+lKir/6DBnv+gw\nZ78AABRBkxjavtQEUb4AAIZB1ARRvtQEUb4AAIpBT4VRPdQEUb4AAMBBl5unPtQEUb4AAMBB\nbYwdP9QEUb4AAMBBL+poP9QEUb4AAMBB6DBnv+gwZ79mZhJBkxjavtQEUb4AAIhB1ARRvtQE\n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\ns5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmQAA/5mzs7OZs7OzmbOzs5mzs7OZ\ns7OzmbOzs5mzs7OZ/wAAmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOz\ns5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mYHiq/mB4qvxhIIUF+TaG+mB4qvxmvIkGAo5y9\nmB4qv9IQJkFBzEE+mB4qv2ZLOUE4WvE+mB4qv26vgkFOO0M/mB4qv7nGp0GYHiq/fk2hvhD3\nNkF+TaG+fk2hvpaFOkGAo5y9fk2hvs3VQUFBzEE+fk2hvi5pWkE4WvE+fk2hvjA0jUFOO0M/\nfk2hvql0qUGYHiq/gKOcvVJRWUF+TaG+gKOcvdApXkGAo5y9gKOcvdQGZ0FBzEE+gKOcvZqn\nfkE4WvE+gKOcvYKvl0FOO0M/gKOcvSN4q0GYHiq/QcxBPnY8iUF+TaG+QcxBPo+Si0GAo5y9\nQcxBPthkj0FBzEE+QcxBPoa3l0E4WvE+QcxBPqY2pUFOO0M/QcxBPgiHrkGYHiq/OFrxPi4T\nrkF+TaG+OFrxPnQHr0GAo5y9OFrxPhdfsEFBzEE+OFrxPsKOskE4WvE+OFrxPqMktEFOO0M/\nOFrxPnuvskH//wEB/wEBAQH/AQEAAP8A//8A/wEBAQEAAAEA6DBnv2Pcgr+q8u9AL+poP2Pc\ngr+q8u9A6DBnv2Pcgr+q8u9A6DBnv8B7iL8KyeFAkxjavmPcgr+q8u9AkxjavsB7iL8KyeFA\n1ARRvmPcgr+q8u9A1ARRvsB7iL8KyeFAT4VRPWPcgr+q8u9AT4VRPcB7iL8KyeFAl5unPmPc\ngr+q8u9Al5unPsB7iL8KyeFAbYwdP2Pcgr+q8u9AbYwdP8B7iL8KyeFAL+poP2Pcgr+q8u9A\nL+poP8B7iL8KyeFAAAAAAYCjXDtj3IK/qvLvQOgwZ78SrIW/2t3oQJMY2r4SrIW/2t3oQNQE\nUb4SrIW/2t3oQE+FUT0SrIW/2t3oQJebpz4SrIW/2t3oQG2MHT8SrIW/2t3oQC/qaD8SrIW/\n2t3oQOgwZ796upO/yXXFQJMY2r56upO/yXXFQNQEUb56upO/yXXFQE+FUT16upO/yXXFQJeb\npz56upO/yXXFQG2MHT96upO/yXXFQC/qaD96upO/yXXFQAAAAAHoMGe/erqTv8l1xUCTGNq+\nerqTv8l1xUDUBFG+erqTv8l1xUBPhVE9erqTv8l1xUCXm6c+erqTv8l1xUBtjB0/erqTv8l1\nxUAv6mg/erqTv8l1xUAI0oW/6DBnv6ry70AI0oW/bYwdP6ry70AI0oW/6DBnv6ry70BziIy/\n6DBnvwrJ4UAI0oW/kxjavqry70BziIy/kxjavgrJ4UAI0oW/1ARRvqry70BziIy/1ARRvgrJ\n4UAI0oW/T4VRPary70BziIy/T4VRPQrJ4UAI0oW/l5unPqry70BziIy/l5unPgrJ4UAI0oW/\nbYwdP6ry70BziIy/bYwdPwrJ4UAAAAABCNKFv/ZIE76q8u9APi2Jv+gwZ7/a3ehAPi2Jv5MY\n2r7a3ehAPi2Jv9QEUb7a3ehAPi2Jv0+FUT3a3ehAPi2Jv5ebpz7a3ehAPi2Jv22MHT/a3ehA\nSfWZv+gwZ7/JdcVASfWZv5MY2r7JdcVASfWZv9QEUb7JdcVASfWZv0+FUT3JdcVASfWZv5eb\npz7JdcVASfWZv22MHT/JdcVAAAAAAUn1mb/oMGe/yXXFQEn1mb+TGNq+yXXFQEn1mb/UBFG+\nyXXFQEn1mb9PhVE9yXXFQEn1mb+Xm6c+yXXFQEn1mb9tjB0/yXXFQAjShb9j3IK/AAAgQQjS\nhb9j3IK/AACgQQjShb9j3IK/AAAgQXOIjL/Ae4i/AAAgQQjShb9j3IK/AABwQXOIjL/Ae4i/\nAABwQQjShb9j3IK/AACgQXOIjL/Ae4i/AACgQQAAAAEI0oW/Y9yCvwAAcEE+LYm/EqyFvwAA\nIEE+LYm/EqyFvwAAcEE+LYm/EqyFvwAAoEFJ9Zm/erqTvwAAIEFJ9Zm/erqTvwAAcEFJ9Zm/\nerqTvwAAoEEAAAABSfWZv3q6k78AACBBSfWZv3q6k78AAHBBSfWZv3q6k78AAKBBAADAfwAA\nAEAAAAAAAAAAAQAAwH8AAABAAAAAAAAAwH8AAABAAAAAAAAAAAEAAMB/AAAAQAAAAAAAAMB/\nAAAAQAAAAAAAAAABAADAfwAAAEAAAAAA6DBnv+gwZ7+vbhdBkxjavugwZ78TbxdB1ARRvugw\nZ7+xeRdBT4VRPegwZ7/XoxhBl5unPugwZ78/uzRBbYwdP+gwZ7+rqp5BL+poP+gwZ7/tD69B\n6DBnv5MY2r4v6ClBkxjavpMY2r5yWixB1ARRvpMY2r4teS9BT4VRPZMY2r6SrDhBl5unPpMY\n2r7vIV9BbYwdP5MY2r51JKJBL+poP5MY2r7ZO69B6DBnv9QEUb5i0kBBkxjavtQEUb4/x0RB\n1ARRvtQEUb56e0lBT4VRPdQEUb77tVVBl5unPtQEUb48IHxBbYwdP9QEUb40C6VBL+poP9QE\nUb4hZ69B6DBnv0+FUT17SW1Bkxjavk+FUT0uYnJB1ARRvk+FUT1aAnhBT4VRPU+FUT3Bc4JB\nl5unPk+FUT1X8JFBbYwdP0+FUT1hsqlBL+poP0+FUT3Zu69B6DBnv5ebpz7XkJlBkxjavpeb\npz4si5tB1ARRvpebpz7NjJ1BT4VRPZebpz6kkaFBl5unPpebpz5a6KhBbYwdP5ebpz6ET7BB\nL+poP5ebpz5eXrBB6DBnv22MHT9kncFBkxjavm2MHT9Pk8FB1ARRvm2MHT+JcsFBT4VRPW2M\nHT9j68BBl5unPm2MHT+o1b5BbYwdP22MHT8EhbhBL+poP22MHT8Di7FBs7OzmbOzs5mzs7OZ\ns7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOz\ns5kAAP+Zs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7Ozmf8AAJmzs7OZs7OzmbOzs5mzs7OZ\ns7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZs7OzmbOzs5mzs7OZmB4qv5ge\nKr8YSCFBfk2hvpgeKr8ZryJBgKOcvZgeKr/SECZBQcxBPpgeKr9mSzlBOFrxPpgeKr9ur4JB\nTjtDP5geKr+5xqdBmB4qv35Nob4Q9zZBfk2hvn5Nob6WhTpBgKOcvX5Nob7N1UFBQcxBPn5N\nob4uaVpBOFrxPn5Nob4wNI1BTjtDP35Nob6pdKlBmB4qv4CjnL1SUVlBfk2hvoCjnL3QKV5B\ngKOcvYCjnL3UBmdBQcxBPoCjnL2ap35BOFrxPoCjnL2Cr5dBTjtDP4CjnL0jeKtBmB4qv0HM\nQT52PIlBfk2hvkHMQT6PkotBgKOcvUHMQT7YZI9BQcxBPkHMQT6Gt5dBOFrxPkHMQT6mNqVB\nTjtDP0HMQT4Ih65BmB4qvzha8T4uE65Bfk2hvjha8T50B69BgKOcvTha8T4XX7BBQcxBPjha\n8T7CjrJBOFrxPjha8T6jJLRBTjtDPzha8T57r7JBAQEBAQAAAAEBAQEAAAAAAAABAAAAAQAA\nAAE="}]},"context":{"shiny":false,"rmarkdown":null},"vertexShader":"#line 2 1\n// File 1 is the vertex shader\n#ifdef GL_ES\n#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\n#endif\n\nattribute vec3 aPos;\nattribute vec4 aCol;\nuniform mat4 mvMatrix;\nuniform mat4 prMatrix;\nvarying vec4 vCol;\nvarying vec4 vPosition;\n\n#ifdef NEEDS_VNORMAL\nattribute vec3 aNorm;\nuniform mat4 normMatrix;\nvarying vec4 vNormal;\n#endif\n\n#if defined(HAS_TEXTURE) || defined (IS_TEXT)\nattribute vec2 aTexcoord;\nvarying vec2 vTexcoord;\n#endif\n\n#ifdef FIXED_SIZE\nuniform vec3 textScale;\n#endif\n\n#ifdef FIXED_QUADS\nattribute vec3 aOfs;\n#endif\n\n#ifdef IS_TWOSIDED\n#ifdef HAS_NORMALS\nvarying float normz;\nuniform mat4 invPrMatrix;\n#else\nattribute vec3 aPos1;\nattribute vec3 aPos2;\nvarying float normz;\n#endif\n#endif // IS_TWOSIDED\n\n#ifdef FAT_LINES\nattribute vec3 aNext;\nattribute vec2 aPoint;\nvarying vec2 vPoint;\nvarying float vLength;\nuniform float uAspect;\nuniform float uLwd;\n#endif\n\n\nvoid main(void) {\n  \n#ifndef IS_BRUSH\n#if defined(NCLIPPLANES) || !defined(FIXED_QUADS) || defined(HAS_FOG)\n  vPosition = mvMatrix * vec4(aPos, 1.);\n#endif\n  \n#ifndef FIXED_QUADS\n  gl_Position = prMatrix * vPosition;\n#endif\n#endif // !IS_BRUSH\n  \n#ifdef IS_POINTS\n  gl_PointSize = POINTSIZE;\n#endif\n  \n  vCol = aCol;\n  \n#ifdef NEEDS_VNORMAL\n  vNormal = normMatrix * vec4(-aNorm, dot(aNorm, aPos));\n#endif\n  \n#ifdef IS_TWOSIDED\n#ifdef HAS_NORMALS\n  /* normz should be calculated *after* projection */\n  normz = (invPrMatrix*vNormal).z;\n#else\n  vec4 pos1 = prMatrix*(mvMatrix*vec4(aPos1, 1.));\n  pos1 = pos1/pos1.w - gl_Position/gl_Position.w;\n  vec4 pos2 = prMatrix*(mvMatrix*vec4(aPos2, 1.));\n  pos2 = pos2/pos2.w - gl_Position/gl_Position.w;\n  normz = pos1.x*pos2.y - pos1.y*pos2.x;\n#endif\n#endif // IS_TWOSIDED\n  \n#ifdef NEEDS_VNORMAL\n  vNormal = vec4(normalize(vNormal.xyz/vNormal.w), 1);\n#endif\n  \n#if defined(HAS_TEXTURE) || defined(IS_TEXT)\n  vTexcoord = aTexcoord;\n#endif\n  \n#if defined(FIXED_SIZE) && !defined(ROTATING)\n  vec4 pos = prMatrix * mvMatrix * vec4(aPos, 1.);\n  pos = pos/pos.w;\n  gl_Position = pos + vec4(aOfs*textScale, 0.);\n#endif\n  \n#if defined(IS_SPRITES) && !defined(FIXED_SIZE)\n  vec4 pos = mvMatrix * vec4(aPos, 1.);\n  pos = pos/pos.w + vec4(aOfs,  0.);\n  gl_Position = prMatrix*pos;\n#endif\n  \n#ifdef FAT_LINES\n  /* This code was inspired by Matt Deslauriers' code in \n   https://mattdesl.svbtle.com/drawing-lines-is-hard */\n  vec2 aspectVec = vec2(uAspect, 1.0);\n  mat4 projViewModel = prMatrix * mvMatrix;\n  vec4 currentProjected = projViewModel * vec4(aPos, 1.0);\n  currentProjected = currentProjected/currentProjected.w;\n  vec4 nextProjected = projViewModel * vec4(aNext, 1.0);\n  vec2 currentScreen = currentProjected.xy * aspectVec;\n  vec2 nextScreen = (nextProjected.xy / nextProjected.w) * aspectVec;\n  float len = uLwd;\n  vec2 dir = vec2(1.0, 0.0);\n  vPoint = aPoint;\n  vLength = length(nextScreen - currentScreen)/2.0;\n  vLength = vLength/(vLength + len);\n  if (vLength > 0.0) {\n    dir = normalize(nextScreen - currentScreen);\n  }\n  vec2 normal = vec2(-dir.y, dir.x);\n  dir.x /= uAspect;\n  normal.x /= uAspect;\n  vec4 offset = vec4(len*(normal*aPoint.x*aPoint.y - dir), 0.0, 0.0);\n  gl_Position = currentProjected + offset;\n#endif\n  \n#ifdef IS_BRUSH\n  gl_Position = vec4(aPos, 1.);\n#endif\n}","fragmentShader":"#line 2 2\n// File 2 is the fragment shader\n#ifdef GL_ES\n#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\n#endif\nvarying vec4 vCol; // carries alpha\nvarying vec4 vPosition;\n#if defined(HAS_TEXTURE) || defined (IS_TEXT)\nvarying vec2 vTexcoord;\nuniform sampler2D uSampler;\n#endif\n\n#ifdef HAS_FOG\nuniform int uFogMode;\nuniform vec3 uFogColor;\nuniform vec4 uFogParms;\n#endif\n\n#if defined(IS_LIT) && !defined(FIXED_QUADS)\nvarying vec4 vNormal;\n#endif\n\n#if NCLIPPLANES > 0\nuniform vec4 vClipplane[NCLIPPLANES];\n#endif\n\n#if NLIGHTS > 0\nuniform mat4 mvMatrix;\n#endif\n\n#ifdef IS_LIT\nuniform vec3 emission;\nuniform float shininess;\n#if NLIGHTS > 0\nuniform vec3 ambient[NLIGHTS];\nuniform vec3 specular[NLIGHTS]; // light*material\nuniform vec3 diffuse[NLIGHTS];\nuniform vec3 lightDir[NLIGHTS];\nuniform bool viewpoint[NLIGHTS];\nuniform bool finite[NLIGHTS];\n#endif\n#endif // IS_LIT\n\n#ifdef IS_TWOSIDED\nuniform bool front;\nvarying float normz;\n#endif\n\n#ifdef FAT_LINES\nvarying vec2 vPoint;\nvarying float vLength;\n#endif\n\nvoid main(void) {\n  vec4 fragColor;\n#ifdef FAT_LINES\n  vec2 point = vPoint;\n  bool neg = point.y < 0.0;\n  point.y = neg ? (point.y + vLength)/(1.0 - vLength) :\n                 -(point.y - vLength)/(1.0 - vLength);\n#if defined(IS_TRANSPARENT) && defined(IS_LINESTRIP)\n  if (neg && length(point) <= 1.0) discard;\n#endif\n  point.y = min(point.y, 0.0);\n  if (length(point) > 1.0) discard;\n#endif // FAT_LINES\n  \n#ifdef ROUND_POINTS\n  vec2 coord = gl_PointCoord - vec2(0.5);\n  if (length(coord) > 0.5) discard;\n#endif\n  \n#if NCLIPPLANES > 0\n  for (int i = 0; i < NCLIPPLANES; i++)\n    if (dot(vPosition, vClipplane[i]) < 0.0) discard;\n#endif\n    \n#ifdef FIXED_QUADS\n    vec3 n = vec3(0., 0., 1.);\n#elif defined(IS_LIT)\n    vec3 n = normalize(vNormal.xyz);\n#endif\n    \n#ifdef IS_TWOSIDED\n    if ((normz <= 0.) != front) discard;\n#endif\n    \n#ifdef IS_LIT\n    vec3 eye = normalize(-vPosition.xyz/vPosition.w);\n    vec3 lightdir;\n    vec4 colDiff;\n    vec3 halfVec;\n    vec4 lighteffect = vec4(emission, 0.);\n    vec3 col;\n    float nDotL;\n#ifdef FIXED_QUADS\n    n = -faceforward(n, n, eye);\n#endif\n    \n#if NLIGHTS > 0\n    for (int i=0;i<NLIGHTS;i++) {\n      colDiff = vec4(vCol.rgb * diffuse[i], vCol.a);\n      lightdir = lightDir[i];\n      if (!viewpoint[i])\n        lightdir = (mvMatrix * vec4(lightdir, 1.)).xyz;\n      if (!finite[i]) {\n        halfVec = normalize(lightdir + eye);\n      } else {\n        lightdir = normalize(lightdir - vPosition.xyz/vPosition.w);\n        halfVec = normalize(lightdir + eye);\n      }\n      col = ambient[i];\n      nDotL = dot(n, lightdir);\n      col = col + max(nDotL, 0.) * colDiff.rgb;\n      col = col + pow(max(dot(halfVec, n), 0.), shininess) * specular[i];\n      lighteffect = lighteffect + vec4(col, colDiff.a);\n    }\n#endif\n    \n#else // not IS_LIT\n    vec4 colDiff = vCol;\n    vec4 lighteffect = colDiff;\n#endif\n    \n#ifdef IS_TEXT\n    vec4 textureColor = lighteffect*texture2D(uSampler, vTexcoord);\n#endif\n    \n#ifdef HAS_TEXTURE\n#ifdef TEXTURE_rgb\n    vec4 textureColor = lighteffect*vec4(texture2D(uSampler, vTexcoord).rgb, 1.);\n#endif\n    \n#ifdef TEXTURE_rgba\n    vec4 textureColor = lighteffect*texture2D(uSampler, vTexcoord);\n#endif\n    \n#ifdef TEXTURE_alpha\n    vec4 textureColor = texture2D(uSampler, vTexcoord);\n    float luminance = dot(vec3(1.,1.,1.), textureColor.rgb)/3.;\n    textureColor =  vec4(lighteffect.rgb, lighteffect.a*luminance);\n#endif\n    \n#ifdef TEXTURE_luminance\n    vec4 textureColor = vec4(lighteffect.rgb*dot(texture2D(uSampler, vTexcoord).rgb, vec3(1.,1.,1.))/3., lighteffect.a);\n#endif\n    \n#ifdef TEXTURE_luminance_alpha\n    vec4 textureColor = texture2D(uSampler, vTexcoord);\n    float luminance = dot(vec3(1.,1.,1.),textureColor.rgb)/3.;\n    textureColor = vec4(lighteffect.rgb*luminance, lighteffect.a*textureColor.a);\n#endif\n    \n    fragColor = textureColor;\n\n#elif defined(IS_TEXT)\n    if (textureColor.a < 0.1)\n      discard;\n    else\n      fragColor = textureColor;\n#else\n    fragColor = lighteffect;\n#endif // HAS_TEXTURE\n    \n#ifdef HAS_FOG\n    // uFogParms elements: x = near, y = far, z = fogscale, w = (1-sin(FOV/2))/(1+sin(FOV/2))\n    // In Exp and Exp2: use density = density/far\n    // fogF will be the proportion of fog\n    // Initialize it to the linear value\n    float fogF;\n    if (uFogMode > 0) {\n      fogF = (uFogParms.y - vPosition.z/vPosition.w)/(uFogParms.y - uFogParms.x);\n      if (uFogMode > 1)\n        fogF = mix(uFogParms.w, 1.0, fogF);\n      fogF = fogF*uFogParms.z;\n      if (uFogMode == 2)\n        fogF = 1.0 - exp(-fogF);\n      // Docs are wrong: use (density*c)^2, not density*c^2\n      // https://gitlab.freedesktop.org/mesa/mesa/-/blob/master/src/mesa/swrast/s_fog.c#L58\n      else if (uFogMode == 3)\n        fogF = 1.0 - exp(-fogF*fogF);\n      fogF = clamp(fogF, 0.0, 1.0);\n      gl_FragColor = vec4(mix(fragColor.rgb, uFogColor, fogF), fragColor.a);\n    } else gl_FragColor = fragColor;\n#else\n    gl_FragColor = fragColor;\n#endif // HAS_FOG\n    \n}","players":[],"webGLoptions":{"preserveDrawingBuffer":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(maxR_B<span class="sc">$</span>confInt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Overall effect
+Estimated mean departure from null response surface with 95% confidence interval:
+3.0011 [-0.9349, 7.6348]
+Evidence for effects in data: None 
+
+Significant pointwise effects
+      estimate  lower   upper call
+1_0.5   9.7145 2.4252 17.0038  Syn
+
+Pointwise 95% confidence intervals summary:
+ Syn Ant Total
+   1   0    17</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotConfInt</span>(maxR_B, <span class="at">color =</span> <span class="st">"effect-size"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Workpackage_1_files/figure-html/unnamed-chunk-8-6.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-kaltsas2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Kaltsas, P., Want, S. &amp; Cohen, J. <a href="https://doi.org/10.1111/j.1469-0691.2004.01054.x">Development of a time-to-positivity assay as a tool in the antibiotic management of septic patients</a>. <em>Clinical Microbiology and Infection</em> <strong>11</strong>, 109–114 (2005).</div>
+</div>
+<div id="ref-Clinical_Laboratory_Standards_Institute1999-iy" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Clinical Laboratory Standards Institute. Methods for determining bactericidal activity of antimicrobial agents; approved guidelines M26-a. (1999).</div>
+</div>
+<div id="ref-Clinical_Laboratory_Standards_Institute1999-iya" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Clinical Laboratory Standards Institute. Methodology for the serum bactericidal test; approved guidelines M21-a. (1999).</div>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
