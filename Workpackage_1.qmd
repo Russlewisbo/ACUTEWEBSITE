@@ -127,3 +127,61 @@ fit <- drda(tpos ~ caz, data=cazavi2, mean_function = "loglogistic4", max_iter =
 plot(fit, xlab = "CAZ/AVI (conc)", ylab = "Tpos (hr)")
 
 ```
+
+## Figure 6. In vitro effects of combination ceftazidime/avibactam + gentamicin
+
+```{r}
+library(BIGL)
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(broom)
+library(kableExtra)
+set.seed(12345)
+cutoff <- 0.95
+caz_gent <- read.csv("~/Desktop/ACUTEWEBSITE/caz_gent_syn.csv")
+## Fitting marginal models, maximal fixe at 24 hours, minimal at 8.5
+marginalFit <- fitMarginals(caz_gent, method = "nls",
+                            names = c("CTZ/AVI", "GENT"))
+summary(marginalFit)
+## Plotting marginal models
+plot(marginalFit) + ggtitle(paste("Ceftazidime/Avibactam + Gentamicin"))
+rs <- fitSurface(caz_gent, marginalFit,
+                 null_model = "loewe",
+                 B.CP = 50, statistic = "none", parallel = FALSE)
+summary(rs)
+isobologram(rs)
+plot(rs, legend = FALSE, main = "")
+view3d(0, -75)
+rglwidget()
+rsh <- fitSurface(caz_gent, marginalFit,
+                  null_model = "hsa",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsh)
+
+rsb <- fitSurface(caz_gent, marginalFit, 
+                  null_model = "bliss",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsb)
+maxR_N <- fitSurface(caz_gent, marginalFit,
+                     statistic = "maxR", CP = rs$CP, B.B = NULL,
+                     parallel = FALSE)
+maxR_B <- fitSurface(caz_gent, marginalFit,
+                     statistic = "maxR", CP = rs$CP, B.B = 20,
+                     parallel = FALSE)
+maxR_both <- rbind(summary(maxR_N$maxR)$totals,
+                   summary(maxR_B$maxR)$totals)
+outPts <- outsidePoints(maxR_B$maxR$Ymean)
+kable(outPts, caption = paste0("Non-additive points for Experiment "))
+contour(maxR_B,
+        ## colorPalette = c("blue", "black", "black", "red"),
+        main = paste0(" Experiment ", " contour plot for maxR"),
+        scientific = TRUE, digits = 3, cutoff = cutoff)
+plot
+plot(maxR_B, color = "maxR", legend = FALSE, main = "")
+view3d(0, -75)
+rglwidget()
+summary(maxR_B$confInt)
+plotConfInt(maxR_B, color = "effect-size")
+
+```
