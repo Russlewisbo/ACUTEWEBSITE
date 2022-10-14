@@ -1,6 +1,6 @@
 ---
 title: "Protocols"
-date: "09/23/2023"
+date: "10/03/2022"
 ---
 
 # Workpackage 1
@@ -42,11 +42,13 @@ date: "09/23/2023"
 | Isolate                                  | Abbreviaiton | Enzyme       | Ceftazidime/Avibactam MIC (mg/L) |
 |------------------------------------------|--------------|--------------|----------------------------------|
 | *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | *MIC needed*                     |
-| *Klebsiella pneumoniae* KPC- A           | KP_KPC_A     | KPC-2        | 1                                |
-| *Klebsiella pneumoniae* KPC- B           | KP_KPC_B     | KPC-2        | 2                                |
-| *Klebsiella pneumoniae* KPC- C           | KP_KPC_C     |              |                                  |
-| *Klebsiella pneumoniae* NDM              | KP_NDM       | NDM-2        | \>256 (correct?)                 |
-| *Klebsiella pneumonia* VIM               | KP_VIM       | VIM          | \>256 (correct?)                 |
+| *Klebsiella pneumoniae* KPC- A           | KP_KPC_A     | KPC-3        | 2                                |
+| *Klebsiella pneumoniae* KPC- B           | KP_KPC_B     | KPC-3        | 1                                |
+| *Klebsiella pneumoniae* KPC- C           | KP_KPC_C     | KPC-3        |                                  |
+| *Klebsiella pneumoniae* NDM              | KP_NDM       | NDM-2        | \>256                            |
+| *Klebsiella pneumonia* VIM               | KP_VIM       | VIM          | \>256                            |
+
+MICs were performed and confirmed by Etest
 
 ## Inoculum preparation
 
@@ -78,7 +80,7 @@ To prepare a standardized inoculum (1.5 x10^2^ CFU/mL) for injection in blood cu
 
 3.  After vortexing for 7-10 seconds each tube, 1 ml of inoculum suspension at 1.5x10^2^ CFU/mL and 1 mL of antibiotic containing serum are inoculated with a sterile insulin syringe into a blood culture bottle containing 40 mL of enrichment broth *without* inactivating matrix.
 
-4.  Bloodcultre bottles are then incubated into Bact/ALERT system to detect growth. The same procedure is repeated for all the selected antibiotic concentration-inoculum pairs.
+4.  Bloodculture bottles are then incubated into Bact/ALERT system to detect growth. The same procedure is repeated for all the selected antibiotic concentration-inoculum pairs.
 
 5.  One bottle is inoculated with the bacterial inoculum without adding the antibiotic solution (drug-free control).
 

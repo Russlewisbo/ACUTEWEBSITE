@@ -24,3 +24,5 @@
 **Funding:** European Society of Clinical Microbiology and Infectious Diseases (ESCMID) [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022)
 
 ![](ESCMID.png){fig-align="center" width="400"}
+
+![](unibologo.png){fig-align="center" width="150"}

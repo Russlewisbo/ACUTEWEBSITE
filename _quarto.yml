@@ -12,7 +12,7 @@ website:
       - about.qmd
       - Workpackage_1.qmd
       - Workpackage_2.qmd
-      - Summary_results.qmd
+      - Summary.qmd
       - Presentations.qmd
       - Publications.qmd
       - Protocols.qmd
