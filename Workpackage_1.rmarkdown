@@ -11,6 +11,7 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
+
 ## Package 1A
 
 **Establishing the quantitative relationship of Tpos and KPC-*Klebsiella pneumoniae* inoculum in blood culture bottles.** <br> The methods for the assay are a modification of those originally proposed by Kaltsas et al.[@kaltsas2005] Detailed procedures can be found following this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.[@Clinical_Laboratory_Standards_Institute1999-iy; @Clinical_Laboratory_Standards_Institute1999-iya]
@@ -26,6 +27,7 @@ We have opted to report the final inoculum in each bottle accounting for the gro
 :::
 
 ### Figure 1. Tpos vs. test inoculum
+
 
 ```{r}
 library (ggplot2)
@@ -50,6 +52,7 @@ kbl(table1)%>%
 kable_paper("hover", full_width = F, position="left")
 ```
 
+
 ## Package 1B
 
 This workpackage explores how antibiotic concentrations impact Tpos. <br>
@@ -62,6 +65,7 @@ Drug concentrations reported in figures represent the concentration of antibioti
 
 ### Figure 2. Impact of CAZ/AVI concentrations on Tpos
 
+
 ```{r}
 library (ggplot2)
 theme_set(theme_bw())
@@ -71,6 +75,7 @@ scale_x_log10(name="CAZ/AVI, mg/L") +
 scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
 
 ```
+
 
 ::: callout-note
 Experiments performed using KPC_B isolate (MIC 1 mg/L) and pure powders over range of ceftazidime dilutions and fixed avibactam concentration of 4 mg/L.
@@ -87,6 +92,7 @@ A four-parameter logistic regression model was fit to the experimental data (Fig
 ::: callout-note
 Experiments performed using commercial CAZ/AVI formulation
 :::
+
 
 ```{r}
 # | code-fold: true
@@ -109,11 +115,13 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
 ### Figure 4. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos (KPC_B isolate MIC 1 mg/L)
 
 ::: callout-note
 Experiments performed using pure powder at a CAZ:AVI ratio of 4:1
 :::
+
 
 ```{r}
 # | code-fold: true
@@ -136,11 +144,13 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
 ### Figure 5. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos (KPC_A isolate MIC 2 mg/L)
 
 ::: callout-note
 Experiments performed using the commercial CAZ/AVI formulation.
 :::
+
 
 ```{r}
 # | code-fold: true
@@ -164,11 +174,13 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
 ### Figure 6. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos (KPC_A isolate MIC 2 mg/L)
 
 ::: callout-note
 Experiments performed using pure powder with a ceftazidime:avibactam raio of 4:1
 :::
+
 
 ```{r}
 # | code-fold: true
@@ -193,11 +205,13 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
 ### Figure 7. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos (KPC_A isolate MIC 2 mg/L)
 
 ::: callout-note
 Experiments performed using pure powder but with a fixed concentration of avibactam at 4 mg/L in all tubes
 :::
+
 
 ```{r}
 # | code-fold: true
@@ -222,9 +236,11 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
 # Figure 8. In vitro effects of combination ceftazidime/avibactam + gentamicin
 
 The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial product) plus gentamicin was tested against KP_KPC_B strain in ~~X replicate~~ experiments. The effect of the Tpos combination was analyzed using (A) Loewe Additivity and (B) Bliss Independence Model of Drug interaction. The results demonstrated that CTZ/AVI + gentamicin is broadly synergistic over a range of clinically acheived concentrations, with and average 4.29 hr (95% CI 2.65-6.46) increase in Tpos versus the predicted null response.
+
 
 ```{r}
 library(BIGL)
@@ -282,9 +298,11 @@ summary(maxR_B$confInt)
 plotConfInt(maxR_B, color = "effect-size")
 ```
 
+
 # Figure 9. In vitro effects of combination ceftazidime/avibactam + aztreonam against NDM-1 producing isolate.
 
 The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial product) plus gentamicin was tested against KP_KPC_B strain in ~~X replicate~~ experiments. The effect of the Tpos combination was analyzed using (A) Loewe Additivity and (B) Bliss Independence Model of Drug interaction. The results demonstrated that CTZ/AVI + aztreonam is broadly synergistic over a range of clinically achieved concentrations, with and average 4.29 hr (95% CI 2.65-6.46) increase in Tpos versus the predicted null response.
+
 
 ```{r}
 library(BIGL)
@@ -341,3 +359,4 @@ rglwidget()
 summary(maxR_B$confInt)
 plotConfInt(maxR_B, color = "effect-size")
 ```
+
