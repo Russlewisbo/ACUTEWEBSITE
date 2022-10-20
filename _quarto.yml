@@ -10,7 +10,8 @@ website:
     contents:
       - index.qmd
       - about.qmd
-      - Workpackage_1.qmd
+      - Workpackage_1a.qmd
+      - Workpackage_1b.qmd
       - Workpackage_2.qmd
       - Summary.qmd
       - Presentations.qmd

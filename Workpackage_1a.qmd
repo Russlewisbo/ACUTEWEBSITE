@@ -292,4 +292,3 @@ view3d(0, -75)
 rglwidget()
 
 ```
-
