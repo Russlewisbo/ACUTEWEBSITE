@@ -3,11 +3,11 @@ title: "Publications"
 ---
 
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ![](timing_picture.png) | \*\*Is timing everything?\                                                                                                                                                          |
+| ![](timing_picture.png) | **Is timing everything?**\                                                                                                                                                          |
 |                         |                                                                                                                                                                                     |
-|                         | A Bayesian meta-analysis of the prognostic and diagnostic utility of bloodculture time-to-positivity (TTP) and differential time-to positivity (DTP) for bloodstream infections\*\* |
+|                         | **A Bayesian meta-analysis of the prognostic and diagnostic utility of bloodculture time-to-positivity (TTP) and differential time-to positivity (DTP) for bloodstream infections** |
 |                         |                                                                                                                                                                                     |
-|                         | Click [here](ESCMID%202022.pdf) for the poster                                                                                                                                      |
+|                         | Click [here](ESCMID_2022_poster.pdf) for the poster                                                                                                                                 |
 |                         |                                                                                                                                                                                     |
 |                         | Presented at 2022 ESCMID Meeting, Lisbon                                                                                                                                            |
 |                         |                                                                                                                                                                                     |

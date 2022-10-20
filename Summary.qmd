@@ -1,5 +1,5 @@
 ---
-title: "Results Summary"
+title: "Summary"
 ---
 
 Coming soon!

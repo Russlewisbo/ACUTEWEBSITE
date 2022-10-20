@@ -12,7 +12,7 @@ website:
       - about.qmd
       - Workpackage1.qmd
       - PKPDmodel.qmd
-      - Workpackage_2.qmd
+      - Workpackage2.qmd
       - Summary.qmd
       - Presentations.qmd
       - Publications.qmd
