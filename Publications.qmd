@@ -2,4 +2,14 @@
 title: "Publications"
 ---
 
-Coming soon!
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](timing_picture.png) | \*\*Is timing everything?\                                                                                                                                                          |
+|                         |                                                                                                                                                                                     |
+|                         | A Bayesian meta-analysis of the prognostic and diagnostic utility of bloodculture time-to-positivity (TTP) and differential time-to positivity (DTP) for bloodstream infections\*\* |
+|                         |                                                                                                                                                                                     |
+|                         | Click [here](ESCMID%202022.pdf) for the poster                                                                                                                                      |
+|                         |                                                                                                                                                                                     |
+|                         | Presented at 2022 ESCMID Meeting, Lisbon                                                                                                                                            |
+|                         |                                                                                                                                                                                     |
+|                         | Abstract #01824                                                                                                                                                                     |
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
