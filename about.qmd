@@ -2,9 +2,9 @@
 title: "Background"
 ---
 
-**The ACUTE project** (**A**dapting Blood**cu**lture systems **t**o monitor antimicrobial **e**fficacy) proposes to develop time-to positivity (Tpos)- a commonly recorded measurement from continuously monitored bloodculture systems in clinical microbiology laboratories - as a surrogate pharmacodynamic marker for monitoring antibiotic therapy of multidrug resistant (MDR) gram-negative bacteria.
+**The ACUTE project** proposes to develop *time-to positivity (Tpos)*- a common measurement from continuously monitored bloodculture systems used in clinical microbiology laboratories - as a surrogate pharmacodynamic marker for monitoring antibiotic therapy of multidrug resistant (MDR) gram-negative bacteria.
 
-The project will generate fundamental knowledge of how Tpos correlates with established pharmacodynamic indices (e.g. AUC/MIC, %T~\> MIC~). The activity of ceftazidime-avibactam monotherapy, and combination antibiotic regimens will be tested *in vitro* and then in sera from patients undergoing treatment for KPC-carbapenemase producing *Klebsiella pneumoniae* (KPC-Kp). <br>
+The project will generate fundamental knowledge of how *Tpos* correlates with established pharmacodynamic indices (e.g. AUC/MIC, %T~\>MIC~). The activity of ceftazidime-avibactam monotherapy, and combination antibiotic regimens will be tested *in vitro* and then in sera from patients undergoing treatment for KPC-carbapenemase producing *Klebsiella pneumoniae* (KPC-Kp). <br>
 
 ::: column-margin
 ![](bloodculturebottle.png){fig-align="center" width="150"}
