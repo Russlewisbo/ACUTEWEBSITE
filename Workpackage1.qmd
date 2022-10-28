@@ -101,7 +101,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 
 <br>
 
--   The relationship between ceftazidime/avibactam concentrations and Tpos were analyzed by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) using the commercial Avycaz (Zavicefta) formulation in at least 5 replicate experiments perfomed on seperate days.
+-   The relationship between ceftazidime/avibactam concentrations and Tpos were analyzed by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) using the commercial Avycaz (Zavicefta) formulation in at least 5 replicate experiments performed on separate days.
 -   Bottles were incubated with 1x10^4^ *Klebsiella pneumoniae* KPC-B strain and incubated at 37°C for 24 hours. Tpos positivity was registered using the BACTEC Alert/3D software
 -   Tpos data versus ceftazidime/avibactam concentrations were then fit to a 4-parameter logistic regression model using the Dose-Response Data Analysis (DRDA) package to estimate PD endpoints.[@drda] Regression results were extracted using the Broom [@broom] and Kableextra [@kableExtra] packages.
 -   Results of the analysis are shown in **Figure 3**. Ceftazidime/avibactam exhibited a steep Tpos response from and EC~50~ of 2.10 (95% CI 2.08-2.12) to and EC~90~ 2.39 (2.33-2.45). The transitional portion of the dose-response curve occurred 1-dilution above the MIC (1 mg/L)determined using Etest strips.
@@ -263,7 +263,7 @@ Experiments were repeated using pure powder but with a fixed concentration of av
 ## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
 library (readxl)
 library(drda)
-caz_avi_8 <- read_excel("datasets/kpca_caz_avi_powder_fix4.xlsx")
+caz_avi_8 <- read_excel("datasets/kpcb_caz_avi_powder_fix4.xlsx")
 fit5<- drda(tpos ~ ctz, data=caz_avi_8, mean_function = "loglogistic4", max_iter = 1000)
 plot(fit5, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
 
@@ -275,7 +275,7 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_8 <- read_excel("datasets/kpca_caz_avi_powder_fix4.xlsx")
+caz_avi_8 <- read_excel("datasets/kpcb_caz_avi_powder_fix4.xlsx")
 fit5 <- drda(tpos ~ ctz, data=caz_avi_8, mean_function = "loglogistic4", max_iter = 1000)
 ed<-effective_dose(fit5, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
@@ -294,7 +294,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial formulation) plus gentamicin (0-4 mg/L) was tested against *Klebsiella pneumonia*\_KPC_B strain in 5 replicate experiments.
 
-    ![](test_array.png){width="150"}
+    ![](test_array.png){width="600"}
 
 -   The effect of the antibiotic combinations Tpos combination was analyzed using a Bliss Independence Model of drug interaction using a workflow described for the [synergy analysis](https://cran.r-project.org/web/packages/BIGL/vignettes/analysis.html) using the BIGL package.[@BIGL]
 
