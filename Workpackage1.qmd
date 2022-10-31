@@ -260,7 +260,7 @@ Experiments were repeated using pure powder but with a fixed concentration of av
 :::
 
 ```{r}
-## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
 caz_avi_8 <- read_excel("datasets/kpcb_caz_avi_powder_fix4.xlsx")
@@ -286,6 +286,35 @@ kable_paper("hover", full_width = F, position = "left")
 ## These data confirm that Tpos recapitulates classical PD endpoints and the relationship of ceftazidime/avibactam concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen. Although ED50/90 estimates were broadly similar if the commercial (patient) and analytical powder formulations were tested, used of high-fixed concentrations of avibactam resulted in lower EC50/90 estimates and broader concentration-effect curves.
 :::
 
+### Figure 8. In vitro pharmacodynamics of meropenem concentrations vs. Tpos (KP ATCC isolate MIC XX mg/L)
+
+::: callout-note
+Experiments performed using pure powder with a fixed avibactam concentration of 4 mg/L in all ceftazidime containing bottles.
+:::
+
+```{r}
+## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
+library (readxl)
+library(drda)
+mero1 <- read_excel("datasets/ATCC_meropenem.xlsx")
+fit6 <- drda(tpos ~ mero, data=mero1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit4, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
+
+```
+
+```{r}
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter sestiamtes plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+mero1 <- read_excel("datasets/ATCC_meropenem.xlsx")
+fit6 <- drda(tpos ~ mero, data=mero1, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit6, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
 ------------------------------------------------------------------------
 
 ## Package 1B: Effect of combination antimicrobial exposure on Tpos
@@ -310,7 +339,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 -   The results sown in **Figure 8** demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with and average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
 
-### Figure 8. In vitro effects of combination ceftazidime/avibactam + gentamicin
+### Figure 9. In vitro effects of combination ceftazidime/avibactam + gentamicin
 
 ```{r}
 library(BIGL)
@@ -379,7 +408,7 @@ summary(rsb)
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial formulation) plus aztreonam (0-40 mg/L) was tested against *Klebsiella pneumonia*\_KPC_A strain in 5 replicate experiments using the same methodology.
 -   Results are shown in **Figure 9**.
 
-### Figure 9. In vitro effects of combination ceftazidime/avibactam + gentamicin
+### Figure 10. In vitro effects of combination ceftazidime/avibactam + gentamicin
 
 ```{r}
 library(BIGL)
@@ -453,7 +482,9 @@ Ceftazidime-avibactam + aztreonam synergy against K. pneumoniae NDM-1 strain.
 -   The effect of the Tpos combination was analyzed using a Bliss Independence Model of drug interaction using a workflow described for the [synergy analysis](https://cran.r-project.org/web/packages/BIGL/vignettes/analysis.html) using the BIGL package.[@BIGL]
 -   The results sown in **Figure 8** demonstrated that CTZ/AVI + aztreonam is broadly synergistic over the range of tested concentrations, **with and average 3.6 hr increase (95% CI 1.76-6.23) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.**
 
-### Figure 10. In vitro effects of combination ceftazidime/avibactam + aztreonam against NDM-1 producing isolate.
+### Figure 11.
+
+### Figure 12. In vitro effects of combination ceftazidime/avibactam + aztreonam against NDM-1 producing isolate.
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial product) plus aztreonam (1.25-40 mg/L) was tested against and NDM-2 producing *Klebsiella pneumoniae* isolate (ceftazidime/avibactam MIC \> 64 mg/L).
 -   The effect of the Tpos combination was analyzed using a Bliss Independence Model of Drug interaction.
