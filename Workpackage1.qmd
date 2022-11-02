@@ -1,6 +1,6 @@
 ---
 title: "Workpackage 1"
-date: "10/20/2022"
+date: "Updated 11/2/2022"
 format: 
   html:
     code-fold: true
@@ -11,20 +11,20 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
-## Package 1A Quantitative Relationship of Tpos with Numbers of Viable Gram-Negative Bacteria
+## Workpackage 1A Quantitative Relationship of Tpos with Numbers of Viable Gram-Negative Bacteria
 
 ### Methods
 
-In this package we will establishing the quantitative relationship of Tpos and KPC-*Klebsiella pneumoniae* inoculum in blood culture bottles. <br> The methods for the assay are a modification of those originally proposed by Kaltsas et al.[@kaltsas2005] Detailed procedures can be found at this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.[@Clinical_Laboratory_Standards_Institute1999-iy; @Clinical_Laboratory_Standards_Institute1999-iya]
+In this package we will establishing the quantitative relationship of Tpos and KPC- cabrapenemase producing *Klebsiella pneumoniae* inoculum in blood culture bottles. <br> The methods for the assay are a modification of those originally proposed by Kaltsas et al.[@kaltsas2005] Detailed procedures can be found at this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.[@Clinical_Laboratory_Standards_Institute1999-iy; @Clinical_Laboratory_Standards_Institute1999-iya]
 
--   Briefly, tubes containing 1.8 mL of pooled healthy human serum were inoculated with 0.2 mL of a series of ten-fold dilutions (5x10^1^ to 5x10^7^ CFU/mL) of the standardised inoculum of each test indicator strains.
--   The inoculated sera were then transferred into BacT⁄ALERT bottles ***without antibiotic inactivating matrix*** (Biomérieux Inc) for aerobic incubation for 24 hours and monitored for time to positivity.
--   Tpos results were used to establish preliminary assay quality control ranges by testing in triplicate for five KPC-carbapenemase producing *K. pneumoniae* strains (KPC_KPCA,B,C and NDM, and VIM producing strains) and a reference *K. pneumoniae* ATCC strain producing ESBL enzyme only.
--   More detailed information on the isolates can be found [here](Protocols.html). We will also compare how inoculation of the organism suspension prepared in phosphate buffered saline (PBS-0.9%) versus pooled human serum (serum) affected Tpos.
+-   Briefly, tubes containing 1.8 mL of pooled healthy human serum are inoculated with 0.2 mL of a series of ten-fold dilutions (5x10^1^ to 5x10^7^ CFU/mL) of the standardised inoculum of each test indicator strains.
+-   The sera were are then transferred into BacT⁄ALERT bottles ***without antibiotic inactivating matrix*** (Biomérieux Inc) for aerobic incubation for 24 hours and monitored for time to positivity.
+-   Tpos results were used to establish preliminary assay quality control ranges by testing in triplicate for five KPC-carbapenemase producing *K. pneumoniae* strains (KPC_KPCA,B,C and NDM, and VIM producing strains) and a reference *K. pneumoniae* ATCC strain producing ESBL enzyme only. More detailed information on the isolates can be found on the [Protocols](Protocols.html) section.
+-   We also compared how Tpos results change if the organism suspension prepared in phosphate buffered saline (PBS-0.9%) versus pooled human serum (serum).
 
 ### Results
 
-**Figure 1** shows the relationship between Tpos and the *K. pneumoniae* inoculum. A linear relationship was observed from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R^2^ of 0.92-0.94.
+The relationship between Tpos and the *K. pneumoniae* inoculum is shown in @fig-inoculum, a linear relationship was observed from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R^2^ of 0.92-0.94. The linear relationship of Tpos versus inoculum was consistent if the inoculum was prepared in PBS or pooled human serum as shown in @tbl-diluent.
 
 ::: callout-note
 In the original methodology proposed by Kaltsas et al, [@kaltsas2005] the isolate inoculum was reported as the inoculum introduced into the bottle, which already contains between 30-40 mL of growth media (depending on the manufacturer).
@@ -34,9 +34,11 @@ Therefore we have followed this precedent of reporting the inoculum introduced i
 All experiments were performed using bloodculture bottles ***without antibiotic inactivating matrix***
 :::
 
-### Figure 1. Tpos vs. test inoculum
-
 ```{r}
+#| label: fig-inoculum
+#| fig-cap: "Relationship of time-to-positivity (Tpos) versus test inoculum"
+
+
 library (ggplot2)
 library(scales)
 theme_set(theme_bw())
@@ -52,7 +54,8 @@ fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = 
 ```
 
 ```{r}
-## use forestmangr package to output results of linear regression in Kable-table for display in webpage
+#| label: tbl-diluent
+#| tbl-cap: Effect of inoculum diluent on Tpos
 library(forestmangr)
 library(kableExtra)
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
@@ -66,9 +69,11 @@ kable_paper("hover", full_width = F, position="left")
 ## These data confirm that Tpos exhibits a wide dynamic range as a surrogate indicator for viable CFU/mL.
 :::
 
-## Package 1B: Effect of ceftazidime/avibactam exposure on Tpos
+------------------------------------------------------------------------
 
-This workpackage explores how ceftazidime/avibactam concentrations, alone or in combination with other antibiotics, affect Tpos. <br>
+## Workpackage 1B: Effect of ceftazidime/avibactam exposure on Tpos
+
+This workpackage explores how ceftazidime/avibactam concentrations, alone or in combination with other antibiotics alters Tpos for a standard bacterial inoculum of 1x10 CFU/mL of *Klebsiella pneumoniae*. <br>
 
 ### Methods
 
@@ -76,16 +81,16 @@ The effect of increasing fixed ceftazidime/avibactam (CAZ/AVI) concentrations (4
 
 ### Results
 
-**Figure 2** shows a marked increased in the Tpos for KPC_B from \< 10 hrs to [\>]{.underline} 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos \< 10hr at all test concentrations with lack of antimicrobial activity. Trends in Tpos relative to antibiotic exposuew were fitted by Loess.
+As shown in @fig-cazavitpos, a marked increased in the Tpos for KPC_B from \< 10 hrs to [\>]{.underline} 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos \< 10hr at all test concentrations with lack of antimicrobial activity. Trends in Tpos relative to antibiotic exposure were fitted by Loess.
 
 ::: callout-note
 Drug concentrations reported in figures represent the concentration of antibiotic injected (1 mL) into the bottle- "simulating" the antibiotic concentrations that would be detected in the bloodstream. These concentrations do not account for 40 mL growth median and inoculum (1 mL) already present in the bottle= total volume 42 mL.
 :::
 
-### Figure 2. Impact of CAZ/AVI concentrations on Tpos
-
 ```{r}
-## simple x-y plot of raw data to show Tpos differences for susceptible versus intrinsically resistant isolate. Trends are highlighted by loess
+#| label: fig-cazavitpos
+#| fig-cap: "Effect of ceftazidime/aviactam concentrations on Tpos of K. pneumoniae"
+
 library (ggplot2)
 theme_set(theme_bw())
 ceftaz <- read.csv("~/Desktop/ACUTEWEBSITE/datasets/ceftazidime.csv")
@@ -97,23 +102,22 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 
 ```
 
-------------------------------------------------------------------------
-
 <br>
 
 -   The relationship between ceftazidime/avibactam concentrations and Tpos were analyzed by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) using the commercial Avycaz (Zavicefta) formulation in at least 5 replicate experiments performed on separate days.
 -   Bottles were incubated with 1x10^4^ *Klebsiella pneumoniae* KPC-B strain and incubated at 37°C for 24 hours. Tpos positivity was registered using the BACTEC Alert/3D software
 -   Tpos data versus ceftazidime/avibactam concentrations were then fit to a 4-parameter logistic regression model using the Dose-Response Data Analysis (DRDA) package to estimate PD endpoints.[@drda] Regression results were extracted using the Broom [@broom] and Kableextra [@kableExtra] packages.
--   Results of the analysis are shown in **Figure 3**. Ceftazidime/avibactam exhibited a steep Tpos response from and EC~50~ of 2.10 (95% CI 2.08-2.12) to and EC~90~ 2.39 (2.33-2.45). The transitional portion of the dose-response curve occurred 1-dilution above the MIC (1 mg/L)determined using Etest strips.
-
-### Figure 3. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos (KP-KPC-B isolate MIC 1 mg/L)
+-   Results of the pharmacodynamic analysis are shown in @fig-cazavidrkpcb_com. Ceftazidime/avibactam exhibited a steep Tpos response from and EC~50~ of 2.10 (95% CI 2.08-2.12) to and EC~90~ 2.39 (2.33-2.45). As shown in @tbl-cazavidrkpcb_comtbl, the transitional portion of the dose-response curve occurred 1-dilution above the MIC (1 mg/L) that was determined by Etest.
 
 ::: callout-note
-Experiments shown below were performed using commercial CAZ/AVI formulation not analytical powder
+Experiments shown in @fig-cazavidrkpcb_com were performed using commercial CAZ/AVI formulation not analytical powder. Concentrations plotted on the X axis indicate concentrations of ceftazidime (4:1 relative to avibactam) in tubes
 :::
 
-```{r}
-## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
+```{r }
+#| label: fig-cazavidrkpcb_com
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
 caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_com.xlsx")
@@ -122,7 +126,11 @@ plot(fit1, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
-## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estiamtes plus 95% CI 
+#| label: tbl-cazavidrkpcb_comtbl
+#| tbl-cap: "Pharmacodynamic estimates"
+
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
 library (readxl)
 library(drda)
 library(broom)
@@ -136,26 +144,60 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
--   The relationship between ceftazidime/avibactam concentrations and Tpos were analyzed by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) *using the analytical grade powder.* Experiments were performed in at least 5 replicate experiments on separate days.
+-   The relationship between ceftazidime/avibactam concentrations and Tpos were repeated by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) *using the analytical grade powder instead of the commercial pharmaceutical formulation.* Experiments were performed in at least 5 replicate experiments on separate days.
 -   Bottles were incubated with 1x10^4^ *Klebsiella pneumoniae* KPC-B strain and incubated at 37°C for 24 hours. Tpos positivity was registered using the BACTEC Alert/3D software
 -   Tpos data versus ceftazidime/avibactam concentrations were then fit to a 4-parameter logistic regression model using the Dose-Response Data Analysis (DRDA) package to estimate PD endpoints.[@drda] Regression results were extracted using the Broom [@broom] and Kableextra [@kableExtra] packages.
--   **Figure 4** shows the results of the analysis. Ceftazidime/avibactam exhibited a steep Tpos response from and EC~50~ of 2.10 (95% CI 2.08-2.12) to and EC~90~ 2.39 (2.33-2.45). The transitional portion of the dose-response curve occurred 1-dilution above the MIC (1 mg/L) determined using Etest strips.
+-   As shown in @fig-cazavidrkpcb_pow, ceftazidime/avibactam exhibited a steep Tpos response with increasing concentrations with an EC~50~ of 2.10 (95% CI 2.08-2.12) to and EC~90~ 2.39 (2.33-2.45). The transitional portion of the dose-response curve occurred 1-dilution above the MIC (1 mg/L) determined using Etest strips @tbl-cazavidrkpcb_powtbl
 
 <br>
 
+::: callout-note
+Experiments shown in @fig-cazavidrkpcb_pow were performed using CAZ/AVI *analytical grade powder* at a fixed 4:1 ratio. Concentrations plotted on the X axis indicate concentrations of ceftazidime (4:1 relative to avibactam) in tubes
+:::
+
+```{r }
+#| label: fig-cazavidrkpcb_pow
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_powder_4-1.xlsx")
+fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit1, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
+```
+
+```{r}
+#| label: tbl-cazavidrkpcb_powtbl
+#| tbl-cap: "Pharmacodynamic estimates"
+
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estiamtes plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_powder_4-1.xlsx")
+fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
 ------------------------------------------------------------------------
 
--   Experiments were repeated as described for Figure 3 using the same method but substituting **commercial ceftazidime-avibactam formulation (4:1 ratio)** against *Klebsiella pneumoniae* KPC A isolate (ceftazidime/avibactam MIC 2 mg/L).
+-   Experiments with the commercial and analytical powder forms of ceftazidime/avibactam were repeated substituting *Klebsiella pneumoniae* KPC A isolate (ceftazidime/avibactam MIC 2 mg/L).
 
--   Results of the logistic regression demonstrated an EC~50~ 4.14 mg/L (95% CI4.09-4.20) and an EC~90~ 4.78 (95% CI 4.59-4.96). The transitional portion of the dose response curve occurred 1-dilution above the MIC of the isolate (2 mg/L) determined by Etest.
-
-### Figure 4. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos (KP KPC-A isolate MIC 2 mg/L)
+-   Results of the logistic regression analysis from studies with the commercial formulation demonstrated an EC~50~ 4.14 mg/L (95% CI4.09-4.20) and an EC~90~ 4.78 (95% CI 4.59-4.96) as shown in @fig-cazavidrkpca_com and @tbl-cazavidrkpca_comtbl. The transitional portion of the dose response curve occurred 1-dilution above the MIC of the isolate (2 mg/L) determined by Etest.
 
 ::: callout-note
-Experiments performed using the commercial CAZ/AVI formulation.
+Experiments plotted in @fig-cazavidrkpca_com were performed using the commercial CAZ/AVI formulation for K. pneumoniae KPC producing isolate A (MIC 2 mg/L)
 :::
 
 ```{r}
+#| label: fig-cazavidrkpca_com
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
+
 ## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
 library (readxl)
 library(drda)
@@ -166,6 +208,10 @@ plot(fit3, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
+
+#| label: tbl-cazavidrkpca_comtbl
+#| fig-cap: "Pharmacodynamic estimates"
+
 ## Analysis is repeated to produce a table reporting estimated EC10-EC95 parametersestiamtes plus 95% CI 
 library (readxl)
 library(drda)
@@ -180,18 +226,19 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
--   An additional set of experiments were performed using the same methodology and the **analytical grade powder of ceftazidime-avibactam formulation (4:1 ratio)** against *Klebsiella pneumoniae* KPC A isolate (ceftazidime/avibactam MIC 2 mg/L).
+-   Similar experiments were performed using the same methodology and **analytical grade powder of ceftazidime-avibactam formulation (4:1 ratio)** against *Klebsiella pneumoniae* KPC A isolate (ceftazidime/avibactam MIC 2 mg/L).
 
 -   Results of the logistic regression are shown in **Figure 5** and demonstrated an EC~50~ 4.55 mg/L (95% CI4.29-4.83) and an EC~90~ 6.89 (95% CI 5.71-8.08). The transitional portion of the dose response curve was relatively broader and occurred 1-3 dilutions above the MIC of the isolate (2 mg/L) determined by Etest.
 
-### Figure 5. In vitro pharmacodynamics of CAZ/AVI concentrations vs. Tpos (KP KPC-A isolate MIC 2 mg/L)
-
 ::: callout-note
-Experiments performed using pure powder at a CAZ:AVI ratio of 4:1
+Experiments reported in performed using pure powder at a CAZ:AVI ratio of 4:1
 :::
 
 ```{r}
-## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
+
+#| label: fig-cazavidrkpca_pow
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
+
 library (readxl)
 library(drda)
 caz_avi_5 <- read_excel("datasets/kpcb_caz_avi_powder_4-1.xlsx")
@@ -200,6 +247,11 @@ plot(fit2, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
+
+#| label: tbl-cazavidrkpca_pow
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
+
+
 ## Analysis is repeated to produce a table reporting estimated EC10-EC95 parametersestiamtes plus 95% CI 
 library (readxl)
 library(drda)
@@ -293,7 +345,7 @@ Experiments performed using pure powder with a fixed avibactam concentration of 
 :::
 
 ```{r}
-## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
 mero1 <- read_excel("datasets/ATCC_meropenem.xlsx")
@@ -303,7 +355,7 @@ plot(fit4, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
-## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter sestiamtes plus 95% CI 
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
 library (readxl)
 library(drda)
 library(broom)
