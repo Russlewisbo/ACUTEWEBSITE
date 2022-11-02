@@ -11,7 +11,6 @@ website:
       - index.qmd
       - about.qmd
       - Workpackage1.qmd
-      - PKPDmodel.qmd
       - Workpackage2.qmd
       - Summary.qmd
       - Presentations.qmd
