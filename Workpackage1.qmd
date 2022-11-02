@@ -483,11 +483,11 @@ summary(rsb)
 <br>
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial formulation) plus aztreonam (0-40 mg/L) was tested against ***Klebsiella pneumonia*****\_KPC_A strain** in 5 replicate experiments using the same methodology.
--   Results are shown in @fig-11
+-   Results are shown in
 
 ```{r}
 #| label: fig-11
-#| fig-cap: "Effect of combine ceftazidime/avibactam and gentamicin effects on Tpos"
+#| fig-cap: "Effect of combined ceftazidime/avibactam and gentamicin effects on Tpos"
 
 library(BIGL)
 library(knitr)
