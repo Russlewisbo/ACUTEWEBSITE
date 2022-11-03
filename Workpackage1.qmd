@@ -628,6 +628,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 ### Results
 
+### Ceftazidime-avibactam + gentamicin
+
 -   The results shown in [@fig-10] demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with and average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
 
 ```{r}
@@ -698,7 +700,7 @@ summary(rsb)
 <br>
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial formulation) plus gentamicin was tested against ***Klebsiella pneumonia*****\_KPC_A strain** in 5 replicate experiments using the same methodology.
--   Results are shown in [@fig-11] **.**
+-   Results are shown in [@fig-11]**.**
 
 ```{r}
 #| label: fig-11
@@ -768,6 +770,8 @@ summary(rsb2)
 <br>
 
 #### Ceftazidime/avibactam plus aztreonam
+
+Results are shown in [@fig-12].
 
 ```{r}
 #| label: fig-12
