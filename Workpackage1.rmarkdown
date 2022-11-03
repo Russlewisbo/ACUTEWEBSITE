@@ -12,6 +12,8 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
+
+
 ## Workpackage 1A: <br>Quantitative Relationship of Tpos with Numbers of Viable Gram-Negative Bacteria
 
 ### Methods
@@ -34,6 +36,8 @@ Therefore we have followed this precedent of reporting the inoculum introduced i
 
 All experiments were performed using bloodculture bottles ***without antibiotic inactivating matrix***
 :::
+
+
 
 ```{r}
 #| label: fig-1
@@ -66,6 +70,8 @@ kbl(table1)%>%
 kable_paper("hover", full_width = F, position="left")
 ```
 
+
+
 ::: callout-note
 ## These data confirm that Tpos exhibits a wide dynamic range as a surrogate indicator for viable CFU/mL.
 :::
@@ -88,6 +94,8 @@ As shown in [@fig-2], a marked increased in the Tpos for KPC_B from \< 10 hrs to
 Drug concentrations reported in figures represent the concentration of antibiotic injected (1 mL) into the bottle- "simulating" the antibiotic concentrations that would be detected in the bloodstream. These concentrations do not account for 40 mL growth median and inoculum (1 mL) already present in the bottle= total volume 42 mL.
 :::
 
+
+
 ```{r}
 #| label: fig-2
 #| fig-cap: "Effect of ceftazidime/aviactam concentrations on Tpos of K. pneumoniae"
@@ -102,6 +110,8 @@ scale_x_log10(name="CAZ/AVI, mg/L") +
 scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
 
 ```
+
+
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
 |-----------------------------|-------------------|------------------------|
@@ -120,6 +130,8 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ::: callout-note
 Experiments shown in [@fig-3] were performed using commercial CAZ/AVI pharmaceutical formulation not analytical powder. Concentrations plotted on the X axis indicate concentrations of ceftazidime (4:1 relative to avibactam) in tubes
 :::
+
+
 
 ```{r }
 #| label: fig-3
@@ -150,9 +162,13 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 ### Inoculum effects on ceftazidime/avibactam targets with commercial pharmaceutical formulation
 
 #### KPC B isolate (MIC 1 mg/L)
+
+
 
 ```{r }
 #| label: fig-3a
@@ -183,6 +199,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 <br>
 
 #### KPC B isolate (MIC 1 mg/L) tested with analytical powder
@@ -197,6 +215,8 @@ kable_paper("hover", full_width = F, position = "left")
 ::: callout-note
 Experiments shown in [@fig-4] were performed using CAZ/AVI *analytical grade powder* at a fixed 4:1 ratio. Concentrations plotted on the X axis indicate concentrations of ceftazidime (4:1 relative to avibactam) in tubes
 :::
+
+
 
 ```{r }
 #| label: fig-4
@@ -227,6 +247,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 ------------------------------------------------------------------------
 
 #### KPC A isolate (MIC 2 mg/L) tested with commercial formulation
@@ -238,6 +260,8 @@ kable_paper("hover", full_width = F, position = "left")
 ::: callout-note
 Experiments plotted in [@fig-5] were performed using the commercial CAZ/AVI pharmaceutical formulation for *K. pneumoniae* KPC producing isolate A (MIC 2 mg/L)
 :::
+
+
 
 ```{r}
 #| label: fig-5
@@ -268,6 +292,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 <br>
 
 #### KPC A isolate (MIC 2 mg/L) tested with analytical powder
@@ -279,6 +305,8 @@ kable_paper("hover", full_width = F, position = "left")
 ::: callout-note
 Experiments reported in [@fig-6] performed using pure powder at a CAZ:AVI ratio of 4:1
 :::
+
+
 
 ```{r}
 #| label: fig-6
@@ -308,6 +336,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 <br>
 
 ------------------------------------------------------------------------
@@ -323,6 +353,8 @@ kable_paper("hover", full_width = F, position = "left")
 ::: callout-note
 Experiments performed in [@fig-7] utilized pure powder with a fixed avibactam concentration of 4 mg/L in all ceftazidime containing bottles.
 :::
+
+
 
 ```{r}
 #| label: fig-7
@@ -353,6 +385,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 <br>
 
 #### KPC B isolate (MIC 1 mg/L)
@@ -364,6 +398,8 @@ kable_paper("hover", full_width = F, position = "left")
 ::: callout-note
 Experiments shown in [@fig-8] were repeated using pure powder but with a fixed concentration of avibactam at 4 mg/L in all tubes
 :::
+
+
 
 ```{r}
 #| label: fig-8
@@ -394,6 +430,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 ::: callout-note
 ## Overall these data show Tpos is a robust PD endpoint and the relationship of ceftazidime/avibactam concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen.Although ED50/90 estimates were broadly similar if the commercial (pharmaceutical) and analytical powder formulations were tested, used of high-fixed concentrations of avibactam or testing at very high K. pneumoniae inocula resulted in broader concentration-effect curves and higher EC50/90 estimates
 :::
@@ -409,6 +447,8 @@ kable_paper("hover", full_width = F, position = "left")
 -   Analytical powder was used to produce serum concentration
 
 -   As shown in [@fig-9] , Tpos increased as meropenem concentrations surpassed the MIC, with an estimated pharmacodynamic parameters consistent with previous experiments that showed transition in the EC50/EC90 at simulated serum concentrations near the MIC as shown in [@tbl-9].
+
+
 
 ```{r}
 #| label: fig-9
@@ -439,7 +479,11 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 #### KPC B isolate (MIC )
+
+
 
 ```{r}
 #| label: fig-9b
@@ -470,11 +514,15 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 ------------------------------------------------------------------------
 
 ### Gentamicin
 
 #### KPC A isolate (MIC 2 mg/L)
+
+
 
 ```{r}
 #| label: fig-genta
@@ -505,7 +553,11 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 #### KPC B isolate (MIC 0.5 mg/L )
+
+
 
 ```{r}
 #| label: fig-gentb
@@ -536,6 +588,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 <br>
 
 ------------------------------------------------------------------------
@@ -543,6 +597,8 @@ kable_paper("hover", full_width = F, position = "left")
 ### Colistin
 
 #### KPC B isolate (MIC 0.125 mg/L)
+
+
 
 ```{r}
 #| label: fig-colib
@@ -573,9 +629,13 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 ------------------------------------------------------------------------
 
 ### Meropenem-vaborbactam
+
+
 
 ```{r}
 #| label: fig-vabob
@@ -606,6 +666,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+
+
 ------------------------------------------------------------------------
 
 ## Workpackage 1C: <br>Effect of combination antimicrobial exposure on Tpos
@@ -629,6 +691,8 @@ kable_paper("hover", full_width = F, position = "left")
 ### Results
 
 -   The results shown in [@fig-10] demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with and average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
+
+
 
 ```{r}
 #| label: fig-10
@@ -695,10 +759,14 @@ summary(rsb)
 
 ```
 
+
+
 <br>
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial formulation) plus gentamicin was tested against ***Klebsiella pneumonia*****\_KPC_A strain** in 5 replicate experiments using the same methodology.
 -   Results are shown in [@fig-11] **.**
+
+
 
 ```{r}
 #| label: fig-11
@@ -765,9 +833,15 @@ summary(rsb2)
 
 ```
 
+
+
 <br>
 
-#### Ceftazidime/avibactam plus aztreonam
+------------------------------------------------------------------------
+
+-   Ceftazidime/avibactam plus aztreonam
+
+
 
 ```{r}
 #| label: fig-12
@@ -810,3 +884,4 @@ summary(rsb3)
 
 
 ```
+
