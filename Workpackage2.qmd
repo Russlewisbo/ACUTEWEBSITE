@@ -7,6 +7,7 @@ format:
 execute:
   echo: true
   warning: false
+  freeze: true
 bibliography: references.bib
 csl: nature.csl
 ---
