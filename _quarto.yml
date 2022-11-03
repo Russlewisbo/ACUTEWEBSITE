@@ -8,10 +8,11 @@ website:
     style: "docked"
     search: true
     contents:
-      - index.qmd
-      - about.qmd
+      - Index.qmd
+      - About.qmd
       - Workpackage1.qmd
       - Workpackage2.qmd
+      - Timeline.qmd
       - Summary.qmd
       - Presentations.qmd
       - Publications.qmd
@@ -22,6 +23,5 @@ format:
     theme: cerulean
     css: styles.css
     toc: true
-
 editor: visual
 

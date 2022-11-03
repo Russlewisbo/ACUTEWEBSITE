@@ -1,0 +1,16 @@
+{
+  "hash": "e7cf237cc62b2d755cd33829eb655225",
+  "result": {
+    "markdown": "---\ntitle: \"Workpackage 2\"\ndate: \"10/20/2022\"\nformat: \n  html:\n    code-fold: true\nexecute:\n  echo: true\n  warning: false\n  freeze: true\nbibliography: references.bib\ncsl: nature.csl\n---\n\n\n## Package 1B\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(PKPDsim)\nlibrary(PKPDplot)\nlibrary (ggplot2)\npk1 <- new_ode_model(model = \"pk_2cmt_iv\") # ceftazidime\npk2 <- new_ode_model(model = \"pk_2cmt_iv\") # avibactam\np <- list(\n  CL = 6.95,\n  V  = 10.5,\n  Q  = 31.5,\n  V2 = 7.57)\n\np2 <- list(\n  CL = 10.2,\n  V  = 11.1,\n  Q  = 5.44,\n  V2 = 6.91)\nn <- 100\n\nomega <- cv_to_omega(list(CL=0.423, V=1.05, Q=0.315, V2=1.10))\n\nomega2 <- cv_to_omega(list(CL=0.591, V=1.07, Q=1.22, V2=6.91))\nr1 <- new_regimen(\n  amt = 2000,\n  interval = 8,\n  n = 5,\n  type = \"infusion\",\n  t_inf = c(2,2,2,2,2)\n)\n\nr2 <- new_regimen(\n  amt = 500,\n  interval = 8,\n  n = 5,\n  type = \"infusion\",\n  t_inf = c(2,2,2,2,2)\n)\ndat <- sim(\n  ode = pk1,\n  parameters = p,\n  omega = omega,\n  n_ind = 20,\n  res_var = list(prop=0.1, add=7.5),\n  regimen = r1, \n  covariates = list(\"SCR\" = new_covariate(value = 80)), output_include = list(parameters=TRUE, variable=TRUE, covariates=TRUE)\n)\n\ndat2 <- sim(\n  ode = pk2,\n  parameters = p2,\n  omega = omega2,\n  n_ind = 20,\n  res_var = list(prop=0.17, add=0.5),\n  regimen = r2, \n  covariates = list(\"SCR\" = new_covariate(value = 80)), output_include = list(parameters=TRUE, variable=TRUE, covariates=TRUE)\n)\n\nplot(dat, show_population = list(obs = TRUE, spaghetti = FALSE, ci = TRUE, \n                                 median =TRUE, regimen = TRUE), ci = c(0.05, 0.95))\n```\n\n::: {.cell-output-display}\n![](Workpackage2_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "Workpackage2_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
