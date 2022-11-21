@@ -80,12 +80,12 @@ This workpackage explores how ceftazidime/avibactam concentrations, alone or in 
 
 The effect of increasing fixed ceftazidime/avibactam (CAZ/AVI) concentrations (4:1) on Tpos was investigated at an inoculum of 1x10^4^ CFU/mL of *K. pneumoniae* KPC_B (MIC 1 mg/L) and *K. pneumoniae* NDM producing isolate (negative control) [@tbl-table2]. All experiments were performed in \> 5 replicates with an incubation period of 24 hours.
 
-### Results
+### Ceftazidime-Avibactam
 
 As shown in [@fig-2], a marked increased in the Tpos for KPC_B from \< 10 hrs to [\>]{.underline} 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos \< 10hr at all test concentrations with lack of antimicrobial activity. Trends in Tpos relative to antibiotic exposure were fitted by Loess.
 
 ::: callout-note
-Drug concentrations reported in figures represent the concentration of antibiotic injected (1 mL) into the bottle- "simulating" the antibiotic concentrations that would be detected in the bloodstream. These concentrations do not account for 40 mL growth median and inoculum (1 mL) already present in the bottle= total volume 42 mL.
+Drug concentrations reported in figures represent the concentration of antibiotic injected (1 mL) into the bottle- "simulating" the antibiotic concentrations that would be detected in the bloodstream. Hence, these concentrations do not reflect the final antibiotic test concentration per 42 mL.
 :::
 
 ```{r}
@@ -94,23 +94,23 @@ Drug concentrations reported in figures represent the concentration of antibioti
 
 library (ggplot2)
 theme_set(theme_bw())
-ceftaz <- read.csv("~/Desktop/ACUTEWEBSITE/datasets/ceftazidime.csv")
-ggplot(ceftaz, aes(x=conc, y=tpos, color=isolate, shape=isolate)) + 
-  geom_point(size=4, alpha = 0.7)+ 
+ceftaz <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_single/ceftazidime.csv")
+ggplot(ceftaz, aes(x=conc_s, y=tpos, color=isolate, shape=isolate)) + 
+  geom_point(size=4, alpha = 0.7) + 
   geom_smooth(aes(linetype=isolate), method= loess, color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE ) +
-scale_x_log10(name="CAZ/AVI, mg/L") +
+scale_x_log10(name="CAZ/AVI test conc, mg/L") +
 scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
 
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|------------------------|------------------|------------------------------|
+|------------------------|-------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
 : Isolates used for testing {#tbl-table2}
 
-#### KPC B isolate (MIC 1 mg/L) tested with commercial pharmaceutical formulation
+##### KPC B isolate (MIC 1 mg/L) tested with commercial pharmaceutical formulation
 
 -   The relationship between ceftazidime/avibactam concentrations and Tpos were analyzed by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) using the commercial Avycaz (Zavicefta) formulation in at least 5 replicate experiments performed on separate days.
 -   Bottles were incubated with 1x10^4^ *Klebsiella pneumoniae* KPC-B strain and incubated at 37°C for 24 hours. Tpos positivity was registered using the BACTEC Alert/3D software
@@ -128,9 +128,9 @@ Experiments shown in [@fig-3] were performed using commercial CAZ/AVI pharmaceut
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_com.xlsx")
-fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit1, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
+caz_avi_4 <- read_excel("datasets_single/kpcb_caz_avi_com.xlsx")
+fit4 <- drda(tpos ~ ctz_s, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit1, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
@@ -143,16 +143,16 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_com.xlsx")
-fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
+caz_avi_4 <- read_excel("datasets_single/kpcb_caz_avi_com.xlsx")
+fit4 <- drda(tpos ~ ctz_s, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
 ed<-effective_dose(fit1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-### Inoculum effects on ceftazidime/avibactam targets with commercial pharmaceutical formulation
+#### Inoculum effects on ceftazidime/avibactam targets with commercial pharmaceutical formulation
 
-#### KPC B isolate (MIC 1 mg/L)
+##### KPC B isolate (MIC 1 mg/L)
 
 ```{r }
 #| label: fig-3a
@@ -161,9 +161,9 @@ kable_paper("hover", full_width = F, position = "left")
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_com_hinoc.xlsx")
-fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit1, xlab = "CAZ/AVI Serum (mg/L)", ylab = "Tpos (hr)")
+caz_avi_5 <- read_excel("datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
+fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit1, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
@@ -176,8 +176,8 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_com_hinoc.xlsx")
-fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
+caz_avi_5 <- read_excel("datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
+fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
 ed<-effective_dose(fit1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
@@ -185,7 +185,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
-#### KPC B isolate (MIC 1 mg/L) tested with analytical powder
+##### KPC B isolate (MIC 1 mg/L) tested with analytical powder
 
 -   The relationship between ceftazidime/avibactam concentrations and Tpos were repeated by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) *using the analytical grade powder instead of the commercial pharmaceutical formulation.* Experiments were performed in at least 5 replicate experiments on separate days.
 -   Bottles were incubated with 1x10^4^ *Klebsiella pneumoniae* KPC-B strain and incubated at 37°C for 24 hours. Tpos positivity was registered using the BACTEC Alert/3D software
@@ -205,9 +205,9 @@ Experiments shown in [@fig-4] were performed using CAZ/AVI *analytical grade pow
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_powder_4-1.xlsx")
-fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit1, xlab = "CAZ/AVI serum (mg/L)", ylab = "Tpos (hr)")
+caz_avi_6 <- read_excel("datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+fit6 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit6, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
@@ -220,8 +220,8 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_4 <- read_excel("datasets/kpcb_caz_avi_powder_4-1.xlsx")
-fit1 <- drda(tpos ~ ctz, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
+caz_avi_6 <- read_excel("datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+fit6 <- drda(tpos ~ ctz_s, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
 ed<-effective_dose(fit1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
@@ -246,9 +246,9 @@ Experiments plotted in [@fig-5] were performed using the commercial CAZ/AVI phar
 ## a four-parameter logistic regression model is fit to ceftazidime concencentrations to estiamted PD parameters
 library (readxl)
 library(drda)
-caz_avi_6 <- read_excel("datasets/kpca_caz_avi_com.xlsx")
-fit3 <- drda(tpos ~ ctz, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit3, xlab = "CAZ/AVI serum (mg/L)", ylab = "Tpos (hr)")
+caz_avi_7 <- read_excel("datasets_single/kpca_caz_avi_com.xlsx")
+fit7 <- drda(tpos ~ ctz_s, data=caz_avi_7, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit7, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -261,9 +261,9 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_6 <- read_excel("datasets/kpca_caz_avi_com.xlsx")
-fit3 <- drda(tpos ~ ctz, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit3, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+caz_avi_7 <- read_excel("datasets_single/kpca_caz_avi_com.xlsx")
+fit7 <- drda(tpos ~ ctz_s, data=caz_avi_7, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit7, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
