@@ -708,15 +708,15 @@ library(broom)
 library(kableExtra)
 set.seed(12345)
 cutoff <- 0.95
-caz_gent_kpcb2 <- read.csv("~/Desktop/ACUTEWEBSITE/datasets/caz_gent_kpcb2.csv")
+caz_gent_kpcb <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/caz_gent_kpcb.csv")
 ## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
-marginalFit <- fitMarginals(caz_gent_kpcb2, method = "optim",                 
+marginalFit <- fitMarginals(caz_gent_kpcb, method = "optim",                 
                             fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
                             names = c("CTZ/AVI", "GENT"))
 summary(marginalFit)
 ## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum contrastined at 24 hours
 plot(marginalFit) + ggtitle(paste("Ceftazidime/Avibactam + Gentamicin"))
-rs <- fitSurface(caz_gent_kpcb2, marginalFit,
+rs <- fitSurface(caz_gent_kpcb, marginalFit,
                  null_model = "bliss",
                  B.CP = 50, statistic = "none", parallel = FALSE)
 summary(rs)
@@ -726,13 +726,13 @@ rglwidget()
 
 
 ## mean R statistic evaluates how the test evaluates how the predicted response surface based on a specified null model differs from the observed one. If the null hypothesis is rejected, this test suggests that at least some dose combinations may exhibit synergistic or antagonistic behaviour. The meanR test is not designed to pinpoint which combinations produce these effects nor what type of deviating effect is present.
-meanR_N <-fitSurface(caz_gent_kpcb2, marginalFit, statistic="meanR",CP=rs$CP, B.B=20, parallel = FALSE)
+meanR_N <-fitSurface(caz_gent_kpcb, marginalFit, statistic="meanR",CP=rs$CP, B.B=20, parallel = FALSE)
 
 # maxR test allows to evaluate presence of synergistic/antagonistic effects for each dose combination and as such provides a point-by-point classification.
-maxR_N <- fitSurface(caz_gent_kpcb2, marginalFit,
+maxR_N <- fitSurface(caz_gent_kpcb, marginalFit,
                      statistic = "maxR", CP = rs$CP, B.B = 20,
                      parallel = FALSE)
-maxR_B <- fitSurface(caz_gent_kpcb2, marginalFit,
+maxR_B <- fitSurface(caz_gent_kpcb, marginalFit,
                      statistic = "maxR", CP = rs$CP, B.B = 20,
                      parallel = FALSE)
 maxR_both <- rbind(summary(maxR_N$maxR)$totals,
@@ -745,12 +745,12 @@ contour(maxR_B,
 
 plotConfInt(maxR_B, color ="effect-size")
 
-rsh <- fitSurface(caz_gent_kpcb2, marginalFit,
+rsh <- fitSurface(caz_gent_kpcb, marginalFit,
                   null_model = "hsa",
                   B.CP = 50, statistic = "both", parallel = FALSE)
 summary(rsh)
 
-rsb <- fitSurface(caz_gent_kpcb2, marginalFit, 
+rsb <- fitSurface(caz_gent_kpcb, marginalFit, 
                   null_model = "bliss",
                   B.CP = 50, statistic = "both", parallel = FALSE)
 summary(rsb)
@@ -778,7 +778,7 @@ library(broom)
 library(kableExtra)
 set.seed(12345)
 cutoff <- 0.95
-caz_gent_kpca2 <- read.csv("~/Desktop/ACUTEWEBSITE/datasets/caz_gent_kpca2.csv")
+caz_gent_kpca2 <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/caz_gent_kpca.csv")
 ## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
 marginalFit2 <- fitMarginals(caz_gent_kpca2, method = "optim",                 
                             fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
