@@ -286,9 +286,9 @@ Experiments reported in [@fig-6] performed using pure powder at a CAZ:AVI ratio 
 
 library (readxl)
 library(drda)
-caz_avi_5 <- read_excel("datasets/kpca_caz_avi_powder_4-1.xlsx")
-fit2 <- drda(tpos ~ ctz, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit2, xlab = "CAZ/AVI serum (mg/L)", ylab = "Tpos (hr)")
+caz_avi_8 <- read_excel("datasets_single/kpca_caz_avi_powder_4-1.xlsx")
+fit8 <- drda(tpos ~ ctz_s, data=caz_avi_8, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit8, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
@@ -301,9 +301,9 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_5 <- read_excel("datasets/kpca_caz_avi_powder_4-1.xlsx")
-fit2 <- drda(tpos ~ ctz, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit2, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+caz_avi_8 <- read_excel("datasets_single/kpca_caz_avi_powder_4-1.xlsx")
+fit8 <- drda(tpos ~ ctz_s, data=caz_avi_8, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit8, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -314,7 +314,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ### Impact of testing fixed avibactam concentrations on pharmacodynamic estimates
 
-#### KPC A isolate (MIC 2 mg/L)
+##### KPC A isolate (MIC 2 mg/L)
 
 -   We further explored how the results would change if a single fixed concentration of avibactam (4 mg/L) was used in all tubes. Experiments were performed as described previously using the same method and the analytical-grade powder of ceftazidime-avibactam formulation with at fixed avibactam concentrations against *Klebsiella pneumoniae* KPC B isolate (ceftazidime/avibactam MIC 1 mg/L).
 
@@ -331,9 +331,9 @@ Experiments performed in [@fig-7] utilized pure powder with a fixed avibactam co
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_7 <- read_excel("datasets/kpca_caz_avi_powder_fix4.xlsx")
-fit4 <- drda(tpos ~ ctz, data=caz_avi_7, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit4, xlab = "CAZ/AVI serum (mg/L)", ylab = "Tpos (hr)")
+caz_avi_9 <- read_excel("datasets_single/kpca_caz_avi_powder_fix4.xlsx")
+fit9 <- drda(tpos ~ ctz_s, data=caz_avi_9, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit9, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -341,21 +341,21 @@ plot(fit4, xlab = "CAZ/AVI serum (mg/L)", ylab = "Tpos (hr)")
 #| label: tbl-7 
 #| tbl-cap: "Pharmacodynamic estimates"
 
-## Analysis is repeated to produce a table reporting estimated EC10-EC95 parametersestiamtes plus 95% CI 
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estiamtes plus 95% CI 
 library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_7 <- read_excel("datasets/kpca_caz_avi_powder_fix4.xlsx")
-fit4 <- drda(tpos ~ ctz, data=caz_avi_7, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit4, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+caz_avi_9 <- read_excel("datasets_single/kpca_caz_avi_powder_fix4.xlsx")
+fit9 <- drda(tpos ~ ctz_s, data=caz_avi_9, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit9, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
 <br>
 
-#### KPC B isolate (MIC 1 mg/L)
+##### KPC B isolate (MIC 1 mg/L)
 
 -   Similar experiments were repeated with the *Klebsiella pneumoniae* KPC B isolate (ceftazidime/avibactam MIC 1 mg/L).
 
@@ -372,9 +372,9 @@ Experiments shown in [@fig-8] were repeated using pure powder but with a fixed c
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_8 <- read_excel("datasets/kpcb_caz_avi_powder_fix4.xlsx")
-fit5<- drda(tpos ~ ctz, data=caz_avi_8, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit5, xlab = "CAZ/AVI serum (mg/L)", ylab = "Tpos (hr)")
+caz_avi_10 <- read_excel("datasets_single/kpcb_caz_avi_powder_fix4.xlsx")
+fit10<- drda(tpos ~ ctz_s, data=caz_avi_10, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit10, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -387,22 +387,20 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_8 <- read_excel("datasets/kpcb_caz_avi_powder_fix4.xlsx")
-fit5 <- drda(tpos ~ ctz, data=caz_avi_8, mean_function = "loglogistic4", max_iter = 1000)
+caz_avi_10 <- read_excel("datasets_single/kpcb_caz_avi_powder_fix4.xlsx")
+fit10 <- drda(tpos ~ ctz, data=caz_avi_10, mean_function = "loglogistic4", max_iter = 1000)
 ed<-effective_dose(fit5, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-::: callout-note
-## Overall these data show Tpos is a robust PD endpoint and the relationship of ceftazidime/avibactam concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen.Although ED50/90 estimates were broadly similar if the commercial (pharmaceutical) and analytical powder formulations were tested, used of high-fixed concentrations of avibactam or testing at very high K. pneumoniae inocula resulted in broader concentration-effect curves and higher EC50/90 estimates
-:::
+Overall these data show Tpos is a robust PD endpoint and the relationship of ceftazidime/avibactam concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen. Although ED50/90 estimates were broadly similar if the commercial (pharmaceutical) and analytical powder formulations were tested, used of high-fixed concentrations of avibactam or testing at very high K. pneumoniae inocula resulted in broader concentration-effect curves and higher EC50/90 estimates
 
 ------------------------------------------------------------------------
 
 ### Meropenem
 
-#### ATCC isolate (MIC )
+##### ATCC isolate (MIC 0.03 mg/L)
 
 -   The impact of increasing meropenem concentrations on Tpos observed with the ATCC ESBL producing *Klebsiella pneumoniae* was tested using similar methodology as previously described
 
@@ -417,9 +415,9 @@ kable_paper("hover", full_width = F, position = "left")
 ## a four-parameter logistic regression model is fit to meropenem concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-mero1 <- read_excel("datasets/ATCC_meropenem.xlsx")
-fit6 <- drda(tpos ~ mero, data=mero1, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit6, xlab = "Meropenem serum (mg/L)", ylab = "Tpos (hr)")
+mero <- read_excel("datasets_single/ATCC_meropenem.xlsx")
+fit11 <- drda(tpos ~ mero_s, data=mero, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit11, xlab = "Meropenem serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -432,25 +430,25 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-mero1 <- read_excel("datasets/ATCC_meropenem.xlsx")
-fit6 <- drda(tpos ~ mero, data=mero1, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit6, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+mero <- read_excel("datasets_single/ATCC_meropenem.xlsx")
+fit11 <- drda(tpos ~ mero_s, data=mero, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit11, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### KPC B isolate (MIC )
+##### KPC B isolate (MIC X?)
 
 ```{r}
 #| label: fig-9b
-#| fig-cap: "Pharmacodynamic relationship of Tpos to gentamicin concentrations"
+#| fig-cap: "Pharmacodynamic relationship of Tpos to meropenem concentrations"
 
 ## a four-parameter logistic regression model is fit to meropenem concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-mero2 <- read_excel("datasets/KPCB_meropenem.xlsx")
-fit7 <- drda(tpos ~ mero, data=mero2, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit7, xlab = "Meropenem serum (mg/L)", ylab = "Tpos (hr)")
+mero2 <- read_excel("datasets_single/KPCB_meropenem.xlsx")
+fit11 <- drda(tpos ~ mero_s, data=mero2, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit11, xlab = "Meropenem serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -463,9 +461,9 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-mero1 <- read_excel("datasets/KPCB_meropenem.xlsx")
-fit7 <- drda(tpos ~ mero, data=mero2, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit7, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+mero2 <- read_excel("datasets_single/KPCB_meropenem.xlsx")
+fit11 <- drda(tpos ~ mero_s, data=mero2, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit11, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -474,7 +472,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ### Gentamicin
 
-#### KPC A isolate (MIC 2 mg/L)
+##### KPC A isolate (MIC 2 mg/L)
 
 ```{r}
 #| label: fig-genta
@@ -483,9 +481,9 @@ kable_paper("hover", full_width = F, position = "left")
 ## a four-parameter logistic regression model is fit to gentamicin concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-gent1 <- read_excel("datasets/KPCA_gent.xlsx")
-fit8 <- drda(tpos ~ gent, data=gent1, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit8, xlab = "Gentamicin serum (mg/L)", ylab = "Tpos (hr)")
+gent1 <- read_excel("datasets_single/KPCA_gent.xlsx")
+fit12 <- drda(tpos ~ gent_s, data=gent1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit12, xlab = "Gentamicin serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -498,25 +496,25 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-gent1 <- read_excel("datasets/KPCA_gent.xlsx")
-fit8 <- drda(tpos ~ gent, data=gent1, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit8, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+gent1 <- read_excel("datasets_single/KPCA_gent.xlsx")
+fit12 <- drda(tpos ~ gent_s, data=gent1, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit12, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### KPC B isolate (MIC 0.5 mg/L )
+##### KPC B isolate (MIC 0.5 mg/L)
 
 ```{r}
 #| label: fig-gentb
-#| fig-cap: "Pharmacodynamic relationship of Tpos to meropenem concentrations"
+#| fig-cap: "Pharmacodynamic relationship of Tpos to gentamicin concentrations"
 
-## a four-parameter logistic regression model is fit to meropenem concentrations to estimated PD parameters
+## a four-parameter logistic regression model is fit to gentamicin concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-gent2 <- read_excel("datasets/KPCB_gent.xlsx")
-fit9 <- drda(tpos ~ gent, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit9, xlab = "Gentamicin serum (mg/L)", ylab = "Tpos (hr)")
+gent2 <- read_excel("datasets_single/KPCB_gent.xlsx")
+fit13 <- drda(tpos ~ gent_s, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit13, xlab = "Gentamicin serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -529,9 +527,9 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-gent2 <- read_excel("datasets/KPCB_gent.xlsx")
-fit9 <- drda(tpos ~ gent, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit9, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+gent2 <- read_excel("datasets_single/KPCB_gent.xlsx")
+fit13 <- drda(tpos ~ gent_s, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit13, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -551,9 +549,9 @@ kable_paper("hover", full_width = F, position = "left")
 ## a four-parameter logistic regression model is fit to colistin concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-coli1 <- read_excel("datasets/KPCB_coli.xlsx")
-fit10 <- drda(tpos ~ coli, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit10, xlab = "Colistin serum (mg/L)", ylab = "Tpos (hr)")
+coli1 <- read_excel("datasets_single/KPCB_coli.xlsx")
+fit13 <- drda(tpos ~ coli_s, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit13, xlab = "Colistin serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -566,9 +564,9 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-coli1 <- read_excel("datasets/KPCB_coli.xlsx")
-fit10 <- drda(tpos ~ coli, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit10, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+coli1 <- read_excel("datasets_single/KPCB_coli.xlsx")
+fit13 <- drda(tpos ~ coli_s, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit13, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -584,9 +582,9 @@ kable_paper("hover", full_width = F, position = "left")
 ## a four-parameter logistic regression model is fit to meropenem-vaborbactam concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-vabo1 <- read_excel("datasets/KPCB_vabo.xlsx")
-fit11 <- drda(tpos ~ vabo, data=vabo1, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit11, xlab = "Meropenem-vabobactam serum (mg/L)", ylab = "Tpos (hr)")
+vabo1 <- read_excel("datasets_single/KPCB_vabo.xlsx")
+fit14 <- drda(tpos ~ vabo_s, data=vabo1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit14, xlab = "Meropenem-vabobactam serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -599,12 +597,78 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-vabo1 <- read_excel("datasets/KPCB_vabo.xlsx")
-fit11 <- drda(tpos ~ vabo, data=vabo1, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit11, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+vabo1 <- read_excel("datasets_single/KPCB_vabo.xlsx")
+fit14 <- drda(tpos ~ vabo_s, data=vabo1, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit14, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
+
+------------------------------------------------------------------------
+
+### Tigecycline
+#### K. pneumonia KPC-A (MIC 0.75 mg/L)
+
+```{r}
+#| label: fig-tiga
+#| fig-cap: "Pharmacodynamic relationship of Tpos to tigecycline concentrations"
+
+## a four-parameter logistic regression model is fit to tigecycline concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+tig1 <- read_excel("datasets_single/kpca_tig.xlsx")
+fit15 <- drda(tpos ~ tig_s, data=tig1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit14, xlab = "Tigecycline serum conc. (mg/L)", ylab = "Tpos (hr)")
+
+```
+
+```{r}
+#| label: tbl-tiga
+#| tbl-cap: "Pharmacodynamic estimates"
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+tig1 <- read_excel("datasets_single/kpca_tig.xlsx")
+fit15 <- drda(tpos ~ tig_s, data=tig1, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit14, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
+#### K. pneumonia KPC-B (MIC 0.38 mg/L)
+
+```{r}
+#| label: fig-tigb
+#| fig-cap: "Pharmacodynamic relationship of Tpos to tigecycline concentrations"
+
+## a four-parameter logistic regression model is fit to tigecycline concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+tig2 <- read_excel("datasets_single/kpcb_tig.xlsx")
+fit16 <- drda(tpos ~ tig_s, data=tig2, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit16, xlab = "Tigecycline serum conc. (mg/L)", ylab = "Tpos (hr)")
+
+```
+
+```{r}
+#| label: tbl-tigb
+#| tbl-cap: "Pharmacodynamic estimates"
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+tig2 <- read_excel("datasets_single/kpca_tig.xlsx")
+fit16 <- drda(tpos ~ tig_s, data=tig2, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit16, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
 
 ------------------------------------------------------------------------
 

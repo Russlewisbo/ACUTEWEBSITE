@@ -40,7 +40,7 @@ date: "11/03/2022"
 -   Each day before testing, strains are thawed and incubated at 37°C for 18-24 hours.
 
 | Isolate                                  | Abbreviation | Enzyme       | Source           | Ceftazidime/Avibactam MIC (mg/L) | Gentamicin | Meropenem | Meropenem-Vaborbactam | Colistin |
-|-----------------------|-------------|-------------|-----------|-----------------------------|------------|-------------|-------------------|------------------|
+|------------------------------------------|--------------|--------------|------------------|----------------------------------|------------|-----------|-----------------------|----------|
 | *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | Reference strain | *MIC needed*                     |            |           |                       |          |
 | *Klebsiella pneumoniae* KPC- A           | KPC_A        | KPC-3        | Clinical isolate | 2                                |            |           |                       |          |
 | *Klebsiella pneumoniae* KPC- B           | KPC_B        | KPC-3        | Clinical isolate | 1                                |            |           |                       |          |
