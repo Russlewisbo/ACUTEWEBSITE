@@ -20,7 +20,7 @@ website:
       - Documentation.qmd
 format: 
   html:
-    theme: cerulean
+    theme: zephyr
     css: styles.css
     toc: true
 editor: visual
