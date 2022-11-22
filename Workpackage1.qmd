@@ -4,6 +4,7 @@ date: "11/2/2022"
 format: 
   html:
     code-fold: true
+    number-sections: true
 execute:
   echo: true
   warning: false
@@ -104,7 +105,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|------------------------|-------------------|------------------------------|
+|------------------------|-------------------|-----------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -130,7 +131,7 @@ library (readxl)
 library(drda)
 caz_avi_4 <- read_excel("datasets_single/kpcb_caz_avi_com.xlsx")
 fit4 <- drda(tpos ~ ctz_s, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit1, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
+plot(fit4, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
@@ -145,7 +146,7 @@ library(broom)
 library(kableExtra)
 caz_avi_4 <- read_excel("datasets_single/kpcb_caz_avi_com.xlsx")
 fit4 <- drda(tpos ~ ctz_s, data=caz_avi_4, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+ed<-effective_dose(fit4, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -163,7 +164,7 @@ library (readxl)
 library(drda)
 caz_avi_5 <- read_excel("datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
 fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit1, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
+plot(fit5, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
@@ -178,7 +179,7 @@ library(broom)
 library(kableExtra)
 caz_avi_5 <- read_excel("datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
 fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+ed<-effective_dose(fit5, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -222,7 +223,7 @@ library(broom)
 library(kableExtra)
 caz_avi_6 <- read_excel("datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
 fit6 <- drda(tpos ~ ctz_s, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+ed<-effective_dose(fit6, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -394,6 +395,8 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
+#### Summary of ceftazidime-avibactam experiments
+
 Overall these data show Tpos is a robust PD endpoint and the relationship of ceftazidime/avibactam concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen. Although ED50/90 estimates were broadly similar if the commercial (pharmaceutical) and analytical powder formulations were tested, used of high-fixed concentrations of avibactam or testing at very high K. pneumoniae inocula resulted in broader concentration-effect curves and higher EC50/90 estimates
 
 ------------------------------------------------------------------------
@@ -550,8 +553,8 @@ kable_paper("hover", full_width = F, position = "left")
 library (readxl)
 library(drda)
 coli1 <- read_excel("datasets_single/KPCB_coli.xlsx")
-fit13 <- drda(tpos ~ coli_s, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit13, xlab = "Colistin serum conc. (mg/L)", ylab = "Tpos (hr)")
+fit14 <- drda(tpos ~ coli_s, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit14, xlab = "Colistin serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -565,8 +568,8 @@ library(drda)
 library(broom)
 library(kableExtra)
 coli1 <- read_excel("datasets_single/KPCB_coli.xlsx")
-fit13 <- drda(tpos ~ coli_s, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit13, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+fit14 <- drda(tpos ~ coli_s, data=coli1, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit14, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -607,6 +610,7 @@ kable_paper("hover", full_width = F, position = "left")
 ------------------------------------------------------------------------
 
 ### Tigecycline
+
 #### K. pneumonia KPC-A (MIC 0.75 mg/L)
 
 ```{r}
@@ -618,7 +622,7 @@ library (readxl)
 library(drda)
 tig1 <- read_excel("datasets_single/kpca_tig.xlsx")
 fit15 <- drda(tpos ~ tig_s, data=tig1, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit14, xlab = "Tigecycline serum conc. (mg/L)", ylab = "Tpos (hr)")
+plot(fit15, xlab = "Tigecycline serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```
 
@@ -633,7 +637,7 @@ library(broom)
 library(kableExtra)
 tig1 <- read_excel("datasets_single/kpca_tig.xlsx")
 fit15 <- drda(tpos ~ tig_s, data=tig1, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit14, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+ed<-effective_dose(fit15, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -669,7 +673,6 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-
 ------------------------------------------------------------------------
 
 ## Workpackage 1C: <br>Effect of combination antimicrobial exposure on Tpos
@@ -682,7 +685,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 -   The effect of the antibiotic combinations Tpos combination was analyzed using a Bliss Independence Model of drug interaction using a workflow described for the [synergy analysis](https://cran.r-project.org/web/packages/BIGL/vignettes/analysis.html) using the BIGL package.[@BIGL]
 
--   The first step of the fitting procedure analyzed marginal data only, i.e. those observations within the experiment where one of the compounds is dosed at zero. For each compound the corresponding marginal doses are modelled using a 4-parameter logistic model
+-   The first step of the fitting procedure analyzed marginal data only, i.e.-those observations within the experiment where one of the compounds is dosed at zero. For each compound the corresponding marginal doses are modelled using a 4-parameter logistic model
 
 -   The marginal models will be estimated together using non-linear least squares estimation procedure. A simple sum-of-squared-residuals minimization driven by a default Nelder-Mead algorithm from `optim` minimizer was used.
 
@@ -763,7 +766,7 @@ summary(rsb)
 
 <br>
 
--   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial formulation) plus gentamicin was tested against ***Klebsiella pneumonia*****\_KPC_A strain** in 5 replicate experiments using the same methodology.
+-   The activity of combination ceftazidime/avibactam (4 to 1 ratio from analytical powder) plus gentamicin was tested against ***Klebsiella pneumonia*****\_KPC_A strain** in 5 replicate experiments using the same methodology.
 -   Results are shown in [@fig-11]**.**
 
 ```{r}
@@ -778,13 +781,13 @@ library(broom)
 library(kableExtra)
 set.seed(12345)
 cutoff <- 0.95
-caz_gent_kpca2 <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/caz_gent_kpca.csv")
+caz_gent_kpca2 <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kpca_gent_caz.csv")
 ## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
 marginalFit2 <- fitMarginals(caz_gent_kpca2, method = "optim",                 
                             fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
                             names = c("CTZ/AVI", "GENT"))
 summary(marginalFit2)
-## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum contrastined at 24 hours
+## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum constrained at 24 hours
 plot(marginalFit2) + ggtitle(paste("Ceftazidime/Avibactam + Gentamicin"))
 rs2 <- fitSurface(caz_gent_kpca2, marginalFit2,
                  null_model = "bliss",
@@ -849,7 +852,7 @@ library(broom)
 library(kableExtra)
 set.seed(12345)
 cutoff <- 0.95
-caz_azt <- read.csv("~/Desktop/ACUTEWEBSITE/datasets/caz_avi_azt.csv")
+caz_azt <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/ndm_cazavi_azt.csv")
 ## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
 marginalFit3 <- fitMarginals(caz_azt, method = "optim",                 
                             fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
@@ -875,6 +878,100 @@ rsb3 <- fitSurface(caz_azt, marginalFit3,
                   null_model = "bliss",
                   B.CP = 50, statistic = "both", parallel = FALSE)
 summary(rsb3)
+
+
+```
+
+<br>
+
+#### Ceftazidime/avibactam plus colistin
+
+Results are shown in [@fig-13].
+
+```{r}
+#| label: fig-13
+#| fig-cap: "Effect of combined ceftazidime/avibactam and colistin effects on Tpos"
+
+library(BIGL)
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(broom)
+library(kableExtra)
+set.seed(12345)
+cutoff <- 0.95
+caz_col <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kpcb_colistin_cazavi.csv")
+## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
+marginalFit4 <- fitMarginals(caz_col, method = "optim",                 
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
+                            names = c("CTZ/AVI", "COL"))
+summary(marginalFit4)
+## Plotting marginal model for ceftazidime/avibactam and colistin, minimum constrained at 9 hrs and maximum constrained at 24 hours
+plot(marginalFit4) + ggtitle(paste("Ceftazidime/Avibactam + Colistin"))
+rs4 <- fitSurface(caz_col, marginalFit4,
+                 null_model = "bliss",
+                 B.CP = 50, statistic = "none", parallel = FALSE)
+summary(rs4)
+plot(rs4, legend = FALSE, main = "")
+view3d(0, -75)
+rglwidget()
+
+
+rsh4 <- fitSurface(caz_col, marginalFit4,
+                  null_model = "hsa",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsh4)
+
+rsb4 <- fitSurface(caz_col, marginalFit4, 
+                  null_model = "bliss",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsb4)
+
+
+```
+
+#### Ceftazidime/avibactam plus tigecycline
+
+Results are shown in [@fig-14].
+
+```{r}
+#| label: fig-14
+#| fig-cap: "Effect of combined ceftazidime/avibactam and tigecycline effects on Tpos"
+
+library(BIGL)
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(broom)
+library(kableExtra)
+set.seed(12345)
+cutoff <- 0.95
+caz_tig <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kcb_cazavi_tig.csv")
+## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
+marginalFit5 <- fitMarginals(caz_tig, method = "optim",                 
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
+                            names = c("CTZ/AVI", "TIG"))
+summary(marginalFit5)
+## Plotting marginal model for ceftazidime/avibactam and tigecycline, minimum constrained at 9 hrs and maximum constrained at 24 hours
+plot(marginalFit5) + ggtitle(paste("Ceftazidime/Avibactam + Tigecycline"))
+rs5 <- fitSurface(caz_tig, marginalFit5,
+                 null_model = "bliss",
+                 B.CP = 50, statistic = "none", parallel = FALSE)
+summary(rs5)
+plot(rs5, legend = FALSE, main = "")
+view3d(0, -75)
+rglwidget()
+
+
+rsh5 <- fitSurface(caz_tig, marginalFit5,
+                  null_model = "hsa",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsh5)
+
+rsb5 <- fitSurface(caz_tig, marginalFit5, 
+                  null_model = "bliss",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsb5)
 
 
 ```
