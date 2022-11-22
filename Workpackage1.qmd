@@ -17,7 +17,7 @@ csl: nature.csl
 
 ### Methods
 
-In this package we will establishing the quantitative relationship of Tpos and KPC- cabrapenemase producing *Klebsiella pneumoniae* inoculum in blood culture bottles. <br> The methods for the assay are a modification of those originally proposed by Kaltsas et al.[@kaltsas2005] Detailed procedures can be found at this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.[@Clinical_Laboratory_Standards_Institute1999-iy; @Clinical_Laboratory_Standards_Institute1999-iya]
+In this package we will establishing the quantitative relationship of Tpos and KPC- carbapenemase producing *Klebsiella pneumoniae* inoculum in blood culture bottles. <br> The methods for the assay are a modification of those originally proposed by Kaltsas et al.[@kaltsas2005] Detailed procedures can be found at this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.[@Clinical_Laboratory_Standards_Institute1999-iy; @Clinical_Laboratory_Standards_Institute1999-iya]
 
 -   Briefly, tubes containing 1.8 mL of pooled healthy human serum are inoculated with 0.2 mL of a series of ten-fold dilutions (5x10^1^ to 5x10^7^ CFU/mL) of the standardised inoculum of each test indicator strains.
 -   The sera were are then transferred into BacT⁄ALERT bottles ***without antibiotic inactivating matrix*** (Biomérieux Inc) for aerobic incubation for 24 hours and monitored for time to positivity.
@@ -113,13 +113,13 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 
 ##### KPC B isolate (MIC 1 mg/L) tested with commercial pharmaceutical formulation
 
--   The relationship between ceftazidime/avibactam concentrations and Tpos were analyzed by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) using the commercial Avycaz (Zavicefta) formulation in at least 5 replicate experiments performed on separate days.
--   Bottles were incubated with 1x10^4^ *Klebsiella pneumoniae* KPC-B strain and incubated at 37°C for 24 hours. Tpos positivity was registered using the BACTEC Alert/3D software
+-   The relationship between ceftazidime/avibactam "simulated" serum concentrations and Tpos were analyzed by testing increasing concentrations of ceftazidime (0-8 mg/L) and avibactam (fixed ratio 4:1) using the commercial Avycaz (Zavicefta) formulation in at least 5 replicate experiments performed on separate days.
+-   Bottles were incubated with 1x10^4^ *Klebsiella pneumoniae* KPC_B strain and incubated at 37°C for 24 hours. Tpos positivity was registered using the BACTEC Alert/3D software
 -   Tpos data versus ceftazidime/avibactam concentrations were then fit to a 4-parameter logistic regression model using the Dose-Response Data Analysis (DRDA) package to estimate PD endpoints.[@drda] Regression results were extracted using the Broom [@broom] and Kableextra [@kableExtra] packages.
--   Results of the pharmacodynamic analysis are shown in [@fig-3]. Ceftazidime/avibactam exhibited a steep Tpos response from and EC~50~ of 2.10 (95% CI 2.08-2.12) to and EC~90~ 2.39 (2.33-2.45). As shown in [@tbl-3], the transitional portion of the dose-response curve occurred 1-dilution above the MIC (1 mg/L) that was determined by Etest.
+-   Results of the pharmacodynamic analysis are shown in [@fig-3]. Ceftazidime/avibactam exhibited a steep Tpos response from and EC~50~ of 83.89 (95% CI 83.06-84.74) to and EC~90~ 95.5 (93.1-97.99). As shown in [@tbl-3], the transitional portion of the dose-response curve occurred 1-dilution above the MIC (1 mg/L) at final concentration in the bottle (2 mg/L) that was determined by Etest.
 
 ::: callout-note
-Experiments shown in [@fig-3] were performed using commercial CAZ/AVI pharmaceutical formulation not analytical powder. Concentrations plotted on the X axis indicate concentrations of ceftazidime (4:1 relative to avibactam) in tubes
+Experiments shown in [@fig-3] were performed using commercial CAZ/AVI pharmaceutical formulation not analytical powder. Concentrations plotted on the X axis indicate simulated serum concentrations of ceftazidime (4:1 relative to avibactam) in tubes
 :::
 
 ```{r }
@@ -154,6 +154,8 @@ kable_paper("hover", full_width = F, position = "left")
 #### Inoculum effects on ceftazidime/avibactam targets with commercial pharmaceutical formulation
 
 ##### KPC B isolate (MIC 1 mg/L)
+
+We examined how the relationship of Tpos vs. ceftazidime/avibactam concentrations changes when tested against a higher inoculum (1x10^7^ CFU/mL). The same methodology as described above was used for testing. As shown in [@fig-3a] and [@tbl-3a] the EC~50~ and EC~90~ were marginally higher at 167 and 342, with a more shallow dose-response relationship.
 
 ```{r }
 #| label: fig-3a
@@ -440,7 +442,7 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-##### KPC B isolate (MIC X?)
+##### KPC B isolate (MIC 32)
 
 ```{r}
 #| label: fig-9b
@@ -469,6 +471,39 @@ fit11 <- drda(tpos ~ mero_s, data=mero2, mean_function = "loglogistic4", max_ite
 ed<-effective_dose(fit11, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
+```
+
+##### Correlation between Tpos and Serum Conc/MIC ratio
+
+```{r}
+#| label: fig-1a
+#| fig-cap: "Relationship of time-to-positivity (Tpos) versus meropenem Serum/MIC"
+
+
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+mero_mic <- read_excel("datasets_single/meropenem_drug_mic.xlsx")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig2 <-ggplot(mero_mic, aes(x=serum_MIC, y=tpos, color=isolate, shape=isolate, fill=isolate)) + geom_point(size=4, alpha = 0.5) + 
+scale_x_log10() +
+scale_y_continuous(name="Tpos (hr)", limits=c(4,24)) +
+theme(legend.text=element_text(size=12))
+fig2
+```
+
+```{r}
+#| label: fig-1b
+#| fig-cap: "Pharmacodynamic relationship of Tpos to gentamicin concentrations"
+
+## a four-parameter logistic regression model is fit to gentamicin concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+mero_c1 <- read_excel("datasets_single/meropenem_drug_mic.xlsx")
+fitmero <- drda(tpos ~ serum_mic, data=mero mean_function = "loglogistic4", max_iter = 1000)
+plot(fit12, xlab = "Gentamicin serum conc. (mg/L)", ylab = "Tpos (hr)")
+
 ```
 
 ------------------------------------------------------------------------
