@@ -105,7 +105,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|------------------------|-------------------|-----------------------------|
+|------------------------|-------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -422,7 +422,7 @@ library (readxl)
 library(drda)
 mero <- read_excel("datasets_single/ATCC_meropenem.xlsx")
 fit11 <- drda(tpos ~ mero_s, data=mero, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit11, xlab = "Meropenem serum conc. (mg/L)", ylab = "Tpos (hr)")
+plot(fit11, xlab = "Meropenem serum conc. (mg/L)", ylab = "Tpos (hr)", xlim =c(0,100))
 
 ```
 
@@ -453,7 +453,7 @@ library (readxl)
 library(drda)
 mero2 <- read_excel("datasets_single/KPCB_meropenem.xlsx")
 fit11 <- drda(tpos ~ mero_s, data=mero2, mean_function = "loglogistic4", max_iter = 1000)
-plot(fit11, xlab = "Meropenem serum conc. (mg/L)", ylab = "Tpos (hr)")
+plot(fit11, xlab = "Meropenem serum conc. (mg/L)", ylab = "Tpos (hr)", xlim =c(0,100))
 
 ```
 
@@ -472,6 +472,8 @@ ed<-effective_dose(fit11, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
+
+![](curvecomparison.png){fig-align="center"}
 
 ##### Correlation between Tpos and Serum Conc/MIC ratio
 
@@ -493,18 +495,9 @@ theme(legend.text=element_text(size=12))
 fig2
 ```
 
-```{r}
-#| label: fig-1b
-#| fig-cap: "Pharmacodynamic relationship of Tpos to gentamicin concentrations"
+A comparison of the concentration-response curves confirms
 
-## a four-parameter logistic regression model is fit to gentamicin concentrations to estimated PD parameters
-library (readxl)
-library(drda)
-mero_c1 <- read_excel("datasets_single/meropenem_drug_mic.xlsx")
-fitmero <- drda(tpos ~ serum_mic, data=mero mean_function = "loglogistic4", max_iter = 1000)
-plot(fit12, xlab = "Gentamicin serum conc. (mg/L)", ylab = "Tpos (hr)")
-
-```
+![](curvecomparison.tif){fig-align="center"}
 
 ------------------------------------------------------------------------
 
@@ -801,8 +794,8 @@ summary(rsb)
 
 <br>
 
--   The activity of combination ceftazidime/avibactam (4 to 1 ratio from analytical powder) plus gentamicin was tested against ***Klebsiella pneumonia*****\_KPC_A strain** in 5 replicate experiments using the same methodology.
--   Results are shown in [@fig-11]**.**
+-   The activity of combination ceftazidime/avibactam (4 to 1 ratio from analytical powder) plus gentamicin was tested against *Klebsiella pneumonia* KPC_A strain in 5 replicate experiments using the same methodology.
+-   Results are shown in [@fig-11].
 
 ```{r}
 #| label: fig-11
