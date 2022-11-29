@@ -103,7 +103,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|------------------------|-------------------|-----------------------------|
+|------------------------|-------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -171,7 +171,7 @@ Experiments shown in [@fig-4] were performed using CAZ/AVI *analytical grade pow
 library (readxl)
 library(drda)
 caz_avi_6 <- read_excel("datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
-fit6 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
+fit6 <- drda(tpos ~ ctz_s, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
 plot(fit6, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
@@ -347,14 +347,14 @@ plot(fit10, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 #| label: tbl-8
 #| tbl-cap: "Pharmacodynamic estimates"
 
-## Analysis is repeated to produce a table reporting estimated EC10-EC95 parametersestiamtes plus 95% CI 
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameters estiamtes plus 95% CI 
 library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
 caz_avi_10 <- read_excel("datasets_single/kpcb_caz_avi_powder_fix4.xlsx")
 fit10 <- drda(tpos ~ ctz, data=caz_avi_10, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit5, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+ed<-effective_dose(fit10, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -400,7 +400,7 @@ These data demonstrate that Tpos is a robust PD endpoint and the relationship of
 
 ------------------------------------------------------------------------
 
-### Meropenem
+ ### Meropenem
 
 ##### ATCC isolate (MIC 0.03 mg/L)
 
@@ -470,34 +470,22 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-<br> A comparison of meropenem activity against the ATCC ESBL-producing reference (MIC 0.03 mg/L) and KPC-carbapenemase producing K. pneumoniae isolates are shown in [@fig-9c]. The meropenem EC~50~ measured by Tpos was 23-fold higher for the KPC-carbapenemase producing isolate versus the the ESBL-producing ATCC isolate. However some variability in the response was noted for the KPC-B isolate at the simulated 20 mg/L and 80 mg/mL concentrations-*experiments are currently being repeated*. These data suggest that it may be possible to substitute *more sensitive indicator isolates* and to predict pharmacodynamic responses of isolates with higher MICs.
+<br> A comparison of meropenem activity against the ATCC ESBL-producing reference (MIC 0.03 mg/L) and KPC-carbapenemase producing K. pneumoniae isolates are shown in [@fig-comp]. The meropenem EC~50~ measured by Tpos was 23-fold higher for the KPC-carbapenemase producing isolate versus the the ESBL-producing ATCC isolate. Despite variability in the response was noted for the KPC-B isolate at 20 mg/L and 80 mg/mL concentrations (*experiments are currently being repeated*), the EC50 were nearly identical (indicated by the dotted lines) when corrected for pathogen MIC. These data suggest that it may be possible to substitute *sensitive indicator isolates with low MICs* to predict pharmacodynamic responses of isolates with higher MICs.
 
-![](curvecomparison.png){fig-align="center", #fig-9c}
+```{r }
+#| label: fig-comp
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
 
-##### Correlation between Tpos and Serum Conc/MIC ratio
-
-```{r}
-#| label: fig-1a
-#| fig-cap: "Relationship of time-to-positivity (Tpos) versus meropenem Serum/MIC"
-
-
-library (ggplot2)
-library(scales)
-theme_set(theme_bw())
-## import raw data from excel file
- meropenem_drug_mic <- read_excel("datasets_single/meropenem_drug_mic.xlsx")
- meropenem_drug_mic <- as.data.frame(meropenem_drug_mic)
-## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
-fig2 <-ggplot(meropenem_drug_mic, aes(x=serum_MIC, y=tpos, color=isolate, shape=isolate, fill=isolate)) + geom_point(size=4, alpha = 0.5) + 
-scale_x_log10() +
-scale_y_continuous(name="Tpos (hr)", limits=c(4,24)) +
-theme(legend.text=element_text(size=12))
-fig2 + theme_bw(base_size = 14)+ scale_x_log10(name="Serum/MIC", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+mero2 <- read_excel("datasets_single/KPCB_meropenem.xlsx")
+mero <- read_excel("datasets_single/ATCC_meropenem.xlsx")
+fit4a <- drda(tpos ~ mero, mero, mean_function = "loglogistic4", max_iter = 1000)
+fit4b <- drda(tpos ~ mero, mero2, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit4a, fit4b, xlab = "Meropenem conc. (mg/L)", ylab = "Tpos",cex = 0.9,legend = c("KP ATCC ESBL", "KP KPC_2"))
 ```
 
-A comparison of the concentration-response curves confirms that the change in the ED50 is relative proportional to the MIC [@fig-1b].
-
-![](curvecomparison.png){fig-align="center" width="800", #fig-1b}
 
 ### Summary of meropenem experiments
 

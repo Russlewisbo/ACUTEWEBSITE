@@ -42,7 +42,7 @@ date: "11/22/2022"
 -   MICs were confirmed by Etest using the manufacturer's recommendations
 
 | Isolate                                  | Abbreviation | Enzyme       | Source           | Ceftazidime/Avibactam MIC (mg/L) | Gentamicin | Meropenem | Tigecycline | Meropenem-Vaborbactam | Colistin |
-|--------|--------|--------|--------|--------|--------|--------|----------|--------|--------|
+|------------------------------------------|--------------|--------------|------------------|----------------------------------|------------|-----------|-------------|-----------------------|----------|
 | *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | Reference strain | 0.03                             |            | 0.03      |             |                       |          |
 | *Klebsiella pneumoniae* KPC- A           | KPC_A        | KPC-3        | Clinical isolate | 2                                | 2          |           | 0.75        |                       | 0.38     |
 | *Klebsiella pneumoniae* KPC- B           | KPC_B        | KPC-3        | Clinical isolate | 1                                | 0.5        | 32        | 0.38        |                       |          |
