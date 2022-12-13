@@ -41,14 +41,22 @@ date: "11/22/2022"
 
 -   MICs were confirmed by Etest using the manufacturer's recommendations
 
-| Isolate                                  | Abbreviation | Enzyme       | Source           | Ceftazidime/Avibactam MIC (mg/L) | Gentamicin | Meropenem | Tigecycline | Meropenem-Vaborbactam | Colistin |
-|------------------------------------------|--------------|--------------|------------------|----------------------------------|------------|-----------|-------------|-----------------------|----------|
-| *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | Reference strain | 0.03                             |            | 0.03      |             |                       |          |
-| *Klebsiella pneumoniae* KPC- A           | KPC_A        | KPC-3        | Clinical isolate | 2                                | 2          |           | 0.75        |                       | 0.38     |
-| *Klebsiella pneumoniae* KPC- B           | KPC_B        | KPC-3        | Clinical isolate | 1                                | 0.5        | 32        | 0.38        |                       |          |
-| *Klebsiella pneumoniae* KPC- C           | KPC_C        | KPC-3        | Clinical isolate |                                  |            | \>256     |             |                       |          |
-| *Klebsiella pneumoniae* NDM              | NDM          | NDM-2        | Clinical isolate | \>256                            |            | \>256     |             |                       |          |
-| *Klebsiella pneumonia* VIM               | VIM          | VIM          | Clinical isolate | \>256                            |            | \>256     |             |                       |          |
+| Isolate                                  | Abbreviation | Enzyme       | Source           | Ceftazidime/Avibactam MIC (mg/L) | Gentamicin | Meropenem | Tigecycline | Meropenem-Vaborbactam | Colistin | Ciprofloxacin | Ampicillin |
+|------------------------------------------|--------------|--------------|------------------|----------------------------------|------------|-----------|-------------|-----------------------|----------|---------------|------------|
+| Klebseilla pneumonia                     | KI_WT        | Wild type    | clinical isolate | 0.125                            |            |           |             |                       |          | \<=0.06       |            |
+| *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | Reference strain | 0.03                             |            | 0.03      |             |                       |          |               |            |
+| *Klebsiella pneumoniae* KPC- A           | KPC_A        | KPC-3        | Clinical isolate | 2                                | 2          |           | 0.75        |                       | 0.38     |               |            |
+| *Klebsiella pneumoniae* KPC- B           | KPC_B        | KPC-3        | Clinical isolate | 1                                | 0.5        | 32        | 0.38        |                       |          |               |            |
+| *Klebsiella pneumoniae* KPC- C           | KPC_C        | KPC-3        | Clinical isolate |                                  |            | \>256     |             |                       |          |               |            |
+| *Klebsiella pneumoniae* NDM              | KP_NDM       | NDM-2        | Clinical isolate | \>256                            |            | \>256     |             |                       |          |               |            |
+| *Klebsiella pneumonia* VIM               | KP_VIM       | VIM          | Clinical isolate | \>256                            |            | \>256     |             |                       |          |               |            |
+| Escherichia coli ATCC 25922              | EC_ATCC      |              | ATCC             | 0.19                             |            |           | 0.125       |                       |          | 0.012         |            |
+| *Klebsiella pneumonia*                   | KP_Dam       |              | Clinical isolate | 4                                |            |           |             |                       |          |               |            |
+| *Klebsiella pneumonia*                   | KP_Cav       |              |                  | 16                               |            |           |             |                       |          | 4             |            |
+| Escherichia coli                         | EC_Mont      |              |                  | 64                               |            |           |             |                       |          | \>32          |            |
+| Escherichia coli                         | EC_Rossi     |              |                  | 8                                |            |           |             |                       |          | \>32          |            |
+| Pseudomonas aeruginosa ATCC 27853        | PA_ATCC      |              |                  | 1                                |            | 0.38      |             |                       |          | 0.125         |            |
+| Pseudononas aeruginosa                   | PA_Fabri     |              |                  |                                  |            | \>32      |             |                       |          |               |            |
 
 MICs were performed and confirmed by Etest
 
@@ -86,6 +94,73 @@ To prepare a standardized inoculum (1.5 x10^2^ CFU/mL) for injection in blood cu
 
 5.  One bottle is inoculated with the bacterial inoculum without adding the antibiotic solution (drug-free control).
 
-6.  *describe incubation conditions*, incubator settings, etc. <!--# Irene please provide -->
+------------------------------------------------------------------------
 
-7.  *how are data collected from the software etc.* <!--# Irene please provide -->
+### **Inoculum preparation workpackage 1A.**
+
+To obtain a series of ten-fold diluted inoculum to be inoculated in each blood culture bottle.
+
+1.  Base inoculum: Colonies are selected from an 18- to 24-hour agar plate and suspended in saline solution 0.9% in a glass test tube. The suspension is adjusted by optimal density by the Densichek plus instrument to achieve turbidity equivalent to a 1 McFarland standard that corresponds to 3 × 10^8^ CFU/mL.
+
+2.  The inoculum is then serially ten-fold diluted in 0.9% saline to obtain subsequent inocula down to 3 x10^1^ CFU/ml.
+
+3.  Using a multipipettor, 200 μL are withdrawn from tube 1 (inoculum 3 x10^8^ CFU/mL) and added to tube 2 which contains 1800 μL of saline solution (3x10^7^ CFU/mL). The same procedure is repeated serially to produce an inoculum dilution series down to 3 x10^1^ CFU/mL. With each pipette transfer, the suspension is mixed up and down 6-8 times before the subsequent transfer of 200 μL.
+
+4.  1 ml of each dilution is inoculated with a sterile 1 ml syringe into a blood culture bottle for aerobic incubation (BacT/ALERT FA FAN® Aerobic Biomeriuex)
+
+5.  Blood culture bottles are incubated into the Bact/ALERT 3D Biomerieux incubator system for 24 hours that automatically reports time to positivity; 
+
+6.  The day after, time to positivity (defined as the time from the start of incubation to detection of growth) is reported for every bottle.
+
+### **Inoculum preparation workpackage 1A.**
+
+Inoculum preparation: to obtain 1ml of inoculum of 1.5 x10^4^ CFU/mL to be inoculated in each blood culture bottle. The procedure is partly similar to methodology for Workpackage 1A.\
+
+1.  Base inoculum: Colonies are selected from an 18- to 24-hour agar plate and suspended in saline solution 0.9% in a glass test tube. The suspension is adjusted by optimal density by the Densichek plus instrument to achieve turbidity equivalent to a 0.5 McFarland standard that corresponds to 1 to 2 × 10^8^ CFU/mL.
+
+2.  The inoculum is then serially ten-fold diluted 0.9% saline to obtain a final inoculum of 1.5 x10^4^ CFU/ml.
+
+3.  Using a multipipettor, 300 μL are withdrawn from tube 1 (inoculum 1.5 x10^8^ CFU/mL) and added to tube 2 which contains 2700 μL of saline solution (1.5x10^7^ CFU/mL). The same procedure is repeated serially to produce an inoculum dilution series down to 1.5 x10^5^ CFU/mL. With each pipette transfer, the suspension is mixed up and down 6-8 times before the subsequent transfer or 300 μL. Last dilution is performed by withdrawing 300 μL from tube 4 and adding this to tube 5 which contains 2700 μL of MH broth; since the glass tubes contain a maximum of 3-4 mL, this last step is repeated for at least 4 tubes in parallel to obtain a total amount of 12 mL of inoculum 1.5 x10^4^ CFU/ml (approximately 10 antibiotic dilutions and 10 blood culture bottles that are inoculated with 1 mL of bacterial inoculum).
+
+::: callout-note
+Alternative procedure: last dilution is performed by withdrawing 1 mL from tube 4 and adding this to a 15 mL sterile falcon tube that contains 9 mL of MH broth; this last step is repeated twice and it permits to obtain a total amount of 20 mL of inoculum 1.5 x10^4^ CFU/ml.
+:::
+
+### Antibiotic preparation
+
+#### Antibiotic dilutions
+
+-   ceftazidime and avibactam pure powder are diluted in sterile water and conserved at -20°C 
+
+1.  Stocked 200 mcg/ml of ceftazidime solution and 500 mcg/ml of avibactam solution are thawed at room temperature
+2.  Further dilution to obtain the desired concentrations: antimicrobial solutions are calculated at twice the desired final concentration
+
+::: callout-note
+For example: from ceftazidime 200 μg/mL, how to obtain 2 mL of 20 μg/mL stock: using the multipipettor set at 200 mcl, 200 mcl of ceftazidime 200 mcg/mL solution are added in a tube containing 1800 μL of serum.
+
+For example: from ceftazidime 200 μg/ml, how to obtain 50 mcg/ml: using the multipipettor set at 500 μL, 500 μL of ceftazidime 200 μg/mL solution are added in a tube containing 1500 μL of serum.
+:::
+
+3.  500 μL of the doubled desired ceftazidime concentration and 500 μL of the doubled desired avibactam concentration are added in a test tube to obtain 1 ml of serum-antibiotic solution at the desired concentrations
+
+::: callout-note
+Alternative procedure: ceftazidime and avibactam pure powders are diluted in sterile water and conserved at -20°C
+:::
+
+4.  Stocked ceftazidime and avibactam solutions are thawed at room temperature
+
+5.  Considering the blood culture bottles containing 40 mL of enrichment broth, antibiotic stocked solutions are further diluted to obtain concentrations 40 times the MIC values or its multiples.
+
+::: callout-note
+Example: ceftazidime pure powder is diluted to obtain a concentration of 320 μg/mL in 1 mL of serum that corresponds to a final concentration of 8 μg/ml after inoculation into the blood culture bottle.
+:::
+
+6.  Antimicrobial solutions are calculated at twice the desired final concentration; 500 μL of the doubled desired ceftazidime concentration and 500 μL of the doubled desired avibactam concentration are added in a test tube to obtain 1 mL of serum-antibiotic solution at the desired concentrations
+
+::: callout-note
+Example: to test a final concentration of ceftazidime 2 μg/mL and avibactam 0.5 μg/mL, ceftazidime and avibactam are respectively diluted to obtain a concentration of 160 μg/mL and 40 μg/mL. 500 μL of each antibiotic are added in a test tube to obtain a concentration of 80-20 μg/mL which correspond to a final concentration inside the blood culture bottle of 2-0.5 μg/mL.
+:::
+
+7.  After vortexing for 7-10 seconds each tube, 1 ml of inoculum suspension at 1.5x104 CFU/ml and 1 ml of serum with antibiotic concentration are inoculated with a sterile 1 ml insulin syringe into a blood culture bottle containing 40 ml of enrichment broth without inactivating matrix (BacT/ALERT SA Standard Aerobic Biomerieux) and incubated into the Bact/ALERT 3D Biomerieux incubator system for 24 hours that automatically detects growth.
+8.  The same procedure is repeated for all the selected antibiotic concentration-inoculum pairs; one bottle is inoculated with the bacterial inoculum adding 1 mL of saline solution without antibiotic as control.
+9.  The day after, time to positivity (defined as the time from the start of incubation to detection of growth) is reported for every bottle; bottles showing no growth at 24 hours are reported as "24".

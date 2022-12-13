@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.47">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -99,12 +99,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Workpackage1.html" class="sidebar-item-text sidebar-link">Workpackage 1</a>
+  <a href="./Workpackage1_singledrug.html" class="sidebar-item-text sidebar-link">Workpackage 1-Single Drug</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Workpackage1_combination.html" class="sidebar-item-text sidebar-link">Workpackage 1-Combinations</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Workpackage2.html" class="sidebar-item-text sidebar-link">Workpackage 2</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Nonfermentors.html" class="sidebar-item-text sidebar-link">Workpackage 1-Nonfermentors</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -151,7 +161,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
   <li><a href="#test-isolates" id="toc-test-isolates" class="nav-link" data-scroll-target="#test-isolates">Test isolates</a></li>
   <li><a href="#inoculum-preparation" id="toc-inoculum-preparation" class="nav-link" data-scroll-target="#inoculum-preparation">Inoculum preparation</a></li>
-  <li><a href="#antibiotic-preparation" id="toc-antibiotic-preparation" class="nav-link" data-scroll-target="#antibiotic-preparation">Antibiotic preparation</a></li>
+  <li><a href="#antibiotic-preparation" id="toc-antibiotic-preparation" class="nav-link" data-scroll-target="#antibiotic-preparation">Antibiotic preparation</a>
+  <ul class="collapse">
+  <li><a href="#inoculum-preparation-workpackage-1a." id="toc-inoculum-preparation-workpackage-1a." class="nav-link" data-scroll-target="#inoculum-preparation-workpackage-1a."><strong>Inoculum preparation workpackage 1A.</strong></a></li>
+  <li><a href="#inoculum-preparation-workpackage-1a.-1" id="toc-inoculum-preparation-workpackage-1a.-1" class="nav-link" data-scroll-target="#inoculum-preparation-workpackage-1a.-1"><strong>Inoculum preparation workpackage 1A.</strong></a></li>
+  <li><a href="#antibiotic-preparation-1" id="toc-antibiotic-preparation-1" class="nav-link" data-scroll-target="#antibiotic-preparation-1">Antibiotic preparation</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -211,15 +226,17 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <table class="table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 9%">
-<col style="width: 17%">
+<col style="width: 19%">
 <col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 15%">
 <col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 4%">
 <col style="width: 6%">
-<col style="width: 12%">
 <col style="width: 5%">
 </colgroup>
 <thead>
@@ -234,10 +251,26 @@ ul.task-list li input[type="checkbox"] {
 <th>Tigecycline</th>
 <th>Meropenem-Vaborbactam</th>
 <th>Colistin</th>
+<th>Ciprofloxacin</th>
+<th>Ampicillin</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>Klebseilla pneumonia</td>
+<td>KI_WT</td>
+<td>Wild type</td>
+<td>clinical isolate</td>
+<td>0.125</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>&lt;=0.06</td>
+<td></td>
+</tr>
+<tr class="even">
 <td><em>Klebsiella pneumoniae</em> ESBL ATCC 700603</td>
 <td>KP_ATCC</td>
 <td><em>bla</em> SHV-18</td>
@@ -248,8 +281,10 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><em>Klebsiella pneumoniae</em> KPC- A</td>
 <td>KPC_A</td>
 <td>KPC-3</td>
@@ -260,8 +295,10 @@ ul.task-list li input[type="checkbox"] {
 <td>0.75</td>
 <td></td>
 <td>0.38</td>
+<td></td>
+<td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><em>Klebsiella pneumoniae</em> KPC- B</td>
 <td>KPC_B</td>
 <td>KPC-3</td>
@@ -272,8 +309,10 @@ ul.task-list li input[type="checkbox"] {
 <td>0.38</td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><em>Klebsiella pneumoniae</em> KPC- C</td>
 <td>KPC_C</td>
 <td>KPC-3</td>
@@ -284,10 +323,12 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><em>Klebsiella pneumoniae</em> NDM</td>
-<td>NDM</td>
+<td>KP_NDM</td>
 <td>NDM-2</td>
 <td>Clinical isolate</td>
 <td>&gt;256</td>
@@ -296,15 +337,117 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><em>Klebsiella pneumonia</em> VIM</td>
-<td>VIM</td>
+<td>KP_VIM</td>
 <td>VIM</td>
 <td>Clinical isolate</td>
 <td>&gt;256</td>
 <td></td>
 <td>&gt;256</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Escherichia coli ATCC 25922</td>
+<td>EC_ATCC</td>
+<td></td>
+<td>ATCC</td>
+<td>0.19</td>
+<td></td>
+<td></td>
+<td>0.125</td>
+<td></td>
+<td></td>
+<td>0.012</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><em>Klebsiella pneumonia</em></td>
+<td>KP_Dam</td>
+<td></td>
+<td>Clinical isolate</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>Klebsiella pneumonia</em></td>
+<td>KP_Cav</td>
+<td></td>
+<td></td>
+<td>16</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Escherichia coli</td>
+<td>EC_Mont</td>
+<td></td>
+<td></td>
+<td>64</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>&gt;32</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Escherichia coli</td>
+<td>EC_Rossi</td>
+<td></td>
+<td></td>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>&gt;32</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Pseudomonas aeruginosa ATCC 27853</td>
+<td>PA_ATCC</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>0.38</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.125</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Pseudononas aeruginosa</td>
+<td>PA_Fabri</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>&gt;32</td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -338,11 +481,126 @@ ul.task-list li input[type="checkbox"] {
 <li><p>After vortexing for 7-10 seconds each tube, 1 ml of inoculum suspension at 1.5x10<sup>2</sup> CFU/mL and 1 mL of antibiotic containing serum are inoculated with a sterile insulin syringe into a blood culture bottle containing 40 mL of enrichment broth <em>without</em> inactivating matrix.</p></li>
 <li><p>Bloodculture bottles are then incubated into Bact/ALERT system to detect growth. The same procedure is repeated for all the selected antibiotic concentration-inoculum pairs.</p></li>
 <li><p>One bottle is inoculated with the bacterial inoculum without adding the antibiotic solution (drug-free control).</p></li>
-<li><p><em>describe incubation conditions</em>, incubator settings, etc. <!--# Irene please provide --></p></li>
-<li><p><em>how are data collected from the software etc.</em> <!--# Irene please provide --></p></li>
+</ol>
+<hr>
+<section id="inoculum-preparation-workpackage-1a." class="level3">
+<h3 class="anchored" data-anchor-id="inoculum-preparation-workpackage-1a."><strong>Inoculum preparation workpackage 1A.</strong></h3>
+<p>To obtain a series of ten-fold diluted inoculum to be inoculated in each blood culture bottle.</p>
+<ol type="1">
+<li><p>Base inoculum: Colonies are selected from an 18- to 24-hour agar plate and suspended in saline solution 0.9% in a glass test tube. The suspension is adjusted by optimal density by the Densichek plus instrument to achieve turbidity equivalent to a 1 McFarland standard that corresponds to 3 × 10<sup>8</sup> CFU/mL.</p></li>
+<li><p>The inoculum is then serially ten-fold diluted in 0.9% saline to obtain subsequent inocula down to 3 x10<sup>1</sup> CFU/ml.</p></li>
+<li><p>Using a multipipettor, 200 μL are withdrawn from tube 1 (inoculum 3 x10<sup>8</sup> CFU/mL) and added to tube 2 which contains 1800 μL of saline solution (3x10<sup>7</sup> CFU/mL). The same procedure is repeated serially to produce an inoculum dilution series down to 3 x10<sup>1</sup> CFU/mL. With each pipette transfer, the suspension is mixed up and down 6-8 times before the subsequent transfer of 200 μL.</p></li>
+<li><p>1 ml of each dilution is inoculated with a sterile 1 ml syringe into a blood culture bottle for aerobic incubation (BacT/ALERT FA FAN® Aerobic Biomeriuex)</p></li>
+<li><p>Blood culture bottles are incubated into the Bact/ALERT 3D Biomerieux incubator system for 24 hours that automatically reports time to positivity;&nbsp;</p></li>
+<li><p>The day after, time to positivity (defined as the time from the start of incubation to detection of growth) is reported for every bottle.</p></li>
+</ol>
+</section>
+<section id="inoculum-preparation-workpackage-1a.-1" class="level3">
+<h3 class="anchored" data-anchor-id="inoculum-preparation-workpackage-1a.-1"><strong>Inoculum preparation workpackage 1A.</strong></h3>
+<p>Inoculum preparation: to obtain 1ml of inoculum of 1.5 x10<sup>4</sup> CFU/mL to be inoculated in each blood culture bottle. The procedure is partly similar to methodology for Workpackage 1A.<br>
+</p>
+<ol type="1">
+<li><p>Base inoculum: Colonies are selected from an 18- to 24-hour agar plate and suspended in saline solution 0.9% in a glass test tube. The suspension is adjusted by optimal density by the Densichek plus instrument to achieve turbidity equivalent to a 0.5 McFarland standard that corresponds to 1 to 2 × 10<sup>8</sup> CFU/mL.</p></li>
+<li><p>The inoculum is then serially ten-fold diluted 0.9% saline to obtain a final inoculum of 1.5 x10<sup>4</sup> CFU/ml.</p></li>
+<li><p>Using a multipipettor, 300 μL are withdrawn from tube 1 (inoculum 1.5 x10<sup>8</sup> CFU/mL) and added to tube 2 which contains 2700 μL of saline solution (1.5x10<sup>7</sup> CFU/mL). The same procedure is repeated serially to produce an inoculum dilution series down to 1.5 x10<sup>5</sup> CFU/mL. With each pipette transfer, the suspension is mixed up and down 6-8 times before the subsequent transfer or 300 μL. Last dilution is performed by withdrawing 300 μL from tube 4 and adding this to tube 5 which contains 2700 μL of MH broth; since the glass tubes contain a maximum of 3-4 mL, this last step is repeated for at least 4 tubes in parallel to obtain a total amount of 12 mL of inoculum 1.5 x10<sup>4</sup> CFU/ml (approximately 10 antibiotic dilutions and 10 blood culture bottles that are inoculated with 1 mL of bacterial inoculum).</p></li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Alternative procedure: last dilution is performed by withdrawing 1 mL from tube 4 and adding this to a 15 mL sterile falcon tube that contains 9 mL of MH broth; this last step is repeated twice and it permits to obtain a total amount of 20 mL of inoculum 1.5 x10<sup>4</sup> CFU/ml.</p>
+</div>
+</div>
+</section>
+<section id="antibiotic-preparation-1" class="level3">
+<h3 class="anchored" data-anchor-id="antibiotic-preparation-1">Antibiotic preparation</h3>
+<section id="antibiotic-dilutions" class="level4">
+<h4 class="anchored" data-anchor-id="antibiotic-dilutions">Antibiotic dilutions</h4>
+<ul>
+<li>ceftazidime and avibactam pure powder are diluted in sterile water and conserved at -20°C&nbsp;</li>
+</ul>
+<ol type="1">
+<li>Stocked 200 mcg/ml of ceftazidime solution and 500 mcg/ml of avibactam solution are thawed at room temperature</li>
+<li>Further dilution to obtain the desired concentrations: antimicrobial solutions are calculated at twice the desired final concentration</li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For example: from ceftazidime 200 μg/mL, how to obtain 2 mL of 20 μg/mL stock: using the multipipettor set at 200 mcl, 200 mcl of ceftazidime 200 mcg/mL solution are added in a tube containing 1800 μL of serum.</p>
+<p>For example: from ceftazidime 200 μg/ml, how to obtain 50 mcg/ml: using the multipipettor set at 500 μL, 500 μL of ceftazidime 200 μg/mL solution are added in a tube containing 1500 μL of serum.</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>500 μL of the doubled desired ceftazidime concentration and 500 μL of the doubled desired avibactam concentration are added in a test tube to obtain 1 ml of serum-antibiotic solution at the desired concentrations</li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Alternative procedure: ceftazidime and avibactam pure powders are diluted in sterile water and conserved at -20°C</p>
+</div>
+</div>
+<ol start="4" type="1">
+<li><p>Stocked ceftazidime and avibactam solutions are thawed at room temperature</p></li>
+<li><p>Considering the blood culture bottles containing 40 mL of enrichment broth, antibiotic stocked solutions are further diluted to obtain concentrations 40 times the MIC values or its multiples.</p></li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example: ceftazidime pure powder is diluted to obtain a concentration of 320 μg/mL in 1 mL of serum that corresponds to a final concentration of 8 μg/ml after inoculation into the blood culture bottle.</p>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Antimicrobial solutions are calculated at twice the desired final concentration; 500 μL of the doubled desired ceftazidime concentration and 500 μL of the doubled desired avibactam concentration are added in a test tube to obtain 1 mL of serum-antibiotic solution at the desired concentrations</li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example: to test a final concentration of ceftazidime 2 μg/mL and avibactam 0.5 μg/mL, ceftazidime and avibactam are respectively diluted to obtain a concentration of 160 μg/mL and 40 μg/mL. 500 μL of each antibiotic are added in a test tube to obtain a concentration of 80-20 μg/mL which correspond to a final concentration inside the blood culture bottle of 2-0.5 μg/mL.</p>
+</div>
+</div>
+<ol start="7" type="1">
+<li>After vortexing for 7-10 seconds each tube, 1 ml of inoculum suspension at 1.5x104 CFU/ml and 1 ml of serum with antibiotic concentration are inoculated with a sterile 1 ml insulin syringe into a blood culture bottle containing 40 ml of enrichment broth without inactivating matrix (BacT/ALERT SA Standard Aerobic Biomerieux) and incubated into the Bact/ALERT 3D Biomerieux incubator system for 24 hours that automatically detects growth.</li>
+<li>The same procedure is repeated for all the selected antibiotic concentration-inoculum pairs; one bottle is inoculated with the bacterial inoculum adding 1 mL of saline solution without antibiotic as control.</li>
+<li>The day after, time to positivity (defined as the time from the start of incubation to detection of growth) is reported for every bottle; bottles showing no growth at 24 hours are reported as “24”.</li>
 </ol>
 
 
+</section>
+</section>
 </section>
 </section>
 

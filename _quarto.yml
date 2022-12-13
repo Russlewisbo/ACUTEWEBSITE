@@ -10,8 +10,10 @@ website:
     contents:
       - Index.qmd
       - About.qmd
-      - Workpackage1.qmd
+      - Workpackage1_singledrug.qmd
+      - Workpackage1_combination.qmd
       - Workpackage2.qmd
+      - Nonfermentors.qmd
       - Timeline.qmd
       - Summary.qmd
       - Presentations.qmd

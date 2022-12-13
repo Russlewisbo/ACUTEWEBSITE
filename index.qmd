@@ -19,8 +19,15 @@
 -   **John Cohen, M.D., Emeritus Professor,** Infectious Diseases, Brighton & Sussex Medical School, and Visiting Professor in Infectious Diseases, Imperial College of Science, Technology & Medicine, London
 -   **Jason Roberts, Pharm.D., PhD.**, NHMRC Leadership Fellow, UQ Centre for Clinical Research, Faculty of Medicine, Acting Director, CCR. Faculty of Medicine
 
-**Funding:** European Society of Clinical Microbiology and Infectious Diseases (ESCMID) [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022)
+**Funding:**
+
+-   Direzione Generale Della Ricerca Dell' Innovazione in Sanità 2021-Bando Dell Ricerca
+-   European Society of Clinical Microbiology and Infectious Diseases (ESCMID) [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022)
+
+![](images/minstero.png){fig-align="center" width="300"}
 
 ![](ESCMID.png){fig-align="center" width="400"}
 
 ![](unibologo.png){fig-align="center" width="150"}
+
+![](University_of_Padua_seal.png){fig-align="center" width="150"}
