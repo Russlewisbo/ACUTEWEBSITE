@@ -16,7 +16,6 @@
 
 **Collaborators:**
 
--   **John Cohen, M.D., Emeritus Professor,** Infectious Diseases, Brighton & Sussex Medical School, and Visiting Professor in Infectious Diseases, Imperial College of Science, Technology & Medicine, London
 -   **Jason Roberts, Pharm.D., PhD.**, NHMRC Leadership Fellow, UQ Centre for Clinical Research, Faculty of Medicine, Acting Director, CCR. Faculty of Medicine
 
 **Funding:**
@@ -31,3 +30,9 @@
 ![](unibologo.png){fig-align="center" width="150"}
 
 ![](University_of_Padua_seal.png){fig-align="center" width="150"}
+
+Analytical grade antibiotic powder provided by:
+
+<br>
+
+![](Pfizer.svg.png){fig-align="center" width="150"}

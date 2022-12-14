@@ -16,6 +16,7 @@ csl: nature.csl
 ## Workpackage 1A: <br>Quantitative Relationship of Tpos with Numbers of Viable Gram-Negative Non-fermentor bacteria
 
 ### Acinetbacter baumannii
+
 #### Methods
 
 In this package we will establish the quantitative relationship of Tpos and *Acinetobacter baumanii* and *Pseudomonas seruginosa* inoculum in blood culture bottles. <br> <br>
@@ -75,6 +76,7 @@ These data confirm that Tpos exhibits a wide dynamic range as a surrogate indica
 :::
 
 ------------------------------------------------------------------------
+
 ### Pseudomonas aeruginosa
 
 ```{r}

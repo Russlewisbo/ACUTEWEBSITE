@@ -73,10 +73,66 @@ kable_paper("hover", full_width = F, position="left")
 
 #### ESCHERICHIA COLI
 
-#### PSEUDOMONAS AERUGINOSA
 
 #### ACINETOBACTER BAUMANII
 
+
+```{r}
+#| label: fig-1f
+#| fig-cap: "Relationship of time-to-positivity (Tpos) versus test inoculum for Acinetobacter baumanii"
+
+
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+library (readxl)
+abaumani <- read_excel("abaum_pbs.xlsx")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig1 <-ggplot(abaumani, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+
+```
+
+```{r}
+#| label: tbl-1f
+#| tbl-cap: Effect of inoculum diluent on Tpos for Acinetobacter baumanii
+library(forestmangr)
+library(kableExtra)
+library (readxl)
+abaumani <- read_excel("abaum_pbs.xlsx")
+df <- data.frame (abaumani)
+table1<-lm_table(df, log(inoculum) ~ tpos, "diluent")
+kbl(table1)%>%
+kable_paper("hover", full_width = F, position="left")
+```
+
+------------------------------------------------------------------------
+
+#### PSEUDOMONAS AERUGINOSA
+
+```{r}
+#| label: fig-2f
+#| fig-cap: "Relationship of time-to-positivity (Tpos) versus test inoculum for Pseudomonas aeruginosa"
+
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+library (readxl)
+pseudo <- read_excel("pseudo_pbs.xlsx")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig2f <-ggplot(pseudo, aes(x=inoculum, y=tpos, color=isolates, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+fig2f + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+
+
+```
 
 
 
@@ -126,7 +182,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 
 ------------------------------------------------------------------------
 
-#### K. pneumoniae ATCC 700603 isolate (MIC 0.03 mg/L) powder 4:1
+#### K. pneumoniae ATCC 700603 (MIC 0.03 mg/L) powder 4:1
 
 ```{r}
 #| label: fig-1atcc
@@ -192,7 +248,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC B isolate (MIC 1 mg/L) commercial 
+#### KPC B (MIC 1 mg/L) commercial 
 
 ```{r }
 #| label: fig-3
@@ -224,7 +280,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC B isolate (MIC 1 mg/L) powder 4:1
+#### KPC B (MIC 1 mg/L) powder 4:1
 
 
 ```{r }
@@ -258,7 +314,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC A isolate (MIC 2 mg/L) commerical
+#### KPC A (MIC 2 mg/L) commerical
 
 ```{r}
 #| label: fig-5
@@ -291,7 +347,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC A isolate (MIC 2 mg/L) powder 4:1
+#### KPC A (MIC 2 mg/L) powder 4:1
 
 ```{r}
 #| label: fig-6
@@ -323,7 +379,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC A isolate (MIC 2 mg/L) fixed 4 mg/L
+#### KPC A (MIC 2 mg/L) fixed 4 mg/L
 
 ```{r}
 #| label: fig-7
@@ -356,7 +412,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC B isolate (MIC 1 mg/L) fixed 4 mg/L
+#### KPC B (MIC 1 mg/L) fixed 4 mg/L
 
 ```{r}
 #| label: fig-8
@@ -389,7 +445,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC B isolate (MIC 1 mg/L) high inoculum
+#### KPC B (MIC 1 mg/L) high inoculum
 
 We examined how the relationship of Tpos vs. ceftazidime/avibactam concentrations changes when tested against a higher inoculum (1x10^7^ CFU/mL). The same methodology as described above was used for testing. As shown in [@fig-3a] and [@tbl-3a] the EC~50~ and EC~90~ were marginally higher when tested at the higher inoculum with a more shallow dose-response relationship.
 
@@ -424,11 +480,46 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### KPC Catania isolate (MIC 16 mg/L) powder 4:1
+#### KPC Catania (MIC 16 mg/L) powder 4:1
 
 
 ```{r }
-#| label: fig-3a
+#| label: fig-catan1
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a resistant strain"
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+caz_avi_catan <- read_excel("datasets_single/kpccatania_caz_avi_powder4-1.xlsx")
+fitcat <- drda(tpos ~ ctz_s, data=caz_avi_catan, mean_function = "loglogistic4", max_iter = 1000)
+plot(fitcat, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
+```
+
+```{r}
+#| label: tbl-catan1
+#| tbl-cap: "Pharmacodynamic estimates for a high-inoculum"
+
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+caz_avi_5 <- read_excel("datasets_single/kpccatania_caz_avi_powder4-1.xlsx")
+fitcat <- drda(tpos ~ ctz_s, data=caz_avi_catan, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fitcat, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+
+```
+
+------------------------------------------------------------------------
+
+#### KPC Catania (MIC 16 mg/L) fixed 4 mg/L
+
+
+```{r }
+#| label: fig-catfix
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a high-inoculum"
 
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
@@ -440,7 +531,7 @@ plot(fit5, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
-#| label: tbl-3a
+#| label: tbl-catfix
 #| tbl-cap: "Pharmacodynamic estimates for a high-inoculum"
 
 
@@ -454,28 +545,27 @@ fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_i
 ed<-effective_dose(fit5, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
-
 ```
 
 ------------------------------------------------------------------------
 
-#### KPC Catania isolate (MIC 16 mg/L) fixed 4 mg/L
+#### K. pneumonia WT (MIC 0.125 mg/L) fixed 4 mg/L
 
 
 ```{r }
-#| label: fig-3a
-#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a high-inoculum"
+#| label: fig-wt
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a wt strain"
 
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_5 <- read_excel("datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
-fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
+caz_avi_wt <- read_excel("datasets_single/kpwt_caz_avi_powder4-1.xlsx")
+fitwt <- drda(tpos ~ ctz_s, data=caz_avi_wt, mean_function = "loglogistic4", max_iter = 1000)
 plot(fit5, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
-#| label: tbl-3a
+#| label: tbl-wt
 #| tbl-cap: "Pharmacodynamic estimates for a high-inoculum"
 
 
@@ -484,14 +574,17 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_5 <- read_excel("datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
-fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fit5, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+caz_avi_5 <- read_excel("datasets_single/kpwt_caz_avi_powder4-1.xlsx")
+fitwt <- drda(tpos ~ ctz_s, data=caz_avi_wt, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fitwt, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
 ------------------------------------------------------------------------
+
+
+
 
 #### CONCLUSIONS
 
@@ -501,7 +594,7 @@ These data demonstrate that Tpos is a robust PD endpoint and the relationship of
 ------------------------------------------------------------------------
 ### MEROPENEM
 
-##### ATCC isolate (MIC 0.03 mg/L)
+##### KP ATCC (MIC 0.03 mg/L)
 
 -   The impact of increasing meropenem concentrations on Tpos observed with the ATCC ESBL producing *Klebsiella pneumoniae* was tested using similar methodology as previously described
 
@@ -539,7 +632,7 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 ------------------------------------------------------------------------
-##### KPC B isolate (MIC 32 mg/L)
+##### KPC B (MIC 32 mg/L)
 
 ```{r}
 #| label: fig-9b
@@ -598,7 +691,7 @@ A key observation is that the pharmacodynamics were similar when meropenem was t
 
 ### GENTAMICIN
 
-##### KPC A isolate (MIC 2 mg/L)
+##### KPC A (MIC 2 mg/L)
 
 ```{r}
 #| label: fig-genta
@@ -630,7 +723,7 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 ------------------------------------------------------------------------
-##### KPC B isolate (MIC 0.5 mg/L)
+##### KPC B (MIC 0.5 mg/L)
 
 ```{r}
 #| label: fig-gentb
@@ -670,7 +763,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ### COLISTIN
 
-#### KPC B isolate (MIC 0.125 mg/L)
+#### KPC B (MIC 0.125 mg/L)
 
 ```{r}
 #| label: fig-colib
@@ -707,7 +800,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ### MEROPENEM-VABORBACTAM
 
-#### KPC B isolate (MIC X mg/L) commerical
+#### KPC B (MIC X mg/L) 
 
 ```{r}
 #| label: fig-vabob
@@ -744,7 +837,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ### TIGECYCLINE
 
-#### K. pneumonia KPC-A (MIC 0.75 mg/L) powder
+#### KPC-A (MIC 0.75 mg/L)
 
 ```{r}
 #| label: fig-tiga
@@ -775,7 +868,7 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### K. pneumoniae KPC-B (MIC 0.38 mg/L) powder
+#### KPC-B (MIC 0.38 mg/L)
 
 ```{r}
 #| label: fig-tigb
@@ -806,7 +899,7 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### K. pneumoniae KPC-B (MIC 0.38 mg/L) protein binding
+#### KPC-B (MIC 0.38 mg/L) protein binding
 
 #### CONCLUSIONS
 
@@ -814,7 +907,7 @@ kable_paper("hover", full_width = F, position = "left")
 ### CEFTAZIDIME
 
 
-#### Klebsiella pneumoniae ATCC 700603 (MIC 12 mg/L)
+#### K. pneumoniae ATCC 700603 (MIC 12 mg/L)
 
 
 ```{r }
@@ -848,7 +941,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ------------------------------------------------------------------------
 
-#### Klebsiella pneumoniae KP_DAM (MIC 4 mg/L)
+#### K. pneumoniae KP-DAM (MIC 4 mg/L)
 
 ```{r}
 #| label: fig-ceftaz_dam
@@ -879,3 +972,42 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 #### CONCLUSIONS
+
+
+---------------------------------------
+
+### CIPROFLOXACIN
+
+#### K. pneumoniae WT (MIC <= 0.06)
+
+```{r}
+#| label: fig-ciprowt
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime concentrations"
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+cipro1 <- read_excel("datasets_single/kpwt_cipro_powder.xlsx")
+fitcipro1 <- drda(tpos ~ cipro_s, data=cipro1, mean_function = "loglogistic4", max_iter = 1000)
+plot(fitcipro1, xlab = "Ciprofloxacin serum conc. (mg/L)", ylab = "Tpos (hr)")
+```
+
+```{r}
+#| label: tbl-ceftaz_dam
+#| tbl-cap: "Pharmacodynamic estimates"
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+cipro1 <- read_excel("datasets_single/kpwt_cipro_powder.xlsx")
+fitcipro1 <- drda(tpos ~ cipro_s, data=cipro1, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fitcipro1, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
+
+#### KPC B (MIC <= 0.38)
+

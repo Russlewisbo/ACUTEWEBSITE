@@ -13,7 +13,6 @@ website:
       - Workpackage1_singledrug.qmd
       - Workpackage1_combination.qmd
       - Workpackage2.qmd
-      - Nonfermentors.qmd
       - Timeline.qmd
       - Summary.qmd
       - Presentations.qmd
