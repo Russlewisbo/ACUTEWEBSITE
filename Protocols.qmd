@@ -1,6 +1,6 @@
 ---
 title: "Protocols"
-date: "11/22/2022"
+date: "12/24/2022"
 ---
 
 # Workpackage 1
@@ -41,22 +41,22 @@ date: "11/22/2022"
 
 -   MICs were confirmed by Etest using the manufacturer's recommendations
 
-| Isolate                                  | Abbreviation | Enzyme       | Source           | Ceftazidime/Avibactam MIC (mg/L) | Gentamicin | Meropenem | Tigecycline | Meropenem-Vaborbactam | Colistin | Ciprofloxacin | Ampicillin |
-|------------------------------------------|--------------|--------------|------------------|----------------------------------|------------|-----------|-------------|-----------------------|----------|---------------|------------|
-| Klebseilla pneumonia                     | KI_WT        | Wild type    | clinical isolate | 0.125                            |            |           |             |                       |          | \<=0.06       |            |
-| *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | Reference strain | 0.03                             |            | 0.03      |             |                       |          |               |            |
-| *Klebsiella pneumoniae* KPC- A           | KPC_A        | KPC-3        | Clinical isolate | 2                                | 2          |           | 0.75        |                       | 0.38     |               |            |
-| *Klebsiella pneumoniae* KPC- B           | KPC_B        | KPC-3        | Clinical isolate | 1                                | 0.5        | 32        | 0.38        |                       |          |               |            |
-| *Klebsiella pneumoniae* KPC- C           | KPC_C        | KPC-3        | Clinical isolate |                                  |            | \>256     |             |                       |          |               |            |
-| *Klebsiella pneumoniae* NDM              | KP_NDM       | NDM-2        | Clinical isolate | \>256                            |            | \>256     |             |                       |          |               |            |
-| *Klebsiella pneumonia* VIM               | KP_VIM       | VIM          | Clinical isolate | \>256                            |            | \>256     |             |                       |          |               |            |
-| Escherichia coli ATCC 25922              | EC_ATCC      |              | ATCC             | 0.19                             |            |           | 0.125       |                       |          | 0.012         |            |
-| *Klebsiella pneumonia*                   | KP_Dam       |              | Clinical isolate | 4                                |            |           |             |                       |          |               |            |
-| *Klebsiella pneumonia*                   | KP_Cav       |              |                  | 16                               |            |           |             |                       |          | 4             |            |
-| Escherichia coli                         | EC_Mont      |              |                  | 64                               |            |           |             |                       |          | \>32          |            |
-| Escherichia coli                         | EC_Rossi     |              |                  | 8                                |            |           |             |                       |          | \>32          |            |
-| Pseudomonas aeruginosa ATCC 27853        | PA_ATCC      |              |                  | 1                                |            | 0.38      |             |                       |          | 0.125         |            |
-| Pseudononas aeruginosa                   | PA_Fabri     |              |                  |                                  |            | \>32      |             |                       |          |               |            |
+| Isolate                                  | Abbreviation | Enzyme       | Source           | Ceftazidime/Avibactam MIC (mg/L) | Ceftazidime | Gentamicin | Meropenem | Tigecycline | Meropenem-Vaborbactam | Colistin | Ciprofloxacin | Ampicillin |
+|------|------|------|------|------|------|------|------|------|------|------|------|------|
+| Klebseilla pneumonia                     | KI_WT        | Wild type    | clinical isolate | 0.125                            | 0.125       |            |           | 1           |                       |          | \<=0.06       |            |
+| *Klebsiella pneumoniae* ESBL ATCC 700603 | KP_ATCC      | *bla* SHV-18 | Reference strain | 0.75                             | 12          |            | 0.03      | 4           |                       |          |               |            |
+| *Klebsiella pneumoniae* KPC- A           | KPC_A        | KPC-3        | Clinical isolate | 2                                |             | 2          |           | 0.75        |                       | 0.38     |               |            |
+| *Klebsiella pneumoniae* KPC- B           | KPC_B        | KPC-3        | Clinical isolate | 1                                |             | 0.5        | 32        | 0.38        |                       |          |               |            |
+| *Klebsiella pneumoniae* KPC- C           | KPC_C        | KPC-3        | Clinical isolate |                                  |             |            | \>256     |             |                       |          |               |            |
+| *Klebsiella pneumoniae* NDM              | KP_NDM       | NDM-2        | Clinical isolate | \>256                            |             |            | \>256     |             |                       |          |               |            |
+| *Klebsiella pneumonia* VIM               | KP_VIM       | VIM          | Clinical isolate | \>256                            |             |            | \>256     |             |                       |          |               |            |
+| Escherichia coli ATCC 25922              | EC_ATCC      |              | ATCC             |                                  | 0.19        |            |           | 0.125       |                       |          | 0.012         | 4          |
+| *Klebsiella pneumonia*                   | KP_Dam       |              | Clinical isolate |                                  | 4           |            |           |             |                       |          |               |            |
+| *Klebsiella pneumonia*                   | KP_Cav       |              |                  |                                  | 16          |            |           |             |                       |          | 4             |            |
+| Escherichia coli                         | EC_Mont      |              |                  |                                  | 64          |            |           |             |                       |          | \>32          | 4          |
+| Escherichia coli                         | EC_Rossi     |              |                  |                                  | 8           |            |           |             |                       |          | \>32          |            |
+| Pseudomonas aeruginosa ATCC 27853        | PA_ATCC      |              |                  |                                  | 1           |            | 0.38      |             |                       |          | 0.125         |            |
+| Pseudononas aeruginosa                   | PA_Fabri     |              |                  |                                  |             |            | \>32      |             |                       |          |               |            |
 
 MICs were performed and confirmed by Etest
 
