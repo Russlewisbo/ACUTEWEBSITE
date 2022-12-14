@@ -21,7 +21,7 @@ website:
       - Documentation.qmd
 format: 
   html:
-    theme: zephyr
+    theme: flatly
     css: styles.css
     toc: true
 editor: visual

@@ -27,12 +27,12 @@
 
 ![](ESCMID.png){fig-align="center" width="400"}
 
-![](unibologo.png){fig-align="center" width="150"}
+![](unibologo.png){fig-align="center" width="125"}
 
-![](University_of_Padua_seal.png){fig-align="center" width="150"}
+![](University_of_Padua_seal.png){fig-align="center" width="125"}
 
-Analytical grade antibiotic powder provided by:
+**Additional support:**
 
-<br>
+Analytical grade antibiotic powder for testing provided by:
 
-![](Pfizer.svg.png){fig-align="center" width="150"}
+![](Pfizer.svg.png){fig-align="center" width="100"}

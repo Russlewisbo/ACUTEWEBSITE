@@ -7,7 +7,7 @@ title: "Background"
 The project will generate fundamental knowledge of how *Tpos* correlates with established pharmacodynamic indices for antibiotics(e.g. AUC/MIC, %T~\>MIC~). The activity of ceftazidime-avibactam monotherapy, and combination antibiotic regimens, will be tested *in vitro* and then in sera from patients undergoing treatment for KPC-carbapenemase producing *Klebsiella pneumoniae* (KPC-Kp). <br>
 
 ::: column-margin
-![](bloodculturebottle.png){fig-align="center" width="150"}
+![](bactec.jpg){fig-align="center" width="300"}
 :::
 
 The objectives of this project will be accomplished through two specific aims and several workpackages:
