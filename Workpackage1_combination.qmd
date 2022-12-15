@@ -4,7 +4,7 @@ date: "12/14/2022"
 format: 
   html:
     code-fold: true
-    number-sections: true
+    number-sections: false
 execute:
   echo: true
   warning: false
@@ -13,9 +13,9 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
-## Workpackage 1C: <br>Effect of combination antimicrobial exposure on Tpos
+## WORKPACKAGE 1B: EFFECT OF ANTIBIOTIC COMBINATIONS on TPOS
 
-### Methods
+### METHODS
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from commercial formulation) plus gentamicin (0-4 mg/L) was tested against *Klebsiella pneumonia* KPCB strain in 5 replicate experiments using an array of test concentrations.
 
@@ -31,14 +31,14 @@ csl: nature.csl
 
 -   `maxR` test allows to evaluate presence of synergistic/antagonistic effects for each dose combination and as such provides a point-by-point classification.
 
-### Results
+### RESULTS
 
-### Ceftazidime-avibactam + gentamicin
+#### Ceftazidime-avibactam + gentamicin
 
--   The results shown in [@fig-10] demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with and average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
+-   The results shown in [@fig-10wp2] demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with and average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
 
 ```{r}
-#| label: fig-10
+#| label: fig-10wp2
 #| fig-cap: "Effect of combined ceftazidime/avibactam and gentamicin effects on Tpos"
 
 library(BIGL)
@@ -105,10 +105,10 @@ summary(rsb)
 <br>
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from analytical powder) plus gentamicin was tested against *Klebsiella pneumonia* KPC_A strain in 5 replicate experiments using the same methodology.
--   Results are shown in [@fig-11].
+-   Results are shown in [@fig-11wp2].
 
 ```{r}
-#| label: fig-11
+#| label: fig-11wp2
 #| fig-cap: "Effect of combined ceftazidime/avibactam and gentamicin effects on Tpos"
 
 library(BIGL)
@@ -174,12 +174,72 @@ summary(rsb2)
 
 <br>
 
-#### Ceftazidime/avibactam plus aztreonam
+#### Ceftazidime-avibactam + gentamicin (high inoculum)
 
-Results are shown in [@fig-12].
+::: callout-important
+
+More dose-response data need for gentamicin against high inoculum
+
+:::
 
 ```{r}
-#| label: fig-12
+#| label: fig-11hinoc
+#| fig-cap: "Effect of combined ceftazidime/avibactam and gentamicin effects on Tpos"
+
+library(BIGL)
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(broom)
+library(kableExtra)
+set.seed(12345)
+cutoff <- 0.95
+caz_gent_hinoc <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kpcb_ceftazavi_gent_hinoc.csv")
+## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
+marginalhinoc <- fitMarginals(caz_gent_hinoc, method = "optim",                 
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
+                            names = c("CTZ/AVI", "GENT"))
+summary(marginalFit2)
+## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum constrained at 24 hours
+plot(marginalhinoc) + ggtitle(paste("Ceftazidime/Avibactam + Gentamicin"))
+rshinoc <- fitSurface(caz_gent_hinoc, marginalhinoc,
+                 null_model = "bliss",
+                 B.CP = 50, statistic = "none", parallel = FALSE)
+summary(rshinoc)
+plot(rshinoc, legend = FALSE, main = "")
+view3d(0, -75)
+rglwidget()
+
+
+## mean R statistic evaluates how the test evaluates how the predicted response surface based on a specified null model differs from the observed one. If the null hypothesis is rejected, this test suggests that at least some dose combinations may exhibit synergistic or antagonistic behaviour. The meanR test is not designed to pinpoint which combinations produce these effects nor what type of deviating effect is present.
+
+
+
+# maxR test allows to evaluate presence of synergistic/antagonistic effects for each dose combination and as such provides a point-by-point classification.
+
+
+rshhinoc <- fitSurface(caz_gent_hinoc, marginalhinoc,
+                  null_model = "hsa",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rshhinoc)
+
+rsbhinoc <- fitSurface(caz_gent_hinoc, marginalhinoc, 
+                  null_model = "bliss",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsbhinoc)
+
+
+
+
+
+```
+
+#### Ceftazidime/avibactam + aztreonam
+
+Results are shown in [@fig-12wp2].
+
+```{r}
+#| label: fig-12wp2
 #| fig-cap: "Effect of combined ceftazidime/avibactam and gentamicin effects on Tpos"
 
 library(BIGL)
@@ -222,12 +282,12 @@ summary(rsb3)
 
 <br>
 
-#### Ceftazidime/avibactam plus colistin
+#### Ceftazidime/avibactam + colistin
 
-Results are shown in [@fig-13].
+Results are shown in [@fig13wp2].
 
 ```{r}
-#| label: fig-13
+#| label: fig-13wp2
 #| fig-cap: "Effect of combined ceftazidime/avibactam and colistin effects on Tpos"
 
 library(BIGL)
@@ -268,12 +328,58 @@ summary(rsb4)
 
 ```
 
-#### Ceftazidime/avibactam plus tigecycline
+#### Ceftazidime/avibactam + meropenem
 
-Results are shown in [@fig-14].
+Results are shown in [@fig-14wp2].
 
 ```{r}
-#| label: fig-14
+#| label: fig-14wp2
+#| fig-cap: "Effect of combined ceftazidime/avibactam and tigecycline effects on Tpos"
+
+library(BIGL)
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(broom)
+library(kableExtra)
+set.seed(12345)
+cutoff <- 0.95
+caz_mero <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/caz_avi_meropenem_kpcb.csv")
+## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
+mfcaz_mero <- fitMarginals(caz_mero, method = "optim",                 
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
+                            names = c("CTZ/AVI", "MER"))
+summary(mfcaz_mero)
+## Plotting marginal model for ceftazidime/avibactam and meropenem, minimum constrained at 9 hrs and maximum constrained at 24 hours
+plot(mfcaz_mero) + ggtitle(paste("Ceftazidime/Avibactam + Meropenem"))
+rscaz_mero <- fitSurface(caz_mero, mfcaz_mero,
+                 null_model = "bliss",
+                 B.CP = 50, statistic = "none", parallel = FALSE)
+summary(rscaz_mero)
+plot(rscaz_mero, legend = FALSE, main = "")
+view3d(0, -75)
+rglwidget()
+
+
+rshcaz_mero <- fitSurface(caz_mero, mfcaz_mero,
+                  null_model = "hsa",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rshcaz_mero)
+
+rsb_caz_mero <- fitSurface(caz_mero, mfcaz_mero, 
+                  null_model = "bliss",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsb_caz_mero)
+
+
+```
+
+#### Ceftazidime/avibactam + tigecycline
+
+Results are shown in [@fig-15wp2]
+
+```{r}
+#| label: fig-15wp2
 #| fig-cap: "Effect of combined ceftazidime/avibactam and tigecycline effects on Tpos"
 
 library(BIGL)
@@ -286,30 +392,32 @@ set.seed(12345)
 cutoff <- 0.95
 caz_tig <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kcb_cazavi_tig.csv")
 ## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
-marginalFit5 <- fitMarginals(caz_tig, method = "optim",                 
+marginalFit6 <- fitMarginals(caz_tig, method = "optim",                 
                             fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
                             names = c("CTZ/AVI", "TIG"))
-summary(marginalFit5)
+summary(marginalFit6)
 ## Plotting marginal model for ceftazidime/avibactam and tigecycline, minimum constrained at 9 hrs and maximum constrained at 24 hours
-plot(marginalFit5) + ggtitle(paste("Ceftazidime/Avibactam + Tigecycline"))
-rs5 <- fitSurface(caz_tig, marginalFit5,
+plot(marginalFit6) + ggtitle(paste("Ceftazidime/Avibactam + Tigecycline"))
+rs6 <- fitSurface(caz_tig, marginalFit6,
                  null_model = "bliss",
                  B.CP = 50, statistic = "none", parallel = FALSE)
-summary(rs5)
-plot(rs5, legend = FALSE, main = "")
+summary(rs6)
+plot(rs6, legend = FALSE, main = "")
 view3d(0, -75)
 rglwidget()
 
 
-rsh5 <- fitSurface(caz_tig, marginalFit5,
+rsh6 <- fitSurface(caz_tig, marginalFit6,
                   null_model = "hsa",
                   B.CP = 50, statistic = "both", parallel = FALSE)
-summary(rsh5)
+summary(rsh6)
 
-rsb5 <- fitSurface(caz_tig, marginalFit5, 
+rsb6 <- fitSurface(caz_tig, marginalFit6, 
                   null_model = "bliss",
                   B.CP = 50, statistic = "both", parallel = FALSE)
-summary(rsb5)
+summary(rsb6)
 
 
 ```
+
+### Summary

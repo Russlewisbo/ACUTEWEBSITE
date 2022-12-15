@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-12-14">
 
-<title>Workpackage 1-Single Drug Regimens</title>
+<title>Workpackage 1-Single Drug</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -154,7 +154,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Workpackage 1-Single Drug Regimens</h1>
+      <h1 class="quarto-secondary-nav-title">Workpackage 1-Single Drug</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -184,7 +184,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Workpackage1_singledrug.html" class="sidebar-item-text sidebar-link active">Workpackage 1-Single Drug Regimens</a>
+  <a href="./Workpackage1_singledrug.html" class="sidebar-item-text sidebar-link active">Workpackage 1-Single Drug</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,6 +255,7 @@ div.csl-indent {
   <li><a href="#ceftazidime" id="toc-ceftazidime" class="nav-link" data-scroll-target="#ceftazidime">CEFTAZIDIME</a></li>
   <li><a href="#ciprofloxacin" id="toc-ciprofloxacin" class="nav-link" data-scroll-target="#ciprofloxacin">CIPROFLOXACIN</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">REFERENCES</a></li>
   </ul>
 </nav>
     </div>
@@ -263,7 +264,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Workpackage 1-Single Drug Regimens</h1>
+<h1 class="title d-none d-lg-block">Workpackage 1-Single Drug</h1>
 </div>
 
 
@@ -289,7 +290,7 @@ div.csl-indent {
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">METHODS</h3>
 <p>In this package we will establish the quantitative relationship of Tpos and KPC-carbapenemase producing <em>Klebsiella pneumoniae</em> inoculum in blood culture bottles. <br></p>
-<p>The methods for the assay are a modification of those originally proposed by Kaltsas et al.<span class="citation" data-cites="kaltsas2005"><sup><a href="#ref-kaltsas2005" role="doc-biblioref">1</a></sup></span> Detailed procedures can be found at this <a href="Protocols.html">link</a>. Methodology for preparing the test inoculum was adapted from <a href="CLSI_M21A.pdf">CLSI M21A</a> and <a href="CLSI_M26A.pdf">M26A</a> guidelines.<span class="citation" data-cites="Clinical_Laboratory_Standards_Institute1999-iy Clinical_Laboratory_Standards_Institute1999-iya"><sup><a href="#ref-Clinical_Laboratory_Standards_Institute1999-iy" role="doc-biblioref">2</a>,<a href="#ref-Clinical_Laboratory_Standards_Institute1999-iya" role="doc-biblioref">3</a></sup></span></p>
+<p>The methods for the assay are a modification of those originally proposed by Kaltsas et al.<span class="citation" data-cites="kaltsas2005"><sup><a href="#ref-kaltsas2005" role="doc-biblioref">1</a></sup></span> Detailed procedures can be found at this <a href="Protocols.html">link</a>. Methodology for preparing the test inoculum was adapted from <a href="CLSI_M21A.pdf">CLSI M21A</a> and <a href="CLSI_M26A.pdf">M26A</a> guidelines.<span class="citation" data-cites="Clinical_Laboratory_Standards_Institute1999-iy Clinical_Laboratory_Standards_Institute1999-iya"><sup><a href="#ref-Clinical_Laboratory_Standards_Institute1999-iy" role="doc-biblioref">2</a>,<a href="#ref-Clinical_Laboratory_Standards_Institute1999-iya" role="doc-biblioref">3</a></sup></span>.</p>
 <ul>
 <li>Briefly, tubes containing 1.8 mL of pooled healthy human serum are inoculated with 0.2 mL of a series of ten-fold dilutions (5x10<sup>1</sup> to 5x10<sup>7</sup> CFU/mL) of the standardised inoculum of each test indicator strains.</li>
 <li>The sera were are then transferred into BacT⁄ALERT bottles <strong><em>without antibiotic inactivating matrix</em></strong> (Biomérieux Inc) for aerobic incubation for 24 hours and monitored for time to positivity.</li>
@@ -647,9 +648,9 @@ Note
 <table class="table">
 <caption>Table&nbsp;5: Isolates used for testing</caption>
 <colgroup>
-<col style="width: 33%">
-<col style="width: 26%">
-<col style="width: 40%">
+<col style="width: 34%">
+<col style="width: 23%">
+<col style="width: 42%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1613,7 +1614,7 @@ Note
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (readxl)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drda)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>caz_avi_5 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"datasets_single/kpcb_caz_avi_com_hinoc.xlsx"</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>caz_avi_5 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"datasets_single/kpccatania_caz_avi_powder_4-1.xlsx"</span>)</span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>fitcat5 <span class="ot">&lt;-</span> <span class="fu">drda</span>(tpos <span class="sc">~</span> ctz_s, <span class="at">data=</span>caz_avi_5, <span class="at">mean_function =</span> <span class="st">"loglogistic4"</span>, <span class="at">max_iter =</span> <span class="dv">1000</span>)</span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fitcat5, <span class="at">xlab =</span> <span class="st">"CAZ/AVI serum conc. (mg/L)"</span>, <span class="at">ylab =</span> <span class="st">"Tpos (hr)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1634,7 +1635,7 @@ Note
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drda)</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>caz_avi_5 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"datasets_single/kpcb_caz_avi_com_hinoc.xlsx"</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>caz_avi_5 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"datasets_single/kpccatania_caz_avi_powder_4-1.xlsx"</span>)</span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">drda</span>(tpos <span class="sc">~</span> ctz_s, <span class="at">data=</span>caz_avi_5, <span class="at">mean_function =</span> <span class="st">"loglogistic4"</span>, <span class="at">max_iter =</span> <span class="dv">1000</span>)</span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>ed<span class="ot">&lt;-</span><span class="fu">effective_dose</span>(fit5, <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">0.10</span>,<span class="fl">0.25</span>,<span class="fl">0.50</span>,<span class="fl">0.75</span>,<span class="fl">0.90</span>,<span class="fl">0.95</span>))</span>
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(ed)<span class="sc">%&gt;%</span></span>
@@ -1655,39 +1656,39 @@ Note
 <tbody>
   <tr>
    <td style="text-align:left;"> 0.1 </td>
-   <td style="text-align:right;"> 82.08148 </td>
-   <td style="text-align:right;"> 71.35951 </td>
-   <td style="text-align:right;"> 92.80344 </td>
+   <td style="text-align:right;"> 384.2489 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 36994.240 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 0.25 </td>
-   <td style="text-align:right;"> 117.28496 </td>
-   <td style="text-align:right;"> 109.48524 </td>
-   <td style="text-align:right;"> 125.08468 </td>
+   <td style="text-align:right;"> 396.8167 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 7916.268 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 0.5 </td>
-   <td style="text-align:right;"> 167.58667 </td>
-   <td style="text-align:right;"> 159.06133 </td>
-   <td style="text-align:right;"> 176.11201 </td>
+   <td style="text-align:right;"> 409.7955 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 23922.806 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 0.75 </td>
-   <td style="text-align:right;"> 239.46201 </td>
-   <td style="text-align:right;"> 222.24533 </td>
-   <td style="text-align:right;"> 256.67869 </td>
+   <td style="text-align:right;"> 423.1988 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 57006.091 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 0.9 </td>
-   <td style="text-align:right;"> 342.16357 </td>
-   <td style="text-align:right;"> 290.42168 </td>
-   <td style="text-align:right;"> 393.90546 </td>
+   <td style="text-align:right;"> 437.0406 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 92226.046 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 0.95 </td>
-   <td style="text-align:right;"> 436.16833 </td>
-   <td style="text-align:right;"> 240.82684 </td>
-   <td style="text-align:right;"> 631.50983 </td>
+   <td style="text-align:right;"> 446.7127 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 117452.840 </td>
   </tr>
 </tbody>
 </table>
@@ -2537,7 +2538,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity<span class="citation" data-cites="Deitchman2018"><sup><a href="#ref-Deitchman2018" role="doc-biblioref">4</a></sup></span>. This phenomena was evident in preliminary experiments.</p>
+<p>Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity.<span class="citation" data-cites="Deitchman2018"><sup><a href="#ref-Deitchman2018" role="doc-biblioref">4</a></sup></span> This phenomena was evident in preliminary experiments as shown in <a href="#fig-edta">Figure&nbsp;27</a>.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -2554,7 +2555,7 @@ Important
 <div id="fig-edta" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-edta-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;27: Effect of ceftazidime/aviactam concentrations on Tpos of K. pneumoniae</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;27: Effect of tigeycvcline concentrations on Tpos of K. pneumoniae using serum collected with and withouth EDTA</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -3480,15 +3481,18 @@ Upper .95
 </div>
 </section>
 <section id="conclusions-8" class="level4">
+<h4 class="anchored" data-anchor-id="conclusions-8">CONCLUSIONS</h4>
+</section>
+</section>
+</section>
+<section id="references" class="level2">
 
 
 
 
 </section>
-</section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">CONCLUSIONS</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="doc-bibliography">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">REFERENCES</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="doc-bibliography">
 <div id="ref-kaltsas2005" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Kaltsas, P., Want, S. &amp; Cohen, J. <a href="https://doi.org/10.1111/j.1469-0691.2004.01054.x">Development of a time-to-positivity assay as a tool in the antibiotic management of septic patients</a>. <em>Clinical Microbiology and Infection</em> <strong>11</strong>, 109–114 (2005).</div>
 </div>
