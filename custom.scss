@@ -15,7 +15,7 @@ $presentation-line-height: 1.3 !default;
 // main colors
 $body-bg: #fff !default;
 $body-color: #222 !default;
-$heading-color: #073763 !default;
+$heading-color: #000000 !default;
 $text-muted: lighten($body-color, 30%) !default;
 
 // link colors
@@ -160,15 +160,7 @@ $selectionColor: $selection-color !default;
 
 /*-- scss:rules --*/
 
-.blue {
-  color: $theme-blue;
-  font-weight: bold;
-}
 
-.red {
-  color: $theme-red;
-  font-weight: bold;
-}
 
 section.has-light-background {
   &,

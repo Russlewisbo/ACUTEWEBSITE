@@ -1,0 +1,190 @@
+---
+format:
+  revealjs:
+    touch: true
+    controls: true
+    transition: fade
+    transition-speed: fast
+    scrollable: true
+    slide-number: false
+    incremental: false
+    multiplex: true
+    chalkboard: true
+    theme: [default, custom.scss]
+    seal: false
+bibliography: references.bib
+---
+
+## Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy {background-image="/slides/bactec_background.png"}
+
+<br>
+
+![](acute_logo.png){fig-align="center" width="350"}
+
+**Principle Investigator:** Irene Zaghi, M.D.
+
+**Supervisors:**
+
+-   Russell E. Lewis, Pharm.D., University of Padua
+-   Monica Cricca, M.D., Ph.D., University of Bologna
+-   Vittorio Sambri, M.D., Ph.D., Univeristy of Bologna
+
+::: aside
+January 20, 2023
+:::
+
+## Antibiotic dosing is an uncertain science
+
+![](meropenem_resistance.png){fig-align="center" width="400"}
+
+::: aside
+Image: Irene Zaghi, M.D.
+:::
+
+## Antibiotic dosing is an uncertain science
+
+<br>
+
+![](pkpd1.png){fig-align="center" width="600"}
+
+::: aside
+[@theuretzbacher2012; @Roberts2014]
+:::
+
+## Antibiotic dosing is an uncertain science
+
+<br>
+
+![](pkpd2.png){fig-align="center" width="800"}
+
+::: aside
+[@theuretzbacher2012; @Roberts2014]
+:::
+
+## How can dosing uncertainty be managed?
+
+![](dose_individual.png){fig-align="center" width="800"}
+
+::: aside
+[@Roberts2014]
+:::
+
+## Dosing uncertainty at the dawn of penicillin resistance
+
+![](schlichter.png){fig-align="center" width="600"}
+
+::: aside
+[@schlichter_maclean47]
+:::
+
+## Dosing uncertainty at the dawn of penicillin resistance
+
+<br>
+
+<br>
+
+> "It was felt that there was a need of some definite basis for determining adequate therapy for each specific infectious organism involved..."
+
+> "Current methods in general use all depend on indirect comparisons (MICs, measurement of penicillin blood levels). In patients with more resistant organisms, it has not been demonstrated that this is the proper approach..."
+
+> "...It occurred to us that a more satisfactory method of outlining adequate therapy in resistant organisms might be based on the action of the patient's own serum during penicillin administration."
+
+::: aside
+[@schlichter_maclean47]
+:::
+
+## Serum bactericidal test (SBT)
+
+![](M21A%20method.png){fig-align="center" width="800"}
+
+::: aside
+[@clsi99; @zaghi_etal20]
+:::
+
+## SBTs correlate with antibiotic PK/PD
+
+![](Meropenem%20SBT.png){fig-align="center"}
+
+::: aside
+[@zaghi_etal20]
+:::
+
+## Potential clinical utility of SBTs
+
+### Individual patient-level diagnostic meta-analysis (1947-2020)
+
+![](metaanalysis.png){fig-align="center" width="800"}
+
+Prognostic performance similar or better than current susceptibility breakpoints
+
+::: aside
+[@zaghi_etal20]
+:::
+
+## Why were SBTs abandoned?
+
+<br>
+
+<br>
+
+::: columns
+::: {.column width="60%"}
+**Advantages**
+
+-   Only microbiological test that accounts for antibiotic
+    -   PK/PD
+
+    -   Synergy or antagonism of combinations
+-   Simple to interpret
+:::
+
+::: {.column width="40%"}
+**Disadvantages**
+
+-   Lack of perceived need in 1990s with introduction of reliably bactericidal antibiotics
+-   Lack of rigorous standardization
+-   Poor interlaboratory reproducibility
+-   Labour-intensive (not automated)
+-   **Delay in results (48-72 hours)**
+:::
+:::
+
+::: aside
+[@zaghi_etal20]
+:::
+
+## "I read your review on SBTs and have a suggestion..."
+
+#### Use continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity
+
+![](Cohen.png){fig-align="center" width="1000"}
+
+::: aside
+[@kaltsas2005; @jerwood2012]
+:::
+
+## Blood culture Tpos measures bacterial inoculum and antimicrobial pharmacokinetics
+
+<br>
+
+![](cohendata.png){fig-align="center"}
+
+::: aside
+[@kaltsas2005; @jerwood2012]
+:::
+
+## Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy {background-image="/slides/bactec_background.png"}
+
+![](acute_logo.png){fig-align="center" width="200"}
+
+<br>
+
+<br>
+
+-   **Specific Aim# 1:** Establish the quantitative relationship *in vitro* between Tpos and carbapenamase-producing Enterobacterales (CPE) and define antibiotic concentration-effect relationships
+
+-   **Specific Aim#2**: Pilot observational clinical study in 20 septic patients undergoing treatment for CPE to explore how early Tpos results with "indicator" isolates correlate with individual antibiotic PK/PD targets
+
+## References
+
+<br>
