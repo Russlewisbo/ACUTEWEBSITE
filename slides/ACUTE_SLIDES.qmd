@@ -121,51 +121,42 @@ Prognostic performance similar or better than current susceptibility breakpoints
 [@zaghi_etal20]
 :::
 
+## SBTs advantages
+
+<br>
+
+-   Only microbiological test that accounts for both antibiotic PK and PD
+-   Theoretically accounts for protein binding changes
+-   Can detect synergistic or antagonistic interactions
+
 ## Why were SBTs abandoned?
-
 <br>
 
-<br>
+-   Insufficent standardization despite published methods (CLSI M21-A, last updated 1999)
+-   Poor inter-laboratory reproducibility
+-   Labour-intensive to perform
+-   Lack of perceived need in 1990s (reliably bactericidal antibiotics)
+-   **Delay in results reporting (48-72 hours with patients isolate)**
 
-::: columns
-::: {.column width="60%"}
-**Advantages**
 
--   Only microbiological test that accounts for antibiotic
-    -   PK/PD
-
-    -   Synergy or antagonism of combinations
--   Simple to interpret
-:::
-
-::: {.column width="40%"}
-**Disadvantages**
-
--   Lack of perceived need in 1990s with introduction of reliably bactericidal antibiotics
--   Lack of rigorous standardization
--   Poor interlaboratory reproducibility
--   Labour-intensive (not automated)
--   **Delay in results (48-72 hours)**
-:::
-:::
-
-::: aside
-[@zaghi_etal20]
-:::
-
-## "I read your review on SBTs and have a suggestion..."
+## "I read your SBT review and have a suggestion..."
 
 #### Use continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity
 
-![](Cohen.png){fig-align="center" width="1000"}
+Concept: The assay measures the time taken for a standardized bacterial inoculum to "grow through" the antimicrobial activity in the patient's serum under defined conditions.
+
+![](Cohen.png){fig-align="center" width="800"}
 
 ::: aside
-[@kaltsas2005; @jerwood2012]
+-   A short Tpos would indicate inadequate antimicrobial activity and should predict a worse outcome
+-   A long Tpos is evidence of adequate antimicrobial activity and should predict a good outcome
 :::
 
 ## Blood culture Tpos measures bacterial inoculum and antimicrobial pharmacokinetics
 
 <br>
+
+<center>A "critical" Tpos result could be reported in \< 12 hours!</center>
 
 ![](cohendata.png){fig-align="center"}
 
@@ -182,8 +173,102 @@ Prognostic performance similar or better than current susceptibility breakpoints
 <br>
 
 -   **Specific Aim# 1:** Establish the quantitative relationship *in vitro* between Tpos and carbapenamase-producing Enterobacterales (CPE) and define antibiotic concentration-effect relationships
-
 -   **Specific Aim#2**: Pilot observational clinical study in 20 septic patients undergoing treatment for CPE to explore how early Tpos results with "indicator" isolates correlate with individual antibiotic PK/PD targets
+
+## Tpos correlates with inoculum {.smaller}
+
+::: panel-tabset
+### K. pneumoniae
+
+```{r, .smaller}
+
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, color=isolates, shape=diluent, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+kpc<-fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot(kpc)
+```
+
+### E. coli
+
+```{r}
+library (readxl)
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+ecoliatcc_inoc <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/ecoliatcc_inoculum.xlsx")
+figecoli <-ggplot(ecoliatcc_inoc, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+ecoli<- figecoli + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot (ecoli)
+```
+
+### A. baumanii
+
+```{r}
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+library (readxl)
+abaumani <- read_excel("~/Desktop/ACUTEWEBSITE/abaum_pbs.xlsx")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+abaumi<-ggplot(abaumani, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+abaumi2 <-abaumi+ theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot (abaumi2)
+```
+
+### P. aeruginosa
+
+```{r}
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+library (readxl)
+pseudo <- read_excel("~/Desktop/ACUTEWEBSITE/pseudo_pbs.xlsx")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig2f <-ggplot(pseudo, aes(x=inoculum, y=tpos, color=isolates, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+psa <-fig2f + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot(psa)
+```
+:::
+
+R^2^ = 0.96-0.99
+
+## Tpos can descriminate between susceptible and resistant pathogens
+
+```{r}
+
+library (ggplot2)
+theme_set(theme_bw())
+ceftaz <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_single/ceftazidime.csv")
+ggplot(ceftaz, aes(x=conc_s, y=tpos, color=isolate, shape=isolate)) + 
+  geom_point(size=4, alpha = 0.7) + 
+  geom_smooth(aes(linetype=isolate), method= loess, color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE ) +
+scale_x_log10(name="CAZ/AVI conc, mg/L") +
+scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
+```
+
+::: aside
+KPC_B MIC 1.0 mg/L, KPC_NDM MIC > 256 mg/L; data fit byLoess
+:::
 
 ## References
 

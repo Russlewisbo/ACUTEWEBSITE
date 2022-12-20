@@ -529,21 +529,21 @@
     "href": "slides/ACUTE_SLIDES.html#why-were-sbts-abandoned",
     "title": "The Acute Website",
     "section": "Why were SBTs abandoned?",
-    "text": "Why were SBTs abandoned?\n\n\n\n\nAdvantages\n\nOnly microbiological test that accounts for antibiotic\n\nPK/PD\nSynergy or antagonism of combinations\n\nSimple to interpret\n\n\nDisadvantages\n\nLack of perceived need in 1990s with introduction of reliably bactericidal antibiotics\nLack of rigorous standardization\nPoor interlaboratory reproducibility\nLabour-intensive (not automated)\nDelay in results (48-72 hours)\n\n\n\n\n\n(Zaghi et al. 2020)"
+    "text": "Why were SBTs abandoned?\n\n\nInsufficent standardization despite published methods (CLSI M21-A, last updated 1999)\nPoor inter-laboratory reproducibility\nLabour-intensive to perform\nLack of perceived need in 1990s (reliably bactericidal antibiotics)\nDelay in results reporting (48-72 hours with patients isolate)"
   },
   {
     "objectID": "slides/ACUTE_SLIDES.html#i-read-your-review-on-sbts-and-have-a-suggestion",
     "href": "slides/ACUTE_SLIDES.html#i-read-your-review-on-sbts-and-have-a-suggestion",
     "title": "The Acute Website",
     "section": "“I read your review on SBTs and have a suggestion…”",
-    "text": "“I read your review on SBTs and have a suggestion…”\nUse continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity\n\n\n\n\n\n\n\n(Kaltsas, Want, and Cohen 2005; Jerwood, Hankins, and Cohen 2012)"
+    "text": "“I read your review on SBTs and have a suggestion…”\nUse continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity\nConcept: The assay measures the time taken for a standardized bacterial inoculum to “grow through” the antimicrobial activity in the patient’s serum under defined conditions.\n\n\n\n\n\n\n\n\nShort Tpos would indicate inadequate antimicrobial activity and should predict a worse outcome\nA long Tpos is evidence of adequate antimicrobial activity and should predict a good outcome"
   },
   {
     "objectID": "slides/ACUTE_SLIDES.html#blood-culture-tpos-measures-bacterial-inoculum-and-antimicrobial-pharmacokinetics",
     "href": "slides/ACUTE_SLIDES.html#blood-culture-tpos-measures-bacterial-inoculum-and-antimicrobial-pharmacokinetics",
     "title": "The Acute Website",
     "section": "Blood culture Tpos measures bacterial inoculum and antimicrobial pharmacokinetics",
-    "text": "Blood culture Tpos measures bacterial inoculum and antimicrobial pharmacokinetics\n\n\n\n\n\n\n\n\n(Kaltsas, Want, and Cohen 2005; Jerwood, Hankins, and Cohen 2012)"
+    "text": "Blood culture Tpos measures bacterial inoculum and antimicrobial pharmacokinetics\n\n\nA “critical” Tpos result could be reported in < 12 hours!\n\n\n\n\n\n\n\n\n(Kaltsas, Want, and Cohen 2005; Jerwood, Hankins, and Cohen 2012)"
   },
   {
     "objectID": "slides/ACUTE_SLIDES.html#adapting-bloodculture-systems-to-monitor-antimicrobial-efficacy-1",
@@ -551,5 +551,40 @@
     "title": "The Acute Website",
     "section": "Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy",
     "text": "Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy\n\n\n\n\nSpecific Aim# 1: Establish the quantitative relationship in vitro between Tpos and carbapenamase-producing Enterobacterales (CPE) and define antibiotic concentration-effect relationships\nSpecific Aim#2: Pilot observational clinical study in 20 septic patients undergoing treatment for CPE to explore how early Tpos results with “indicator” isolates correlate with individual antibiotic PK/PD targets"
+  },
+  {
+    "objectID": "slides/ACUTE_SLIDES.html#i-read-your-sbt-review-and-have-a-suggestion",
+    "href": "slides/ACUTE_SLIDES.html#i-read-your-sbt-review-and-have-a-suggestion",
+    "title": "The Acute Website",
+    "section": "“I read your SBT review and have a suggestion…”",
+    "text": "“I read your SBT review and have a suggestion…”\nUse continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity\nConcept: The assay measures the time taken for a standardized bacterial inoculum to “grow through” the antimicrobial activity in the patient’s serum under defined conditions.\n\n\n\n\n\n\n\n\nA short Tpos would indicate inadequate antimicrobial activity and should predict a worse outcome\nA long Tpos is evidence of adequate antimicrobial activity and should predict a good outcome"
+  },
+  {
+    "objectID": "slides/ACUTE_SLIDES.html#tpos-correlates-with-inoculum-of-carbapenemase-producing-enterbacterales",
+    "href": "slides/ACUTE_SLIDES.html#tpos-correlates-with-inoculum-of-carbapenemase-producing-enterbacterales",
+    "title": "The Acute Website",
+    "section": "Tpos correlates with inoculum of Carbapenemase-producing Enterbacterales",
+    "text": "Tpos correlates with inoculum of Carbapenemase-producing Enterbacterales\n\n\n\n\n\n\nTpos vs. Test inoculum KPC- K. pneumoniae\n\n\n\n\n\n\n\nVapor Pressure of Mercury as a Function of Temperature\n\n\n\n\n\n\n\n\n\nTpos vs. Test inoculum KPC- K. pneumoniae"
+  },
+  {
+    "objectID": "slides/ACUTE_SLIDES.html#tpos-correlates-with-inoculum",
+    "href": "slides/ACUTE_SLIDES.html#tpos-correlates-with-inoculum",
+    "title": "The Acute Website",
+    "section": "Tpos correlates with inoculum",
+    "text": "Tpos correlates with inoculum\n\nK. pneumoniaeE. coliA. baumaniiP. aeruginosa\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR2 = 0.96-0.99"
+  },
+  {
+    "objectID": "slides/ACUTE_SLIDES.html#sbts-advantages",
+    "href": "slides/ACUTE_SLIDES.html#sbts-advantages",
+    "title": "The Acute Website",
+    "section": "SBTs advantages",
+    "text": "SBTs advantages\n\n\nOnly microbiological test that accounts for both antibiotic PK and PD\nTheoretically accounts for protein binding changes\nCan detect synergistic or antagonistic interactions"
+  },
+  {
+    "objectID": "slides/ACUTE_SLIDES.html#tpos-can-descriminate-between-susceptible-and-resistant-pathogens",
+    "href": "slides/ACUTE_SLIDES.html#tpos-can-descriminate-between-susceptible-and-resistant-pathogens",
+    "title": "The Acute Website",
+    "section": "Tpos can descriminate between susceptible and resistant pathogens",
+    "text": "Tpos can descriminate between susceptible and resistant pathogens\n\n\n\n\n\n\n\nKPC_B MIC 1.0 mg/L, KPC_NDM MIC > 256 mg/L; data fit byLoess"
   }
 ]
