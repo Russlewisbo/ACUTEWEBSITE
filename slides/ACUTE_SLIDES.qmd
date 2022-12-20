@@ -2,6 +2,7 @@
 format:
   revealjs:
     touch: true
+    embed-resources: true
     controls: true
     transition: fade
     transition-speed: fast
@@ -9,7 +10,7 @@ format:
     slide-number: false
     incremental: false
     multiplex: true
-    chalkboard: true
+    chalkboard: false
     theme: [default, custom.scss]
     seal: false
 bibliography: references.bib
@@ -267,8 +268,108 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 ::: aside
-KPC_B MIC 1.0 mg/L, KPC_NDM MIC > 256 mg/L; data fit byLoess
+KPC_B MIC 1.0 mg/L, KPC_NDM MIC > 256 mg/L; data fit by Loess
 :::
+
+## Pharmacodynamic relationship of Tpos against <br> K. pneumoniae ATCC 700603 (0.75 mg/L)
+
+::: panel-tabset
+### Ceftazidime-avibactam
+```{r}
+library (readxl)
+library(drda)
+caz_avi_7a <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
+fit_atcc <- drda(tpos ~ ctz_s, data=caz_avi_7a, mean_function = "loglogistic4", max_iter = 1000)
+caz_avi_7b <-read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powderfix4.xlsx")
+fit_atcc2 <- drda(tpos ~ ctz_s, data=caz_avi_7b, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit_atcc,fit_atcc2, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)", legend_location="bottomright", legend = c("CZA-AVI, 4:1 ratio", "CZA-AVI, fixed 4 mg/L"))
+```
+### 4:1 ratio
+```{r}
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+caz_avi_7a <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
+fit_atcc <- drda(tpos ~ ctz_s, data=caz_avi_7a, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit_atcc, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
+### Fixed 4 mg/L
+
+```{r}
+library (readxl)
+library(drda)
+caz_avi_7a <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powderfix4.xlsx")
+fit7a <- drda(tpos ~ ctz_s, data=caz_avi_7a, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit7a, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+:::
+
+## Inoculum effects observed with PD relationship measured by Tpos
+
+
+
+## Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs
+
+```{r}
+## Comparison of meropenem curves for ATCC and KPC_B strains adjusted for MIC
+
+library (readxl)
+library(drda)
+mero <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/ATCC_meropenem.xlsx")
+mero2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_meropenem.xlsx")
+fit1 <- drda(tpos ~ mero_mic, data=mero, mean_function = "loglogistic4", max_iter = 1000)
+fit2 <- drda(tpos ~ mero_mic2, data=mero2, mean_function = "loglogistic4", max_iter = 1000)
+
+
+## Comparison of ceftazidime-avibactam curves for KPC-A and KPC_B strains adjusted for MIC
+
+library (readxl)
+library(drda)
+ctz1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpca_caz_avi_powder_4-1.xlsx")
+ctz2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+ctz3 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/atcc_cazavi.xlsx")
+fit3 <- drda(tpos ~ ctz_mic, data=ctz1, mean_function = "loglogistic4", max_iter = 1000)
+fit4 <- drda(tpos ~ ctz_mic, data=ctz2, mean_function = "loglogistic4", max_iter = 1000)
+fit5 <- drda(tpos ~ ctz_mic, data=ctz3, mean_function = "loglogistic4", max_iter = 1000)
+
+
+
+# Comparison of tigecycline curves for KPC-A and KPC_B strains adjusted for MIC
+
+tig1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpca_tig.xlsx")
+tig2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_tig.xlsx")
+fittig1 <- drda(tpos ~ tig_mic, data=tig1, mean_function = "loglogistic4", max_iter = 1000)
+fittig2 <- drda(tpos ~ tig_mic, data=tig2, mean_function = "loglogistic4", max_iter = 1000)
+
+
+
+# Comparison of gentamicin curves for KPC-A and KPC_B strains adjusted for MIC
+
+gent1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpca_gent.xlsx")
+gent2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_gent.xlsx")
+fitgent1 <- drda(tpos ~ gent_mic, data=gent1, mean_function = "loglogistic4", max_iter = 1000)
+fitgent2 <- drda(tpos ~ gent_mic, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
+
+
+# Colistin adjusted for MIC
+
+col1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_coli.xlsx")
+fitco1 <- drda(tpos ~ col_mic, data=col1, mean_function = "loglogistic4", max_iter = 1000)
+
+
+# plot all data
+plot (fit1, fit2, fit3, fit4, fit5, fittig1, fittig2, fitgent1, fitgent2, fitco1, xlab = "Conc/MIC", base=10, ylab = "Tpos (hr)", xlim =c(0,1000), legend_location="bottomright", legend = c("MERO ATCC", "MERO KPC_B", "CZA-AVI KPC_A", "CZA-AVI KPC_B", "CZA-AVI ATCC", "Tig KPC_A", "TIG KPC_B", "GEN KPC_A", "GEN KPC_B", "Colistin KPC_B"))
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+
+```
+
+
 
 ## References
 
