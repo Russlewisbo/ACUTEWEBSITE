@@ -13,13 +13,13 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
-## WORKPACKAGE 1A:QUANTITATIVE RELATIONSHIP OF TPOS WITH BACTERIAL INOCULUM
+## WORKPACKAGE 1A: QUANTITATIVE RELATIONSHIP OF TPOS WITH BACTERIAL INOCULUM
 
 ### METHODS
 
 In this package we will establish the quantitative relationship of Tpos and KPC-carbapenemase producing *Klebsiella pneumoniae* inoculum in blood culture bottles. <br>
 
-The methods for the assay are a modification of those originally proposed by Kaltsas et al.[@kaltsas2005] Detailed procedures can be found at this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.[@Clinical_Laboratory_Standards_Institute1999-iy; @Clinical_Laboratory_Standards_Institute1999-iya].
+The methods for the assay are a modification of those originally proposed by Kaltsas et al.[@kaltsas2005] Detailed procedures can be found at this [link](Protocols.html). Methodology for preparing the test inoculum was adapted from [CLSI M21A](CLSI_M21A.pdf) and [M26A](CLSI_M26A.pdf) guidelines.
 
 -   Briefly, tubes containing 1.8 mL of pooled healthy human serum are inoculated with 0.2 mL of a series of ten-fold dilutions (5x10^1^ to 5x10^7^ CFU/mL) of the standardised inoculum of each test indicator strains.
 -   The sera were are then transferred into BacT⁄ALERT bottles ***without antibiotic inactivating matrix*** (Biomérieux Inc) for aerobic incubation for 24 hours and monitored for time to positivity.
@@ -219,7 +219,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|--------------------------------|----------------------|----------------------------------------|
+|------------------------|------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -615,6 +615,72 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
+#### KPC K. pneumoniae KPRAD (MIC 0.5 mg/L) 
+
+
+```{r }
+#| label: fig-kprad
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae"
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+caz_avi_kprad <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
+plot(fitkprad, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
+```
+
+```{r}
+#| label: tbl-kprad
+#| tbl-cap: "Pharmacodynamic estimates"
+
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+caz_avi_5 <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+caz_avi_kprad <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fitkprad, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
+#### KPC K. pnuemoniae KFAB (MIC 0.38 mg/L) 
+
+
+```{r }
+#| label: fig-kfab
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae"
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+caz_avi_kfab <- read_excel("datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
+fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
+plot(fitkfab, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
+```
+
+```{r}
+#| label: tbl-kfab
+#| tbl-cap: "Pharmacodynamic estimates"
+
+
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+caz_avi_kfab <- read_excel("datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
+fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fitkprad, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
+
 #### K. pneumoniae WT (MIC 0.125 mg/L) fixed 4 mg/L
 
 ```{r }
@@ -693,14 +759,19 @@ library(drda)
 kpca <- read_excel("datasets_single/kpca_caz_avi_powder_4-1.xlsx")
 kpcb <- read_excel("datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
 kpccatania <- read_excel("datasets_single/kpccatania_caz_avi_powder_4-1.xlsx")
+caz_avi_kfab <- read_excel("datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
 kpwt <- read_excel("datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
+caz_avi_kprad <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+
 ## fit models for each of the isolates
 fitkpca <- drda(tpos ~ ctz_s, kpca, mean_function = "loglogistic4", max_iter = 1000)
 fitkpcb <- drda(tpos ~ ctz_s, kpcb, mean_function = "loglogistic4", max_iter = 1000)
 fitkpccatania <- drda(tpos ~ ctz_s, kpccatania, mean_function = "loglogistic4", max_iter = 1000)
 fitkpwt <- drda(tpos ~ ctz_s, kpwt, mean_function = "loglogistic4", max_iter = 1000)
+fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
+fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
 ## plot all of the isolates together
-p <-plot(fitkpca, fitkpcb, fitkpccatania, fitkpwt, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("KPC_A", "KPC_B",  "KPC_CAT", "KP_WT")) 
+p <-plot(fitkpca, fitkpcb, fitkpccatania, fitkpwt, fitkfab, fitkprad, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("2 mg/L", "1 mg/L",  "16 mg/L", "0.125 mg/L", "0.5 mg/L", "0.38 mg/L")) 
 ```
 
 Do we need to test an isolate with an MIC of 0.25-0.5?

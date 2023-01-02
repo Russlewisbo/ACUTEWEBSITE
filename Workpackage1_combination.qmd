@@ -177,9 +177,7 @@ summary(rsb2)
 #### Ceftazidime-avibactam + gentamicin (high inoculum)
 
 ::: callout-important
-
 More dose-response data need for gentamicin against high inoculum
-
 :::
 
 ```{r}
@@ -197,7 +195,7 @@ cutoff <- 0.95
 caz_gent_hinoc <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kpcb_ceftazavi_gent_hinoc.csv")
 ## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
 marginalhinoc <- fitMarginals(caz_gent_hinoc, method = "optim",                 
-                            fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 5.0),
                             names = c("CTZ/AVI", "GENT"))
 summary(marginalFit2)
 ## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum constrained at 24 hours

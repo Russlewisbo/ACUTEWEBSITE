@@ -122,7 +122,7 @@ Prognostic performance similar or better than current susceptibility breakpoints
 [@zaghi_etal20]
 :::
 
-## SBTs advantages
+## SBT advantages
 
 <br>
 
@@ -131,6 +131,7 @@ Prognostic performance similar or better than current susceptibility breakpoints
 -   Can detect synergistic or antagonistic interactions
 
 ## Why were SBTs abandoned?
+
 <br>
 
 -   Insufficent standardization despite published methods (CLSI M21-A, last updated 1999)
@@ -138,7 +139,6 @@ Prognostic performance similar or better than current susceptibility breakpoints
 -   Labour-intensive to perform
 -   Lack of perceived need in 1990s (reliably bactericidal antibiotics)
 -   **Delay in results reporting (48-72 hours with patients isolate)**
-
 
 ## "I read your SBT review and have a suggestion..."
 
@@ -268,13 +268,14 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 ::: aside
-KPC_B MIC 1.0 mg/L, KPC_NDM MIC > 256 mg/L; data fit by Loess
+KPC_B MIC 1.0 mg/L, KPC_NDM MIC \> 256 mg/L; data fit by Loess
 :::
 
 ## Pharmacodynamic relationship of Tpos against <br> K. pneumoniae ATCC 700603 (0.75 mg/L)
 
 ::: panel-tabset
 ### Ceftazidime-avibactam
+
 ```{r}
 library (readxl)
 library(drda)
@@ -284,7 +285,9 @@ caz_avi_7b <-read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_p
 fit_atcc2 <- drda(tpos ~ ctz_s, data=caz_avi_7b, mean_function = "loglogistic4", max_iter = 1000)
 plot(fit_atcc,fit_atcc2, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)", legend_location="bottomright", legend = c("CZA-AVI, 4:1 ratio", "CZA-AVI, fixed 4 mg/L"))
 ```
+
 ### 4:1 ratio
+
 ```{r}
 library (readxl)
 library(drda)
@@ -312,7 +315,18 @@ kable_paper("hover", full_width = F, position = "left")
 
 ## Inoculum effects observed with PD relationship measured by Tpos
 
+```{r}
+library (readxl)
+library(drda)
+caz_avi_hinc <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
+fithinc <- drda(tpos ~ ctz_s, data=caz_avi_hinc, mean_function = "loglogistic4", max_iter = 1000)
+library (readxl)
+library(drda)
+caz_avi_6 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+fit_reginoc <- drda(tpos ~ ctz_s, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
+plot(fithinc, fit_reginoc, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)", legend = c("1x10^7", "1x10^4"))
 
+```
 
 ## Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs
 
@@ -369,7 +383,9 @@ plot (fit1, fit2, fit3, fit4, fit5, fittig1, fittig2, fitgent1, fitgent2, fitco1
 
 ```
 
+## Combination therapy
 
+![](combination%20method.png){fig-align="center"}
 
 ## References
 
