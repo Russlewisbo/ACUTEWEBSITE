@@ -13,7 +13,7 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
-## WORKPACKAGE 1B: EFFECT OF ANTIBIOTIC COMBINATIONS on TPOS
+## WORKPACKAGE 1B: EFFECT OF ANTIBIOTIC COMBINATIONS ON TPOS
 
 ### METHODS
 
@@ -33,9 +33,9 @@ csl: nature.csl
 
 ### RESULTS
 
-#### Ceftazidime-avibactam + gentamicin
+### Ceftazidime-avibactam + gentamicin
 
--   The results shown in [@fig-10wp2] demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with and average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
+-   The results shown in [@fig-10wp2] demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with an average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
 
 ```{r}
 #| label: fig-10wp2
@@ -105,7 +105,7 @@ summary(rsb)
 <br>
 
 -   The activity of combination ceftazidime/avibactam (4 to 1 ratio from analytical powder) plus gentamicin was tested against *Klebsiella pneumonia* KPC_A strain in 5 replicate experiments using the same methodology.
--   Results are shown in [@fig-11wp2].
+-   Results are shown in [@fig-11wp2]
 
 ```{r}
 #| label: fig-11wp2
@@ -174,11 +174,7 @@ summary(rsb2)
 
 <br>
 
-#### Ceftazidime-avibactam + gentamicin (high inoculum)
-
-::: callout-important
-More dose-response data need for gentamicin against high inoculum
-:::
+### Ceftazidime-avibactam + gentamicin (high inoculum)
 
 ```{r}
 #| label: fig-11hinoc
@@ -232,13 +228,13 @@ summary(rsbhinoc)
 
 ```
 
-#### Ceftazidime/avibactam + aztreonam
+### Ceftazidime/avibactam + aztreonam versus Catania strain
 
-Results are shown in [@fig-12wp2].
+Results are shown in [@fig-12cat].
 
 ```{r}
-#| label: fig-12wp2
-#| fig-cap: "Effect of combined ceftazidime/avibactam and gentamicin effects on Tpos"
+#| label: fig-12cat
+#| fig-cap: "Effect of combined ceftazidime/avibactam and aztreonam effects on Tpos"
 
 library(BIGL)
 library(knitr)
@@ -250,37 +246,83 @@ set.seed(12345)
 cutoff <- 0.95
 caz_azt <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/ndm_cazavi_azt.csv")
 ## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
-marginalFit3 <- fitMarginals(caz_azt, method = "optim",                 
+marginalFit3cat <- fitMarginals(caz_azt, method = "optim",                 
                             fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
                             names = c("CTZ/AVI", "AZT"))
-summary(marginalFit3)
+summary(marginalFit3cat)
 ## Plotting marginal model for ceftazidime/avibactam and aztroenam, minimum constrained at 9 hrs and maximum constrained at 24 hours
-plot(marginalFit3) + ggtitle(paste("Ceftazidime/Avibactam + Aztreonam"))
-rs3 <- fitSurface(caz_azt, marginalFit3,
+plot(marginalFit3cat) + ggtitle(paste("Ceftazidime/Avibactam + Aztreonam"))
+rs3cat <- fitSurface(caz_azt, marginalFit3cat,
                  null_model = "bliss",
                  B.CP = 50, statistic = "none", parallel = FALSE)
-summary(rs3)
-plot(rs3, legend = FALSE, main = "")
+summary(rs3cat)
+plot(rs3cat, legend = FALSE, main = "")
 view3d(0, -75)
 rglwidget()
 
 
-rsh3 <- fitSurface(caz_azt, marginalFit3,
+rsh3cat <- fitSurface(caz_azt, marginalFit3cat,
                   null_model = "hsa",
                   B.CP = 50, statistic = "both", parallel = FALSE)
-summary(rsh3)
+summary(rsh3cat)
 
-rsb3 <- fitSurface(caz_azt, marginalFit3, 
+rsb3cat <- fitSurface(caz_azt, marginalFit3cat,
                   null_model = "bliss",
                   B.CP = 50, statistic = "both", parallel = FALSE)
-summary(rsb3)
+summary(rsb3cat)
+
+
+```
+
+### Ceftazidime/avibactam + meropenem vs. Catania strain (MIC 16 mg/L)
+
+Results are shown in [@fig-cat2].
+
+```{r}
+#| label: fig-cat2
+#| fig-cap: "Effect of combined ceftazidime/avibactam and meropenem effects on Tpos"
+
+library(BIGL)
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(broom)
+library(kableExtra)
+set.seed(12345)
+cutoff <- 0.95
+caz_mero_cat <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kp_kpc_catania_cazavi_mero.csv")
+## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
+marginalFitcat2 <- fitMarginals(caz_mero_cat, method = "optim",                 
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
+                            names = c("CTZ/AVI", "AZT"))
+summary(marginalFitcat2)
+## Plotting marginal model for ceftazidime/avibactam and aztroenam, minimum constrained at 9 hrs and maximum constrained at 24 hours
+plot(marginalFitcat2) + ggtitle(paste("Ceftazidime/Avibactam + Meropenem"))
+rs3cat2 <- fitSurface(caz_mero_cat, marginalFitcat2,
+                 null_model = "bliss",
+                 B.CP = 50, statistic = "none", parallel = FALSE)
+summary(rs3cat2)
+plot(rs3cat2, legend = FALSE, main = "")
+view3d(0, -75)
+rglwidget()
+
+
+rsh3cat2 <- fitSurface(caz_mero_cat, marginalFitcat2,
+                  null_model = "hsa",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsh3cat2)
+
+rsb3cat2 <- fitSurface(caz_mero_cat, marginalFitcat2, 
+                  null_model = "bliss",
+                  B.CP = 50, statistic = "both", parallel = FALSE)
+summary(rsb3cat2)
 
 
 ```
 
 <br>
 
-#### Ceftazidime/avibactam + colistin
+### Ceftazidime/avibactam + colistin
 
 Results are shown in [@fig13wp2].
 
@@ -326,7 +368,7 @@ summary(rsb4)
 
 ```
 
-#### Ceftazidime/avibactam + meropenem
+### Ceftazidime/avibactam + meropenem
 
 Results are shown in [@fig-14wp2].
 
@@ -372,7 +414,7 @@ summary(rsb_caz_mero)
 
 ```
 
-#### Ceftazidime/avibactam + tigecycline
+### Ceftazidime/avibactam + tigecycline
 
 Results are shown in [@fig-15wp2]
 
