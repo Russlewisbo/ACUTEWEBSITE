@@ -715,41 +715,6 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
-#### K. pneumoniae WT (MIC 0.125 mg/L) fixed 4 mg/L
-
-```{r }
-#| label: fig-wt
-#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a wt strain"
-
-## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
-library (readxl)
-library(drda)
-caz_avi_wt <- read_excel("datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
-fitwt <- drda(tpos ~ ctz_s, data=caz_avi_wt, mean_function = "loglogistic4", max_iter = 1000)
-plot(fitwt, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
-```
-
-```{r}
-#| label: tbl-wt
-#| tbl-cap: "Pharmacodynamic estimates K. pneumoniae WT (MIC 0.125 mg/L) "
-
-
-## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
-library (readxl)
-library(drda)
-library(broom)
-library(kableExtra)
-caz_avi_5 <- read_excel("datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
-fitwt <- drda(tpos ~ ctz_s, data=caz_avi_wt, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fitwt, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
-kbl(ed)%>%
-kable_paper("hover", full_width = F, position = "left")
-```
-
-<br>
-
-<br>
-
 #### E. coli ATCC 25922 (MIC 0.19 mg/L)
 
 ```{r }

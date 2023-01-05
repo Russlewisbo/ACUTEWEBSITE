@@ -127,24 +127,26 @@ Prognostic performance similar or better than current susceptibility breakpoints
 <br>
 
 -   Only microbiological test that accounts for both antibiotic PK and PD
--   Theoretically accounts for protein binding changes
--   Can detect synergistic or antagonistic interactions
+-   Accounts for protein binding changes
+-   Can detect synergistic or antagonistic antibiotic interactions
 
 ## Why were SBTs abandoned?
 
 <br>
 
--   Insufficent standardization despite published methods (CLSI M21-A, last updated 1999)
+-   Insufficient standardization despite published methods
+    -   CLSI M21-A, last updated 1999
 -   Poor inter-laboratory reproducibility
 -   Labour-intensive to perform
--   Lack of perceived need in 1990s (reliably bactericidal antibiotics)
+-   Lack of perceived need after introduction of reliably bactericidal antibiotics in 1990s
+    -   3rd generation cephalosporins, fluoroquinolones, carbapenems
 -   **Delay in results reporting (48-72 hours with patients isolate)**
 
 ## "I read your SBT review and have a suggestion..."
 
 #### Use continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity
 
-Concept: The assay measures the time taken for a standardized bacterial inoculum to "grow through" the antimicrobial activity in the patient's serum under defined conditions.
+*Concept: The assay will measure time taken for a standardized bacterial inoculum to "grow through" the antimicrobial activity in the patient's serum under defined conditions.*
 
 ![](Cohen.png){fig-align="center" width="800"}
 
@@ -253,7 +255,7 @@ plot(psa)
 
 R^2^ = 0.96-0.99
 
-## Tpos can descriminate between susceptible and resistant pathogens
+## Tpos can discriminate between susceptible and resistant pathogens
 
 ```{r}
 
@@ -272,6 +274,8 @@ KPC_B MIC 1.0 mg/L, KPC_NDM MIC \> 256 mg/L; data fit by Loess
 :::
 
 ## Pharmacodynamic relationship of Tpos against <br> K. pneumoniae ATCC 700603 (0.75 mg/L)
+
+<br>
 
 ::: panel-tabset
 ### Ceftazidime-avibactam
@@ -383,11 +387,9 @@ plot (fit1, fit2, fit3, fit4, fit5, fittig1, fittig2, fitgent1, fitgent2, fitco1
 
 ```
 
-## Comparison of indicator isolates
+## Comparison of K. pneumoniae indicator isolates
 
 ```{r }
-#| label: fig-compkp
-#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
 
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
@@ -420,7 +422,7 @@ p <-plot(fitkpwt, fitkprad, fitkfab, fitkpcatcc, fitkpcb, fitkpca, fitkpccatania
 
 ## How could Tpos be used clinically
 
-## Could Tpos be used with "indicator" isolates?
+## Could Tpos be performed with "indicator" isolates?
 
 ![](MIC%20data.png)
 
