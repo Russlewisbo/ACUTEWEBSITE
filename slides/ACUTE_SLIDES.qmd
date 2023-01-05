@@ -385,9 +385,9 @@ plot (fit1, fit2, fit3, fit4, fit5, fittig1, fittig2, fitgent1, fitgent2, fitco1
 
 ## Comparison of indicator isolates
 
-```{r}
+```{r }
 #| label: fig-compkp
-#| fig-cap: ""
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
 
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
@@ -398,16 +398,18 @@ kpccatania <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpccatania_caz_
 caz_avi_kfab <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
 kpwt <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
 caz_avi_kprad <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+kpatcc <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
 
 ## fit models for each of the isolates
 fitkpca <- drda(tpos ~ ctz_s, kpca, mean_function = "loglogistic4", max_iter = 1000)
+fitkpcatcc <- drda(tpos ~ ctz_s, kpatcc, mean_function = "loglogistic4", max_iter = 1000)
 fitkpcb <- drda(tpos ~ ctz_s, kpcb, mean_function = "loglogistic4", max_iter = 1000)
 fitkpccatania <- drda(tpos ~ ctz_s, kpccatania, mean_function = "loglogistic4", max_iter = 1000)
 fitkpwt <- drda(tpos ~ ctz_s, kpwt, mean_function = "loglogistic4", max_iter = 1000)
 fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
 fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
 ## plot all of the isolates together
-p <-plot(fitkpca, fitkpcb, fitkpccatania, fitkpwt, fitkfab, fitkprad, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("2 mg/L", "1 mg/L",  "16 mg/L", "0.125 mg/L", "0.5 mg/L", "0.38 mg/L")) 
+p <-plot(fitkpwt, fitkprad, fitkfab, fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L",  "0.5 mg/L", "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
 ```
 
 ## Combination therapy

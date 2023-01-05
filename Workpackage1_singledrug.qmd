@@ -219,7 +219,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|--------------------------------|----------------------|----------------------------------------|
+|------------------------|------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -229,7 +229,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 
 <br>
 
-#### K. pneumoniae ATCC 700603 (MIC 0.03 mg/L) powder 4:1
+#### K. pneumoniae ATCC 700603 (MIC 0.75 mg/L) powder 4:1
 
 ```{r}
 #| label: fig-1atcc
@@ -264,7 +264,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
-#### K. pneumoniae ATCC 700603 (MIC 0.03 mg/L) fixed 4 mg/L
+#### K. pneumoniae ATCC 700603 (MIC 0.75 mg/L) fixed 4 mg/L
 
 ```{r}
 #| label: fig-1atccfix
@@ -491,13 +491,13 @@ plot(fit10, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 #| label: tbl-8
 #| tbl-cap: "Pharmacodynamic estimates"
 
-## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameters estiamtes plus 95% CI 
+## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameters estimates plus 95% CI 
 library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
 caz_avi_10 <- read_excel("datasets_single/kpcb_caz_avi_powder_fix4.xlsx")
-fit10 <- drda(tpos ~ ctz, data=caz_avi_10, mean_function = "loglogistic4", max_iter = 1000)
+fit10 <- drda(tpos ~ ctz_s, data=caz_avi_10, mean_function = "loglogistic4", max_iter = 1000)
 ed<-effective_dose(fit10, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
@@ -560,7 +560,7 @@ plot(fitcat, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 
 ```{r}
 #| label: tbl-catan1
-#| tbl-cap: "Pharmacodynamic estimates for a high-inoculum"
+#| tbl-cap: "Pharmacodynamic estimates"
 
 
 ## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
@@ -589,14 +589,14 @@ kable_paper("hover", full_width = F, position = "left")
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_5 <- read_excel("datasets_single/kpccatania_caz_avi_powder_4-1.xlsx")
+caz_avi_5 <- read_excel("datasets_single/kpccatania_caz_avi_powderfix.xlsx")
 fitcat5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
 plot(fitcat5, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
 
 ```{r}
 #| label: tbl-catfix
-#| tbl-cap: "Pharmacodynamic estimates for a high-inoculum"
+#| tbl-cap: "Pharmacodynamic estimates"
 
 
 ## Analysis is repeated to produce a table reporting estimated EC10-EC95 parameter estimates plus 95% CI 
@@ -604,7 +604,7 @@ library (readxl)
 library(drda)
 library(broom)
 library(kableExtra)
-caz_avi_5 <- read_excel("datasets_single/kpccatania_caz_avi_powder_4-1.xlsx")
+caz_avi_5 <- read_excel("datasets_single/kpccatania_caz_avi_powderfix.xlsx")
 fit5 <- drda(tpos ~ ctz_s, data=caz_avi_5, mean_function = "loglogistic4", max_iter = 1000)
 ed<-effective_dose(fit5, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
@@ -624,7 +624,7 @@ kable_paper("hover", full_width = F, position = "left")
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-caz_avi_kprad <- read_excel("~/datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+caz_avi_kprad <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
 fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
 plot(fitkprad, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
 ```
@@ -646,7 +646,7 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### KPC K. pnuemoniae KFAB (MIC 0.38 mg/L)
+#### K. pneumoniae KFAB ESBL (MIC 0.38 mg/L)
 
 ```{r }
 #| label: fig-kfab
@@ -796,18 +796,19 @@ kpccatania <- read_excel("datasets_single/kpccatania_caz_avi_powder_4-1.xlsx")
 caz_avi_kfab <- read_excel("datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
 kpwt <- read_excel("datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
 caz_avi_kprad <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+kpatcc <- read_excel("datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
 
 ## fit models for each of the isolates
 fitkpca <- drda(tpos ~ ctz_s, kpca, mean_function = "loglogistic4", max_iter = 1000)
+fitkpcatcc <- drda(tpos ~ ctz_s, kpatcc, mean_function = "loglogistic4", max_iter = 1000)
 fitkpcb <- drda(tpos ~ ctz_s, kpcb, mean_function = "loglogistic4", max_iter = 1000)
 fitkpccatania <- drda(tpos ~ ctz_s, kpccatania, mean_function = "loglogistic4", max_iter = 1000)
 fitkpwt <- drda(tpos ~ ctz_s, kpwt, mean_function = "loglogistic4", max_iter = 1000)
 fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
 fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
 ## plot all of the isolates together
-p <-plot(fitkpca, fitkpcb, fitkpccatania, fitkpwt, fitkfab, fitkprad, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("2 mg/L", "1 mg/L",  "16 mg/L", "0.125 mg/L", "0.5 mg/L", "0.38 mg/L")) 
+p <-plot(fitkpwt, fitkprad, fitkfab, fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L",  "0.5 mg/L", "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
 ```
-
 
 #### CONCLUSIONS
 
