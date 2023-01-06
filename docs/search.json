@@ -123,7 +123,7 @@
     "href": "slides/ACUTE_SLIDES.html#pharmacodynamic-relationship-of-tpos-against-k.-pneumoniae-atcc-700603-0.75-mgl",
     "title": "The Acute Website",
     "section": "Pharmacodynamic relationship of Tpos against  K. pneumoniae ATCC 700603 (0.75 mg/L)",
-    "text": "Pharmacodynamic relationship of Tpos against  K. pneumoniae ATCC 700603 (0.75 mg/L)\n\n\nCeftazidime-avibactam4:1 ratioFixed 4 mg/L\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n  \n      \n    Estimate \n    Lower .95 \n    Upper .95 \n  \n \n\n  \n    0.1 \n    23.87874 \n    19.31716 \n    28.44033 \n  \n  \n    0.25 \n    26.93812 \n    24.06902 \n    29.80723 \n  \n  \n    0.5 \n    30.38948 \n    29.11007 \n    31.66888 \n  \n  \n    0.75 \n    34.28302 \n    31.38838 \n    37.17767 \n  \n  \n    0.9 \n    38.67541 \n    33.84814 \n    43.50268 \n  \n  \n    0.95 \n    41.98020 \n    33.98412 \n    49.97627 \n  \n\n\n\n\n\n\n\n\n\n\n\n \n  \n      \n    Estimate \n    Lower .95 \n    Upper .95 \n  \n \n\n  \n    0.1 \n    8.099087 \n    7.038485 \n    9.159689 \n  \n  \n    0.25 \n    9.235833 \n    8.728989 \n    9.742676 \n  \n  \n    0.5 \n    10.532127 \n    10.149119 \n    10.915134 \n  \n  \n    0.75 \n    12.010361 \n    10.856802 \n    13.163921 \n  \n  \n    0.9 \n    13.696074 \n    11.685276 \n    15.706872 \n  \n  \n    0.95 \n    14.975851 \n    12.415855 \n    17.535846"
+    "text": "Pharmacodynamic relationship of Tpos against  K. pneumoniae ATCC 700603 (0.75 mg/L)\n\nCeftazidime-avibactam4:1 ratioFixed 4 mg/L\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n  \n      \n    Estimate \n    Lower .95 \n    Upper .95 \n  \n \n\n  \n    0.1 \n    23.87874 \n    19.31716 \n    28.44033 \n  \n  \n    0.25 \n    26.93812 \n    24.06902 \n    29.80723 \n  \n  \n    0.5 \n    30.38948 \n    29.11007 \n    31.66888 \n  \n  \n    0.75 \n    34.28302 \n    31.38838 \n    37.17767 \n  \n  \n    0.9 \n    38.67541 \n    33.84814 \n    43.50268 \n  \n  \n    0.95 \n    41.98020 \n    33.98412 \n    49.97627 \n  \n\n\n\n\n\n\n\n\n\n\n\n \n  \n      \n    Estimate \n    Lower .95 \n    Upper .95 \n  \n \n\n  \n    0.1 \n    8.099087 \n    7.038485 \n    9.159689 \n  \n  \n    0.25 \n    9.235833 \n    8.728989 \n    9.742676 \n  \n  \n    0.5 \n    10.532127 \n    10.149119 \n    10.915134 \n  \n  \n    0.75 \n    12.010361 \n    10.856802 \n    13.163921 \n  \n  \n    0.9 \n    13.696074 \n    11.685276 \n    15.706872 \n  \n  \n    0.95 \n    14.975851 \n    12.415855 \n    17.535846"
   },
   {
     "objectID": "slides/ACUTE_SLIDES.html#inoculum-effects-observed-with-pd-relationship-measured-by-tpos",
@@ -194,5 +194,12 @@
     "title": "The Acute Website",
     "section": "Comparison of K. pneumoniae indicator isolates",
     "text": "Comparison of K. pneumoniae indicator isolates"
+  },
+  {
+    "objectID": "slides/ACUTE_SLIDES.html#at-a-standardized-inoculum-tpos-demonstrates-a-consistent-relationship-across-different-antibiotics-and-isolates-with-different-mics",
+    "href": "slides/ACUTE_SLIDES.html#at-a-standardized-inoculum-tpos-demonstrates-a-consistent-relationship-across-different-antibiotics-and-isolates-with-different-mics",
+    "title": "The Acute Website",
+    "section": "At a standardized inoculum, Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs",
+    "text": "At a standardized inoculum, Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs"
   }
 ]

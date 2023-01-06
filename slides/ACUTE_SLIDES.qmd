@@ -275,8 +275,6 @@ KPC_B MIC 1.0 mg/L, KPC_NDM MIC \> 256 mg/L; data fit by Loess
 
 ## Pharmacodynamic relationship of Tpos against <br> K. pneumoniae ATCC 700603 (0.75 mg/L)
 
-<br>
-
 ::: panel-tabset
 ### Ceftazidime-avibactam
 
@@ -332,7 +330,7 @@ plot(fithinc, fit_reginoc, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr
 
 ```
 
-## Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs
+## At a standardized inoculum, Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs
 
 ```{r}
 ## Comparison of meropenem curves for ATCC and KPC_B strains adjusted for MIC
