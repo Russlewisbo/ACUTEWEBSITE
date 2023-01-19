@@ -193,7 +193,7 @@ caz_gent_hinoc <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/kpcb_ceftazavi
 marginalhinoc <- fitMarginals(caz_gent_hinoc, method = "optim",                 
                             fixed = c("m1" = 24, "m2" = 24, "b" = 5.0),
                             names = c("CTZ/AVI", "GENT"))
-summary(marginalFit2)
+summary(marginalhinoc)
 ## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum constrained at 24 hours
 plot(marginalhinoc) + ggtitle(paste("Ceftazidime/Avibactam + Gentamicin"))
 rshinoc <- fitSurface(caz_gent_hinoc, marginalhinoc,

@@ -27,13 +27,30 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -320,6 +337,9 @@
       margin-right: 0; 
     }
   </style>
+  
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -332,18 +352,15 @@
 </div>
 
 </section>
-<section id="adapting-bloodculture-systems-to-monitor-antimicrobial-efficacy" class="slide level2" data-background-image="./slides/bactec_background.png">
+<section id="adapting-bloodculture-systems-to-monitor-antimicrobial-efficacy" class="slide level2" data-background-image="bactec_background.png">
 <h2>Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy</h2>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides/acute_logo.png" width="400"></p>
+<p><img data-src="acute_logo.png" width="350"></p>
 </figure>
 </div>
-<p><br></p>
-<center>
-<strong>Principle Investigator:</strong> Irene Zaghi, M.D.
-</center>
-<p><br></p>
+<p><strong>Principle Investigator:</strong> Irene Zaghi, M.D.</p>
 <p><strong>Supervisors:</strong></p>
 <ul>
 <li>Russell E. Lewis, Pharm.D., University of Padua</li>
@@ -352,796 +369,536 @@
 </ul>
 
 <aside><div>
-<p>January 20, 2022</p>
+<p>January 20, 2023</p>
 </div></aside></section>
-<section id="disclosures" class="slide level2">
-<h2>Disclosures</h2>
-<p><br></p>
-<ul>
-<li><strong>Research funding</strong>: Merck &amp; Co Inc., Gilead Sciences</li>
-<li><strong>Speaking</strong>: Avir, Gilead</li>
-<li><strong>Consultancy</strong>: F2G, Scynexis, Gilead Sciences, Cidara Therapeutics</li>
-</ul>
-</section>
-<section id="agenda" class="slide level2">
-<h2>Agenda</h2>
-<p><br></p>
-<ul>
-<li>How will new therapies for hematological malignancies impact the epidemiology of invasive fungal infections?</li>
-<li>What are the risks of toxicity and drug interactions with these newer therapies?</li>
-<li>Is their a unique role for isavuconazole versus other triazoles?</li>
-</ul>
-</section>
-<section id="the-cure-of-leukemia-through-the-optimists-prism" class="slide level2 smaller">
-<h2>The cure of leukemia through the optimist’s prism</h2>
-<p><br></p>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 61%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Disease</th>
-<th>Current/future therapies*</th>
-<th>Survival <br> (5 year)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Hairy cell leukemia</strong></td>
-<td>Cladarabine + <span style="color:red;">gemtuzumab ozogamicin (GO)</span></td>
-<td>90%</td>
-</tr>
-<tr class="even">
-<td><strong>Acute premyelocytic leukemia</strong></td>
-<td>ATRA + arsenic ± <span style="color:red;">GO</span></td>
-<td>80-90%</td>
-</tr>
-<tr class="odd">
-<td><strong>AML (core binding factor positive)</strong></td>
-<td>FLAG-<span style="color:red;">GO</span> ± IDA, alloHSCT if MRD positive, if indicated, oral <span style="color:red;">AZA/HMA with venetoclax or FLT3/IDH or menin inhibitors</span></td>
-<td>80-90%+</td>
-</tr>
-<tr class="even">
-<td><strong>AML</strong> <br><strong>(younger fit)</strong></td>
-<td>FLAG-IDA and <span style="color:red;">venetoclax</span>, CLIA and <span style="color:red;">venetoclax</span></td>
-<td>50-60%</td>
-</tr>
-<tr class="odd">
-<td><strong>AML</strong> <br> <strong>(older, unfit, complex karyotype, T-53 mutations, MECOM)</strong></td>
-<td>Low-intensity triple nucleosides (cladarabine, cytarabine and <span style="color:red;">HMAs + venetoclax; HMAs + venetoclax + targeted therapy</span></td>
-<td>40-50%</td>
-</tr>
-<tr class="even">
-<td><strong>ALL &lt; 60 years</strong></td>
-<td>HyperCVAD + <span style="color:red;">CD19/CD20 targeted antibodies</span></td>
-<td>60-70%</td>
-</tr>
-<tr class="odd">
-<td><strong>ALL &gt; 60 years</strong></td>
-<td>Mini-hyper CVAD+ <span style="color:red;">inotuzumab; blinatumab + ponatinib</span></td>
-<td>50%</td>
-</tr>
-<tr class="even">
-<td><strong>Ph-positive ALL</strong></td>
-<td>HyperCVAD + <span style="color:red;">ponatinib; blinatumab + ponatinib</span></td>
-<td>70-80%?</td>
-</tr>
-</tbody>
-</table>
+<section id="antibiotic-dosing-is-an-uncertain-science" class="slide level2">
+<h2>Antibiotic dosing is an uncertain science</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="meropenem_resistance.png" width="400"></p>
+</figure>
+</div>
 
 <aside><div>
-<p><span class="citation" data-cites="kantarjian2021 kantarjian2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>kantarjian2021?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>kantarjian2022J?</strong></a>)</span> <br></p>
-<p>*some therapies investigational or not licensed in Canada</p>
+<p>Image: Irene Zaghi, M.D.</p>
 </div></aside></section>
-<section id="section" class="slide level2 smaller">
-<h2></h2>
-<table style="width:99%;">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 78%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Disease</th>
-<th>Current/ future therapy*</th>
-<th>Survival <br>(5 year)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>CML</strong></td>
-<td><span style="color:red;">BCR-Abl1 tyrosine kinase inhibitors (imatinib, dasatinib, bosutinib, nilotunib, ponatinib)</span>, alloHSCT</td>
-<td>85-90%</td>
-</tr>
-<tr class="even">
-<td><strong>CLL</strong></td>
-<td><span style="color:red;">Ibrutinib, other BTKIs (acalabrutinib, zanubrutinib, pirtobrutinib)</span></td>
-<td>80-90% +</td>
-</tr>
-<tr class="odd">
-<td><strong>MDS</strong></td>
-<td><span style="color:red;">Parenteral HMAs, oral HMAs, venetoclax, others</span></td>
-<td>40% +</td>
-</tr>
-</tbody>
-</table>
-
-<aside><div>
-<p><span class="citation" data-cites="kantarjian2021 kantarjian2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>kantarjian2021?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>kantarjian2022J?</strong></a>)</span> <br></p>
-<p>*some therapies investigational or not licensed in Canada</p>
-</div></aside></section>
-<section id="how-is-invasive-fungal-disease-risk-altered-by-targeted-therapies" class="slide level2" data-background-image="bonemarrow.png">
-<h2><br> <br> <br> <br> <br>How is invasive fungal disease risk altered <br> by targeted therapies?</h2>
-</section>
-<section id="unexpected-consequences-of-targeted-therapy" class="slide level2">
-<h2>Unexpected consequences of targeted therapy?</h2>
+<section id="antibiotic-dosing-is-an-uncertain-science-1" class="slide level2">
+<h2>Antibiotic dosing is an uncertain science</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="burger_NEJM.png" width="3028"></p>
+<p><img data-src="pkpd1.png" width="600"></p>
 </figure>
 </div>
 
 <aside><div>
-<p><span class="citation" data-cites="burger2015 chamilos2018">(<a href="" role="doc-biblioref" onclick="return false;"><strong>burger2015?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>chamilos2018?</strong></a>)</span></p>
+<p><span class="citation" data-cites="theuretzbacher2012 Roberts2014">(<a href="#/references" role="doc-biblioref" onclick=""><strong>theuretzbacher2012?</strong></a>; <a href="#/references" role="doc-biblioref" onclick=""><strong>Roberts2014?</strong></a>)</span></p>
 </div></aside></section>
-<section id="ibrutinib-associated-aspergillosis" class="slide level2">
-<h2>Ibrutinib-associated aspergillosis</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div>
-<div class="quarto-figure quarto-figure-left">
-<figure>
-<p><img data-src="MRI.png"></p>
-</figure>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><br></p>
-<p><br></p>
-<ul>
-<li>Retrospective French surveillance study identified 33 cases of aspergillosis in ibrutinib-treated patients with CLL</li>
-<li><span style="color:red;">CNS aspergillosis in 11/27 (40%)</span>, most cases within 3 months of starting therapy</li>
-<li>All patients had refractory/relapsed CLL and other predisposing risk factors</li>
-</ul>
-</div>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="ghez2018 chamilos2018">(<a href="" role="doc-biblioref" onclick="return false;"><strong>ghez2018?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>chamilos2018?</strong></a>)</span></p>
-</div></aside></section>
-<section id="fungal-infections-in-patients-receiving-ibrutinib-for-lymphoid-cancers" class="slide level2">
-<h2>Fungal infections in patients receiving <br> ibrutinib for lymphoid cancers</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<center>
-Data from MSKCC, New York
-</center>
-<div>
-<p><img data-src="ibrutinib_onset.png"></p>
-</div>
-</div><div class="column" style="width:40%;">
-<p><br> <br></p>
-<ul>
-<li><strong>In a second, retrospective study from MDACC (2014-2018):</strong>
-<ul>
-<li>21 (2.5%) with proven/probable invasive mold infection</li>
-<li>Primarily pneumonia</li>
-<li>Mostly <em>Aspergillus</em> spp.</li>
-<li>Risk factors: monocytopenia, ≥ 3 prior CLL therapies</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="varughese2018 frei2020J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>varughese2018?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>frei2020J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p><img data-src="Lancet _DI.png"></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Lancet Haematology.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="bruggemann2022 stemler2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>bruggemann2022?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>stemler2022J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="managing-fungal-infection-risks-with-novel-therapies-for-aml" class="slide level2">
-<h2>Managing fungal infection risks with <br> novel therapies for AML</h2>
-<h3 id="eha-consensus-recommendations">EHA consensus recommendations</h3>
-<p><br></p>
-<ul>
-<li>Systematic review of the literature, recommendations developed using GRADE framework (4977 publications evaluated)</li>
-<li>Outcomes evaluated:
-<ul>
-<li>Incidence of invasive fungal disease (IFD)</li>
-<li>Prolongation of hospitalization</li>
-<li>Days spent in ICU/mortality associated with IFD</li>
-<li>Potential DDIs</li>
-</ul></li>
-<li><strong>Evidence-based recommendations were developed for hypomethylating agents (HMAs), FLT-3 inhibitors, and venetoclax-HMA combinations</strong></li>
-</ul>
-
-<aside><div>
-<p><span class="citation" data-cites="stemler2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>stemler2022J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="summary-of-eha-recommendations-1" class="slide level2">
-<h2>Summary of EHA recommendations-1</h2>
-<p><br></p>
-<ul>
-<li><strong>Hypomethylating agent monotherapy:</strong>
-<ul>
-<li>Standard use or prophylaxis not recommended</li>
-<li>Risk of IFI increased in patients with neutropenia at onset of treatment, prior intensive chemotherapy → conditional recommendation for prophylaxis</li>
-</ul></li>
-<li><strong>FLT3 inhibitors (midostaurin, gilteritinib)</strong>
-<ul>
-<li>Antifungal prophylaxis recommended during induction chemotherapy</li>
-<li>Conditional recommendation for prophylaxis during consolidation in patients with risk factors (prior IFI, prolonged neutropenia)</li>
-<li>Lack of clear medical guidance for managing drug interactions</li>
-<li>Close monitoring favoured over empiric FLT-3 inhibitor dose reduction</li>
-</ul></li>
-</ul>
-
-<aside><div>
-<p><span class="citation" data-cites="stemler2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>stemler2022J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="summary-of-eha-recommendations-2" class="slide level2">
-<h2>Summary of EHA recommendations-2</h2>
-<p><br></p>
-<ul>
-<li><strong>Venetoclax</strong>
-<ul>
-<li>Risk of IFI increased in patients with neutropenia at onset of treatment, prior intensive chemotherapy, or prolonged neutropenia with venetoclax</li>
-<li>Conditional recommendation to administer prophylaxis</li>
-<li>Careful management of drug interactions with triazoles</li>
-</ul></li>
-</ul>
-
-<aside><div>
-<p><span class="citation" data-cites="stemler2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>stemler2022J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="venetoclax-dose-adjustment-with-triazoles" class="slide level2">
-<h2>Venetoclax dose-adjustment with triazoles</h2>
-<p><br></p>
-<center>
-<p>Venetoclax + hypomethylating agents for AML;</p>
-<p>Co-administration with posaconazole ↑ venetoclax AUC 8-fold</p>
-</center>
-<p><br></p>
-<table style="width:98%;">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 15%">
-<col style="width: 35%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Day</strong></th>
-<th><strong>Full dose</strong></th>
-<th><strong>Moderate CYP3A4 inhibitor</strong><sup>1</sup></th>
-<th><strong>Strong CYP3A4 inhibitor</strong><sup>2</sup></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Day 1</td>
-<td>100 mg</td>
-<td>50 mg</td>
-<td>10 mg</td>
-</tr>
-<tr class="even">
-<td>Day 2</td>
-<td>200 mg</td>
-<td>100 mg</td>
-<td>20 mg</td>
-</tr>
-<tr class="odd">
-<td>Day 3</td>
-<td>400 mg</td>
-<td>200 mg</td>
-<td>50 mg</td>
-</tr>
-<tr class="even">
-<td>Day 4-28</td>
-<td>400 mg</td>
-<td>200 mg</td>
-<td>70 mg</td>
-</tr>
-</tbody>
-</table>
-
-<aside><div>
-<p><span class="citation" data-cites="stemler2022J bhatnagar2021J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>stemler2022J?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>bhatnagar2021J?</strong></a>)</span></p>
-</div><ol class="aside-footnotes"><li id="fn1"><p>fluconazole, isavuconazole</p></li><li id="fn2"><p>voriconazole, posaconazole</p></li></ol></aside></section>
-<section id="triazole-prophylaxis-increases-duration-of-thrombocytopenia-but-not-neutropenia-or-infections-with-dose-adjusted-venetoclax" class="slide level2">
-<h2>Triazole prophylaxis increases duration of thrombocytopenia but not neutropenia or infections with dose-adjusted venetoclax</h2>
+<section id="antibiotic-dosing-is-an-uncertain-science-2" class="slide level2">
+<h2>Antibiotic dosing is an uncertain science</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="venetoclax_Rausch.png"></p>
+<p><img data-src="pkpd2.png" width="800"></p>
 </figure>
 </div>
 
 <aside><div>
-<p><span class="citation" data-cites="rausch2019">(<a href="" role="doc-biblioref" onclick="return false;"><strong>rausch2019?</strong></a>)</span></p>
+<p><span class="citation" data-cites="theuretzbacher2012 Roberts2014">(<a href="#/references" role="doc-biblioref" onclick=""><strong>theuretzbacher2012?</strong></a>; <a href="#/references" role="doc-biblioref" onclick=""><strong>Roberts2014?</strong></a>)</span></p>
 </div></aside></section>
-<section id="cyp450-interactions-the-achilles-heel-of-triazoles" class="slide level2">
-<h2>CYP450 Interactions: The achilles heel of triazoles</h2>
+<section id="how-can-dosing-uncertainty-be-managed" class="slide level2">
+<h2>How can dosing uncertainty be managed?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="dose_individual.png" width="800"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><span class="citation" data-cites="Roberts2014">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Roberts2014?</strong></a>)</span></p>
+</div></aside></section>
+<section id="dosing-uncertainty-at-the-dawn-of-penicillin-resistance" class="slide level2">
+<h2>Dosing uncertainty at the dawn of penicillin resistance</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="schlichter.png" width="600"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><span class="citation" data-cites="schlichter_maclean47">(<a href="#/references" role="doc-biblioref" onclick=""><strong>schlichter_maclean47?</strong></a>)</span></p>
+</div></aside></section>
+<section id="dosing-uncertainty-at-the-dawn-of-penicillin-resistance-1" class="slide level2">
+<h2>Dosing uncertainty at the dawn of penicillin resistance</h2>
+<p><br></p>
+<p><br></p>
+<blockquote>
+<p>“It was felt that there was a need of some definite basis for determining adequate therapy for each specific infectious organism involved…”</p>
+</blockquote>
+<blockquote>
+<p>“Current methods in general use all depend on indirect comparisons (MICs, measurement of penicillin blood levels). In patients with more resistant organisms, it has not been demonstrated that this is the proper approach…”</p>
+</blockquote>
+<blockquote>
+<p>“…It occurred to us that a more satisfactory method of outlining adequate therapy in resistant organisms might be based on the action of the patient’s own serum during penicillin administration.”</p>
+</blockquote>
+
+<aside><div>
+<p><span class="citation" data-cites="schlichter_maclean47">(<a href="#/references" role="doc-biblioref" onclick=""><strong>schlichter_maclean47?</strong></a>)</span></p>
+</div></aside></section>
+<section id="serum-bactericidal-test-sbt" class="slide level2">
+<h2>Serum bactericidal test (SBT)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="M21A method.png" width="800"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><span class="citation" data-cites="clsi99 zaghi_etal20">(<a href="#/references" role="doc-biblioref" onclick=""><strong>clsi99?</strong></a>; <a href="#/references" role="doc-biblioref" onclick=""><strong>zaghi_etal20?</strong></a>)</span></p>
+</div></aside></section>
+<section id="sbts-correlate-with-antibiotic-pkpd" class="slide level2">
+<h2>SBTs correlate with antibiotic PK/PD</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Meropenem SBT.png"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><span class="citation" data-cites="zaghi_etal20">(<a href="#/references" role="doc-biblioref" onclick=""><strong>zaghi_etal20?</strong></a>)</span></p>
+</div></aside></section>
+<section id="potential-clinical-utility-of-sbts" class="slide level2">
+<h2>Potential clinical utility of SBTs</h2>
+<h3 id="individual-patient-level-diagnostic-meta-analysis-1947-2020">Individual patient-level diagnostic meta-analysis (1947-2020)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="metaanalysis.png" width="800"></p>
+</figure>
+</div>
+<p>Prognostic performance similar or better than current susceptibility breakpoints</p>
+
+<aside><div>
+<p><span class="citation" data-cites="zaghi_etal20">(<a href="#/references" role="doc-biblioref" onclick=""><strong>zaghi_etal20?</strong></a>)</span></p>
+</div></aside></section>
+<section id="sbt-advantages" class="slide level2">
+<h2>SBT advantages</h2>
+<p><br></p>
+<ul>
+<li>Only microbiological test that accounts for both antibiotic PK and PD</li>
+<li>Accounts for protein binding changes</li>
+<li>Can detect synergistic or antagonistic antibiotic interactions</li>
+</ul>
+</section>
+<section id="why-were-sbts-abandoned" class="slide level2">
+<h2>Why were SBTs abandoned?</h2>
+<p><br></p>
+<ul>
+<li>Insufficient standardization despite published methods
+<ul>
+<li>CLSI M21-A, last updated 1999</li>
+</ul></li>
+<li>Poor inter-laboratory reproducibility</li>
+<li>Labour-intensive to perform</li>
+<li>Lack of perceived need after introduction of reliably bactericidal antibiotics in 1990s
+<ul>
+<li>3rd generation cephalosporins, fluoroquinolones, carbapenems</li>
+</ul></li>
+<li><strong>Delay in results reporting (48-72 hours with patients isolate)</strong></li>
+</ul>
+</section>
+<section id="i-read-your-sbt-review-and-have-a-suggestion" class="slide level2">
+<h2>“I read your SBT review and have a suggestion…”</h2>
+<h4 id="use-continuously-monitored-bloodculture-systems-time-to-positivity-tpos-to-measure-bactericidal-activity">Use continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity</h4>
+<p><em>Concept: The assay will measure time taken for a standardized bacterial inoculum to “grow through” the antimicrobial activity in the patient’s serum under defined conditions.</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Cohen.png" width="800"></p>
+</figure>
+</div>
+
+<aside><div>
+<ul>
+<li>A short Tpos would indicate inadequate antimicrobial activity and should predict a worse outcome</li>
+<li>A long Tpos is evidence of adequate antimicrobial activity and should predict a good outcome</li>
+</ul>
+</div></aside></section>
+<section id="blood-culture-tpos-measures-bacterial-inoculum-and-antimicrobial-pharmacokinetics" class="slide level2">
+<h2>Blood culture Tpos measures bacterial inoculum and antimicrobial pharmacokinetics</h2>
+<p><br></p>
 <center>
-75-85% of patients receiving mold-active triazoles have serious drug interactions
+A “critical” Tpos result could be reported in &lt; 12 hours!
 </center>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="cyp_interactions.png" width="600"></p>
-</figure>
-</div>
-<p><br></p>
-
-<aside><div>
-<p><span class="citation" data-cites="bruggemann2009a andes2016">(<a href="" role="doc-biblioref" onclick="return false;"><strong>bruggemann2009a?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>andes2016?</strong></a>)</span></p>
-</div></aside></section>
-<section id="pkpd-properties-of-small-molecule-kinase-inhibitors" class="slide level2 smaller">
-<h2>PK/PD Properties of Small Molecule Kinase Inhibitors</h2>
-<p><br> <br></p>
-<table style="width:98%;">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 13%">
-<col style="width: 12%">
-<col style="width: 24%">
-<col style="width: 12%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Drug</th>
-<th>Venetoclax</th>
-<th>Midostraurin</th>
-<th>Gilteritinib</th>
-<th>Ivosidenib</th>
-<th>Enasidinib</th>
-<th>Glasdegib</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Specificity (targets)</td>
-<td>BCL2</td>
-<td>FLT3</td>
-<td>FLT3</td>
-<td>IDH1</td>
-<td>IDH2</td>
-<td>Hedgehog pathway</td>
-</tr>
-<tr class="even">
-<td>Hepatic</td>
-<td><span style="color:red;">CYP3A4</span></td>
-<td><span style="color:red;">CYP3A4</span></td>
-<td><span style="color:red;">CYP3A4/5</span></td>
-<td><span style="color:red;">CYP3A4/5</span></td>
-<td><span style="color:red;">Multiple CYP enzymes including CYP3A4</span></td>
-<td><span style="color:red;">CYP3A4/5</span></td>
-</tr>
-<tr class="odd">
-<td>Efflux</td>
-<td>Substrate of PgP, BCRP</td>
-<td>Not a substrate</td>
-<td>Substrate of PgP, not BCRP, OATP</td>
-<td>Substrate PgP, but not BRCP</td>
-<td>Not a substrate of BCRP pr PgP</td>
-<td>Substrate for PGP, BCRP</td>
-</tr>
-</tbody>
-</table>
-
-<aside><div>
-<p><span class="citation" data-cites="megias-vericat2020J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>megias-vericat2020J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="toxicities-of-small-molecule-kinase-inhibitors" class="slide level2">
-<h2>Toxicities of small-molecule kinase inhibitors</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="targeted therapy toxicities.png"></p>
+<p><img data-src="cohendata.png"></p>
 </figure>
 </div>
 
 <aside><div>
-<p><span class="citation" data-cites="wang2020a">(<a href="" role="doc-biblioref" onclick="return false;"><strong>wang2020a?</strong></a>)</span></p>
+<p><span class="citation" data-cites="kaltsas2005 jerwood2012">(<a href="#/references" role="doc-biblioref" onclick="">Kaltsas, Want, and Cohen 2005</a>; <a href="#/references" role="doc-biblioref" onclick=""><strong>jerwood2012?</strong></a>)</span></p>
 </div></aside></section>
-<section id="just-avoid-triazoles" class="slide level2">
-<h2>Just avoid triazoles?</h2>
-<p><br></p>
+<section id="adapting-bloodculture-systems-to-monitor-antimicrobial-efficacy-1" class="slide level2" data-background-image="bactec_background.png">
+<h2>Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy</h2>
 
-<img data-src="avoid triazoles.png" class="r-stretch quarto-figure-center"></section>
-<section id="the-problems-with-echinocandin-prophylaxis" class="slide level2">
-<h2>The problems with echinocandin prophylaxis</h2>
+<img data-src="acute_logo.png" width="200" class="r-stretch quarto-figure-center"><p><br></p>
 <p><br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="echinocandin.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="gomes2014">(<a href="" role="doc-biblioref" onclick="return false;"><strong>gomes2014?</strong></a>)</span></p>
-</div></aside></section>
-<section id="is-their-a-unique-role-for-isavuconazole-vs.-other-triazoles" class="slide level2" data-background-image="bonemarrow.png">
-<h2><br> <br> <br> <br> <br> Is their a unique role for isavuconazole <br> vs.&nbsp;other triazoles?</h2>
+<ul>
+<li><strong>Specific Aim# 1:</strong> Establish the quantitative relationship <em>in vitro</em> between Tpos and carbapenamase-producing Enterobacterales (CPE) and define antibiotic concentration-effect relationships</li>
+<li><strong>Specific Aim#2</strong>: Pilot observational clinical study in 20 septic patients undergoing treatment for CPE to explore how early Tpos results with “indicator” isolates correlate with individual antibiotic PK/PD targets</li>
+</ul>
 </section>
-<section id="strong-opinions-about-voriconazole" class="slide level2">
-<h2>Strong opinions about voriconazole</h2>
-
-<img data-src="spec.png" width="800" class="r-stretch quarto-figure-center"></section>
-<section id="pharmacokinetic-complexity-of-voriconazole" class="slide level2">
-<h2>Pharmacokinetic complexity of voriconazole</h2>
-<p><br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="voriconazole PK.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="trifilio2014">(<a href="" role="doc-biblioref" onclick="return false;"><strong>trifilio2014?</strong></a>)</span></p>
-</div></aside></section>
-<section id="triazole-toxicities" class="slide level2">
-<h2>Triazole toxicities</h2>
-<p><br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="triazole toxicity.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="Lewis2011805 johnson2021">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Lewis2011805?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>johnson2021?</strong></a>)</span></p>
-</div></aside></section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p><br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="new title.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="ostrosky-zeichner2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>ostrosky-zeichner2022J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="triazole-safety" class="slide level2">
-<h2>Triazole safety</h2>
-<p><br></p>
-<ul>
-<li>Multicenter registry of prophylaxis (n=1777) and treatment (n=816) courses</li>
-<li>Adverse effects leading to treatment discontinuation:
-<ul>
-<li>voriconazole (n=494) 14.2%</li>
-<li>posaconazole (n=547) 11.3%</li>
-<li><strong>isavuconazole (n=514) 3.9%</strong></li>
-<li>multiple/sequenced therapy (n=454) 11.7%</li>
-</ul></li>
-<li>QTc prolongation was rare, but more frequent with voriconazole and posaconazole</li>
-<li>Severe drug interactions occurred in 4% of all treated patients</li>
-<li>IFI mortality rates were similar for all agents ranging between 1.1-1.8%</li>
-</ul>
-
-<aside><div>
-<p><span class="citation" data-cites="ostrosky-zeichner2022J">(<a href="" role="doc-biblioref" onclick="return false;"><strong>ostrosky-zeichner2022J?</strong></a>)</span></p>
-</div></aside></section>
-<section id="what-makes-isavuconazole-isavuconazonium-unique" class="slide level2">
-<h2>What makes isavuconazole <br>(isavuconazonium) unique?</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><br></p>
-<div>
-<div class="quarto-figure quarto-figure-left">
-<figure>
-<p><img data-src="isavuconazole.png"></p>
-</figure>
+<section id="tpos-correlates-with-inoculum" class="slide level2 smaller">
+<h2>Tpos correlates with inoculum</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">K. pneumoniae</a></li><li><a href="#tabset-1-2">E. coli</a></li><li><a href="#tabset-1-3">A. baumanii</a></li><li><a href="#tabset-1-4">P. aeruginosa</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="ACUTE_SLIDES_files/figure-revealjs/.smaller-1.png" width="960"></p>
 </div>
 </div>
-</div><div class="column" style="width:60%;">
-<p><br></p>
-<ul>
-<li>Broad spectrum of activity</li>
-<li>Prodrug IV/ oral formulations (&gt; 90% bioav.)</li>
-<li>Predictable linear PK, t<sub>1/2</sub>=130h</li>
-<li>Less need for TDM</li>
-<li>Better safety profile than voriconazole
-<ul>
-<li>Less potent CYP3A4/5 inhibition</li>
-<li>Less cutaneous, CNS, hepatic toxicities</li>
-<li>Does not prolong QT</li>
-</ul></li>
-</ul>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="ACUTE_SLIDES_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="ACUTE_SLIDES_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-4">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="ACUTE_SLIDES_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>R<sup>2</sup> = 0.96-0.99</p>
+</section>
+<section id="tpos-can-discriminate-between-susceptible-and-resistant-pathogens" class="slide level2">
+<h2>Tpos can discriminate between susceptible and resistant pathogens</h2>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="ACUTE_SLIDES_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </div>
 </div>
 
 <aside><div>
-<p><span class="citation" data-cites="johnson2021 maertens2016">(<a href="" role="doc-biblioref" onclick="return false;"><strong>johnson2021?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>maertens2016?</strong></a>)</span></p>
+<p>KPC_B MIC 1.0 mg/L, KPC_NDM MIC &gt; 256 mg/L; data fit by Loess</p>
 </div></aside></section>
-<section id="qt-prolongation-risk-with-triazoles" class="slide level2">
-<h2>QT prolongation risk with triazoles</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><br></p>
-<p><img data-src="QTC.png" width="400"></p>
-</div><div class="column" style="width:60%;">
-<p><br></p>
-<p><br></p>
-<ul>
-<li>Older triazoles inhibit human ether-a-go-go (hERG) channel, which underlies rapid K<sup>+</sup> rectifier current</li>
-<li>Isavuconazole shortens cardiac QT in a dose-related manner, with no associated cardiac risk
-<ul>
-<li>hCav1.2 L-type Ca<sup>++</sup> channels</li>
-</ul></li>
-</ul>
+<section id="pharmacodynamic-relationship-of-tpos-against-k.-pneumoniae-atcc-700603-0.75-mgl" class="slide level2">
+<h2>Pharmacodynamic relationship of Tpos against <br> K. pneumoniae ATCC 700603 (0.75 mg/L)</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Ceftazidime-avibactam</a></li><li><a href="#tabset-2-2">4:1 ratio</a></li><li><a href="#tabset-2-3">Fixed 4 mg/L</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="ACUTE_SLIDES_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </div>
 </div>
-
-<aside><div>
-<p><span class="citation" data-cites="keirns2017">(<a href="" role="doc-biblioref" onclick="return false;"><strong>keirns2017?</strong></a>)</span></p>
-</div></aside></section>
-<section id="isavuconazole-versus-voriconazole-for-primary-treatment-of-invasive-mould-disease-caused-by-aspergillus-and-other-filamentous-fungi-secure" class="slide level2 smaller">
-<h2>Isavuconazole versus voriconazole for primary treatment of invasive mould disease caused by <em>Aspergillus</em> and other filamentous fungi (SECURE)</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Secure.png" width="400"></p>
-</figure>
 </div>
-<p><br></p>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="cell-output-display">
 
-<aside><div>
-<p><span class="citation" data-cites="maertens2016">(<a href="" role="doc-biblioref" onclick="return false;"><strong>maertens2016?</strong></a>)</span></p>
-</div></aside></section>
-<section id="treatment-emergent-adverse-effects-in-the-secure-trial" class="slide level2">
-<h2>Treatment-emergent adverse effects <br> in the SECURE trial</h2>
-<p><br></p>
-<ul>
-<li><strong>Overall drug-related AE (VOR-60% vs.&nbsp;ISA-42%, p&lt;0.001)</strong>
-<ul>
-<li><p>Hepatobiliary disorders (VOR-16% vs.&nbsp;ISA-9%, p=0.016)</p></li>
-<li><p>Visual disturbances (VOR-27% vs.&nbsp;ISA-15%, p=0.002)</p></li>
-<li><p>Skin or subcutaneous tissue (VOR-42% vs.&nbsp;ISA-33%, p=0.037</p></li>
-</ul></li>
-</ul>
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; ">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 23.87874 </td>
+   <td style="text-align:right;"> 19.31716 </td>
+   <td style="text-align:right;"> 28.44033 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 26.93812 </td>
+   <td style="text-align:right;"> 24.06902 </td>
+   <td style="text-align:right;"> 29.80723 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 30.38948 </td>
+   <td style="text-align:right;"> 29.11007 </td>
+   <td style="text-align:right;"> 31.66888 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 34.28302 </td>
+   <td style="text-align:right;"> 31.38838 </td>
+   <td style="text-align:right;"> 37.17767 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 38.67541 </td>
+   <td style="text-align:right;"> 33.84814 </td>
+   <td style="text-align:right;"> 43.50268 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 41.98020 </td>
+   <td style="text-align:right;"> 33.98412 </td>
+   <td style="text-align:right;"> 49.97627 </td>
+  </tr>
+</tbody>
+</table>
 
-<aside><div>
-<p><span class="citation" data-cites="maertens2016">(<a href="" role="doc-biblioref" onclick="return false;"><strong>maertens2016?</strong></a>)</span></p>
-</div></aside></section>
-<section id="isavuconazole-treatment-for-mucormycosis-a-single-arm-open-label-case-control-study-vital" class="slide level2">
-<h2>Isavuconazole treatment for mucormycosis: <br> a single-arm, open-label, case-control study (VITAL)</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="isavuconazole_Mucor.png" width="600"></p>
-</figure>
 </div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="cell">
+<div class="cell-output-display">
 
-<aside><div>
-<p><span class="citation" data-cites="marty2014">(<a href="" role="doc-biblioref" onclick="return false;"><strong>marty2014?</strong></a>)</span></p>
-</div></aside></section>
-<section id="isavuconazole-drug-interaction-potential-in-hsct" class="slide level2">
-<h2>Isavuconazole drug interaction potential in HSCT</h2>
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; ">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 8.099087 </td>
+   <td style="text-align:right;"> 7.038485 </td>
+   <td style="text-align:right;"> 9.159689 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 9.235833 </td>
+   <td style="text-align:right;"> 8.728989 </td>
+   <td style="text-align:right;"> 9.742676 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 10.532127 </td>
+   <td style="text-align:right;"> 10.149119 </td>
+   <td style="text-align:right;"> 10.915134 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 12.010361 </td>
+   <td style="text-align:right;"> 10.856802 </td>
+   <td style="text-align:right;"> 13.163921 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 13.696074 </td>
+   <td style="text-align:right;"> 11.685276 </td>
+   <td style="text-align:right;"> 15.706872 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 14.975851 </td>
+   <td style="text-align:right;"> 12.415855 </td>
+   <td style="text-align:right;"> 17.535846 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="inoculum-effects-observed-with-pd-relationship-measured-by-tpos" class="slide level2">
+<h2>Inoculum effects observed with PD relationship measured by Tpos</h2>
+
+<img data-src="ACUTE_SLIDES_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="at-a-standardized-inoculum-tpos-demonstrates-a-consistent-relationship-across-different-antibiotics-and-isolates-with-different-mics" class="slide level2">
+<h2>At a standardized inoculum, Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs</h2>
+
+<img data-src="ACUTE_SLIDES_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="tpos-for-directed-antimicrobial-therapy-in-vivo-mic" class="slide level2">
+<h2>Tpos for directed antimicrobial therapy “in vivo MIC”</h2>
+
+<img data-src="tpos directed .png" class="r-stretch quarto-figure-center"></section>
+<section id="tpos-performed-using-indicator-isolates-to-screen-for-suboptimal-pkpd" class="slide level2">
+<h2>Tpos performed using indicator isolates to screen for suboptimal PK/PD</h2>
+
+<img data-src="indicator strains.png" class="r-stretch quarto-figure-center"></section>
+<section id="comparison-of-k.-pneumoniae-indicator-isolates" class="slide level2">
+<h2>Comparison of K. pneumoniae indicator isolates</h2>
+
+<img data-src="ACUTE_SLIDES_files/figure-revealjs/fig-compkp-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Figure&nbsp;1: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</p></section>
+<section id="isolate-pd-coverage-of-ceftazidime-avibactam" class="slide level2">
+<h2>Isolate PD coverage of ceftazidime-avibactam</h2>
+
+<img data-src="MIC data.png" class="r-stretch quarto-figure-center"></section>
+<section id="combination-therapy" class="slide level2">
+<h2>Combination therapy</h2>
+
+<img data-src="combination method.png" class="r-stretch quarto-figure-center"></section>
+<section id="synergy-of-ceftazidime-avibactam-plus-gentamicin-versus-kpc-producing-k.-pneumoniae" class="slide level2">
+<h2>Synergy of ceftazidime-avibactam plus gentamicin versus KPC-producing K. pneumoniae</h2>
+
+<img data-src="ESCMIDabstract_Fig2.png" class="r-stretch"></section>
+<section id="combination-therapy-versus-klebsiella-pneumoniaeo" class="slide level2">
+<h2>Combination therapy versus Klebsiella pneumoniaeo</h2>
 <p><br></p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%">
-<col style="width: 20%">
-<col style="width: 64%">
+<col style="width: 25%">
+<col style="width: 30%">
+<col style="width: 44%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Drug</th>
-<th>Pharmacokinetic change</th>
-<th>Initial management</th>
+<th>Antibiotic combination</th>
+<th>Strain <br> (Ceftazidime-avibactam MIC mg/L)</th>
+<th>Mean Tpos change (hr) from predicted null response surface (95% CI)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Tacrolimus</strong></td>
-<td><p>↑ AUC 1.8-3xfold</p>
-<p>↑ C<sub>max</sub> 1.4-2.8xfold</p></td>
-<td>40-50% reduction in tacrolimus dose, TDM. <br>Some case series suggest no empiric dose reduction was required</td>
+<td>CZA + GENT</td>
+<td>KP_A; KPC (2)</td>
+<td>+5.68 (5.09-6.53)</td>
 </tr>
 <tr class="even">
-<td><strong>Prednisone or Prednisolone</strong></td>
-<td>↑ AUC (8%) minimal</td>
-<td>No dose adjustments recommended</td>
+<td>CZA + GENT</td>
+<td>KP_B; KPC (1)</td>
+<td>+3.05 (2.16-4.03)</td>
 </tr>
 <tr class="odd">
-<td><strong>Ruxolitinib</strong></td>
-<td>↑AUC and C<sub>max</sub> by an average of 27% and 8%</td>
-<td>Although dose reduction is recommended for strong CYP3A4 inhibitors, no dose reduction recommended with moderate inhibitors such as isavuconazole</td>
+<td>CZA + GENT</td>
+<td>KP_Catania; KPC (16)</td>
+<td>+3.23 (2.10-4.14)</td>
+</tr>
+<tr class="even">
+<td>CZA + COL</td>
+<td>KP_B; KPC (1)</td>
+<td>+2.31 (1.40-3.20)</td>
+</tr>
+<tr class="odd">
+<td>CZA + TGC</td>
+<td>KP_B ;KPC (1)</td>
+<td>+1.66 (0.72-2.73)</td>
+</tr>
+<tr class="even">
+<td>CZA + ATM</td>
+<td>KP_NDM;NDM-2 (&gt; 64)</td>
+<td>+10.33 (10.32-10.34)</td>
+</tr>
+<tr class="odd">
+<td>CZA + ATM</td>
+<td>KP_Catania; KPC (16)</td>
+<td>+10.36 (10.31-10.35)</td>
+</tr>
+<tr class="even">
+<td>CZA + MER</td>
+<td>KP_B; KPC (1)</td>
+<td>+11.61 (11.05-11.95)</td>
+</tr>
+<tr class="odd">
+<td>CZA + MER</td>
+<td>KP_Catania; KPC (16)</td>
+<td>+3.04 (2.15-4.03)</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="impact-of-combination-therapy-on-high-inoculum-infections" class="slide level2">
+<h2>Impact of combination therapy on high-inoculum infections</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="inoculum effect.png"></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="combination_hiinco.png"></p>
+</div>
+</div>
+<p><em>synergistic activity improved but did not overcome effects of high-inoculum infection</em></p>
+</section>
+<section id="adapting-bloodculture-systems-to-monitor-antimicrobial-efficacy-2" class="slide level2" data-background-image="bactec_background.png">
+<h2>Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy</h2>
 
-<aside><div>
-<p><span class="citation" data-cites="kufel2018 kieu2019 groll2017b ouatas2017">(<a href="" role="doc-biblioref" onclick="return false;"><strong>kufel2018?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>kieu2019?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>groll2017b?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>ouatas2017?</strong></a>)</span></p>
-</div></aside></section>
-<section id="isavuconazole-drug-interaction-potential" class="slide level2">
-<h2>Isavuconazole drug interaction potential</h2>
+<img data-src="acute_logo.png" width="200" class="r-stretch quarto-figure-center"><p><br></p>
 <p><br></p>
-<table style="width:99%;">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 18%">
-<col style="width: 67%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Drug</th>
-<th>Pharmacokinetic change</th>
-<th>Initial management</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Venetoclax</strong></td>
-<td>↑AUC 2-3.9xfold</td>
-<td>Dose reduction of venetoclax by 50%</td>
-</tr>
-<tr class="even">
-<td><strong>Midostaurin</strong></td>
-<td>↑AUC 1.44xfold higher</td>
-<td>Avoid strong CYP3A4 inhibitors, no dose reduction recommended for moderate CYP3A4 inhibitors</td>
-</tr>
-<tr class="odd">
-<td><strong>Gilteritinib</strong></td>
-<td><p>↑AUC 1.4xfold; <br></p>
-<p>↑C<sub>max</sub> 1.2-fold higher</p></td>
-<td>Avoid strong CYP3A4 inhibitors, no dose reduction recommended for moderate CYP3A4 inhibitors</td>
-</tr>
-</tbody>
-</table>
-
-<aside><div>
-<p><span class="citation" data-cites="kufel2018 kieu2019 groll2017b ouatas2017">(<a href="" role="doc-biblioref" onclick="return false;"><strong>kufel2018?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>kieu2019?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>groll2017b?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>ouatas2017?</strong></a>)</span></p>
-</div></aside></section>
-<section id="does-tdm-support-claims-of-less-potent-cyp3a4-inhibition" class="slide level2">
-<h2>Does TDM support claims of less potent <br> CYP3A4 inhibition?</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Menna_midostraurin.png"></p>
-</figure>
+<div class="fragment semi-fade-out">
+<p><strong>Specific Aim# 1:</strong> Establish the quantitative relationship <em>in vitro</em> between Tpos and carbapenamase-producing Enterobacterales (CPE) and define antibiotic concentration-effect relationships</p>
 </div>
-
-<aside><div>
-<p><span class="citation" data-cites="Menna2021-mb">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Menna2021-mb?</strong></a>)</span></p>
-</div></aside></section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Bose study.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="bose2020">(<a href="" role="doc-biblioref" onclick="return false;"><strong>bose2020?</strong></a>)</span></p>
-</div></aside></section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="bose_study.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="bose2020">(<a href="" role="doc-biblioref" onclick="return false;"><strong>bose2020?</strong></a>)</span></p>
-</div></aside></section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="bose3.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="bose2020">(<a href="" role="doc-biblioref" onclick="return false;"><strong>bose2020?</strong></a>)</span></p>
-</div></aside></section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="bose4.png"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><span class="citation" data-cites="bose2020">(<a href="" role="doc-biblioref" onclick="return false;"><strong>bose2020?</strong></a>)</span></p>
-</div></aside></section>
-<section id="isavuconazole-tolerability" class="slide level2">
-<h2>Isavuconazole tolerability</h2>
+<p><strong>Specific Aim#2</strong>: Pilot observational clinical study in 20 septic patients undergoing treatment for CPE to explore how early Tpos results with “indicator” isolates correlate with individual antibiotic PK/PD targets</p>
+</section>
+<section id="longer-range-goals" class="slide level2" data-background-image="./slides/bactec_background.png">
+<h2>Longer range goals</h2>
+<p><br></p>
+<ul>
+<li>Develop population PK/PD tools for interpreting and predicting Tpos with ceftazidime-avibactam and other core antibiotics</li>
+<li>Expand Tpos analysis for other difficult to treat Gram-negative pathogens (e.g., Acinetobacter baumanii, Pseudomonas aeruginosa) and <em>Candida spp.</em></li>
+<li>Future multicentre collaborative trials (validation, testing)</li>
+<li>Pilot projects to develop Tpos as dosing tools in LMICs?</li>
+</ul>
+</section>
+<section id="acknowledgements" class="slide level2 smaller">
+<h2>Acknowledgements</h2>
 <p><br></p>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p><strong>Supervisors:</strong></p>
 <ul>
-<li><strong>Posaconazole experience</strong> <br> <strong>(previous study with tablet/IV)</strong>
-<ul>
-<li><p><span style="color:red;">Grade III/IV liver injury with tablet and IV formulations (9%)</span></p></li>
-<li><p>Primary hyperbilirubinemia</p></li>
-<li><p>Higher frequency in patients with POS serum levels &gt; 1,830 ng/mL</p></li>
-</ul></li>
+<li><strong>Prof.&nbsp;Russell Lewis</strong>, Department of Molecular Medicine, University Of Padua</li>
+<li><strong>Prof.&nbsp;Monica Cricca</strong>, Department of Diagnostic and Experimental Medicine, University of Bologna</li>
+<li><strong>Prof.&nbsp;Vittorio Sambri,</strong> Department of Diagnostic and Experimental Medicine, University of Bologna</li>
+<li>Faculty and staff at the Microbiology Unit, Greater Romagna Area Hub, Pievesistina, Cesena, Italy</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<ul>
-<li><strong>Isavuconazole (current study)</strong>
-<ul>
-<li><p><span style="color:red;">Grade 1 transaminitis (2.7%)</span></p></li>
-<li><p>Grade 2 elevated T. bilirubin (1.3%)</p></li>
-<li><p>No elevations in QTc detected vs.&nbsp;baselines at 10 days</p></li>
-</ul></li>
-</ul>
-</div><div class="fragment">
-<p>“Isavuconazole was well tolerated and facilitated use of the most potent molecular-targeted agents in remission-induction chemotherapy with excellent short term survival and high remission rates.”</p>
+<p><strong>Funding:</strong></p>
+<p>Direzione Generale Della Ricerca Dell’ Innovazione in Sanità 2021-Bando Dell Ricerca</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="minstero.png" width="300"></p>
+</figure>
+</div>
+<p>European Society of Clinical Microbiology and Infectious Diseases (ESCMID) <a href="https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022">2022 Research Grants Program</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="ESCMID.png" width="300"></p>
+</figure>
+</div>
+<p>Antibiotic powder:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Pfizer.svg.png" width="100"></p>
+</figure>
 </div>
 </div>
-
-<aside><div>
-<p><span class="citation" data-cites="bose2020 Tverdek2017-gh">(<a href="" role="doc-biblioref" onclick="return false;"><strong>bose2020?</strong></a>; <a href="" role="doc-biblioref" onclick="return false;"><strong>Tverdek2017-gh?</strong></a>)</span></p>
-</div></aside></section>
-<section id="dd" class="slide level2">
-<h2>dd</h2>
-
-<img data-src="bose5.png" class="r-stretch quarto-figure-center"><p><br></p>
-<p><br></p>
-<div>
-<p><span class="citation" data-cites="Young2021-jx">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Young2021-jx?</strong></a>)</span></p>
 </div>
 </section>
-<section id="jo-anne-h.-young-clin-infect-dis-2021" class="slide level2">
-<h2>Jo-Anne H. Young, <em>Clin Infect Dis 2021</em></h2>
-<p><br></p>
-<p><br></p>
-<div class="fragment">
-<p>“This is the first antifungal prophylaxis study in this select population of patients with leukemia, specifically, those patients being treated with the BCL-2 antagonist venetoclax and fms3-like tyrosine kinase 3 (FLT3) inhibitors.</p>
-</div>
-<p><br></p>
-<div class="fragment">
-<p>“Clinicians should take away from these studies the fact that many of the advanced-generation azoles can be used interchangeably in times of prophylaxis when they are needed.”</p>
-</div>
-</section>
-<section id="summary" class="slide level2" data-background-image="bonemarrow.png">
-<h2>Summary</h2>
-<p><br></p>
-<ul>
-<li><strong>Knowledge of fungal infection risk with targeted therapy is evolving, and depends heavily on the individual patient treatment scenario</strong> <br></li>
-<li><strong>Many small molecule inhibitors are metabolised by CYP3A4/5 and have potential for QTc prolongation, making concurrent use with broad-spectrum triazoles difficult</strong> <br></li>
-<li><strong>Isavuconazole has several unique pharmacokinetic and safety advantages over older triazoles, making it an useful alternative in patients receiving targeted therapies</strong></li>
-</ul>
-</section>
-<section id="thank-you-for-your-attention" class="slide level2">
-<h2>Thank you for your attention!</h2>
-<p><img data-src="bologna 2.png" class="absolute" style="top: 200px; left: 0px; width: 442px; height: 303px; "></p>
-<p><img data-src="bologna3.png" class="absolute" style="top: 50px; right: 50px; width: 450px; height: 250px; "></p>
-<p><img data-src="Screenshot 2022-05-16 at 12.30.29.png" class="absolute" style="bottom: 0px; right: 50px; width: 418px; height: 273px; "></p>
-</section>
-<section id="references" class="slide level2">
+<section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <p><br></p>
-<p>All figures created by R. Lewis using www.biorender.com <br> <br></p>
 
-
-<img src="unibo_red.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<div class="footer footer-default">
 
 </div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-kaltsas2005" class="csl-entry" role="doc-biblioentry">
+Kaltsas, P, S Want, and J Cohen. 2005. <span>“Development of a Time-to-Positivity Assay as a Tool in the Antibiotic Management of Septic Patients.”</span> <em>Clinical Microbiology and Infection: The Official Publication of the European Society of Clinical Microbiology and Infectious Diseases</em> 11 (2): 109–14. <a href="https://doi.org/10.1111/j.1469-0691.2004.01054.x">https://doi.org/10.1111/j.1469-0691.2004.01054.x</a>.
+</div>
+</div>
 </section>
-
     </div>
   </div>
 
@@ -1152,7 +909,6 @@ Data from MSKCC, New York
   <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
   <script src="site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
   <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
@@ -1176,8 +932,7 @@ Data from MSKCC, New York
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'multiplex': {"secret":"16715215040521024781","id":"a50a07de22088a67","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
@@ -1349,7 +1104,7 @@ Data from MSKCC, New York
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -1358,6 +1113,44 @@ Data from MSKCC, New York
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

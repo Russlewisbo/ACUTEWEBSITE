@@ -219,7 +219,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|------------------------|------------------|------------------------------|
+|--------------------------------|----------------------|----------------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -672,7 +672,7 @@ library(broom)
 library(kableExtra)
 caz_avi_kfab <- read_excel("datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
 fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
-ed<-effective_dose(fitkprad, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+ed<-effective_dose(fitkfab, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
@@ -772,7 +772,7 @@ fitkpwt <- drda(tpos ~ ctz_s, kpwt, mean_function = "loglogistic4", max_iter = 1
 fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
 fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
 ## plot all of the isolates together
-p <-plot(fitkpwt, fitkprad, fitkfab, fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L",  "0.5 mg/L", "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
+p <-plot(fitkpwt, fitkfab, fitkprad,  fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L", "0.5 mg/L",  "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
 ```
 
 #### CONCLUSIONS
