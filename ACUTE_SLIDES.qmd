@@ -1,0 +1,525 @@
+---
+format:
+  revealjs:
+    touch: true
+    embed-resources: false
+    controls: true
+    transition: fade
+    transition-speed: fast
+    scrollable: true
+    slide-number: false
+    incremental: false
+    multiplex: true
+    chalkboard: false
+    theme: [default, custom.scss]
+    seal: false
+bibliography: references.bib
+---
+
+## Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy {background-image="bactec_background.png"}
+
+<br>
+
+![](acute_logo.png){fig-align="center" width="350"}
+
+**Principle Investigator:** Irene Zaghi, M.D.
+
+**Supervisors:**
+
+-   Russell E. Lewis, Pharm.D., University of Padua
+-   Monica Cricca, M.D., Ph.D., University of Bologna
+-   Vittorio Sambri, M.D., Ph.D., Univeristy of Bologna
+
+::: aside
+January 20, 2023
+:::
+
+## Antibiotic dosing is an uncertain science
+
+![](meropenem_resistance.png){fig-align="center" width="400"}
+
+::: aside
+Image: Irene Zaghi, M.D.
+:::
+
+## Antibiotic dosing is an uncertain science
+
+<br>
+
+![](pkpd1.png){fig-align="center" width="600"}
+
+::: aside
+[@theuretzbacher2012; @Roberts2014]
+:::
+
+## Antibiotic dosing is an uncertain science
+
+<br>
+
+![](pkpd2.png){fig-align="center" width="800"}
+
+::: aside
+[@theuretzbacher2012; @Roberts2014]
+:::
+
+## How can dosing uncertainty be managed?
+
+![](dose_individual.png){fig-align="center" width="800"}
+
+::: aside
+[@Roberts2014]
+:::
+
+## Dosing uncertainty at the dawn of penicillin resistance
+
+![](schlichter.png){fig-align="center" width="600"}
+
+::: aside
+[@schlichter_maclean47]
+:::
+
+## Dosing uncertainty at the dawn of penicillin resistance
+
+<br>
+
+<br>
+
+> "It was felt that there was a need of some definite basis for determining adequate therapy for each specific infectious organism involved..."
+
+> "Current methods in general use all depend on indirect comparisons (MICs, measurement of penicillin blood levels). In patients with more resistant organisms, it has not been demonstrated that this is the proper approach..."
+
+> "...It occurred to us that a more satisfactory method of outlining adequate therapy in resistant organisms might be based on the action of the patient's own serum during penicillin administration."
+
+::: aside
+[@schlichter_maclean47]
+:::
+
+## Serum bactericidal test (SBT)
+
+![](M21A%20method.png){fig-align="center" width="800"}
+
+::: aside
+[@clsi99; @zaghi_etal20]
+:::
+
+## SBTs correlate with antibiotic PK/PD
+
+![](Meropenem%20SBT.png){fig-align="center"}
+
+::: aside
+[@zaghi_etal20]
+:::
+
+## Potential clinical utility of SBTs
+
+### Individual patient-level diagnostic meta-analysis (1947-2020)
+
+![](metaanalysis.png){fig-align="center" width="800"}
+
+Prognostic performance similar or better than current susceptibility breakpoints
+
+::: aside
+[@zaghi_etal20]
+:::
+
+## SBT advantages
+
+<br>
+
+-   Only microbiological test that accounts for both antibiotic PK and PD
+-   Accounts for protein binding changes
+-   Can detect synergistic or antagonistic antibiotic interactions
+
+## Why were SBTs abandoned?
+
+<br>
+
+-   Insufficient standardization despite published methods
+    -   CLSI M21-A, last updated 1999
+-   Poor inter-laboratory reproducibility
+-   Labour-intensive to perform
+-   Lack of perceived need after introduction of reliably bactericidal antibiotics in 1990s
+    -   3rd generation cephalosporins, fluoroquinolones, carbapenems
+-   **Delay in results reporting (48-72 hours with patients isolate)**
+
+## "I read your SBT review and have a suggestion..."
+
+#### Use continuously-monitored bloodculture systems Time-to-positivity (Tpos) to measure bactericidal activity
+
+*Concept: The assay will measure time taken for a standardized bacterial inoculum to "grow through" the antimicrobial activity in the patient's serum under defined conditions.*
+
+![](Cohen.png){fig-align="center" width="800"}
+
+::: aside
+-   A short Tpos would indicate inadequate antimicrobial activity and should predict a worse outcome
+-   A long Tpos is evidence of adequate antimicrobial activity and should predict a good outcome
+:::
+
+## Blood culture Tpos measures bacterial inoculum and antimicrobial pharmacokinetics
+
+<br>
+
+<center>A "critical" Tpos result could be reported in \< 12 hours!</center>
+
+![](cohendata.png){fig-align="center"}
+
+::: aside
+[@kaltsas2005; @jerwood2012]
+:::
+
+## Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy {background-image="bactec_background.png"}
+
+![](acute_logo.png){fig-align="center" width="200"}
+
+<br>
+
+<br>
+
+-   **Specific Aim# 1:** Establish the quantitative relationship *in vitro* between Tpos and carbapenamase-producing Enterobacterales (CPE) and define antibiotic concentration-effect relationships
+-   **Specific Aim#2**: Pilot observational clinical study in 20 septic patients undergoing treatment for CPE to explore how early Tpos results with "indicator" isolates correlate with individual antibiotic PK/PD targets
+
+## Tpos correlates with inoculum {.smaller}
+
+::: panel-tabset
+### K. pneumoniae
+
+```{r, .smaller}
+
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, color=isolates, shape=diluent, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+kpc<-fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot(kpc)
+```
+
+### E. coli
+
+```{r}
+library (readxl)
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+ecoliatcc_inoc <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/ecoliatcc_inoculum.xlsx")
+figecoli <-ggplot(ecoliatcc_inoc, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+ecoli<- figecoli + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot (ecoli)
+```
+
+### A. baumanii
+
+```{r}
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+library (readxl)
+abaumani <- read_excel("~/Desktop/ACUTEWEBSITE/abaum_pbs.xlsx")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+abaumi<-ggplot(abaumani, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+abaumi2 <-abaumi+ theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot (abaumi2)
+```
+
+### P. aeruginosa
+
+```{r}
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+library (readxl)
+pseudo <- read_excel("~/Desktop/ACUTEWEBSITE/pseudo_pbs.xlsx")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig2f <-ggplot(pseudo, aes(x=inoculum, y=tpos, color=isolates, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
+scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+theme(legend.text=element_text(size=12)) +
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+psa <-fig2f + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+plot(psa)
+```
+:::
+
+R^2^ = 0.96-0.99
+
+## Tpos can discriminate between susceptible and resistant pathogens
+
+```{r}
+
+library (ggplot2)
+theme_set(theme_bw())
+ceftaz <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_single/ceftazidime.csv")
+ggplot(ceftaz, aes(x=conc_s, y=tpos, color=isolate, shape=isolate)) + 
+  geom_point(size=4, alpha = 0.7) + 
+  geom_smooth(aes(linetype=isolate), method= loess, color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE ) +
+scale_x_log10(name="CAZ/AVI conc, mg/L") +
+scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
+```
+
+::: aside
+KPC_B MIC 1.0 mg/L, KPC_NDM MIC \> 256 mg/L; data fit by Loess
+:::
+
+## Pharmacodynamic relationship of Tpos against <br> K. pneumoniae ATCC 700603 (0.75 mg/L)
+
+::: panel-tabset
+### Ceftazidime-avibactam
+
+```{r}
+library (readxl)
+library(drda)
+caz_avi_7a <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
+fit_atcc <- drda(tpos ~ ctz_s, data=caz_avi_7a, mean_function = "loglogistic4", max_iter = 1000)
+caz_avi_7b <-read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powderfix4.xlsx")
+fit_atcc2 <- drda(tpos ~ ctz_s, data=caz_avi_7b, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit_atcc,fit_atcc2, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)", legend_location="bottomright", legend = c("CZA-AVI, 4:1 ratio", "CZA-AVI, fixed 4 mg/L"))
+```
+
+### 4:1 ratio
+
+```{r}
+library (readxl)
+library(drda)
+library(broom)
+library(kableExtra)
+caz_avi_7a <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
+fit_atcc <- drda(tpos ~ ctz_s, data=caz_avi_7a, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit_atcc, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+
+### Fixed 4 mg/L
+
+```{r}
+library (readxl)
+library(drda)
+caz_avi_7a <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powderfix4.xlsx")
+fit7a <- drda(tpos ~ ctz_s, data=caz_avi_7a, mean_function = "loglogistic4", max_iter = 1000)
+ed<-effective_dose(fit7a, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+kable_paper("hover", full_width = F, position = "left")
+```
+:::
+
+## Inoculum effects observed with PD relationship measured by Tpos
+
+```{r}
+library (readxl)
+library(drda)
+caz_avi_hinc <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_caz_avi_com_hinoc.xlsx")
+fithinc <- drda(tpos ~ ctz_s, data=caz_avi_hinc, mean_function = "loglogistic4", max_iter = 1000)
+library (readxl)
+library(drda)
+caz_avi_6 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+fit_reginoc <- drda(tpos ~ ctz_s, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
+plot(fithinc, fit_reginoc, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)", legend = c("1x10^7", "1x10^4"))
+
+```
+
+## At a standardized inoculum, Tpos demonstrates a consistent relationship across different antibiotics and isolates with different MICs
+
+```{r}
+## Comparison of meropenem curves for ATCC and KPC_B strains adjusted for MIC
+
+library (readxl)
+library(drda)
+mero <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/ATCC_meropenem.xlsx")
+mero2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_meropenem.xlsx")
+fit1 <- drda(tpos ~ mero_mic, data=mero, mean_function = "loglogistic4", max_iter = 1000)
+fit2 <- drda(tpos ~ mero_mic2, data=mero2, mean_function = "loglogistic4", max_iter = 1000)
+
+
+## Comparison of ceftazidime-avibactam curves for KPC-A and KPC_B strains adjusted for MIC
+
+library (readxl)
+library(drda)
+ctz1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpca_caz_avi_powder_4-1.xlsx")
+ctz2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+ctz3 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/atcc_cazavi.xlsx")
+fit3 <- drda(tpos ~ ctz_mic, data=ctz1, mean_function = "loglogistic4", max_iter = 1000)
+fit4 <- drda(tpos ~ ctz_mic, data=ctz2, mean_function = "loglogistic4", max_iter = 1000)
+fit5 <- drda(tpos ~ ctz_mic, data=ctz3, mean_function = "loglogistic4", max_iter = 1000)
+
+
+
+# Comparison of tigecycline curves for KPC-A and KPC_B strains adjusted for MIC
+
+tig1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpca_tig.xlsx")
+tig2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_tig.xlsx")
+fittig1 <- drda(tpos ~ tig_mic, data=tig1, mean_function = "loglogistic4", max_iter = 1000)
+fittig2 <- drda(tpos ~ tig_mic, data=tig2, mean_function = "loglogistic4", max_iter = 1000)
+
+
+
+# Comparison of gentamicin curves for KPC-A and KPC_B strains adjusted for MIC
+
+gent1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpca_gent.xlsx")
+gent2 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_gent.xlsx")
+fitgent1 <- drda(tpos ~ gent_mic, data=gent1, mean_function = "loglogistic4", max_iter = 1000)
+fitgent2 <- drda(tpos ~ gent_mic, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
+
+
+# Colistin adjusted for MIC
+
+col1 <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_coli.xlsx")
+fitco1 <- drda(tpos ~ col_mic, data=col1, mean_function = "loglogistic4", max_iter = 1000)
+
+
+# plot all data
+plot (fit1, fit2, fit3, fit4, fit5, fittig1, fittig2, fitgent1, fitgent2, fitco1, xlab = "Conc/MIC", base=10, ylab = "Tpos (hr)", xlim =c(0,1000), legend_location="bottomright", legend = c("MERO ATCC", "MERO KPC_B", "CZA-AVI KPC_A", "CZA-AVI KPC_B", "CZA-AVI ATCC", "Tig KPC_A", "TIG KPC_B", "GEN KPC_A", "GEN KPC_B", "Colistin KPC_B"))
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+
+```
+
+## Tpos for directed antimicrobial therapy "in vivo MIC"
+
+![](tpos%20directed%20.png){fig-align="center"}
+
+## Tpos performed using indicator isolates to screen for suboptimal PK/PD
+
+![](indicator%20strains.png){fig-align="center"}
+
+## Comparison of K. pneumoniae indicator isolates
+
+```{r }
+#| label: fig-compkp
+#| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+kpca <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpca_caz_avi_powder_4-1.xlsx")
+kpcb <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+kpccatania <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpccatania_caz_avi_powder_4-1.xlsx")
+caz_avi_kfab <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
+kpwt <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
+caz_avi_kprad <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
+kpatcc <- read_excel("~/Desktop/ACUTEWEBSITE/datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
+
+## fit models for each of the isolates
+fitkpca <- drda(tpos ~ ctz_s, kpca, mean_function = "loglogistic4", max_iter = 1000)
+fitkpcatcc <- drda(tpos ~ ctz_s, kpatcc, mean_function = "loglogistic4", max_iter = 1000)
+fitkpcb <- drda(tpos ~ ctz_s, kpcb, mean_function = "loglogistic4", max_iter = 1000)
+fitkpccatania <- drda(tpos ~ ctz_s, kpccatania, mean_function = "loglogistic4", max_iter = 1000)
+fitkpwt <- drda(tpos ~ ctz_s, kpwt, mean_function = "loglogistic4", max_iter = 1000)
+fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
+fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
+## plot all of the isolates together
+p <-plot(fitkpwt, fitkfab, fitkprad,  fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L", "0.5 mg/L",  "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
+```
+
+## Isolate PD coverage of ceftazidime-avibactam
+
+![](MIC%20data.png){fig-align="center"}
+
+## Combination therapy
+
+![](combination%20method.png){fig-align="center"}
+
+## Synergy of ceftazidime-avibactam plus gentamicin versus KPC-producing K. pneumoniae
+
+![](ESCMIDabstract_Fig2.png)
+
+## Combination therapy versus Klebsiella pneumoniaeo
+
+<br>
+
+| Antibiotic combination | Strain <br> (Ceftazidime-avibactam MIC mg/L) | Mean Tpos change (hr) from predicted null response surface (95% CI) |
+|------------------|----------------------|--------------------------------|
+| CZA + GENT             | KP_A; KPC (2)                                | +5.68 (5.09-6.53)                                                   |
+| CZA + GENT             | KP_B; KPC (1)                                | +3.05 (2.16-4.03)                                                   |
+| CZA + GENT             | KP_Catania; KPC (16)                         | +3.23 (2.10-4.14)                                                   |
+| CZA + COL              | KP_B; KPC (1)                                | +2.31 (1.40-3.20)                                                   |
+| CZA + TGC              | KP_B ;KPC (1)                                | +1.66 (0.72-2.73)                                                   |
+| CZA + ATM              | KP_NDM;NDM-2 (\> 64)                         | +10.33 (10.32-10.34)                                                |
+| CZA + ATM              | KP_Catania; KPC (16)                         | +10.36 (10.31-10.35)                                                |
+| CZA + MER              | KP_B; KPC (1)                                | +11.61 (11.05-11.95)                                                |
+| CZA + MER              | KP_Catania; KPC (16)                         | +3.04 (2.15-4.03)                                                   |
+
+## Impact of combination therapy on high-inoculum infections
+
+::: columns
+::: {.column width="70%"}
+![](inoculum%20effect.png)
+:::
+
+::: {.column width="30%"}
+![](combination_hiinco.png)
+:::
+:::
+
+*synergistic activity improved but did not overcome effects of high-inoculum infection*
+
+## Adapting Bloodculture Systems to Monitor Antimicrobial Efficacy {background-image="bactec_background.png"}
+
+![](acute_logo.png){fig-align="center" width="200"}
+
+<br>
+
+<br>
+
+::: {.fragment .semi-fade-out}
+**Specific Aim# 1:** Establish the quantitative relationship *in vitro* between Tpos and carbapenamase-producing Enterobacterales (CPE) and define antibiotic concentration-effect relationships
+:::
+
+**Specific Aim#2**: Pilot observational clinical study in 20 septic patients undergoing treatment for CPE to explore how early Tpos results with "indicator" isolates correlate with individual antibiotic PK/PD targets
+
+## Longer range goals {background-image="/slides/bactec_background.png"}
+
+<br>
+
+-   Develop population PK/PD tools for interpreting and predicting Tpos with ceftazidime-avibactam and other core antibiotics
+-   Expand Tpos analysis for other difficult to treat Gram-negative pathogens (e.g., Acinetobacter baumanii, Pseudomonas aeruginosa) and *Candida spp.*
+-   Future multicentre collaborative trials (validation, testing)
+-   Pilot projects to develop Tpos as dosing tools in LMICs?
+
+## Acknowledgements {.smaller}
+
+<br>
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+**Supervisors:**
+
+-   **Prof. Russell Lewis**, Department of Molecular Medicine, University Of Padua
+-   **Prof. Monica Cricca**, Department of Diagnostic and Experimental Medicine, University of Bologna
+-   **Prof. Vittorio Sambri,** Department of Diagnostic and Experimental Medicine, University of Bologna
+-   Faculty and staff at the Microbiology Unit, Greater Romagna Area Hub, Pievesistina, Cesena, Italy
+:::
+
+::: {.column width="50%"}
+**Funding:**
+
+Direzione Generale Della Ricerca Dell' Innovazione in Sanità 2021-Bando Dell Ricerca
+
+![](minstero.png){fig-align="center" width="300"}
+
+European Society of Clinical Microbiology and Infectious Diseases (ESCMID) [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022)
+
+![](ESCMID.png){fig-align="center" width="300"}
+
+Antibiotic powder:
+
+![](Pfizer.svg.png){fig-align="center" width="100"}
+:::
+:::
+
+## References
+
+<br>
