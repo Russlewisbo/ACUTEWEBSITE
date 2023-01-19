@@ -385,6 +385,8 @@ plot (fit1, fit2, fit3, fit4, fit5, fittig1, fittig2, fitgent1, fitgent2, fitco1
 
 ```
 
+## Tpos for monitoring antimicrobial therapy
+
 ## Comparison of K. pneumoniae indicator isolates
 
 ```{r }
@@ -411,6 +413,10 @@ fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4
 ## plot all of the isolates together
 p <-plot(fitkpwt, fitkprad, fitkfab, fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L",  "0.5 mg/L", "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
 ```
+
+## Tpos performed using indicator isolates
+
+![](tposcoverage.png){fig-align="center"}
 
 ## Combination therapy
 
