@@ -219,7 +219,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|--------------------------------|----------------------|----------------------------------------|
+|------------------------|------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -1022,7 +1022,7 @@ kable_paper("hover", full_width = F, position = "left")
 ### TIGECYCLINE
 
 ::: callout-important
-Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity.[@Deitchman2018a] This phenomena was evident in preliminary experiments as shown in [@fig-edta].
+Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity as previously reported by Deitchman et al.[@deitchman2018] This phenomena was evident in preliminary experiments as shown in \[@fig-edta\].
 
 ```{r}
 #| label: fig-edta

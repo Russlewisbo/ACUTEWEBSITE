@@ -9,7 +9,7 @@ format:
     scrollable: true
     slide-number: false
     incremental: false
-    multiplex: true
+    multiplex: false
     chalkboard: false
     theme: [default, custom.scss]
     seal: false
@@ -439,7 +439,7 @@ p <-plot(fitkpwt, fitkfab, fitkprad,  fitkpcatcc, fitkpcb, fitkpca, fitkpccatani
 <br>
 
 | Antibiotic combination | Strain <br> (Ceftazidime-avibactam MIC mg/L) | Mean Tpos change (hr) from predicted null response surface (95% CI) |
-|------------------|----------------------|--------------------------------|
+|-------------------|----------------------|--------------------------------|
 | CZA + GENT             | KP_A; KPC (2)                                | +5.68 (5.09-6.53)                                                   |
 | CZA + GENT             | KP_B; KPC (1)                                | +3.05 (2.16-4.03)                                                   |
 | CZA + GENT             | KP_Catania; KPC (16)                         | +3.23 (2.10-4.14)                                                   |
