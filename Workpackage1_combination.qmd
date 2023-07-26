@@ -1,6 +1,6 @@
 ---
 title: "Workpackage 1-Combinations"
-date: "12/14/2022"
+date: "06/09/2023"
 format: 
   html:
     code-fold: true
@@ -35,7 +35,7 @@ csl: nature.csl
 
 ### Ceftazidime-avibactam + gentamicin
 
--   The results shown in [@fig-10wp2] demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with an average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
+-   The results shown in [@fig-10wp2]demonstrated that CTZ/AVI + gentamicin is broadly synergistic over the range of tested concentrations, with an average 4.29 hr increase (95% CI 2.65-6.46) in Tpos versus the predicted null interactive response of ceftazidime-avibactam and gentamicin alone.
 
 ```{r}
 #| label: fig-10wp2
@@ -324,7 +324,7 @@ summary(rsb3cat2)
 
 ### Ceftazidime/avibactam + colistin
 
-Results are shown in [@fig13wp2].
+Results are shown in [@fig-13wp2].
 
 ```{r}
 #| label: fig-13wp2
@@ -459,7 +459,5 @@ summary(rsb6)
 
 
 ```
-
-### Summary
 
 ## References
