@@ -220,7 +220,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|--------------------------------|----------------------|----------------------------------------|
+|------------------------|------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -369,7 +369,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
-#### KPC A (MIC 2 mg/L) commerical
+#### KPC A (MIC 2 mg/L) commercial
 
 ```{r}
 #| label: fig-5
