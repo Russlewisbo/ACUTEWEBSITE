@@ -18,7 +18,7 @@ website:
       - Presentations.qmd
       - Publications.qmd
       - Protocols.qmd
-      - Documentation.qmd
+      - Antifungals.qmd
 format: 
   html:
     theme: cosmo

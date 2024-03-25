@@ -1,6 +1,6 @@
 ---
 title: "Workpackage 1-Single Drug"
-date: "12/14/2022"
+date: "06/08/2023"
 format: 
   html:
     code-fold: true
@@ -54,7 +54,8 @@ wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
 fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, color=isolates, shape=diluent, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
 scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
 theme(legend.text=element_text(size=12)) +
-geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE)
+fig1
 fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
 
 ```
@@ -123,11 +124,11 @@ theme_set(theme_bw())
 library (readxl)
 abaumani <- read_excel("abaum_pbs.xlsx")
 ## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
-fig1 <-ggplot(abaumani, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
+fig1ab <-ggplot(abaumani, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
 scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
 theme(legend.text=element_text(size=12)) +
 geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
-fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+fig1ab + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
 
 ```
 
@@ -219,7 +220,11 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
+<<<<<<< HEAD
 |------------------------|-------------------|------------------------------|
+=======
+|------------------------|------------------|------------------------------|
+>>>>>>> a72d8bf8db747dca544fb670c6a5f63b1b274185
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -368,7 +373,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br>
 
-#### KPC A (MIC 2 mg/L) commerical
+#### KPC A (MIC 2 mg/L) commercial
 
 ```{r}
 #| label: fig-5
@@ -761,7 +766,7 @@ kpccatania <- read_excel("datasets_single/kpccatania_caz_avi_powder_4-1.xlsx")
 caz_avi_kfab <- read_excel("datasets_single/kp_FAB_caz_avi_powder4-1.xlsx")
 kpwt <- read_excel("datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
 caz_avi_kprad <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
-kpatcc <- read_excel("datasets_single/kpatcc_caz_avi_powder4-1.xlsx")
+kpatcc <- read_excel("datasets_single/kpatcc_caz_avi_powder_4-1.xlsx")
 
 ## fit models for each of the isolates
 fitkpca <- drda(tpos ~ ctz_s, kpca, mean_function = "loglogistic4", max_iter = 1000)
@@ -941,8 +946,6 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### CONCLUSIONS
-
 ------------------------------------------------------------------------
 
 ### COLISTIN
@@ -977,8 +980,6 @@ ed<-effective_dose(fit14, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
-
-#### CONCLUSIONS
 
 ------------------------------------------------------------------------
 
@@ -1015,14 +1016,12 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### CONCLUSIONS
-
 ------------------------------------------------------------------------
 
 ### TIGECYCLINE
 
 ::: callout-important
-Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity.[@Deitchman2018a] This phenomena was evident in preliminary experiments as shown in [@fig-edta].
+Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity as previously reported by Deitchman et al.[@deitchman2018] This phenomena was evident in preliminary experiments as shown in [@fig-edta].
 
 ```{r}
 #| label: fig-edta
@@ -1170,8 +1169,6 @@ kable_paper("hover", full_width = F, position = "left")
 
 ```
 
-#### CONCLUSIONS
-
 ------------------------------------------------------------------------
 
 ### CEFTAZIDIME
@@ -1237,8 +1234,6 @@ kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
 
-#### CONCLUSIONS
-
 ------------------------------------------------------------------------
 
 ### CIPROFLOXACIN
@@ -1302,7 +1297,5 @@ ed<-effective_dose(fitcipro2, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
 kable_paper("hover", full_width = F, position = "left")
 ```
-
-#### CONCLUSIONS
 
 ## REFERENCES
