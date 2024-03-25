@@ -6,6 +6,8 @@ library(ggthemes)
 library (ggsci)
 library (devtools)
 library (drda)
+library (envalysis)
+library (scales)
 
 
 ###########################KPC_B##################################################################
@@ -144,8 +146,91 @@ ggplot() +
   geom_point(data = df3, aes(x = Conc, y = KPC_B), shape = 3, size = 4) +
   geom_ribbon(data = newdata3, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
   geom_line(data = newdata4, aes(x = Conc, y = Prediction)) +
-  geom_point(data = df4, aes(x = Conc, y = KPRAD), shape = 3, size = 4) +
+  geom_point(data = df4, aes(x = Conc, y = KPRAD), shape = 5, size = 4) +
   geom_ribbon(data = newdata4, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
-  labs(x = "Serum Ceftazidime-Avibactam [4:1] mg/L", y = "Time to positivity (Tpos) hours", title = "4-Parameter Logistic Regression with 95% CI") +
-  scale_x_log10() + theme_classic ()
+  labs(x = "Spiked serum ceftazidime-avibactam [4:1] mg/L", y = "Time to positivity (Tpos) hours") +
+  scale_x_log10() + theme_base()
 
+############KFAB#################################################################################
+
+KFAB <- read_excel("C:/Users/Russell Lewis/OneDrive/Desktop/KFAB.xlsx") 
+
+df5 <- KFAB
+df5 <- na.omit(df5)
+
+
+# Fit the 4PL model- ATCC isolate
+fit5 <- drm(KPFAB ~ Conc, data = df5, fct = LL.4())
+
+# Create a new data frame for predictions
+newdata5 <- data.frame(Conc = seq(min(df5$Conc), max(df5$Conc), length.out = 100))
+
+# Predict with 95% CI
+pred5 <- predict(fit5, newdata = newdata5, interval = "confidence")
+df_pred5 <- data.frame(pred5)
+
+# Bind the predictions to the new data frame
+newdata5 <- cbind(newdata5, pred5)
+
+ggplot() + 
+  geom_line(data = newdata1, aes(x = Conc, y = Prediction)) +  
+  geom_point(data = df1, aes(x = Conc, y = KPWT), shape = 1, size = 4) +
+  geom_ribbon(data = newdata1, aes(x= Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata2, aes(x = Conc, y = Prediction)) +  
+  geom_point(data = df2, aes(x = Conc, y = KPCA), shape = 2, size = 4) +
+  geom_ribbon(data = newdata2, aes(x= Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata3, aes(x = Conc, y = Prediction)) +
+  geom_point(data = df3, aes(x = Conc, y = KPC_B), shape = 8, size = 4) +
+  geom_ribbon(data = newdata3, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata4, aes(x = Conc, y = Prediction)) +
+  geom_point(data = df4, aes(x = Conc, y = KPRAD), shape = 5, size = 4) +
+  geom_ribbon(data = newdata4, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata5, aes(x = Conc, y = Prediction)) +
+  geom_point(data = df5, aes(x = Conc, y = KPFAB), shape = 6, size = 4) +
+  geom_ribbon(data = newdata5, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  labs(x = "Spiked serum ceftazidime-avibactam [4:1] mg/L", y = "Time to positivity (Tpos) hours") +
+  scale_x_log10(labels = label_log(digits = 1)) + theme_base()
+
+############KCAT#################################################################################
+
+KPCAT <- read_excel("C:/Users/Russell Lewis/OneDrive/Desktop/KPCAT.xlsx") 
+
+df6 <- KPCAT
+df6 <- na.omit(df6)
+
+
+# Fit the 4PL model- ATCC isolate
+fit6 <- drm(KPCAT ~ Conc, data = df6, fct = LL.4())
+
+# Create a new data frame for predictions
+newdata6 <- data.frame(Conc = seq(min(df6$Conc), max(df6$Conc), length.out = 100))
+
+# Predict with 95% CI
+pred6 <- predict(fit6, newdata = newdata6, interval = "confidence")
+df_pred6 <- data.frame(pred6)
+
+# Bind the predictions to the new data frame
+newdata6 <- cbind(newdata6, pred6)
+
+ggplot() + 
+  geom_line(data = newdata1, aes(x = Conc, y = Prediction)) +  
+  geom_point(data = df1, aes(x = Conc, y = KPWT), shape = 1, size = 4) +
+  geom_ribbon(data = newdata1, aes(x= Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata2, aes(x = Conc, y = Prediction)) +  
+  geom_point(data = df2, aes(x = Conc, y = KPCA), shape = 2, size = 4) +
+  geom_ribbon(data = newdata2, aes(x= Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata3, aes(x = Conc, y = Prediction)) +
+  geom_point(data = df3, aes(x = Conc, y = KPC_B), shape = 8, size = 4) +
+  geom_ribbon(data = newdata3, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata4, aes(x = Conc, y = Prediction)) +
+  geom_point(data = df4, aes(x = Conc, y = KPRAD), shape = 5, size = 4) +
+  geom_ribbon(data = newdata4, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata5, aes(x = Conc, y = Prediction)) +
+  geom_point(data = df5, aes(x = Conc, y = KPFAB), shape = 6, size = 4) +
+  geom_ribbon(data = newdata5, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  geom_line(data = newdata6, aes(x = Conc, y = Prediction)) +
+  geom_point(data = df6, aes(x = Conc, y = KPCAT), shape = 15, size = 4) +
+  geom_ribbon(data = newdata6, aes(x = Conc, ymin = Lower, ymax = Upper), alpha = 0.2) +
+  labs(x = "Spiked serum ceftazidime-avibactam [4:1] mg/L", y = "Time to positivity (Tpos) hours") +
+  scale_x_log10(labels = label_log(digits = 1)) + theme_base()
+ 
