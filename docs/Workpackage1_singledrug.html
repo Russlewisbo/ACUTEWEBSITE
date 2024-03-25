@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.47">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,10 +18,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,19 +47,48 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging-indent div.csl-entry {
+.hanging div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -74,7 +102,8 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}</style>
+}
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -123,16 +152,11 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Workpackage1_singledrug.html">Workpackage 1-Single Drug</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Workpackage 1-Single Drug</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
     </div>
   </nav>
@@ -140,72 +164,72 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Workpackage1_singledrug.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Workpackage 1-Single Drug</span></a>
+  <a href="./Index.html" class="sidebar-item-text sidebar-link">The Acute Website</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Workpackage1_combination.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workpackage 1-Combinations</span></a>
+  <a href="./About.html" class="sidebar-item-text sidebar-link">Background</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Workpackage2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workpackage 2</span></a>
+  <a href="./Workpackage1_singledrug.html" class="sidebar-item-text sidebar-link active">Workpackage 1-Single Drug</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Timeline.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Timeline</span></a>
+  <a href="./Workpackage1_combination.html" class="sidebar-item-text sidebar-link">Workpackage 1-Combinations</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ECCMID 2023 ABSTRACT (Submitted)</span></a>
+  <a href="./Workpackage2.html" class="sidebar-item-text sidebar-link">Workpackage 2</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Presentations</span></a>
+  <a href="./Timeline.html" class="sidebar-item-text sidebar-link">Timeline</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Publications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Publications</span></a>
+  <a href="./Summary.html" class="sidebar-item-text sidebar-link">ECCMID 2023 ABSTRACT (Submitted)</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Protocols.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Protocols</span></a>
+  <a href="./Presentations.html" class="sidebar-item-text sidebar-link">Presentations</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Documentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documentation</span></a>
+  <a href="./Publications.html" class="sidebar-item-text sidebar-link">Publications</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Protocols.html" class="sidebar-item-text sidebar-link">Protocols</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Documentation.html" class="sidebar-item-text sidebar-link">Documentation</a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -240,7 +264,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Workpackage 1-Single Drug</h1>
+<h1 class="title d-none d-lg-block">Workpackage 1-Single Drug</h1>
 </div>
 
 
@@ -277,12 +301,12 @@ div.csl-indent {
 <section id="results" class="level3">
 <h3 class="anchored" data-anchor-id="results">RESULTS</h3>
 <p>The relationship between Tpos and the <em>K. pneumoniae</em> inoculum is shown in <a href="#fig-1">Figure&nbsp;1</a> a linear relationship was observed from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R<sup>2</sup> of 0.92-0.94. The linear relationship of Tpos versus inoculum was consistent if the inoculum was prepared in PBS or pooled human serum as shown in <a href="#tbl-1">Table&nbsp;1</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Note
 </div>
 </div>
@@ -313,7 +337,7 @@ Note
 <div id="fig-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Relationship of time-to-positivity (Tpos) versus test inoculum</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Relationship of time-to-positivity (Tpos) versus test inoculum</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -331,40 +355,39 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-1" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: Effect of inoculum diluent on Tpos</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">diluent</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b0</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b1</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr_adj</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Std.Error</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;1:  Effect of inoculum diluent on Tpos </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> diluent </th>
+   <th style="text-align:right;"> b0 </th>
+   <th style="text-align:right;"> b1 </th>
+   <th style="text-align:right;"> Rsqr </th>
+   <th style="text-align:right;"> Rsqr_adj </th>
+   <th style="text-align:right;"> Std.Error </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">pbs</td>
-<td style="text-align: right;">32.05074</td>
-<td style="text-align: right;">-2.564975</td>
-<td style="text-align: right;">0.9343070</td>
-<td style="text-align: right;">0.9336227</td>
-<td style="text-align: right;">1.110872</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">serum</td>
-<td style="text-align: right;">33.02361</td>
-<td style="text-align: right;">-2.840223</td>
-<td style="text-align: right;">0.9231703</td>
-<td style="text-align: right;">0.9216023</td>
-<td style="text-align: right;">1.210130</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> pbs </td>
+   <td style="text-align:right;"> 32.05074 </td>
+   <td style="text-align:right;"> -2.564975 </td>
+   <td style="text-align:right;"> 0.9343070 </td>
+   <td style="text-align:right;"> 0.9336227 </td>
+   <td style="text-align:right;"> 1.110872 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> serum </td>
+   <td style="text-align:right;"> 33.02361 </td>
+   <td style="text-align:right;"> -2.840223 </td>
+   <td style="text-align:right;"> 0.9231703 </td>
+   <td style="text-align:right;"> 0.9216023 </td>
+   <td style="text-align:right;"> 1.210130 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <hr>
@@ -391,7 +414,7 @@ Note
 <div id="fig-ecoli" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-ecoli-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Relationship of time-to-positivity (Tpos) versus test inoculum</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Relationship of time-to-positivity (Tpos) versus test inoculum</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -410,32 +433,31 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-ecoli" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2: Effect of inoculum diluent on Tpos</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">diluent</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b0</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b1</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr_adj</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Std.Error</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;2:  Effect of inoculum diluent on Tpos </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> diluent </th>
+   <th style="text-align:right;"> b0 </th>
+   <th style="text-align:right;"> b1 </th>
+   <th style="text-align:right;"> Rsqr </th>
+   <th style="text-align:right;"> Rsqr_adj </th>
+   <th style="text-align:right;"> Std.Error </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">pbs</td>
-<td style="text-align: right;">29.52142</td>
-<td style="text-align: right;">-2.295468</td>
-<td style="text-align: right;">0.9933486</td>
-<td style="text-align: right;">0.9929985</td>
-<td style="text-align: right;">0.3948541</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> pbs </td>
+   <td style="text-align:right;"> 29.52142 </td>
+   <td style="text-align:right;"> -2.295468 </td>
+   <td style="text-align:right;"> 0.9933486 </td>
+   <td style="text-align:right;"> 0.9929985 </td>
+   <td style="text-align:right;"> 0.3948541 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <hr>
@@ -462,7 +484,7 @@ Note
 <div id="fig-1f" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-1f-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Relationship of time-to-positivity (Tpos) versus test inoculum for Acinetobacter baumanii</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Relationship of time-to-positivity (Tpos) versus test inoculum for Acinetobacter baumanii</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -481,32 +503,31 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-1f" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3: Effect of inoculum diluent on Tpos for Acinetobacter baumanii</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">diluent</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b0</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b1</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr_adj</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Std.Error</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;3:  Effect of inoculum diluent on Tpos for Acinetobacter baumanii </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> diluent </th>
+   <th style="text-align:right;"> b0 </th>
+   <th style="text-align:right;"> b1 </th>
+   <th style="text-align:right;"> Rsqr </th>
+   <th style="text-align:right;"> Rsqr_adj </th>
+   <th style="text-align:right;"> Std.Error </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">pbs</td>
-<td style="text-align: right;">28.35235</td>
-<td style="text-align: right;">-2.158901</td>
-<td style="text-align: right;">0.9924317</td>
-<td style="text-align: right;">0.9921406</td>
-<td style="text-align: right;">0.4157561</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> pbs </td>
+   <td style="text-align:right;"> 28.35235 </td>
+   <td style="text-align:right;"> -2.158901 </td>
+   <td style="text-align:right;"> 0.9924317 </td>
+   <td style="text-align:right;"> 0.9921406 </td>
+   <td style="text-align:right;"> 0.4157561 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <hr>
@@ -533,7 +554,7 @@ Note
 <div id="fig-2f" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-2f-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: Relationship of time-to-positivity (Tpos) versus test inoculum for Pseudomonas aeruginosa</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Relationship of time-to-positivity (Tpos) versus test inoculum for Pseudomonas aeruginosa</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -552,32 +573,31 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-2f" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;4: Effect of inoculum diluent on Tpos for pseudomonas aeruginosa</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">diluent</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b0</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">b1</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Rsqr_adj</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Std.Error</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;4:  Effect of inoculum diluent on Tpos for pseudomonas aeruginosa </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> diluent </th>
+   <th style="text-align:right;"> b0 </th>
+   <th style="text-align:right;"> b1 </th>
+   <th style="text-align:right;"> Rsqr </th>
+   <th style="text-align:right;"> Rsqr_adj </th>
+   <th style="text-align:right;"> Std.Error </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">pbs</td>
-<td style="text-align: right;">26.16852</td>
-<td style="text-align: right;">-1.465734</td>
-<td style="text-align: right;">0.9842056</td>
-<td style="text-align: right;">0.9838108</td>
-<td style="text-align: right;">0.59305</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> pbs </td>
+   <td style="text-align:right;"> 26.16852 </td>
+   <td style="text-align:right;"> -1.465734 </td>
+   <td style="text-align:right;"> 0.9842056 </td>
+   <td style="text-align:right;"> 0.9838108 </td>
+   <td style="text-align:right;"> 0.59305 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -619,7 +639,7 @@ Note
 <div id="fig-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Effect of ceftazidime/aviactam concentrations on Tpos of K. pneumoniae</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Effect of ceftazidime/aviactam concentrations on Tpos of K. pneumoniae</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -672,7 +692,7 @@ Note
 <div id="fig-1atcc" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-1atcc-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -693,58 +713,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-5a" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;6: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;6:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">23.87874</td>
-<td style="text-align: right;">19.31716</td>
-<td style="text-align: right;">28.44033</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">26.93812</td>
-<td style="text-align: right;">24.06902</td>
-<td style="text-align: right;">29.80723</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">30.38948</td>
-<td style="text-align: right;">29.11007</td>
-<td style="text-align: right;">31.66888</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">34.28302</td>
-<td style="text-align: right;">31.38838</td>
-<td style="text-align: right;">37.17767</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">38.67541</td>
-<td style="text-align: right;">33.84814</td>
-<td style="text-align: right;">43.50268</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">41.98020</td>
-<td style="text-align: right;">33.98412</td>
-<td style="text-align: right;">49.97627</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 23.87874 </td>
+   <td style="text-align:right;"> 19.31716 </td>
+   <td style="text-align:right;"> 28.44033 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 26.93812 </td>
+   <td style="text-align:right;"> 24.06902 </td>
+   <td style="text-align:right;"> 29.80723 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 30.38948 </td>
+   <td style="text-align:right;"> 29.11007 </td>
+   <td style="text-align:right;"> 31.66888 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 34.28302 </td>
+   <td style="text-align:right;"> 31.38838 </td>
+   <td style="text-align:right;"> 37.17767 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 38.67541 </td>
+   <td style="text-align:right;"> 33.84814 </td>
+   <td style="text-align:right;"> 43.50268 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 41.98020 </td>
+   <td style="text-align:right;"> 33.98412 </td>
+   <td style="text-align:right;"> 49.97627 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -766,7 +785,7 @@ Note
 <div id="fig-1atccfix" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-1atccfix-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -787,58 +806,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-atccfix" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;7: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;7:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">8.099087</td>
-<td style="text-align: right;">7.038485</td>
-<td style="text-align: right;">9.159689</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">9.235833</td>
-<td style="text-align: right;">8.728989</td>
-<td style="text-align: right;">9.742676</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">10.532127</td>
-<td style="text-align: right;">10.149119</td>
-<td style="text-align: right;">10.915134</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">12.010361</td>
-<td style="text-align: right;">10.856802</td>
-<td style="text-align: right;">13.163921</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">13.696074</td>
-<td style="text-align: right;">11.685276</td>
-<td style="text-align: right;">15.706872</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">14.975851</td>
-<td style="text-align: right;">12.415855</td>
-<td style="text-align: right;">17.535846</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 8.099087 </td>
+   <td style="text-align:right;"> 7.038485 </td>
+   <td style="text-align:right;"> 9.159689 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 9.235833 </td>
+   <td style="text-align:right;"> 8.728989 </td>
+   <td style="text-align:right;"> 9.742676 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 10.532127 </td>
+   <td style="text-align:right;"> 10.149119 </td>
+   <td style="text-align:right;"> 10.915134 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 12.010361 </td>
+   <td style="text-align:right;"> 10.856802 </td>
+   <td style="text-align:right;"> 13.163921 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 13.696074 </td>
+   <td style="text-align:right;"> 11.685276 </td>
+   <td style="text-align:right;"> 15.706872 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 14.975851 </td>
+   <td style="text-align:right;"> 12.415855 </td>
+   <td style="text-align:right;"> 17.535846 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -860,7 +878,7 @@ Note
 <div id="fig-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;8: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -881,58 +899,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-3" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;8: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;8:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">73.66731</td>
-<td style="text-align: right;">71.92413</td>
-<td style="text-align: right;">75.41048</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">78.61720</td>
-<td style="text-align: right;">77.51043</td>
-<td style="text-align: right;">79.72397</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">83.89969</td>
-<td style="text-align: right;">83.05534</td>
-<td style="text-align: right;">84.74404</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">89.53712</td>
-<td style="text-align: right;">88.10788</td>
-<td style="text-align: right;">90.96636</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">95.55335</td>
-<td style="text-align: right;">93.12523</td>
-<td style="text-align: right;">97.98147</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">99.87460</td>
-<td style="text-align: right;">96.42020</td>
-<td style="text-align: right;">103.32901</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 73.66731 </td>
+   <td style="text-align:right;"> 71.92413 </td>
+   <td style="text-align:right;"> 75.41048 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 78.61720 </td>
+   <td style="text-align:right;"> 77.51043 </td>
+   <td style="text-align:right;"> 79.72397 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 83.89969 </td>
+   <td style="text-align:right;"> 83.05534 </td>
+   <td style="text-align:right;"> 84.74404 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 89.53712 </td>
+   <td style="text-align:right;"> 88.10788 </td>
+   <td style="text-align:right;"> 90.96636 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 95.55335 </td>
+   <td style="text-align:right;"> 93.12523 </td>
+   <td style="text-align:right;"> 97.98147 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 99.87460 </td>
+   <td style="text-align:right;"> 96.42020 </td>
+   <td style="text-align:right;"> 103.32901 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -954,7 +971,7 @@ Note
 <div id="fig-4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-4-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;9: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -975,58 +992,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-4" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;9: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;9:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">68.88793</td>
-<td style="text-align: right;">61.14631</td>
-<td style="text-align: right;">76.62954</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">75.52374</td>
-<td style="text-align: right;">71.50425</td>
-<td style="text-align: right;">79.54322</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">82.79876</td>
-<td style="text-align: right;">79.85671</td>
-<td style="text-align: right;">85.74080</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">90.77456</td>
-<td style="text-align: right;">83.70890</td>
-<td style="text-align: right;">97.84023</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">99.51866</td>
-<td style="text-align: right;">86.97415</td>
-<td style="text-align: right;">112.06317</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">105.94237</td>
-<td style="text-align: right;">88.43755</td>
-<td style="text-align: right;">123.44720</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 68.88793 </td>
+   <td style="text-align:right;"> 61.14631 </td>
+   <td style="text-align:right;"> 76.62954 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 75.52374 </td>
+   <td style="text-align:right;"> 71.50425 </td>
+   <td style="text-align:right;"> 79.54322 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 82.79876 </td>
+   <td style="text-align:right;"> 79.85671 </td>
+   <td style="text-align:right;"> 85.74080 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 90.77456 </td>
+   <td style="text-align:right;"> 83.70890 </td>
+   <td style="text-align:right;"> 97.84023 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 99.51866 </td>
+   <td style="text-align:right;"> 86.97415 </td>
+   <td style="text-align:right;"> 112.06317 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 105.94237 </td>
+   <td style="text-align:right;"> 88.43755 </td>
+   <td style="text-align:right;"> 123.44720 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1048,7 +1064,7 @@ Note
 <div id="fig-5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-5-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;10: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1069,58 +1085,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-5" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;10: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;10:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">143.5857</td>
-<td style="text-align: right;">138.9952</td>
-<td style="text-align: right;">148.1763</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">154.0912</td>
-<td style="text-align: right;">151.7888</td>
-<td style="text-align: right;">156.3936</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">165.3653</td>
-<td style="text-align: right;">163.4974</td>
-<td style="text-align: right;">167.2333</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">177.4643</td>
-<td style="text-align: right;">172.9862</td>
-<td style="text-align: right;">181.9424</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">190.4485</td>
-<td style="text-align: right;">183.1369</td>
-<td style="text-align: right;">197.7601</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">199.8183</td>
-<td style="text-align: right;">190.5343</td>
-<td style="text-align: right;">209.1023</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 143.5857 </td>
+   <td style="text-align:right;"> 138.9952 </td>
+   <td style="text-align:right;"> 148.1763 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 154.0912 </td>
+   <td style="text-align:right;"> 151.7888 </td>
+   <td style="text-align:right;"> 156.3936 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 165.3653 </td>
+   <td style="text-align:right;"> 163.4974 </td>
+   <td style="text-align:right;"> 167.2333 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 177.4643 </td>
+   <td style="text-align:right;"> 172.9862 </td>
+   <td style="text-align:right;"> 181.9424 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 190.4485 </td>
+   <td style="text-align:right;"> 183.1369 </td>
+   <td style="text-align:right;"> 197.7601 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 199.8183 </td>
+   <td style="text-align:right;"> 190.5343 </td>
+   <td style="text-align:right;"> 209.1023 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1141,7 +1156,7 @@ Note
 <div id="fig-6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-6-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;11: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;11: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1162,58 +1177,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-6" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;11: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;11:  Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">125.7716</td>
-<td style="text-align: right;">114.3869</td>
-<td style="text-align: right;">137.1562</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">143.8460</td>
-<td style="text-align: right;">136.1835</td>
-<td style="text-align: right;">151.5085</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">164.5179</td>
-<td style="text-align: right;">158.8981</td>
-<td style="text-align: right;">170.1377</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">188.1605</td>
-<td style="text-align: right;">179.1859</td>
-<td style="text-align: right;">197.1350</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">215.2007</td>
-<td style="text-align: right;">197.7571</td>
-<td style="text-align: right;">232.6444</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">235.7798</td>
-<td style="text-align: right;">202.9734</td>
-<td style="text-align: right;">268.5861</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 125.7716 </td>
+   <td style="text-align:right;"> 114.3869 </td>
+   <td style="text-align:right;"> 137.1562 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 143.8460 </td>
+   <td style="text-align:right;"> 136.1835 </td>
+   <td style="text-align:right;"> 151.5085 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 164.5179 </td>
+   <td style="text-align:right;"> 158.8981 </td>
+   <td style="text-align:right;"> 170.1377 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 188.1605 </td>
+   <td style="text-align:right;"> 179.1859 </td>
+   <td style="text-align:right;"> 197.1350 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 215.2007 </td>
+   <td style="text-align:right;"> 197.7571 </td>
+   <td style="text-align:right;"> 232.6444 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 235.7798 </td>
+   <td style="text-align:right;"> 202.9734 </td>
+   <td style="text-align:right;"> 268.5861 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1235,7 +1249,7 @@ Note
 <div id="fig-7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-7-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;12: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;12: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1256,58 +1270,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-7" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;12: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;12:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">26.02302</td>
-<td style="text-align: right;">22.05197</td>
-<td style="text-align: right;">29.99406</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">37.21041</td>
-<td style="text-align: right;">34.05205</td>
-<td style="text-align: right;">40.36876</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">53.20729</td>
-<td style="text-align: right;">50.04995</td>
-<td style="text-align: right;">56.36463</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">76.08130</td>
-<td style="text-align: right;">70.56354</td>
-<td style="text-align: right;">81.59905</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">108.78892</td>
-<td style="text-align: right;">81.37114</td>
-<td style="text-align: right;">136.20669</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">138.74444</td>
-<td style="text-align: right;">47.74622</td>
-<td style="text-align: right;">229.74266</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 26.02302 </td>
+   <td style="text-align:right;"> 22.05197 </td>
+   <td style="text-align:right;"> 29.99406 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 37.21041 </td>
+   <td style="text-align:right;"> 34.05205 </td>
+   <td style="text-align:right;"> 40.36876 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 53.20729 </td>
+   <td style="text-align:right;"> 50.04995 </td>
+   <td style="text-align:right;"> 56.36463 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 76.08130 </td>
+   <td style="text-align:right;"> 70.56354 </td>
+   <td style="text-align:right;"> 81.59905 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 108.78892 </td>
+   <td style="text-align:right;"> 81.37114 </td>
+   <td style="text-align:right;"> 136.20669 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 138.74444 </td>
+   <td style="text-align:right;"> 47.74622 </td>
+   <td style="text-align:right;"> 229.74266 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1329,7 +1342,7 @@ Note
 <div id="fig-8" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-8-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;13: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;13: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1350,58 +1363,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-8" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;13: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;13:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">21.16519</td>
-<td style="text-align: right;">15.15120</td>
-<td style="text-align: right;">27.17918</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">27.06283</td>
-<td style="text-align: right;">22.30567</td>
-<td style="text-align: right;">31.81998</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">34.60383</td>
-<td style="text-align: right;">31.40317</td>
-<td style="text-align: right;">37.80449</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">44.24612</td>
-<td style="text-align: right;">39.07653</td>
-<td style="text-align: right;">49.41571</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">56.57521</td>
-<td style="text-align: right;">43.63228</td>
-<td style="text-align: right;">69.51813</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">66.87013</td>
-<td style="text-align: right;">38.60827</td>
-<td style="text-align: right;">95.13199</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 21.16519 </td>
+   <td style="text-align:right;"> 15.15120 </td>
+   <td style="text-align:right;"> 27.17918 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 27.06283 </td>
+   <td style="text-align:right;"> 22.30567 </td>
+   <td style="text-align:right;"> 31.81998 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 34.60383 </td>
+   <td style="text-align:right;"> 31.40317 </td>
+   <td style="text-align:right;"> 37.80449 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 44.24612 </td>
+   <td style="text-align:right;"> 39.07653 </td>
+   <td style="text-align:right;"> 49.41571 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 56.57521 </td>
+   <td style="text-align:right;"> 43.63228 </td>
+   <td style="text-align:right;"> 69.51813 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 66.87013 </td>
+   <td style="text-align:right;"> 38.60827 </td>
+   <td style="text-align:right;"> 95.13199 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1424,7 +1436,7 @@ Note
 <div id="fig-3a" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-3a-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;14: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a high-inoculum</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a high-inoculum</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1445,58 +1457,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-3a" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;14: Pharmacodynamic estimates for a high-inoculum</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;14:  Pharmacodynamic estimates for a high-inoculum </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">82.08148</td>
-<td style="text-align: right;">71.35951</td>
-<td style="text-align: right;">92.80344</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">117.28496</td>
-<td style="text-align: right;">109.48524</td>
-<td style="text-align: right;">125.08468</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">167.58667</td>
-<td style="text-align: right;">159.06133</td>
-<td style="text-align: right;">176.11201</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">239.46201</td>
-<td style="text-align: right;">222.24533</td>
-<td style="text-align: right;">256.67869</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">342.16357</td>
-<td style="text-align: right;">290.42168</td>
-<td style="text-align: right;">393.90546</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">436.16833</td>
-<td style="text-align: right;">240.82684</td>
-<td style="text-align: right;">631.50983</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 82.08148 </td>
+   <td style="text-align:right;"> 71.35951 </td>
+   <td style="text-align:right;"> 92.80344 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 117.28496 </td>
+   <td style="text-align:right;"> 109.48524 </td>
+   <td style="text-align:right;"> 125.08468 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 167.58667 </td>
+   <td style="text-align:right;"> 159.06133 </td>
+   <td style="text-align:right;"> 176.11201 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 239.46201 </td>
+   <td style="text-align:right;"> 222.24533 </td>
+   <td style="text-align:right;"> 256.67869 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 342.16357 </td>
+   <td style="text-align:right;"> 290.42168 </td>
+   <td style="text-align:right;"> 393.90546 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 436.16833 </td>
+   <td style="text-align:right;"> 240.82684 </td>
+   <td style="text-align:right;"> 631.50983 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1518,7 +1529,7 @@ Note
 <div id="fig-catan1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-catan1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;15: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a resistant strain</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a resistant strain</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1539,58 +1550,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-catan1" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;15: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;15:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">357.0678</td>
-<td style="text-align: right;">344.5988</td>
-<td style="text-align: right;">369.5368</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">399.4416</td>
-<td style="text-align: right;">391.4077</td>
-<td style="text-align: right;">407.4755</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">446.8440</td>
-<td style="text-align: right;">438.8360</td>
-<td style="text-align: right;">454.8519</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">499.8716</td>
-<td style="text-align: right;">486.9293</td>
-<td style="text-align: right;">512.8140</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">559.1922</td>
-<td style="text-align: right;">538.6586</td>
-<td style="text-align: right;">579.7258</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">603.5119</td>
-<td style="text-align: right;">566.2421</td>
-<td style="text-align: right;">640.7818</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 357.0678 </td>
+   <td style="text-align:right;"> 344.5988 </td>
+   <td style="text-align:right;"> 369.5368 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 399.4416 </td>
+   <td style="text-align:right;"> 391.4077 </td>
+   <td style="text-align:right;"> 407.4755 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 446.8440 </td>
+   <td style="text-align:right;"> 438.8360 </td>
+   <td style="text-align:right;"> 454.8519 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 499.8716 </td>
+   <td style="text-align:right;"> 486.9293 </td>
+   <td style="text-align:right;"> 512.8140 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 559.1922 </td>
+   <td style="text-align:right;"> 538.6586 </td>
+   <td style="text-align:right;"> 579.7258 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 603.5119 </td>
+   <td style="text-align:right;"> 566.2421 </td>
+   <td style="text-align:right;"> 640.7818 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1612,7 +1622,7 @@ Note
 <div id="fig-catfix" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-catfix-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;16: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a high-inoculum</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a high-inoculum</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1633,58 +1643,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-catfix" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;16: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;16:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">227.1879</td>
-<td style="text-align: right;">181.0095</td>
-<td style="text-align: right;">273.3664</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">292.7908</td>
-<td style="text-align: right;">255.0843</td>
-<td style="text-align: right;">330.4973</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">377.3372</td>
-<td style="text-align: right;">356.2659</td>
-<td style="text-align: right;">398.4084</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">486.2972</td>
-<td style="text-align: right;">454.9664</td>
-<td style="text-align: right;">517.6279</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">626.7205</td>
-<td style="text-align: right;">552.7132</td>
-<td style="text-align: right;">700.7278</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">744.7437</td>
-<td style="text-align: right;">610.2525</td>
-<td style="text-align: right;">879.2349</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 227.1879 </td>
+   <td style="text-align:right;"> 181.0095 </td>
+   <td style="text-align:right;"> 273.3664 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 292.7908 </td>
+   <td style="text-align:right;"> 255.0843 </td>
+   <td style="text-align:right;"> 330.4973 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 377.3372 </td>
+   <td style="text-align:right;"> 356.2659 </td>
+   <td style="text-align:right;"> 398.4084 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 486.2972 </td>
+   <td style="text-align:right;"> 454.9664 </td>
+   <td style="text-align:right;"> 517.6279 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 626.7205 </td>
+   <td style="text-align:right;"> 552.7132 </td>
+   <td style="text-align:right;"> 700.7278 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 744.7437 </td>
+   <td style="text-align:right;"> 610.2525 </td>
+   <td style="text-align:right;"> 879.2349 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1706,7 +1715,7 @@ Note
 <div id="fig-kprad" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-kprad-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;17: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1727,58 +1736,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-kprad" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;17: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;17:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">45.60828</td>
-<td style="text-align: right;">44.00945</td>
-<td style="text-align: right;">47.20710</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">48.96778</td>
-<td style="text-align: right;">47.95219</td>
-<td style="text-align: right;">49.98337</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">52.57475</td>
-<td style="text-align: right;">51.68561</td>
-<td style="text-align: right;">53.46388</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">56.44741</td>
-<td style="text-align: right;">54.94883</td>
-<td style="text-align: right;">57.94598</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">60.60532</td>
-<td style="text-align: right;">58.19775</td>
-<td style="text-align: right;">63.01290</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">63.60696</td>
-<td style="text-align: right;">59.97950</td>
-<td style="text-align: right;">67.23441</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 45.60828 </td>
+   <td style="text-align:right;"> 44.00945 </td>
+   <td style="text-align:right;"> 47.20710 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 48.96778 </td>
+   <td style="text-align:right;"> 47.95219 </td>
+   <td style="text-align:right;"> 49.98337 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 52.57475 </td>
+   <td style="text-align:right;"> 51.68561 </td>
+   <td style="text-align:right;"> 53.46388 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 56.44741 </td>
+   <td style="text-align:right;"> 54.94883 </td>
+   <td style="text-align:right;"> 57.94598 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 60.60532 </td>
+   <td style="text-align:right;"> 58.19775 </td>
+   <td style="text-align:right;"> 63.01290 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 63.60696 </td>
+   <td style="text-align:right;"> 59.97950 </td>
+   <td style="text-align:right;"> 67.23441 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -1798,7 +1806,7 @@ Note
 <div id="fig-kfab" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-kfab-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;18: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1819,58 +1827,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-kfab" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;18: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;18:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">18.54827</td>
-<td style="text-align: right;">17.58236</td>
-<td style="text-align: right;">19.51418</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">20.74190</td>
-<td style="text-align: right;">20.01959</td>
-<td style="text-align: right;">21.46420</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">23.19495</td>
-<td style="text-align: right;">22.00443</td>
-<td style="text-align: right;">24.38548</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">25.93813</td>
-<td style="text-align: right;">23.96559</td>
-<td style="text-align: right;">27.91067</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">29.00572</td>
-<td style="text-align: right;">26.27565</td>
-<td style="text-align: right;">31.73580</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">31.29690</td>
-<td style="text-align: right;">27.87479</td>
-<td style="text-align: right;">34.71901</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 18.54827 </td>
+   <td style="text-align:right;"> 17.58236 </td>
+   <td style="text-align:right;"> 19.51418 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 20.74190 </td>
+   <td style="text-align:right;"> 20.01959 </td>
+   <td style="text-align:right;"> 21.46420 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 23.19495 </td>
+   <td style="text-align:right;"> 22.00443 </td>
+   <td style="text-align:right;"> 24.38548 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 25.93813 </td>
+   <td style="text-align:right;"> 23.96559 </td>
+   <td style="text-align:right;"> 27.91067 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 29.00572 </td>
+   <td style="text-align:right;"> 26.27565 </td>
+   <td style="text-align:right;"> 31.73580 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 31.29690 </td>
+   <td style="text-align:right;"> 27.87479 </td>
+   <td style="text-align:right;"> 34.71901 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -1890,7 +1897,7 @@ Note
 <div id="fig-wtpow" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-wtpow-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;19: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a wt strain</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a wt strain</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1916,58 +1923,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-wtpow" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;19: Pharmacodynamic estimates K. pneumoniae WT (MIC 0.125 mg/L)</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;19:  Pharmacodynamic estimates K. pneumoniae WT (MIC 0.125 mg/L) </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">4.104039</td>
-<td style="text-align: right;">3.907545</td>
-<td style="text-align: right;">4.300533</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">4.853535</td>
-<td style="text-align: right;">4.727647</td>
-<td style="text-align: right;">4.979422</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">5.739906</td>
-<td style="text-align: right;">5.602824</td>
-<td style="text-align: right;">5.876987</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">6.788149</td>
-<td style="text-align: right;">6.522560</td>
-<td style="text-align: right;">7.053738</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">8.027827</td>
-<td style="text-align: right;">7.540413</td>
-<td style="text-align: right;">8.515241</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">8.997963</td>
-<td style="text-align: right;">8.099929</td>
-<td style="text-align: right;">9.895996</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 4.104039 </td>
+   <td style="text-align:right;"> 3.907545 </td>
+   <td style="text-align:right;"> 4.300533 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 4.853535 </td>
+   <td style="text-align:right;"> 4.727647 </td>
+   <td style="text-align:right;"> 4.979422 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 5.739906 </td>
+   <td style="text-align:right;"> 5.602824 </td>
+   <td style="text-align:right;"> 5.876987 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 6.788149 </td>
+   <td style="text-align:right;"> 6.522560 </td>
+   <td style="text-align:right;"> 7.053738 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 8.027827 </td>
+   <td style="text-align:right;"> 7.540413 </td>
+   <td style="text-align:right;"> 8.515241 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 8.997963 </td>
+   <td style="text-align:right;"> 8.099929 </td>
+   <td style="text-align:right;"> 9.895996 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 <p><br></p>
@@ -1989,7 +1995,7 @@ Note
 <div id="fig-ecoliatcc" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-ecoliatcc-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;20: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against E. coli ATCC 25922 (MIC 0.19 mg/L)</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against E. coli ATCC 25922 (MIC 0.19 mg/L)</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2010,58 +2016,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-ecoliatcc" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;20: Pharmacodynamic estimates for a high-inoculum</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;20:  Pharmacodynamic estimates for a high-inoculum </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">3.823371</td>
-<td style="text-align: right;">3.241785</td>
-<td style="text-align: right;">4.404957</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">4.312649</td>
-<td style="text-align: right;">3.937461</td>
-<td style="text-align: right;">4.687837</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">4.864540</td>
-<td style="text-align: right;">4.644781</td>
-<td style="text-align: right;">5.084298</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">5.487056</td>
-<td style="text-align: right;">5.137118</td>
-<td style="text-align: right;">5.836995</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">6.189236</td>
-<td style="text-align: right;">5.480141</td>
-<td style="text-align: right;">6.898332</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">6.717490</td>
-<td style="text-align: right;">5.482243</td>
-<td style="text-align: right;">7.952737</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 3.823371 </td>
+   <td style="text-align:right;"> 3.241785 </td>
+   <td style="text-align:right;"> 4.404957 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 4.312649 </td>
+   <td style="text-align:right;"> 3.937461 </td>
+   <td style="text-align:right;"> 4.687837 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 4.864540 </td>
+   <td style="text-align:right;"> 4.644781 </td>
+   <td style="text-align:right;"> 5.084298 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 5.487056 </td>
+   <td style="text-align:right;"> 5.137118 </td>
+   <td style="text-align:right;"> 5.836995 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 6.189236 </td>
+   <td style="text-align:right;"> 5.480141 </td>
+   <td style="text-align:right;"> 6.898332 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 6.717490 </td>
+   <td style="text-align:right;"> 5.482243 </td>
+   <td style="text-align:right;"> 7.952737 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2096,7 +2101,7 @@ Note
 <div id="fig-compkp" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-compkp-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;21: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;21: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2131,7 +2136,7 @@ Note
 <div id="fig-9" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-9-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;22: Pharmacodynamic relationship of Tpos to meropenem concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;22: Pharmacodynamic relationship of Tpos to meropenem concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2152,58 +2157,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-9" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;21: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;21:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">1.165027</td>
-<td style="text-align: right;">1.026833</td>
-<td style="text-align: right;">1.303220</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">1.460430</td>
-<td style="text-align: right;">1.351831</td>
-<td style="text-align: right;">1.569029</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">1.830736</td>
-<td style="text-align: right;">1.764894</td>
-<td style="text-align: right;">1.896577</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">2.294935</td>
-<td style="text-align: right;">2.177266</td>
-<td style="text-align: right;">2.412605</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">2.876837</td>
-<td style="text-align: right;">2.586027</td>
-<td style="text-align: right;">3.167648</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">3.354810</td>
-<td style="text-align: right;">2.861582</td>
-<td style="text-align: right;">3.848038</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 1.165027 </td>
+   <td style="text-align:right;"> 1.026833 </td>
+   <td style="text-align:right;"> 1.303220 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 1.460430 </td>
+   <td style="text-align:right;"> 1.351831 </td>
+   <td style="text-align:right;"> 1.569029 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 1.830736 </td>
+   <td style="text-align:right;"> 1.764894 </td>
+   <td style="text-align:right;"> 1.896577 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 2.294935 </td>
+   <td style="text-align:right;"> 2.177266 </td>
+   <td style="text-align:right;"> 2.412605 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 2.876837 </td>
+   <td style="text-align:right;"> 2.586027 </td>
+   <td style="text-align:right;"> 3.167648 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 3.354810 </td>
+   <td style="text-align:right;"> 2.861582 </td>
+   <td style="text-align:right;"> 3.848038 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2223,7 +2227,7 @@ Note
 <div id="fig-9b" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-9b-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;23: Pharmacodynamic relationship of Tpos to meropenem concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;23: Pharmacodynamic relationship of Tpos to meropenem concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2244,58 +2248,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-9b" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;22: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;22:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">39.27741</td>
-<td style="text-align: right;">38.19835</td>
-<td style="text-align: right;">40.35648</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">40.68575</td>
-<td style="text-align: right;">39.82820</td>
-<td style="text-align: right;">41.54329</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">42.14458</td>
-<td style="text-align: right;">41.17684</td>
-<td style="text-align: right;">43.11232</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">43.65572</td>
-<td style="text-align: right;">42.30388</td>
-<td style="text-align: right;">45.00756</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">45.22105</td>
-<td style="text-align: right;">43.33285</td>
-<td style="text-align: right;">47.10925</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">46.31764</td>
-<td style="text-align: right;">43.91272</td>
-<td style="text-align: right;">48.72257</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 39.27741 </td>
+   <td style="text-align:right;"> 38.19835 </td>
+   <td style="text-align:right;"> 40.35648 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 40.68575 </td>
+   <td style="text-align:right;"> 39.82820 </td>
+   <td style="text-align:right;"> 41.54329 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 42.14458 </td>
+   <td style="text-align:right;"> 41.17684 </td>
+   <td style="text-align:right;"> 43.11232 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 43.65572 </td>
+   <td style="text-align:right;"> 42.30388 </td>
+   <td style="text-align:right;"> 45.00756 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 45.22105 </td>
+   <td style="text-align:right;"> 43.33285 </td>
+   <td style="text-align:right;"> 47.10925 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 46.31764 </td>
+   <td style="text-align:right;"> 43.91272 </td>
+   <td style="text-align:right;"> 48.72257 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2318,7 +2321,7 @@ Note
 <div id="fig-comp" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-comp-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;24: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;24: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2349,7 +2352,7 @@ Note
 <div id="fig-genta" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-genta-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;25: Pharmacodynamic relationship of Tpos to gentamicin concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;25: Pharmacodynamic relationship of Tpos to gentamicin concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2370,58 +2373,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-genta" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;23: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;23:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">56.65250</td>
-<td style="text-align: right;">53.43037</td>
-<td style="text-align: right;">59.87462</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">62.53591</td>
-<td style="text-align: right;">60.25523</td>
-<td style="text-align: right;">64.81660</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">69.03033</td>
-<td style="text-align: right;">67.01957</td>
-<td style="text-align: right;">71.04109</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">76.19920</td>
-<td style="text-align: right;">73.71019</td>
-<td style="text-align: right;">78.68821</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">84.11256</td>
-<td style="text-align: right;">79.42354</td>
-<td style="text-align: right;">88.80158</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">89.95932</td>
-<td style="text-align: right;">78.37830</td>
-<td style="text-align: right;">101.54033</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 56.65250 </td>
+   <td style="text-align:right;"> 53.43037 </td>
+   <td style="text-align:right;"> 59.87462 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 62.53591 </td>
+   <td style="text-align:right;"> 60.25523 </td>
+   <td style="text-align:right;"> 64.81660 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 69.03033 </td>
+   <td style="text-align:right;"> 67.01957 </td>
+   <td style="text-align:right;"> 71.04109 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 76.19920 </td>
+   <td style="text-align:right;"> 73.71019 </td>
+   <td style="text-align:right;"> 78.68821 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 84.11256 </td>
+   <td style="text-align:right;"> 79.42354 </td>
+   <td style="text-align:right;"> 88.80158 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 89.95932 </td>
+   <td style="text-align:right;"> 78.37830 </td>
+   <td style="text-align:right;"> 101.54033 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2441,7 +2443,7 @@ Note
 <div id="fig-gentb" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-gentb-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;26: Pharmacodynamic relationship of Tpos to gentamicin concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;26: Pharmacodynamic relationship of Tpos to gentamicin concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2462,58 +2464,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-gentb" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;24: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;24:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">18.56332</td>
-<td style="text-align: right;">16.93133</td>
-<td style="text-align: right;">20.19530</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">19.92766</td>
-<td style="text-align: right;">19.06150</td>
-<td style="text-align: right;">20.79382</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">21.39227</td>
-<td style="text-align: right;">20.34817</td>
-<td style="text-align: right;">22.43636</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">22.96452</td>
-<td style="text-align: right;">20.81244</td>
-<td style="text-align: right;">25.11660</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">24.65233</td>
-<td style="text-align: right;">21.10862</td>
-<td style="text-align: right;">28.19605</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">25.87062</td>
-<td style="text-align: right;">20.96263</td>
-<td style="text-align: right;">30.77861</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 18.56332 </td>
+   <td style="text-align:right;"> 16.93133 </td>
+   <td style="text-align:right;"> 20.19530 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 19.92766 </td>
+   <td style="text-align:right;"> 19.06150 </td>
+   <td style="text-align:right;"> 20.79382 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 21.39227 </td>
+   <td style="text-align:right;"> 20.34817 </td>
+   <td style="text-align:right;"> 22.43636 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 22.96452 </td>
+   <td style="text-align:right;"> 20.81244 </td>
+   <td style="text-align:right;"> 25.11660 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 24.65233 </td>
+   <td style="text-align:right;"> 21.10862 </td>
+   <td style="text-align:right;"> 28.19605 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 25.87062 </td>
+   <td style="text-align:right;"> 20.96263 </td>
+   <td style="text-align:right;"> 30.77861 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2540,7 +2541,7 @@ Note
 <div id="fig-colib" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-colib-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;27: Pharmacodynamic relationship of Tpos to colistin concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;27: Pharmacodynamic relationship of Tpos to colistin concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2561,58 +2562,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-colib" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;25: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;25:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">3.814341</td>
-<td style="text-align: right;">3.374386</td>
-<td style="text-align: right;">4.254296</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">4.696574</td>
-<td style="text-align: right;">4.395993</td>
-<td style="text-align: right;">4.997155</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">5.782863</td>
-<td style="text-align: right;">5.463324</td>
-<td style="text-align: right;">6.102402</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">7.120404</td>
-<td style="text-align: right;">6.500514</td>
-<td style="text-align: right;">7.740293</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">8.767309</td>
-<td style="text-align: right;">7.696486</td>
-<td style="text-align: right;">9.838132</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">10.100091</td>
-<td style="text-align: right;">8.130500</td>
-<td style="text-align: right;">12.069682</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 3.814341 </td>
+   <td style="text-align:right;"> 3.374386 </td>
+   <td style="text-align:right;"> 4.254296 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 4.696574 </td>
+   <td style="text-align:right;"> 4.395993 </td>
+   <td style="text-align:right;"> 4.997155 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 5.782863 </td>
+   <td style="text-align:right;"> 5.463324 </td>
+   <td style="text-align:right;"> 6.102402 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 7.120404 </td>
+   <td style="text-align:right;"> 6.500514 </td>
+   <td style="text-align:right;"> 7.740293 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 8.767309 </td>
+   <td style="text-align:right;"> 7.696486 </td>
+   <td style="text-align:right;"> 9.838132 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 10.100091 </td>
+   <td style="text-align:right;"> 8.130500 </td>
+   <td style="text-align:right;"> 12.069682 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2639,7 +2639,7 @@ Note
 <div id="fig-vabob" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-vabob-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;28: Pharmacodynamic relationship of Tpos to meropenem-vaborbactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;28: Pharmacodynamic relationship of Tpos to meropenem-vaborbactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2660,58 +2660,57 @@ Note
 </details>
 <div class="cell-output-display">
 <div id="tbl-vabob" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;26: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;26:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">5.391292</td>
-<td style="text-align: right;">4.092373</td>
-<td style="text-align: right;">6.690211</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">7.797856</td>
-<td style="text-align: right;">6.671079</td>
-<td style="text-align: right;">8.924633</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">11.278661</td>
-<td style="text-align: right;">10.098053</td>
-<td style="text-align: right;">12.459269</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">16.313228</td>
-<td style="text-align: right;">13.817427</td>
-<td style="text-align: right;">18.809029</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">23.595123</td>
-<td style="text-align: right;">18.006802</td>
-<td style="text-align: right;">29.183445</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">30.327549</td>
-<td style="text-align: right;">19.089870</td>
-<td style="text-align: right;">41.565227</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 5.391292 </td>
+   <td style="text-align:right;"> 4.092373 </td>
+   <td style="text-align:right;"> 6.690211 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 7.797856 </td>
+   <td style="text-align:right;"> 6.671079 </td>
+   <td style="text-align:right;"> 8.924633 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 11.278661 </td>
+   <td style="text-align:right;"> 10.098053 </td>
+   <td style="text-align:right;"> 12.459269 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 16.313228 </td>
+   <td style="text-align:right;"> 13.817427 </td>
+   <td style="text-align:right;"> 18.809029 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 23.595123 </td>
+   <td style="text-align:right;"> 18.006802 </td>
+   <td style="text-align:right;"> 29.183445 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 30.327549 </td>
+   <td style="text-align:right;"> 19.089870 </td>
+   <td style="text-align:right;"> 41.565227 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2722,12 +2721,12 @@ Note
 </section>
 <section id="tigecycline" class="level3">
 <h3 class="anchored" data-anchor-id="tigecycline">TIGECYCLINE</h3>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Important
 </div>
 </div>
@@ -2749,7 +2748,7 @@ Important
 <div id="fig-edta" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-edta-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;29: Effect of tigeycvcline concentrations on Tpos of K. pneumoniae using serum collected with and withouth EDTA</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;29: Effect of tigeycvcline concentrations on Tpos of K. pneumoniae using serum collected with and withouth EDTA</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2772,7 +2771,7 @@ Important
 <div id="fig-tiga" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-tiga-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;30: Pharmacodynamic relationship of Tpos to tigecycline concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;30: Pharmacodynamic relationship of Tpos to tigecycline concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2793,58 +2792,57 @@ Important
 </details>
 <div class="cell-output-display">
 <div id="tbl-tiga" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;27: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;27:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">26.21193</td>
-<td style="text-align: right;">22.64088</td>
-<td style="text-align: right;">29.78298</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">33.33312</td>
-<td style="text-align: right;">30.73822</td>
-<td style="text-align: right;">35.92801</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">42.38896</td>
-<td style="text-align: right;">40.56986</td>
-<td style="text-align: right;">44.20806</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">53.90507</td>
-<td style="text-align: right;">50.72689</td>
-<td style="text-align: right;">57.08325</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">68.54984</td>
-<td style="text-align: right;">60.64442</td>
-<td style="text-align: right;">76.45527</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">80.72308</td>
-<td style="text-align: right;">56.72937</td>
-<td style="text-align: right;">104.71680</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 26.21193 </td>
+   <td style="text-align:right;"> 22.64088 </td>
+   <td style="text-align:right;"> 29.78298 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 33.33312 </td>
+   <td style="text-align:right;"> 30.73822 </td>
+   <td style="text-align:right;"> 35.92801 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 42.38896 </td>
+   <td style="text-align:right;"> 40.56986 </td>
+   <td style="text-align:right;"> 44.20806 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 53.90507 </td>
+   <td style="text-align:right;"> 50.72689 </td>
+   <td style="text-align:right;"> 57.08325 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 68.54984 </td>
+   <td style="text-align:right;"> 60.64442 </td>
+   <td style="text-align:right;"> 76.45527 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 80.72308 </td>
+   <td style="text-align:right;"> 56.72937 </td>
+   <td style="text-align:right;"> 104.71680 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2864,7 +2862,7 @@ Important
 <div id="fig-tigb" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-tigb-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;31: Pharmacodynamic relationship of Tpos to tigecycline concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;31: Pharmacodynamic relationship of Tpos to tigecycline concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2885,58 +2883,57 @@ Important
 </details>
 <div class="cell-output-display">
 <div id="tbl-tigb" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;28: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;28:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">26.21193</td>
-<td style="text-align: right;">22.64088</td>
-<td style="text-align: right;">29.78298</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">33.33312</td>
-<td style="text-align: right;">30.73822</td>
-<td style="text-align: right;">35.92801</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">42.38896</td>
-<td style="text-align: right;">40.56986</td>
-<td style="text-align: right;">44.20806</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">53.90507</td>
-<td style="text-align: right;">50.72689</td>
-<td style="text-align: right;">57.08325</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">68.54984</td>
-<td style="text-align: right;">60.64442</td>
-<td style="text-align: right;">76.45527</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">80.72308</td>
-<td style="text-align: right;">56.72937</td>
-<td style="text-align: right;">104.71680</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 26.21193 </td>
+   <td style="text-align:right;"> 22.64088 </td>
+   <td style="text-align:right;"> 29.78298 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 33.33312 </td>
+   <td style="text-align:right;"> 30.73822 </td>
+   <td style="text-align:right;"> 35.92801 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 42.38896 </td>
+   <td style="text-align:right;"> 40.56986 </td>
+   <td style="text-align:right;"> 44.20806 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 53.90507 </td>
+   <td style="text-align:right;"> 50.72689 </td>
+   <td style="text-align:right;"> 57.08325 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 68.54984 </td>
+   <td style="text-align:right;"> 60.64442 </td>
+   <td style="text-align:right;"> 76.45527 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 80.72308 </td>
+   <td style="text-align:right;"> 56.72937 </td>
+   <td style="text-align:right;"> 104.71680 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -2956,7 +2953,7 @@ Important
 <div id="fig-tigecoli" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-tigecoli-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;32: Pharmacodynamic relationship of Tpos to tigecycline concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;32: Pharmacodynamic relationship of Tpos to tigecycline concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -2977,58 +2974,57 @@ Important
 </details>
 <div class="cell-output-display">
 <div id="tbl-tigecoli" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;29: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;29:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">4.099751</td>
-<td style="text-align: right;">3.742536</td>
-<td style="text-align: right;">4.456966</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">6.123028</td>
-<td style="text-align: right;">5.816673</td>
-<td style="text-align: right;">6.429382</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">9.144816</td>
-<td style="text-align: right;">8.798910</td>
-<td style="text-align: right;">9.490721</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">13.657892</td>
-<td style="text-align: right;">12.976866</td>
-<td style="text-align: right;">14.338918</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">20.398226</td>
-<td style="text-align: right;">18.087056</td>
-<td style="text-align: right;">22.709396</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">26.796582</td>
-<td style="text-align: right;">18.484108</td>
-<td style="text-align: right;">35.109056</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 4.099751 </td>
+   <td style="text-align:right;"> 3.742536 </td>
+   <td style="text-align:right;"> 4.456966 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 6.123028 </td>
+   <td style="text-align:right;"> 5.816673 </td>
+   <td style="text-align:right;"> 6.429382 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 9.144816 </td>
+   <td style="text-align:right;"> 8.798910 </td>
+   <td style="text-align:right;"> 9.490721 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 13.657892 </td>
+   <td style="text-align:right;"> 12.976866 </td>
+   <td style="text-align:right;"> 14.338918 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 20.398226 </td>
+   <td style="text-align:right;"> 18.087056 </td>
+   <td style="text-align:right;"> 22.709396 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 26.796582 </td>
+   <td style="text-align:right;"> 18.484108 </td>
+   <td style="text-align:right;"> 35.109056 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -3050,7 +3046,7 @@ Important
 <div id="fig-protein" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-protein-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;33: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;33: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -3179,7 +3175,7 @@ Upper .95
 </tbody>
 
 </table>
-<figcaption class="figure-caption">Figure&nbsp;34: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;34: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 <details>
@@ -3294,7 +3290,7 @@ Upper .95
 </tbody>
 
 </table>
-<figcaption class="figure-caption">Figure&nbsp;35: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;35: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -3322,7 +3318,7 @@ Upper .95
 <div id="fig-ceftaz_atcc" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-ceftaz_atcc-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;36: Pharmacodynamic relationship of Tpos to ceftazidime concentrations against an ESBL producing ATCC strain</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;36: Pharmacodynamic relationship of Tpos to ceftazidime concentrations against an ESBL producing ATCC strain</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -3343,58 +3339,57 @@ Upper .95
 </details>
 <div class="cell-output-display">
 <div id="tbl-ceftaz_atcc" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;30: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;30:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">245.8990</td>
-<td style="text-align: right;">206.8423</td>
-<td style="text-align: right;">284.9557</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">295.0812</td>
-<td style="text-align: right;">265.6254</td>
-<td style="text-align: right;">324.5370</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">354.1003</td>
-<td style="text-align: right;">335.4615</td>
-<td style="text-align: right;">372.7390</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">424.9237</td>
-<td style="text-align: right;">398.3337</td>
-<td style="text-align: right;">451.5137</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">509.9125</td>
-<td style="text-align: right;">446.8074</td>
-<td style="text-align: right;">573.0176</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">577.2350</td>
-<td style="text-align: right;">434.9467</td>
-<td style="text-align: right;">719.5233</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 245.8990 </td>
+   <td style="text-align:right;"> 206.8423 </td>
+   <td style="text-align:right;"> 284.9557 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 295.0812 </td>
+   <td style="text-align:right;"> 265.6254 </td>
+   <td style="text-align:right;"> 324.5370 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 354.1003 </td>
+   <td style="text-align:right;"> 335.4615 </td>
+   <td style="text-align:right;"> 372.7390 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 424.9237 </td>
+   <td style="text-align:right;"> 398.3337 </td>
+   <td style="text-align:right;"> 451.5137 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 509.9125 </td>
+   <td style="text-align:right;"> 446.8074 </td>
+   <td style="text-align:right;"> 573.0176 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 577.2350 </td>
+   <td style="text-align:right;"> 434.9467 </td>
+   <td style="text-align:right;"> 719.5233 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -3414,7 +3409,7 @@ Upper .95
 <div id="fig-ceftaz_dam" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-ceftaz_dam-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;37: Pharmacodynamic relationship of Tpos to ceftazidime concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;37: Pharmacodynamic relationship of Tpos to ceftazidime concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -3435,58 +3430,57 @@ Upper .95
 </details>
 <div class="cell-output-display">
 <div id="tbl-ceftaz_dam" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;31: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;31:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">107.0276</td>
-<td style="text-align: right;">78.27442</td>
-<td style="text-align: right;">135.7809</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">136.4083</td>
-<td style="text-align: right;">116.29285</td>
-<td style="text-align: right;">156.5238</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">173.8544</td>
-<td style="text-align: right;">165.49765</td>
-<td style="text-align: right;">182.2112</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">221.5801</td>
-<td style="text-align: right;">196.00814</td>
-<td style="text-align: right;">247.1520</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">282.4071</td>
-<td style="text-align: right;">224.19394</td>
-<td style="text-align: right;">340.6202</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">333.0621</td>
-<td style="text-align: right;">230.10196</td>
-<td style="text-align: right;">436.0223</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 107.0276 </td>
+   <td style="text-align:right;"> 78.27442 </td>
+   <td style="text-align:right;"> 135.7809 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 136.4083 </td>
+   <td style="text-align:right;"> 116.29285 </td>
+   <td style="text-align:right;"> 156.5238 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 173.8544 </td>
+   <td style="text-align:right;"> 165.49765 </td>
+   <td style="text-align:right;"> 182.2112 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 221.5801 </td>
+   <td style="text-align:right;"> 196.00814 </td>
+   <td style="text-align:right;"> 247.1520 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 282.4071 </td>
+   <td style="text-align:right;"> 224.19394 </td>
+   <td style="text-align:right;"> 340.6202 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 333.0621 </td>
+   <td style="text-align:right;"> 230.10196 </td>
+   <td style="text-align:right;"> 436.0223 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -3513,7 +3507,7 @@ Upper .95
 <div id="fig-ciprowt" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-ciprowt-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;38: Pharmacodynamic relationship of Tpos to ceftazidime concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;38: Pharmacodynamic relationship of Tpos to ceftazidime concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -3534,58 +3528,57 @@ Upper .95
 </details>
 <div class="cell-output-display">
 <div id="tbl-ciprowt" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;32: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;32:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">0.2429975</td>
-<td style="text-align: right;">0.1876993</td>
-<td style="text-align: right;">0.2982956</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">0.3259756</td>
-<td style="text-align: right;">0.2760740</td>
-<td style="text-align: right;">0.3758772</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">0.4372888</td>
-<td style="text-align: right;">0.3916951</td>
-<td style="text-align: right;">0.4828826</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">0.5866130</td>
-<td style="text-align: right;">0.5247666</td>
-<td style="text-align: right;">0.6484594</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">0.7869281</td>
-<td style="text-align: right;">0.6566179</td>
-<td style="text-align: right;">0.9172382</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">0.9609705</td>
-<td style="text-align: right;">0.7089475</td>
-<td style="text-align: right;">1.2129934</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 0.2429975 </td>
+   <td style="text-align:right;"> 0.1876993 </td>
+   <td style="text-align:right;"> 0.2982956 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 0.3259756 </td>
+   <td style="text-align:right;"> 0.2760740 </td>
+   <td style="text-align:right;"> 0.3758772 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 0.4372888 </td>
+   <td style="text-align:right;"> 0.3916951 </td>
+   <td style="text-align:right;"> 0.4828826 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 0.5866130 </td>
+   <td style="text-align:right;"> 0.5247666 </td>
+   <td style="text-align:right;"> 0.6484594 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 0.7869281 </td>
+   <td style="text-align:right;"> 0.6566179 </td>
+   <td style="text-align:right;"> 0.9172382 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 0.9609705 </td>
+   <td style="text-align:right;"> 0.7089475 </td>
+   <td style="text-align:right;"> 1.2129934 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -3605,7 +3598,7 @@ Upper .95
 <div id="fig-ciprokpcb" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Workpackage1_singledrug_files/figure-html/fig-ciprokpcb-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;39: Pharmacodynamic relationship of Tpos to ceftazidime concentrations</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;39: Pharmacodynamic relationship of Tpos to ceftazidime concentrations</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -3626,58 +3619,57 @@ Upper .95
 </details>
 <div class="cell-output-display">
 <div id="tbl-ciprokpcb" class="anchored">
-<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;33: Pharmacodynamic estimates</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Lower .95</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Upper .95</th>
-</tr>
-</thead>
+
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; "><caption>Table&nbsp;33:  Pharmacodynamic estimates </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> Lower .95 </th>
+   <th style="text-align:right;"> Upper .95 </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.1</td>
-<td style="text-align: right;">7.164090</td>
-<td style="text-align: right;">6.590145</td>
-<td style="text-align: right;">7.738036</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.25</td>
-<td style="text-align: right;">8.982345</td>
-<td style="text-align: right;">8.565516</td>
-<td style="text-align: right;">9.399174</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5</td>
-<td style="text-align: right;">11.262075</td>
-<td style="text-align: right;">10.893533</td>
-<td style="text-align: right;">11.630618</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.75</td>
-<td style="text-align: right;">14.120404</td>
-<td style="text-align: right;">13.417518</td>
-<td style="text-align: right;">14.823290</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.9</td>
-<td style="text-align: right;">17.704179</td>
-<td style="text-align: right;">16.211318</td>
-<td style="text-align: right;">19.197041</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.95</td>
-<td style="text-align: right;">20.648354</td>
-<td style="text-align: right;">17.657499</td>
-<td style="text-align: right;">23.639209</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:right;"> 7.164090 </td>
+   <td style="text-align:right;"> 6.590145 </td>
+   <td style="text-align:right;"> 7.738036 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.25 </td>
+   <td style="text-align:right;"> 8.982345 </td>
+   <td style="text-align:right;"> 8.565516 </td>
+   <td style="text-align:right;"> 9.399174 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:right;"> 11.262075 </td>
+   <td style="text-align:right;"> 10.893533 </td>
+   <td style="text-align:right;"> 11.630618 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.75 </td>
+   <td style="text-align:right;"> 14.120404 </td>
+   <td style="text-align:right;"> 13.417518 </td>
+   <td style="text-align:right;"> 14.823290 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:right;"> 17.704179 </td>
+   <td style="text-align:right;"> 16.211318 </td>
+   <td style="text-align:right;"> 19.197041 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.95 </td>
+   <td style="text-align:right;"> 20.648354 </td>
+   <td style="text-align:right;"> 17.657499 </td>
+   <td style="text-align:right;"> 23.639209 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
-
-
 </div>
 </div>
 </section>
@@ -3693,11 +3685,11 @@ Upper .95
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">REFERENCES</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
-<div id="ref-kaltsas2005" class="csl-entry" role="listitem">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">REFERENCES</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-kaltsas2005" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Kaltsas, P., Want, S. &amp; Cohen, J. <a href="https://doi.org/10.1111/j.1469-0691.2004.01054.x">Development of a time-to-positivity assay as a tool in the antibiotic management of septic patients</a>. <em>Clinical microbiology and infection: the official publication of the European Society of Clinical Microbiology and Infectious Diseases</em> <strong>11</strong>, 109–114 (2005).</div>
 </div>
-<div id="ref-Deitchman2018a" class="csl-entry" role="listitem">
+<div id="ref-Deitchman2018a" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Deitchman, A. N., Singh, R. S. P., Rand, K. H. &amp; Derendorf, H. <a href="https://doi.org/10.1016/j.ijantimicag.2017.12.027">Enhanced in vitro activity of tigecycline in the presence of chelating agents</a>. <em>International Journal of Antimicrobial Agents</em> <strong>51</strong>, 799–802 (2018).</div>
 </div>
 </div></section></div></main> <!-- /main -->
@@ -3728,23 +3720,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -3809,92 +3787,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

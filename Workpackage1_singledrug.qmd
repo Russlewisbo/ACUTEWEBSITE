@@ -90,7 +90,7 @@ figecoli <-ggplot(ecoliatcc_inoc, aes(x=inoculum, y=tpos)) + geom_point(size=4, 
 scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
 theme(legend.text=element_text(size=12)) +
 geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
-fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+figecoli + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
 
 ```
 
@@ -219,7 +219,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-|--------------------------------|----------------------|----------------------------------------|
+|------------------------|-------------------|------------------------------|
 | *Klebsiella pneumoniae* KPC- B | KPC-3                | 1                                      |
 | *Klebsiella pneumoniae* NDM    | NDM-2                | \>64                                   |
 
@@ -772,7 +772,7 @@ fitkpwt <- drda(tpos ~ ctz_s, kpwt, mean_function = "loglogistic4", max_iter = 1
 fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
 fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
 ## plot all of the isolates together
-p <-plot(fitkpwt, fitkfab, fitkprad,  fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L", "0.5 mg/L",  "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
+p <-plot(fitkpwt, fitkfab, fitkprad,  fitkpcatcc, fitkpcb, fitkpca, fitkpccatania, base="10", xlab = "Ceftazidime-avibactam conc. (mg/L)", ylab = "Tpos (hr)",cex = 0.9, legend_location="topleft", legend = c("0.125 mg/L", "0.38 mg/L", "0.5 mg/L",  "0.75 mg/L", "1 mg/L", "2 mg/L", "16 mg/L")) 
 ```
 
 #### CONCLUSIONS
@@ -871,7 +871,7 @@ plot(fit4a, fit4b, xlab = "Meropenem conc. (mg/L)", ylab = "Tpos",cex = 0.9,lege
 
 #### CONCLUSIONS
 
-Similar to cefetazidime-avibactam, experiments with meropenem demonstrated that Tpos is a robust PD endpoint and the relationship of meropenem concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen. <br>
+Similar to ceftazidime-avibactam, experiments with meropenem demonstrated that Tpos is a robust PD endpoint and the relationship of meropenem concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen. <br>
 
 A key observation is that the pharmacodynamics were similar when meropenem was tested against a highly-susceptible ATCC isolate (MIC 0.03 mg/L) and and the KPC-producing K.pneumoniae B isolate (MIC 32 mg/L) with at proportional difference in the EC50/90. **Therefore, it may be possible to use highly-susceptible "indicator" strains for testing to predict activity against more resistant isolates.** This is important because direct testing of 1 mL inoculum may routinely result in limited antimicrobial activity measured by Tpos (\<10 hours) as dilutional effects when the serum samples is introduced into the bottle containing a total volume of 42 mL will reduce the actual testing concentrations of the antibiotics below the MIC for highly resistant pathogens. <br> <br> This effect could be counteracted by testing with highly sensitive "indicator" isolates based on the expected serum concentrations of the antibiotic.
 

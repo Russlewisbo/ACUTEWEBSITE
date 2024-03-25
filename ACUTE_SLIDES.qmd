@@ -9,7 +9,7 @@ format:
     scrollable: true
     slide-number: false
     incremental: false
-    multiplex: true
+    multiplex: false
     chalkboard: false
     theme: [default, custom.scss]
     seal: false
