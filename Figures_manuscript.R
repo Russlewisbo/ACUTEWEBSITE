@@ -409,4 +409,59 @@ ggplot() +
   labs(x = "Log10 Antibiotic concentration/ MIC ratio", y = "Tpos (hours)") +
   scale_x_log10(labels = label_log(digits = 1)) + theme_base() +  scale_color_lancet() +  scale_fill_lancet()
 
+### Figure 3 combination
+
+library(BIGL)
+library(knitr)
+library(rgl)
+library(ggplot2)
+library(broom)
+library(kableExtra)
+set.seed(12345)
+cutoff <- 0.95
+caz_gent_kpcb <- read.csv("~/Desktop/ACUTEWEBSITE/datasets_combo/caz_gent_kpcb.csv")
+
+## Fitting marginal models, maximal fixed at 24 hours, minimal at 9.5 hours
+marginalFit <- fitMarginals(caz_gent_kpcb, method = "optim",                 
+                            fixed = c("m1" = 24, "m2" = 24, "b" = 9.5),
+                            names = c("CTZ/AVI", "GENT"))
+summary(marginalFit)
+
+## Plotting marginal model for ceftazidime and gentamicin, minimum constrained at 9 hrs and maximum contrastined at 24 hours
+plot(marginalFit) + ggtitle(paste("Ceftazidime/Avibactam + Gentamicin"))
+rs <- fitSurface(caz_gent_kpcb, marginalFit,
+                 null_model = "bliss",
+                 B.CP = 50, statistic = "none", parallel = FALSE)
+summary(rs)
+plot(rs, legend = FALSE, main = "")
+
+
+## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+caz_avi_6 <- read_excel("datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
+fit6 <- drda(tpos ~ ctz_s, data=caz_avi_6, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit6, xlab = "CAZ/AVI serum conc. (mg/L)", ylab = "Tpos (hr)")
+
+newdata <- data.frame(Conc = seq(min(caz_avi_6$Conc), max(caz_avi_6$Conc), length.out = 100))
+
+# Predict with 95% CI
+pred7 <- predict(fit7, newdata = newdata7, interval = "confidence")
+df_pred7 <- data.frame(pred7)
+
+# Bind the predictions to the new data frame
+newdata7 <- cbind(newdata7, pred7)
+
+
+
+
+
+## a four-parameter logistic regression model is fit to gentamicin concentrations to estimated PD parameters
+library (readxl)
+library(drda)
+gent2 <- read_excel("datasets_single/KPCB_gent.xlsx")
+fit13 <- drda(tpos ~ gent_s, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
+plot(fit13, xlab = "Gentamicin serum conc. (mg/L)", ylab = "Tpos (hr)")
+
+
 
