@@ -8,6 +8,7 @@ library (devtools)
 library (drda)
 library (envalysis)
 library (scales)
+library(dplyr)
 
 
 # FIGURE 1A #
@@ -293,4 +294,119 @@ ggplot(EC50, aes(x = MIC, y = EC50)) +
   scale_shape_manual(values = c(8,16,17,18,0,1,15)) +
   theme(legend.text = element_text(size = 12)) +
   geom_smooth(method = "lm", color = "black", fill = "#69b3a2", se = TRUE) + theme_base() +  scale_color_lancet() +  scale_fill_lancet()
+
+
+## Figure 2
+
+## gentamicin
+
+gent<- read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/gent.xlsx")
+gent<-data.frame(gent)
+gent <- na.omit(gent)
+
+mero<- read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/mero.xlsx")
+mero<-data.frame(mero)
+mero <- na.omit(mero)
+
+tige <-  read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/tigecycline.xlsx")
+tige<-data.frame(tige)
+tige <- na.omit(tige)
+
+cipro <-  read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/cipro.xlsx")
+cipro<-data.frame(cipro)
+cipro <- na.omit(cipro)
+
+cefavi<-read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/ceftaz-avi.xlsx")
+cefavi<-data.frame(cefavi)
+cefavi <- na.omit(cefavi)
+
+ceftaz<-read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/ceftaz.xlsx")
+ceftaz<-data.frame(ceftaz)
+ceftaz <- na.omit(ceftaz)
+
+coli<-read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/colistin.xlsx")
+coli<-data.frame(coli)
+coli <- na.omit(coli)
+
+
+# Fit the 4PL models- KPC_B
+fit_gent <- drm(Tpos ~ Conc, data = gent, fct = LL.4())
+fit_mero <- drm(Tpos ~ Conc, data = mero, fct = LL.4())
+fit_tige <- drm(Tpos ~ Conc, data = tige, fct = LL.4())
+fit_cipro <- drm(Tpos ~ Conc, data = cipro, fct = LL.4())
+fit_cefavi <- drm(Tpos ~ Conc, data = cefavi, fct = LL.4())
+fit_ceftaz <- drm(Tpos ~ Conc, data = ceftaz, fct = LL.4())
+fit_coli <- drm(Tpos ~ Conc, data = coli, fct = LL.4())
+
+# Create a new data frame for predictions
+newdata8 <- data.frame(Conc = seq(min(gent$Conc), max(gent$Conc), length.out = 100))
+newdata9 <- data.frame(Conc = seq(min(mero$Conc), max(mero$Conc), length.out = 100))
+newdata10 <- data.frame(Conc = seq(min(tige$Conc), max(tige$Conc), length.out = 100))
+newdata11 <- data.frame(Conc = seq(min(cipro$Conc), max(cipro$Conc), length.out = 100))
+newdata12 <- data.frame(Conc = seq(min(cefavi$Conc), max(cefavi$Conc), length.out = 100))
+newdata13 <- data.frame(Conc = seq(min(ceftaz$Conc), max(ceftaz$Conc), length.out = 100))
+newdata14 <- data.frame(Conc = seq(min(coli$Conc), max(coli$Conc), length.out = 100))
+
+# Predict with 95% CI
+pred8 <- predict(fit_gent, newdata = newdata8, interval = "confidence")
+df_pred8 <- data.frame(pred8)
+pred9 <- predict(fit_mero, newdata = newdata9, interval = "confidence")
+df_pred9 <- data.frame(pred9)
+pred10 <- predict(fit_tige, newdata = newdata10, interval = "confidence")
+df_pred10 <- data.frame(pred10)
+pred11 <- predict(fit_cipro, newdata = newdata11, interval = "confidence")
+df_pred11 <- data.frame(pred11)
+pred12 <- predict(fit_cefavi, newdata = newdata12, interval = "confidence")
+df_pred12 <- data.frame(pred12)
+pred13 <- predict(fit_ceftaz, newdata = newdata13, interval = "confidence")
+df_pred13 <- data.frame(pred13)
+pred14 <- predict(fit_coli, newdata = newdata14, interval = "confidence")
+df_pred14 <- data.frame(pred14)
+
+# Bind the predictions to the new data frame
+newdata8 <- cbind(newdata8, pred8)
+newdata9 <- cbind(newdata9, pred9)
+newdata10 <- cbind(newdata10, pred10)
+newdata11 <- cbind(newdata11, pred11)
+newdata12 <- cbind(newdata12, pred12)
+newdata13 <- cbind(newdata13, pred13)
+newdata14 <- cbind(newdata14, pred14)
+
+
+
+
+## plot of all dose response curves versus Conc-MIC
+
+ggplot() + 
+  geom_line(data = newdata8, aes(x = Conc, y = Prediction, color="Gentamicin")) +  
+  geom_point(data = gent, aes(x = Conc, y = Tpos, color="Gentacin"), shape = 2, size = 4) +
+  geom_ribbon(data = newdata8, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Gentamcin"), alpha = 0.2) +
+##  meropenem
+  geom_line(data = newdata9, aes(x = Conc, y = Prediction, color="Meropenem")) +  
+  geom_point(data = mero, aes(x = Conc, y = Tpos, color="Meropenem"), shape = 16, size = 4) +
+  geom_ribbon(data = newdata9, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Meropenem"), alpha = 0.2) +
+## tigecycline
+  geom_line(data = newdata10, aes(x = Conc, y = Prediction, color="Tigecycline")) +  
+  geom_point(data = tige, aes(x = Conc, y = Tpos, color="Tigecycline"), shape = 17, size = 4) +
+  geom_ribbon(data = newdata10, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Tigecycline"), alpha = 0.2) +
+## ciprofloxacin
+  geom_line(data = newdata11, aes(x = Conc, y = Prediction, color="Ciprofloxacin")) +  
+  geom_point(data = cipro, aes(x = Conc, y = Tpos, color="Ciprofloxacin"), shape = 18, size = 4) +
+  geom_ribbon(data = newdata11, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Ciprofloxacin"), alpha = 0.2) +
+## ceftazidime-avibactam
+  geom_line(data = newdata12, aes(x = Conc, y = Prediction, color="Ceftazidime-avibactam [4:1]")) +  
+  geom_point(data = cefavi, aes(x = Conc, y = Tpos, color="Ceftazidime-avibactam [4:1]"), shape = 8, size = 4) +
+  geom_ribbon(data = newdata12, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Ceftazidime-avibactam [4:1]"), alpha = 0.2) +
+## ceftazidime
+  geom_line(data = newdata13, aes(x = Conc, y = Prediction, color="Ceftazidime")) +  
+  geom_point(data = ceftaz, aes(x = Conc, y = Tpos, color="Ceftazidime"), shape = 0, size = 4) +
+  geom_ribbon(data = newdata13, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Ceftazidime"), alpha = 0.2) +
+##  colistin
+  geom_line(data = newdata14, aes(x = Conc, y = Prediction, color="Colistin")) +  
+  geom_point(data = coli, aes(x = Conc, y = Tpos, color="Colistin"), shape = 1, size = 4) +
+  geom_ribbon(data = newdata14, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Colistin"), alpha = 0.2) +
+ ## labels 
+  labs(x = "Log10 Antibiotic concentration/ MIC ratio", y = "Tpos (hours)") +
+  scale_x_log10(labels = label_log(digits = 1)) + theme_base() +  scale_color_lancet() +  scale_fill_lancet()
+
 
