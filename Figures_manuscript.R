@@ -9,9 +9,37 @@ library (drda)
 library (envalysis)
 library (scales)
 library(dplyr)
+library (heatmaply)
 
 
 # FIGURE 1A #
+
+
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## import raw data from .csv file
+wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, color=isolates, shape=diluent, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
+  scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+  theme(legend.text=element_text(size=12)) +
+  geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+fig1 + theme_classic(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x))) 
+
+## import raw data from .xlsx file
+library (readxl)
+ecoliatcc_inoc <- read_excel("datasets_single/ecoliatcc_inoculum.xlsx")
+library (ggplot2)
+library(scales)
+theme_set(theme_bw())
+## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
+figecoli <-ggplot(ecoliatcc_inoc, aes(x=inoculum, y=tpos)) + geom_point(size=4, alpha = 0.5) + 
+  scale_y_continuous(name="Tpos (hr)", limits=c(4,12)) +
+  theme(legend.text=element_text(size=12)) +
+  geom_smooth(aes(linetype=diluent), method=lm , color="black", fill="#69b3a2", se=TRUE, inherit.aes = TRUE )
+figecoli + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = trans_breaks("log10",n=7, function(x) 10^x),labels = trans_format("log10", math_format(10^.x)))
+
 
 
 ###########################KPC_B##################################################################
@@ -328,15 +356,37 @@ coli<-read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/colistin.xlsx")
 coli<-data.frame(coli)
 coli <- na.omit(coli)
 
+vabo<-read_excel("/Users/russelllewis/Desktop/ACUTEWEBSITE/vabo.xlsx")
+vabo<-data.frame(vabo)
+vabo <- na.omit(vabo)
+
 
 # Fit the 4PL models- KPC_B
 fit_gent <- drm(Tpos ~ Conc, data = gent, fct = LL.4())
+fit_gent2 <-drda(Tpos ~ Conc, data=gent, mean_function = "loglogistic4", max_iter = 1000)
 fit_mero <- drm(Tpos ~ Conc, data = mero, fct = LL.4())
+fit_mero2 <-drda(Tpos ~ Conc, data=mero, mean_function = "loglogistic4", max_iter = 1000)
 fit_tige <- drm(Tpos ~ Conc, data = tige, fct = LL.4())
+fit_tige2 <-drda(Tpos ~ Conc, data=tige, mean_function = "loglogistic4", max_iter = 1000)
 fit_cipro <- drm(Tpos ~ Conc, data = cipro, fct = LL.4())
+fit_cipro2 <-drda(Tpos ~ Conc, data=cipro, mean_function = "loglogistic4", max_iter = 1000)
 fit_cefavi <- drm(Tpos ~ Conc, data = cefavi, fct = LL.4())
+fit_cefavi2 <-drda(Tpos ~ Conc, data=cefavi, mean_function = "loglogistic4", max_iter = 1000)
 fit_ceftaz <- drm(Tpos ~ Conc, data = ceftaz, fct = LL.4())
+fit_ceftaz2 <-drda(Tpos ~ Conc, data=ceftaz, mean_function = "loglogistic4", max_iter = 1000)
 fit_coli <- drm(Tpos ~ Conc, data = coli, fct = LL.4())
+fit_coli2 <-drda(Tpos ~ Conc, data=coli, mean_function = "loglogistic4", max_iter = 1000)
+fit_vabo <- drm(Tpos ~ Conc, data = vabo, fct = LL.4())
+fit_vabo2 <-drda(Tpos ~ Conc, data=vabo, mean_function = "loglogistic4", max_iter = 1000)
+
+
+library(broom)
+library(kableExtra)
+library (drda)
+effective_dose(fit_coli2, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+  kable_paper("hover", full_width = F, position = "left")
+
 
 # Create a new data frame for predictions
 newdata8 <- data.frame(Conc = seq(min(gent$Conc), max(gent$Conc), length.out = 100))
@@ -346,6 +396,7 @@ newdata11 <- data.frame(Conc = seq(min(cipro$Conc), max(cipro$Conc), length.out 
 newdata12 <- data.frame(Conc = seq(min(cefavi$Conc), max(cefavi$Conc), length.out = 100))
 newdata13 <- data.frame(Conc = seq(min(ceftaz$Conc), max(ceftaz$Conc), length.out = 100))
 newdata14 <- data.frame(Conc = seq(min(coli$Conc), max(coli$Conc), length.out = 100))
+newdata15 <- data.frame(Conc = seq(min(vabo$Conc), max(vabo$Conc), length.out = 100))
 
 # Predict with 95% CI
 pred8 <- predict(fit_gent, newdata = newdata8, interval = "confidence")
@@ -362,6 +413,8 @@ pred13 <- predict(fit_ceftaz, newdata = newdata13, interval = "confidence")
 df_pred13 <- data.frame(pred13)
 pred14 <- predict(fit_coli, newdata = newdata14, interval = "confidence")
 df_pred14 <- data.frame(pred14)
+pred15 <- predict(fit_vabo, newdata = newdata15, interval = "confidence")
+df_pred15 <- data.frame(pred15)
 
 # Bind the predictions to the new data frame
 newdata8 <- cbind(newdata8, pred8)
@@ -371,6 +424,7 @@ newdata11 <- cbind(newdata11, pred11)
 newdata12 <- cbind(newdata12, pred12)
 newdata13 <- cbind(newdata13, pred13)
 newdata14 <- cbind(newdata14, pred14)
+newdata15 <- cbind(newdata15, pred15)
 
 
 
@@ -379,7 +433,7 @@ newdata14 <- cbind(newdata14, pred14)
 
 ggplot() + 
   geom_line(data = newdata8, aes(x = Conc, y = Prediction, color="Gentamicin")) +  
-  geom_point(data = gent, aes(x = Conc, y = Tpos, color="Gentacin"), shape = 2, size = 4) +
+  geom_point(data = gent, aes(x = Conc, y = Tpos, color="Gentamicin"), shape = 2, size = 4) +
   geom_ribbon(data = newdata8, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Gentamcin"), alpha = 0.2) +
 ##  meropenem
   geom_line(data = newdata9, aes(x = Conc, y = Prediction, color="Meropenem")) +  
@@ -397,16 +451,16 @@ ggplot() +
   geom_line(data = newdata12, aes(x = Conc, y = Prediction, color="Ceftazidime-avibactam [4:1]")) +  
   geom_point(data = cefavi, aes(x = Conc, y = Tpos, color="Ceftazidime-avibactam [4:1]"), shape = 8, size = 4) +
   geom_ribbon(data = newdata12, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Ceftazidime-avibactam [4:1]"), alpha = 0.2) +
-## ceftazidime
-  geom_line(data = newdata13, aes(x = Conc, y = Prediction, color="Ceftazidime")) +  
-  geom_point(data = ceftaz, aes(x = Conc, y = Tpos, color="Ceftazidime"), shape = 0, size = 4) +
-  geom_ribbon(data = newdata13, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Ceftazidime"), alpha = 0.2) +
 ##  colistin
   geom_line(data = newdata14, aes(x = Conc, y = Prediction, color="Colistin")) +  
   geom_point(data = coli, aes(x = Conc, y = Tpos, color="Colistin"), shape = 1, size = 4) +
   geom_ribbon(data = newdata14, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Colistin"), alpha = 0.2) +
- ## labels 
-  labs(x = "Log10 Antibiotic concentration/ MIC ratio", y = "Tpos (hours)") +
+  ##  vaboractam
+  geom_line(data = newdata15, aes(x = Conc, y = Prediction, color="Meropenem-vaborbactam")) +  
+  geom_point(data = vabo, aes(x = Conc, y = Tpos, color="Meropenem-vaborbactam"), shape = 17, size = 4) +
+  geom_ribbon(data = newdata15, aes(x= Conc, ymin = Lower, ymax = Upper, fill="Meropenem-vaborbactam"), alpha = 0.2) +
+  ## labels 
+  labs(x = "Log10 Serum antibiotic concentration", y = "Tpos (hours)") +
   scale_x_log10(labels = label_log(digits = 1)) + theme_base() +  scale_color_lancet() +  scale_fill_lancet()
 
 ### Figure 3 combination
@@ -463,5 +517,7 @@ gent2 <- read_excel("datasets_single/KPCB_gent.xlsx")
 fit13 <- drda(tpos ~ gent_s, data=gent2, mean_function = "loglogistic4", max_iter = 1000)
 plot(fit13, xlab = "Gentamicin serum conc. (mg/L)", ylab = "Tpos (hr)")
 
+synergy<- read_excel("synergy.xlsx")
 
+heatmaply(synergy)
 
