@@ -21,7 +21,7 @@ website:
       - Antifungals.qmd
 format: 
   html:
-    theme: cosmo
+    theme: Zephyr
     css: styles.css
     toc: true
 editor: visual
