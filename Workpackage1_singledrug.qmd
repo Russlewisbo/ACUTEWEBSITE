@@ -1,6 +1,6 @@
 ---
 title: "Workpackage 1-Single Drug"
-date: "02/06/2024"
+date: "06/06/2024"
 format: 
   html:
     code-fold: true
@@ -202,7 +202,7 @@ This workpackage explores how cantibiotic concentrations alters Tpos for a stand
 
 #### Preliminary experiments KPC and NDM isolates
 
-As shown in [@fig-2], a marked increased in the Tpos for KPC_B from \< 10 hrs to [\>]{.underline} 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos \< 10hr at all test concentrations with lack of antimicrobial activity. Trends in Tpos relative to antibiotic exposure were fitted by Loess.
+As shown in [@fig-2], a marked increased in the Tpos for KPC_B from \< 10 hrs to \> 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos \< 10hr at all test concentrations with lack of antimicrobial activity. Trends in Tpos relative to antibiotic exposure were fitted by Loess.
 
 ```{r}
 #| label: fig-2
@@ -220,7 +220,7 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 ```
 
 | Isolate                        | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |
-<<<<<<< HEAD
+
 |------------------------|-------------------|------------------------------|
 =======
 |------------------------|------------------|------------------------------|
