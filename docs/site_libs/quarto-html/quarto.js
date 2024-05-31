@@ -9,7 +9,7 @@ const layoutMarginEls = () => {
   // Find any conflicting margin elements and add margins to the
   // top to prevent overlap
   const marginChildren = window.document.querySelectorAll(
-    ".column-margin.column-container > * "
+    ".column-margin.column-container > *, .margin-caption, .aside"
   );
 
   let lastBottom = 0;
@@ -18,25 +18,14 @@ const layoutMarginEls = () => {
       // clear the top margin so we recompute it
       marginChild.style.marginTop = null;
       const top = marginChild.getBoundingClientRect().top + window.scrollY;
-      console.log({
-        childtop: marginChild.getBoundingClientRect().top,
-        scroll: window.scrollY,
-        top,
-        lastBottom,
-      });
       if (top < lastBottom) {
-        const margin = lastBottom - top;
+        const marginChildStyle = window.getComputedStyle(marginChild);
+        const marginBottom = parseFloat(marginChildStyle["marginBottom"]);
+        const margin = lastBottom - top + marginBottom;
         marginChild.style.marginTop = `${margin}px`;
       }
       const styles = window.getComputedStyle(marginChild);
       const marginTop = parseFloat(styles["marginTop"]);
-
-      console.log({
-        top,
-        height: marginChild.getBoundingClientRect().height,
-        marginTop,
-        total: top + marginChild.getBoundingClientRect().height + marginTop,
-      });
       lastBottom = top + marginChild.getBoundingClientRect().height + marginTop;
     }
   }
@@ -46,7 +35,15 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   // Recompute the position of margin elements anytime the body size changes
   if (window.ResizeObserver) {
     const resizeObserver = new window.ResizeObserver(
-      throttle(layoutMarginEls, 50)
+      throttle(() => {
+        layoutMarginEls();
+        if (
+          window.document.body.getBoundingClientRect().width < 990 &&
+          isReaderMode()
+        ) {
+          quartoToggleReader();
+        }
+      }, 50)
     );
     resizeObserver.observe(window.document.body);
   }
@@ -476,28 +473,6 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     };
   };
 
-<<<<<<< HEAD
-  // Find any conflicting margin elements and add margins to the
-  // top to prevent overlap
-  const marginChildren = window.document.querySelectorAll(
-    ".column-margin.column-container > * "
-  );
-
-  nexttick(() => {
-    let lastBottom = 0;
-    for (const marginChild of marginChildren) {
-      const top = marginChild.getBoundingClientRect().top + window.scrollY;
-      if (top < lastBottom) {
-        const margin = lastBottom - top;
-        marginChild.style.marginTop = `${margin}px`;
-      }
-      const styles = window.getComputedStyle(marginChild);
-      const marginTop = parseFloat(styles["marginTop"]);
-
-      lastBottom = top + marginChild.getBoundingClientRect().height + marginTop;
-    }
-  });
-=======
   const tabEls = document.querySelectorAll('a[data-bs-toggle="tab"]');
   for (const tabEl of tabEls) {
     const id = tabEl.getAttribute("data-bs-target");
@@ -543,7 +518,6 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
         });
     }
   }
->>>>>>> a72d8bf8db747dca544fb670c6a5f63b1b274185
 
   // Manage the visibility of the toc and the sidebar
   const marginScrollVisibility = manageSidebarVisiblity(marginSidebarEl, {
@@ -690,7 +664,6 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
       manageTransition("TOC", slow);
       manageTransition("quarto-sidebar", slow);
     };
-
     const readerMode = !isReaderMode();
     setReaderModeValue(readerMode);
 
@@ -699,6 +672,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
       slowTransition(readerMode);
     }
     highlightReaderToggle(readerMode);
+    hideOverlappedSidebars();
 
     // If we're exiting reader mode, restore the non-slow transition
     if (!readerMode) {
@@ -736,6 +710,9 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   };
   let localReaderMode = null;
 
+  const tocOpenDepthStr = tocEl?.getAttribute("data-toc-expanded");
+  const tocOpenDepth = tocOpenDepthStr ? Number(tocOpenDepthStr) : 1;
+
   // Walk the TOC and collapse/expand nodes
   // Nodes are expanded if:
   // - they are top level
@@ -761,7 +738,13 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
 
     // Process the collapse state if this is an UL
     if (el.tagName === "UL") {
-      if (depth === 1 || hasActiveChild || prevSiblingIsActiveLink(el)) {
+      if (tocOpenDepth === -1 && depth > 1) {
+        el.classList.add("collapse");
+      } else if (
+        depth <= tocOpenDepth ||
+        hasActiveChild ||
+        prevSiblingIsActiveLink(el)
+      ) {
         el.classList.remove("collapse");
       } else {
         el.classList.add("collapse");

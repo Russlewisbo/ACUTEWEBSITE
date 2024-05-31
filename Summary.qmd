@@ -1,8 +1,8 @@
 ---
-title: "ECCMID 2023 ABSTRACT (Submitted)"
+title: "ECCMID 2023 ABSTRACT"
 ---
 
-## ECCMID 2023 Abstract (Submitted)
+## ECCMID 2023 Abstract  
 
 **Pharmacodynamics of ceftazidime-avibactam monotherapy and combination regimens against carbapenemase-producing *Klebsiella pneumoniae* measured by bloodculture system time to positivity (Tpos)**
 
@@ -27,7 +27,7 @@ Irene Zaghi¹, Monica Cricca¹‐², Vittorio Sambri¹‐², Jason Roberts³, Ru
 ![Figure 2. Bliss independence interaction model for antibiotic combinations](ESCMIDabstract_Fig2.png){fig-align="center" width="1000"}
 
 |                        |            |                                                                     |
-|------------------------|------------|---------------------------------------------------------------------|
+|---------------|---------------|-------------------------------------------|
 | Antibiotic combination | Strain     | Mean Tpos change (hr) from predicted null response surface (95% CI) |
 | CZA + GENT             | KP_A (KPC) | \+ 5.68 (5.09-6.53)                                                 |
 | CZA + GENT             | KP_B (KPC) | \+ 3.05 (2.16-4.03)                                                 |

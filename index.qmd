@@ -14,16 +14,13 @@
 
 <br>
 
-**Collaborators:**
+**Collaborator:**
 
 -   **Jason Roberts, Pharm.D., PhD.**, NHMRC Leadership Fellow, UQ Centre for Clinical Research, Faculty of Medicine, Acting Director, CCR. Faculty of Medicine
 
 **Funding:**
 
--   Direzione Generale Della Ricerca Dell' Innovazione in Sanità 2021-Bando Dell Ricerca
 -   European Society of Clinical Microbiology and Infectious Diseases (ESCMID) [2022 Research Grants Program](https://www.escmid.org/profession_career/awards_grants/research_grants/awardees_2022)
-
-![](images/minstero.png){fig-align="center" width="300"}
 
 ![](ESCMID.png){fig-align="center" width="400"}
 
