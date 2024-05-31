@@ -386,6 +386,12 @@ library (drda)
 effective_dose(fit_coli2, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
 kbl(ed)%>%
   kable_paper("hover", full_width = F, position = "left")
+effective_dose(fit_gent2, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+  kable_paper("hover", full_width = F, position = "left")
+effective_dose(fit_cefavi2, y = c(0.10,0.25,0.50,0.75,0.90,0.95))
+kbl(ed)%>%
+  kable_paper("hover", full_width = F, position = "left")
 
 
 # Create a new data frame for predictions
