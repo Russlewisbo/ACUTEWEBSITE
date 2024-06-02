@@ -183,7 +183,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ECCMID 2023 ABSTRACT</span></a>
+ <span class="menu-text">ECCMID 2023</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -231,9 +231,6 @@ div.csl-indent {
   <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1">METHODS</a></li>
   <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">RESULTS</a></li>
   <li><a href="#ceftazidime-avibactam" id="toc-ceftazidime-avibactam" class="nav-link" data-scroll-target="#ceftazidime-avibactam">CEFTAZIDIME-AVIBACTAM</a></li>
-  </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">|————————|——————-|——————————|</a>
-  <ul class="collapse">
   <li><a href="#meropenem" id="toc-meropenem" class="nav-link" data-scroll-target="#meropenem">MEROPENEM</a></li>
   <li><a href="#gentamicin" id="toc-gentamicin" class="nav-link" data-scroll-target="#gentamicin">GENTAMICIN</a></li>
   <li><a href="#colistin" id="toc-colistin" class="nav-link" data-scroll-target="#colistin">COLISTIN</a></li>
@@ -241,8 +238,8 @@ div.csl-indent {
   <li><a href="#tigecycline" id="toc-tigecycline" class="nav-link" data-scroll-target="#tigecycline">TIGECYCLINE</a></li>
   <li><a href="#ceftazidime" id="toc-ceftazidime" class="nav-link" data-scroll-target="#ceftazidime">CEFTAZIDIME</a></li>
   <li><a href="#ciprofloxacin" id="toc-ciprofloxacin" class="nav-link" data-scroll-target="#ciprofloxacin">CIPROFLOXACIN</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">REFERENCES</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">REFERENCES</a></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +286,7 @@ div.csl-indent {
 </section>
 <section id="results" class="level3">
 <h3 class="anchored" data-anchor-id="results">RESULTS</h3>
-<p>The relationship between Tpos and the <em>K. pneumoniae</em> inoculum is shown in <strong>?@fig-1</strong> a linear relationship was observed from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R<sup>2</sup> of 0.92-0.94. The linear relationship of Tpos versus inoculum was consistent if the inoculum was prepared in PBS or pooled human serum as shown in <a href="#tbl-1" class="quarto-xref">Table&nbsp;1</a>.</p>
+<p>The relationship between Tpos and the <em>K. pneumoniae</em> inoculum is shown below. A linear relationship was observed from approximately 10<sup>1</sup>-10<sup>8</sup> <em>K. pneumoniae</em> CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R<sup>2</sup> of 0.92-0.94. The linear relationship of Tpos versus inoculum was consistent if the inoculum was prepared in PBS or pooled human serum as shown in [<a href="#tbl-1" class="quarto-xref">Table&nbsp;1</a>].</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -307,6 +304,7 @@ Note
 </div>
 <section id="klebsiella-pneumoniae-isolates" class="level4">
 <h4 class="anchored" data-anchor-id="klebsiella-pneumoniae-isolates">KLEBSIELLA PNEUMONIAE ISOLATES</h4>
+<p><a href="wp1a.csv">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -324,24 +322,24 @@ Note
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>fig1 <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>)<span class="sc">+</span> <span class="fu">scale_x_log10</span>(<span class="at">name=</span><span class="st">"Inoculum CFU/mL"</span>, <span class="at">breaks =</span> <span class="fu">trans_breaks</span>(<span class="st">"log10"</span>,<span class="at">n=</span><span class="dv">7</span>, <span class="cf">function</span>(x) <span class="dv">10</span><span class="sc">^</span>x),<span class="at">labels =</span> <span class="fu">trans_format</span>(<span class="st">"log10"</span>, <span class="fu">math_format</span>(<span class="dv">10</span><span class="sc">^</span>.x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-1-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-kp-1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Workpackage1_singledrug_files/figure-html/fig-1-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-kp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Workpackage1_singledrug_files/figure-html/fig-kp-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Relationship of time-to-positivity (Tpos) versus test inoculum
 </figcaption>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
-<div id="fig-1-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-kp-2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Workpackage1_singledrug_files/figure-html/fig-1-2.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-kp-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Workpackage1_singledrug_files/figure-html/fig-kp-2.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kp-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Relationship of time-to-positivity (Tpos) versus test inoculum
 </figcaption>
 </figure>
@@ -409,6 +407,7 @@ Table&nbsp;1: Effect of inoculum diluent on Tpos
 </section>
 <section id="escherichia-coli-atcc-25922" class="level4">
 <h4 class="anchored" data-anchor-id="escherichia-coli-atcc-25922">ESCHERICHIA COLI ATCC 25922</h4>
+<p><a href="./datasets_single/ecoliatcc_inoculum.xlsx">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -492,6 +491,7 @@ Table&nbsp;2: Effect of inoculum diluent on Tpos
 </section>
 <section id="acinetobacter-baumanii-atcc-xxxx" class="level4">
 <h4 class="anchored" data-anchor-id="acinetobacter-baumanii-atcc-xxxx">ACINETOBACTER BAUMANII ATCC XXXX</h4>
+<p><a href="abaum_pbs.xlsx">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -575,6 +575,7 @@ Table&nbsp;3: Effect of inoculum diluent on Tpos for Acinetobacter baumanii
 </section>
 <section id="pseudomonas-aeruginosa-atcc-27853" class="level4">
 <h4 class="anchored" data-anchor-id="pseudomonas-aeruginosa-atcc-27853">PSEUDOMONAS AERUGINOSA ATCC 27853</h4>
+<p><a href="pseudo_pbs.xlsx">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -666,7 +667,7 @@ Table&nbsp;4: Effect of inoculum diluent on Tpos for pseudomonas aeruginosa
 <h2 class="anchored" data-anchor-id="workpackage-1b-effect-of-antibiotic-exposure-on-tpos">WORKPACKAGE 1B: EFFECT OF ANTIBIOTIC EXPOSURE ON TPOS</h2>
 <section id="methods-1" class="level3">
 <h3 class="anchored" data-anchor-id="methods-1">METHODS</h3>
-<p>This workpackage explores how cantibiotic concentrations alters Tpos for a standard (1x10<sup>4</sup> CFU/mL) inoculum of Enterobacterales.</p>
+<p>This workpackage explores how antibiotic concentrations alter Tpos for a standard (1x10<sup>4</sup> CFU/mL) inoculum of Enterobacterales.</p>
 </section>
 <section id="results-1" class="level3">
 <h3 class="anchored" data-anchor-id="results-1">RESULTS</h3>
@@ -674,8 +675,9 @@ Table&nbsp;4: Effect of inoculum diluent on Tpos for pseudomonas aeruginosa
 </section>
 <section id="ceftazidime-avibactam" class="level3">
 <h3 class="anchored" data-anchor-id="ceftazidime-avibactam">CEFTAZIDIME-AVIBACTAM</h3>
-<section id="preliminary-experiments-kpc-and-ndm-isolates" class="level4">
-<h4 class="anchored" data-anchor-id="preliminary-experiments-kpc-and-ndm-isolates">Preliminary experiments KPC and NDM isolates</h4>
+<section id="preliminary-experiments-kpc-mic-1-mgl-and-ndm-mic-64-mgl-isolates" class="level4">
+<h4 class="anchored" data-anchor-id="preliminary-experiments-kpc-mic-1-mgl-and-ndm-mic-64-mgl-isolates">Preliminary experiments KPC (MIC 1 mg/L) and NDM (MIC &gt; 64 mg/L) isolates</h4>
+<p><a href="datasets_single/ceftazidime.csv">Download data</a></p>
 <p>As shown in <a href="#fig-2" class="quarto-xref">Figure&nbsp;6</a>, a marked increased in the Tpos for KPC_B from &lt; 10 hrs to &gt; 24 hrs when CAZ/AVI concentrations surpassed 1 mg/L. In contrast, the negative control KPC_NDM strain exhibited consistent Tpos &lt; 10hr at all test concentrations with lack of antimicrobial activity. Trends in Tpos relative to antibiotic exposure were fitted by Loess.</p>
 <div class="cell">
 <details class="code-fold">
@@ -702,18 +704,12 @@ Figure&nbsp;6: Effect of ceftazidime/aviactam concentrations on Tpos of K. pneum
 </div>
 </div>
 </div>
-<div class="line-block">Isolate | Carbapenemase enzyme | Ceftazidime/avibactam Etest MIC (mg/L) |</div>
-</section>
-</section>
-</section>
-<section id="section" class="level1">
-<h1>|————————|——————-|——————————|</h1>
-<p>|————————|——————|——————————| &gt;&gt;&gt;&gt;&gt;&gt;&gt; a72d8bf8db747dca544fb670c6a5f63b1b274185 | <em>Klebsiella pneumoniae</em> KPC- B | KPC-3 | 1 | | <em>Klebsiella pneumoniae</em> NDM | NDM-2 | &gt;64 |</p>
-<p>: Isolates used for testing {#tbl-table2}</p>
 <p><br></p>
 <p><br></p>
+</section>
 <section id="k.-pneumoniae-atcc-700603-mic-0.75-mgl-powder-41" class="level4">
 <h4 class="anchored" data-anchor-id="k.-pneumoniae-atcc-700603-mic-0.75-mgl-powder-41">K. pneumoniae ATCC 700603 (MIC 0.75 mg/L) powder 4:1</h4>
+<p><a href="datasets_single/kpatcc_caz_avi_powder4-1.xlsx">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -820,6 +816,7 @@ Table&nbsp;5: Pharmacodynamic estimates
 </section>
 <section id="k.-pneumoniae-atcc-700603-mic-0.75-mgl-fixed-4-mgl" class="level4">
 <h4 class="anchored" data-anchor-id="k.-pneumoniae-atcc-700603-mic-0.75-mgl-fixed-4-mgl">K. pneumoniae ATCC 700603 (MIC 0.75 mg/L) fixed 4 mg/L</h4>
+<p><a href="datasets_single/kpatcc_caz_avi_powderfix4.xlsx">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -926,6 +923,7 @@ Table&nbsp;6: Pharmacodynamic estimates
 </section>
 <section id="kpc-b-mic-1-mgl-commercial" class="level4">
 <h4 class="anchored" data-anchor-id="kpc-b-mic-1-mgl-commercial">KPC B (MIC 1 mg/L) commercial</h4>
+<p><a href="datasets_single/kpcb_caz_avi_com.xlsx">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1032,6 +1030,7 @@ Table&nbsp;7: Pharmacodynamic estimates
 </section>
 <section id="kpc-b-mic-1-mgl-powder-41" class="level4">
 <h4 class="anchored" data-anchor-id="kpc-b-mic-1-mgl-powder-41">KPC B (MIC 1 mg/L) powder 4:1</h4>
+<p><a href="datasets_single/kpcb_caz_avi_powder_4-1.xlsx">Download data</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -2346,6 +2345,7 @@ Figure&nbsp;22: Pharmacodynamic relationship of Tpos to ceftazidime/avibactam co
 <h4 class="anchored" data-anchor-id="conclusions-1">CONCLUSIONS</h4>
 <p>These data demonstrate that Tpos is a robust PD endpoint and the relationship of ceftazidime/avibactam concentrations versus Tpos follows classical sigmoidal dose response relationship with a steep transitional portion of the dose response curve that occurs near the MIC of the pathogen. Although ED50/90 estimates were broadly similar if the commercial (pharmaceutical) and analytical powder formulations were tested, used of high-fixed concentrations of avibactam or testing at very high <em>K. pneumoniae</em> inocula resulted in broader concentration-effect curves and higher EC50/90 estimates. <br> <br></p>
 <hr>
+</section>
 </section>
 <section id="meropenem" class="level3">
 <h3 class="anchored" data-anchor-id="meropenem">MEROPENEM</h3>
@@ -4078,12 +4078,12 @@ Table&nbsp;32: Pharmacodynamic estimates
 </div>
 </section>
 </section>
+</section>
 <section id="references" class="level2">
 
 
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">REFERENCES</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
