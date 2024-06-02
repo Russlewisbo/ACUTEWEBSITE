@@ -12,8 +12,6 @@ website:
       - About.qmd
       - Workpackage1_singledrug.qmd
       - Workpackage1_combination.qmd
-      - Workpackage2.qmd
-      - Timeline.qmd
       - Summary.qmd
       - Presentations.qmd
       - Publications.qmd
@@ -21,7 +19,7 @@ website:
       - Antifungals.qmd
 format: 
   html:
-    theme: cosmo
+    theme: Materia
     css: styles.css
     toc: true
 editor: visual

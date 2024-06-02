@@ -28,7 +28,7 @@ The methods for the assay are a modification of those originally proposed by Kal
 
 ### RESULTS
 
-The relationship between Tpos and the *K. pneumoniae* inoculum is shown below. A linear relationship was observed from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R^2^ of 0.92-0.94. The linear relationship of Tpos versus inoculum was consistent if the inoculum was prepared in PBS or pooled human serum as shown in \[@tbl-1\].
+The relationship between Tpos and the *K. pneumoniae* inoculum is shown below. A linear relationship was observed from approximately 10^1^-10^8^ *K. pneumoniae* CFU/mL and a Tpos measured from 10.5 hours-4.5 hours over the tested inoculum range, with R^2^ of 0.92-0.94. The linear relationship of Tpos versus inoculum was consistent if the inoculum was prepared in PBS or pooled human serum as shown in [@tbl-1].
 
 ::: callout-note
 In the paper by Kaltsas et al. [@kaltsas2005] the reported inoculum was the inoculum introduced in to the bloodculture bottle, 30-40 mL of growth media (depending on the manufacturer).
@@ -208,7 +208,7 @@ This workpackage explores how antibiotic concentrations alter Tpos for a standar
 
 ### CEFTAZIDIME-AVIBACTAM
 
-#### Preliminary experiments KPC (MIC 1 mg/L) and NDM (MIC > 64 mg/L) isolates
+#### Preliminary experiments KPC (MIC 1 mg/L) and NDM (MIC \> 64 mg/L) isolates
 
 [Download data](datasets_single/ceftazidime.csv)
 
@@ -228,8 +228,6 @@ scale_x_log10(name="CAZ/AVI conc, mg/L") +
 scale_y_continuous(name="Tpos (hr)", limits=c(4,25)) 
 
 ```
-
-
 
 <br>
 
@@ -570,6 +568,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### KPC Catania (MIC 16 mg/L) powder 4:1
 
+[Download data](datasets_single/kpccatania_caz_avi_powder_4-1.xlsx)
+
 ```{r }
 #| label: fig-catan1
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a resistant strain"
@@ -606,6 +606,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### KPC Catania (MIC 16 mg/L) fixed 4 mg/L
 
+[Download data](datasets_single/kpccatania_caz_avi_powderfix.xlsx)
+
 ```{r }
 #| label: fig-catfix
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against a high-inoculum"
@@ -641,6 +643,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### KPC K. pneumoniae KPRAD (MIC 0.5 mg/L)
 
+[Download data](datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx)
+
 ```{r }
 #| label: fig-kprad
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae"
@@ -672,6 +676,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### K. pneumoniae KFAB ESBL (MIC 0.38 mg/L)
 
+[Download data](datasets_single/kp_FAB_caz_avi_powder4-1.xlsx)
+
 ```{r }
 #| label: fig-kfab
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against KPC- producing K. pneumoniae"
@@ -702,6 +708,8 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 #### K. pneumoniae WT (MIC 0.125 mg/L)
+
+[Download data](datasets_single/kpwt_caz_avi_powder_4-1.xlsx)
 
 ```{r }
 #| label: fig-wtpow
@@ -741,6 +749,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### E. coli ATCC 25922 (MIC 0.19 mg/L)
 
+[Download data](datasets_single/ecoliatcc_caz_avi_powder4-1.xlsx)
+
 ```{r }
 #| label: fig-ecoliatcc
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations against E. coli ATCC 25922 (MIC 0.19 mg/L)"
@@ -771,6 +781,14 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 #### COMPARISON OF POSSIBLE INDICATOR ISOLATES
+Download data: <br>
+[kpca](datasets_single/kpca_caz_avi_powder_4-1.xlsx) <br>
+[kpcb](datasets_single/kpcb_caz_avi_powder_4-1.xlsx) <br>
+[kpccatania ](datasets_single/kpccatania_caz_avi_powder_4-1.xlsx) <br>
+[caz_avi_kfab](datasets_single/kp_FAB_caz_avi_powder4-1.xlsx) <br>
+[kpwt](datasets_single/kpwt_caz_avi_powder_4-1.xlsx) <br>
+[caz_avi_kprad](datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx) <br>
+[kpatcc](datasets_single/kpatcc_caz_avi_powder4-1.xlsx)
 
 ```{r }
 #| label: fig-compkp
@@ -815,6 +833,8 @@ These data demonstrate that Tpos is a robust PD endpoint and the relationship of
 
 -   As shown in [@fig-9], Tpos increased as meropenem concentrations surpassed the MIC, with an estimated pharmacodynamic parameters consistent with previous experiments that showed transition in the EC50/EC90 at simulated serum concentrations near the MIC as shown in [@tbl-9].
 
+[Downlad data](datasets_single/ATCC_meropenem.xlsx)
+
 ```{r}
 #| label: fig-9
 #| fig-cap: "Pharmacodynamic relationship of Tpos to meropenem concentrations"
@@ -845,6 +865,8 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 ##### KPC B (MIC 32 mg/L)
+
+[Download data](datasets_single/KPCB_meropenem.xlsx)
 
 ```{r}
 #| label: fig-9b
@@ -879,6 +901,10 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br> A comparison of meropenem activity against the ATCC ESBL-producing reference (MIC 0.03 mg/L) and KPC-carbapenemase producing K. pneumoniae isolates are shown in [@fig-comp]. The meropenem EC~50~ measured by Tpos was 23-fold higher for the KPC-carbapenemase producing isolate versus the the ESBL-producing ATCC isolate. Despite variability in the response was noted for the KPC-B isolate at 20 mg/L and 80 mg/mL concentrations (*experiments are currently being repeated*), the EC50 were nearly identical (indicated by the dotted lines) when corrected for pathogen MIC. These data suggest that it may be possible to substitute *sensitive indicator isolates with low MICs* to predict pharmacodynamic responses of isolates with higher MICs.
 
+[Download dataset1](datasets_single/KPCB_meropenem.xlsx) <br>
+[Download dataset2](datasets_single/ATCC_meropenem.xlsx)
+
+
 ```{r }
 #| label: fig-comp
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime/avibactam concentrations"
@@ -904,6 +930,8 @@ A key observation is that the pharmacodynamics were similar when meropenem was t
 ### GENTAMICIN
 
 ##### KPC A (MIC 2 mg/L)
+
+[Download data](datasets_single/KPCA_gent.xlsx)
 
 ```{r}
 #| label: fig-genta
@@ -936,6 +964,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 ##### KPC B (MIC 0.5 mg/L)
 
+[Download data](datasets_single/KPCB_gent.xlsx)
 ```{r}
 #| label: fig-gentb
 #| fig-cap: "Pharmacodynamic relationship of Tpos to gentamicin concentrations"
@@ -971,6 +1000,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### KPC B (MIC 0.125 mg/L)
 
+[Download data](datasets_single/KPCB_coli.xlsx)
+
 ```{r}
 #| label: fig-colib
 #| fig-cap: "Pharmacodynamic relationship of Tpos to colistin concentrations"
@@ -1004,7 +1035,9 @@ kable_paper("hover", full_width = F, position = "left")
 
 ### MEROPENEM-VABORBACTAM
 
-#### KPC B (MIC X mg/L)
+#### KPC B (MIC 0.06 mg/L)
+
+[Download data](datasets_single/KPCB_vabo.xlsx)
 
 ```{r}
 #| label: fig-vabob
@@ -1042,6 +1075,8 @@ kable_paper("hover", full_width = F, position = "left")
 ::: callout-important
 Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity as previously reported by Deitchman et al.[@deitchman2018] This phenomena was evident in preliminary experiments as shown in [@fig-edta].
 
+[Download data](datasets_single/edtaeffect.xlsx")
+
 ```{r}
 #| label: fig-edta
 #| fig-cap: "Effect of tigeycvcline concentrations on Tpos of K. pneumoniae using serum collected with and withouth EDTA"
@@ -1058,6 +1093,8 @@ scale_y_continuous(name="Tpos (hr)", limits=c(4,25))
 :::
 
 #### KPC-A (MIC 0.75 mg/L)
+
+[Download data](datasets_single/kpca_tig.xlsx)
 
 ```{r}
 #| label: fig-tiga
@@ -1090,6 +1127,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### KPC-B (MIC 0.38 mg/L)
 
+[Download data](datasets_single/kpcb_tig.xlsx)
+
 ```{r}
 #| label: fig-tigb
 #| fig-cap: "Pharmacodynamic relationship of Tpos to tigecycline concentrations"
@@ -1121,6 +1160,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### E. coli ATCC 25922 (MIC 0.125 mg/L)
 
+[Download data](datasets_single/ecoliatcc_tig.xlsx)
+
 ```{r}
 #| label: fig-tigecoli
 #| fig-cap: "Pharmacodynamic relationship of Tpos to tigecycline concentrations"
@@ -1151,6 +1192,8 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 #### E. coli ATCC 25922 (MIC 0.125 mg/L) protein binding
+
+[Download data](datasets_single/ecoliatcc_tig_serum.xlsx)
 
 ```{r }
 #| label: fig-protein
@@ -1193,6 +1236,7 @@ kable_paper("hover", full_width = F, position = "left")
 ### CEFTAZIDIME
 
 #### K. pneumoniae ATCC 700603 (MIC 12 mg/L)
+[Download data](datasets_single/kpatcc_ceftazidime.xlsx)
 
 ```{r }
 #| label: fig-ceftaz_atcc
@@ -1224,6 +1268,8 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 #### K. pneumoniae KP-DAM (MIC 4 mg/L)
+
+[Download data](datasets_single/kp_dam_ceftaz.xlsx)
 
 ```{r}
 #| label: fig-ceftaz_dam
@@ -1259,6 +1305,8 @@ kable_paper("hover", full_width = F, position = "left")
 
 #### K. pneumoniae WT (MIC \<= 0.06)
 
+[Download data](datasets_single/kpwt_cipro_powder.xlsx)
+
 ```{r}
 #| label: fig-ciprowt
 #| fig-cap: "Pharmacodynamic relationship of Tpos to ceftazidime concentrations"
@@ -1288,6 +1336,8 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 #### KPC B (MIC \<= 0.38)
+
+[Download data](datasets_single/kpcb_cipro_powder.xlsx)
 
 ```{r}
 #| label: fig-ciprokpcb
