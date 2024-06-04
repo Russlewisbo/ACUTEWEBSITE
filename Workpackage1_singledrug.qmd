@@ -781,14 +781,8 @@ kable_paper("hover", full_width = F, position = "left")
 ```
 
 #### COMPARISON OF POSSIBLE INDICATOR ISOLATES
-Download data: <br>
-[kpca](datasets_single/kpca_caz_avi_powder_4-1.xlsx) <br>
-[kpcb](datasets_single/kpcb_caz_avi_powder_4-1.xlsx) <br>
-[kpccatania ](datasets_single/kpccatania_caz_avi_powder_4-1.xlsx) <br>
-[caz_avi_kfab](datasets_single/kp_FAB_caz_avi_powder4-1.xlsx) <br>
-[kpwt](datasets_single/kpwt_caz_avi_powder_4-1.xlsx) <br>
-[caz_avi_kprad](datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx) <br>
-[kpatcc](datasets_single/kpatcc_caz_avi_powder4-1.xlsx)
+
+Download data: <br> [kpca](datasets_single/kpca_caz_avi_powder_4-1.xlsx) <br> [kpcb](datasets_single/kpcb_caz_avi_powder_4-1.xlsx) <br> [kpccatania](datasets_single/kpccatania_caz_avi_powder_4-1.xlsx) <br> [caz_avi_kfab](datasets_single/kp_FAB_caz_avi_powder4-1.xlsx) <br> [kpwt](datasets_single/kpwt_caz_avi_powder_4-1.xlsx) <br> [caz_avi_kprad](datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx) <br> [kpatcc](datasets_single/kpatcc_caz_avi_powder4-1.xlsx)
 
 ```{r }
 #| label: fig-compkp
@@ -901,9 +895,7 @@ kable_paper("hover", full_width = F, position = "left")
 
 <br> A comparison of meropenem activity against the ATCC ESBL-producing reference (MIC 0.03 mg/L) and KPC-carbapenemase producing K. pneumoniae isolates are shown in [@fig-comp]. The meropenem EC~50~ measured by Tpos was 23-fold higher for the KPC-carbapenemase producing isolate versus the the ESBL-producing ATCC isolate. Despite variability in the response was noted for the KPC-B isolate at 20 mg/L and 80 mg/mL concentrations (*experiments are currently being repeated*), the EC50 were nearly identical (indicated by the dotted lines) when corrected for pathogen MIC. These data suggest that it may be possible to substitute *sensitive indicator isolates with low MICs* to predict pharmacodynamic responses of isolates with higher MICs.
 
-[Download dataset1](datasets_single/KPCB_meropenem.xlsx) <br>
-[Download dataset2](datasets_single/ATCC_meropenem.xlsx)
-
+[Download dataset1](datasets_single/KPCB_meropenem.xlsx) <br> [Download dataset2](datasets_single/ATCC_meropenem.xlsx)
 
 ```{r }
 #| label: fig-comp
@@ -965,6 +957,7 @@ kable_paper("hover", full_width = F, position = "left")
 ##### KPC B (MIC 0.5 mg/L)
 
 [Download data](datasets_single/KPCB_gent.xlsx)
+
 ```{r}
 #| label: fig-gentb
 #| fig-cap: "Pharmacodynamic relationship of Tpos to gentamicin concentrations"
@@ -1075,7 +1068,7 @@ kable_paper("hover", full_width = F, position = "left")
 ::: callout-important
 Experiments performed using freshly collected blood samples that use EDTA as an anticoagulant result in enhanced tigecycline activity as previously reported by Deitchman et al.[@deitchman2018] This phenomena was evident in preliminary experiments as shown in [@fig-edta].
 
-[Download data](datasets_single/edtaeffect.xlsx")
+[Download data](datasets_single/edtaeffect.xlsx%22)
 
 ```{r}
 #| label: fig-edta
@@ -1236,6 +1229,7 @@ kable_paper("hover", full_width = F, position = "left")
 ### CEFTAZIDIME
 
 #### K. pneumoniae ATCC 700603 (MIC 12 mg/L)
+
 [Download data](datasets_single/kpatcc_ceftazidime.xlsx)
 
 ```{r }
