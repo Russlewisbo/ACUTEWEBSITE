@@ -5,17 +5,16 @@ library(kableExtra)
 theme_set(theme_bw())
 ## Figure1a
 ## import raw data from .csv file
-<<<<<<< HEAD
+
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a1.csv")
-=======
+
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
->>>>>>> a72d8bf8db747dca544fb670c6a5f63b1b274185
 ## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
 library (ggplot2)
 library(scales)
 theme_set(theme_bw())
 ## import raw data from .csv file
-<<<<<<< HEAD
+
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a1.csv")
 ## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
 fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, shape=isolates,  fill=isolates)) + geom_point(size=5, alpha = 1.0) + 
@@ -29,7 +28,7 @@ fig1 + theme_bw(base_size = 18)+ scale_x_log10(name="Inoculum CFU/mL", breaks = 
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a1.csv")
 df <- data.frame (wp1)
 table1<-lm_table(df, log(inoculum) ~ tpos, "isolates")
-=======
+
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
 ## plot raw data as x-y graph Tpos graph vs. drug concentrations stratified by dilution matrix, method="lm" is the method for linear regression
 fig1 <-ggplot(wp1, aes(x=inoculum, y=tpos, color=isolates, shape=diluent, fill=isolates)) + geom_point(size=4, alpha = 0.5) + 
@@ -41,7 +40,7 @@ fig1 + theme_bw(base_size = 14)+ scale_x_log10(name="Inoculum CFU/mL", breaks = 
 wp1 <- read.csv("~/Desktop/ACUTEWEBSITE/wp1a.csv")
 df <- data.frame (wp1)
 table1<-lm_table(df, log(inoculum) ~ tpos, "diluent")
->>>>>>> a72d8bf8db747dca544fb670c6a5f63b1b274185
+
 kbl(table1)%>%
   kable_paper("hover", full_width = F, position="left")
 
@@ -106,10 +105,10 @@ fig1a + fig1b + fig1c + fig1d
 ## a four-parameter logistic regression model is fit to ceftazidime concentrations to estimated PD parameters
 library (readxl)
 library(drda)
-<<<<<<< HEAD
+
 library (drc)
-=======
->>>>>>> a72d8bf8db747dca544fb670c6a5f63b1b274185
+
+
 kpca <- read_excel("datasets_single/kpca_caz_avi_powder_4-1.xlsx")
 kpcb <- read_excel("datasets_single/kpcb_caz_avi_powder_4-1.xlsx")
 kpccatania <- read_excel("datasets_single/kpccatania_caz_avi_powder_4-1.xlsx")
@@ -118,7 +117,7 @@ kpwt <- read_excel("datasets_single/kpwt_caz_avi_powder_4-1.xlsx")
 caz_avi_kprad <- read_excel("datasets_single/kp_PRAD_caz_avi_powder4-1.xlsx")
 kpatcc <- read_excel("datasets_single/kpatcc_caz_avi_powder_4-1.xlsx")
 
-<<<<<<< HEAD
+
 #DR curve fitting 
 DR.kpca <- drm(tpos ~ ctz_s, 
             data= kpca, #fit separate curves for each timepoint
@@ -166,7 +165,7 @@ plot11<-plot(DR.caz_avi_kprad, type = "average", add=TRUE,broken=FALSE, xtsty="s
 plot12<-plot(DR.caz_avi_kprad, type = "confidence", add=TRUE, broken=FALSE, xtsty="standard", xlim = c(0,1000), axes=TRUE, bp=0.1)
 plot13<-plot(DR.kpatcc, type = "average", add=TRUE,broken=FALSE, xtsty="standard", xlim = c(0,1000), axes=TRUE, pch = 7, bp=0.1)
 plot14<-plot(DR.kpatcc, type = "confidence", add=TRUE, broken=FALSE, xtsty="standard", xlim = c(0,1000), axes=TRUE, bp=0.1)
-=======
+
 ## fit models for each of the isolates
 library (broom)
 fitkpca <- drda(tpos ~ ctz_s, kpca, mean_function = "loglogistic4", max_iter = 1000)
@@ -191,5 +190,5 @@ fitkpwt <- drda(tpos ~ ctz_s, kpwt, mean_function = "loglogistic4", max_iter = 1
 fitkfab <- drda(tpos ~ ctz_s, data=caz_avi_kfab, mean_function = "loglogistic4", max_iter = 1000)
 fitkprad <- drda(tpos ~ ctz_s, data=caz_avi_kprad, mean_function = "loglogistic4", max_iter = 1000)
 ## plot all of the isolates together
->>>>>>> a72d8bf8db747dca544fb670c6a5f63b1b274185
+
 
